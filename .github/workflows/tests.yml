@@ -47,7 +47,7 @@ jobs:
       # 假 key：测试里所有模型/Embedding 调用都被替换，这个值不会发出任何请求
       OPENAI_API_KEY: sk-fake-test-key-no-real-network-calls
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # 部分测试用 git worktree 对照历史提交（逐字节一致性检查），需要完整历史
           fetch-depth: 0
