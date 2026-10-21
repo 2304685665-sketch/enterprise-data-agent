@@ -52,7 +52,7 @@ jobs:
           # 部分测试用 git worktree 对照历史提交（逐字节一致性检查），需要完整历史
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
