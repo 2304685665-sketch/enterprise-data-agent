@@ -1,0 +1,42 @@
+{
+  "case_id": "L-total-biotech",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，Biotech 行业的公司融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-total-biotech-9736beda",
+  "started_at": "2026-10-13T15:11:18.165946+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.12,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Biotech 行业公司融资金额合计分析报告\n\n## 融资总金额概述\n\n根据公司内部数据库的精准查询结果，Biotech（生物技术）行业内所有公司迄今为止的融资金额合计为 **789,277,000 美元**。该数据为数据库中实时更新的累计金额，涵盖了行业内所有已记录的融资事件，具有高度的准确性和权威性。\n\n## 数据来源和查询说明\n\n- 本金额数据来源于我司内部专用数据库，数据库动态收录了公司所属行业及其融资信息。\n- 查询范围涵盖了数据库中所有Biotech行业公司，无遗漏。\n- 数据截止时间为2026年10月13日，确保了时效性。\n- 该金额为所有轮次融资的累计和，包括种子轮、天使轮、A轮及后续各轮融资。\n\n## Biotech行业融资的行业背景简析\n\n生物技术行业作为创新驱动型产业，融资活动频繁且金额较大，主要原因体现在以下几个方面：\n\n- **研发投入大**：生物医药和生物技术公司往往需要长期投入大量资金进行临床试验、技术开发和产品验证。\n- **高风险高回报**：巨额融资有助于缓解生物医药产品从研发到市场的长周期资金需求，同时吸引机构投资者参与。\n- **政策及市场推动**：全球医疗健康需求增加及政策支持加速了资本对Biotech行业的青睐。\n\n## 数据准确性与使用建议\n\n- 融资金额为统计的实际资金流入总额，不包括估值或市场价值。\n- 该数值可作为后续战略决策、投资分析、行业报告编制的重要参考依据。\n- 若需分细项分析（如分区域、分轮次、分公司规模等），建议基于当前总额数据进行更精细的数据库二次筛选。\n\n## 结论\n\n公司内部数据库显示，Biotech行业公司累计融资金额为 **789,277,000美元**。该数据具备权威性和全面性，可直接用于业务分析和战略决策支持。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果（2026年10月13日）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_PPPEFA3Ha6obvBbEiQATDcCm"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003229
+  }
+}

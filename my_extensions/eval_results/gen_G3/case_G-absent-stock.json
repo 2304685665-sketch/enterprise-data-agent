@@ -1,0 +1,62 @@
+{
+  "case_id": "G-absent-stock",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Delta Drill 目前的库存还有多少件？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-absent-stock-95c32626",
+  "started_at": "2026-10-13T16:14:33.676561+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 29.671,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Delta Drill 当前库存数量研究报告\n\n## 一、问题背景与研究目标\n\n本报告旨在准确回答公司内部数据库中“Delta Drill”这一产品的当前库存数量。用户明确要求**直接查询数据库获取准确数字**，基于数据库数据而非凭主观印象或推测。\n\n## 二、数据库查询与数据分析\n\n### 2.1 相关数据表及字段说明\n\n- 产品表中，“Delta Drill”的`product_id`为4。\n- 订单表包含产品订单数量及状态，状态字段包括“paid”、“refunded”、“pending”等。\n- 数据库结构中并无专门的“库存”或“存货”表，产品当前库存并非通过订单状态直接表示。\n- 订单状态仅反映订单流程，不能直接等同当前实际库存数量。\n\n### 2.2 查询结果关键数据\n\n- 所有订单中，关于Delta Drill的订单总数量为 80 件。\n- 其中，状态为“paid”的订单数量共计47件。\n- 状态为“pending”的订单有13件，状态为“refunded”的订单包括5件和15件共计20件左右。\n- 数据库中未提供“在库”或“现有库存”状态筛选结果，相关查询返回为空。\n\n### 2.3 数据解释与库存推断\n\n由于数据库缺少单独的库存管理表，“订单状态”字段仅反映订单当前的付款或退款状态，不能代表现实中的库存数量。\n\n- **订单状态“paid”**的数量47件，表明有订单已经付款，但不代表这些产品已经出售，库存是否减少，还需结合发货情况判断（数据库无相关发货或出库记录）。\n- **订单状态“refunded”**和“pending”分别反映了取消和未完成的订单，与库存可用数量无直接对应关系。\n- 仅凭订单数据无法精确计算当前仓库实际剩余的Delta Drill库存。\n\n### 2.4 当前库存数据缺失说明\n\n- 数据库缺少专门的“库存数量”字段或表。\n- 订单数据只能说明累积销售、付款及退货情况，不能作为库存数量的准确依据。\n- 因此无法从现有数据库中查询得到Delta Drill当前实际库存件数的可信数字。\n\n## 三、结论与建议\n\n- **根据数据库查询，Delta Drill产品累计订单总数量为80件**，其中“支付”订单47件。\n- **数据库不包含实时库存信息，无法直接反映产品当前库存数量**。\n- 若需准确库存数字，建议：\n  - 在数据库中增加专门的库存管理表或字段，动态记录每件商品的进出库数据。\n  - 结合仓库管理系统或物流发货系统数据进行库存核算。\n  - 开发库存状态字段，明确区分在库、已售、损耗等状态。\n\n综上，目前数据库内无法准确给出Delta Drill的现实库存数量，仅能给出历史订单总量及部分支付订单数量。\n\n---\n\n## 参考数据表摘要\n\n| 产品名称      | 订单状态 | 订单数量（件） |\n| ------------- | -------- | -------------- |\n| Delta Drill   | Paid     | 47             |\n| Delta Drill   | Pending  | 13             |\n| Delta Drill   | Refunded | 20             |\n| **累计总数**  | —        | 80             |\n\n---\n\n## 四、总结\n\n数据库显示Delta Drill累计订单80件，但无可用字段直接表示当前库存。请考虑数据库结构优化或联合其他系统数据确认库存。\n\n---\n\n### Sources\n\n[1] 公司内部数据库订单及产品信息（数据库查询结果，2026年10月14日）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2026-10-14"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 8,
+      "think_tool": 2
+    },
+    "sql_calls": 8,
+    "sql_call_ids": [
+      "call_7ySETnQtkxdAX4N0RNtuUNas",
+      "call_8llWb3vJmcbDP1INkrT94Xmq",
+      "call_JLedcoa5mPifhn4ru5XRHgPM",
+      "call_TV9pyF8ZRKuKqdm2PCUGIaYQ",
+      "call_VCfNMAQulaj6t3B6Th3nAHbt",
+      "call_cEOtWyqKnkR5Uoy9eSdeSirm",
+      "call_uOnYn6Km1UZY3u015WpHECmF",
+      "call_vQagEUgxYtlCaCuFOTth9m6u"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.010148
+  }
+}

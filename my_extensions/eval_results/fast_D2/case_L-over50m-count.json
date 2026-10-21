@@ -1,0 +1,42 @@
+{
+  "case_id": "L-over50m-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔金额超过 5000 万美元的融资一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-over50m-count-53ac720a",
+  "started_at": "2026-10-13T15:15:18.455504+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.23,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔金额超过5000万美元融资交易数量调研报告\n\n## 背景\n\n本报告旨在基于公司内部数据库的精确数据，统计所有单笔融资金额超过5000万美元的融资交易总数。该统计不受时间段、融资类型或其他交易属性的限制，完全基于数据库中现有的准确记录，确保数据的客观性和权威性。此统计将为公司管理层和相关部门提供清晰的资金流动规模视图，有助于战略分析及业务决策。\n\n## 数据查询方法\n\n为了准确获取符合金额条件的融资交易数量，执行了以下SQL查询命令：\n\n```sql\nSELECT COUNT(*) AS total_transactions_above_50M FROM funding_rounds WHERE amount_usd > 50000000;\n```\n\n通过该命令筛选融资金额严格大于5000万美元的所有融资记录，统计返回其总数。此查询没有加任何额外筛选条件，完全覆盖数据库中相关的所有数据行。\n\n## 查询结果与分析\n\n经查询，公司数据库中符合条件的单笔融资交易共有 **41笔**。该数字包含：\n\n- 所有时间段的融资交易，无论是近期还是历史数据；\n- 所有融资类型，包括股权融资、债务融资、战略投资等；\n- 未对交易地区、行业、投资方或被投资方作任何约束筛选。\n\n因此，该统计结果全面反映了公司在融资操作中的大型交易活跃度和资金规模分布。\n\n从数据维度看，41笔超过5000万美元以上的融资量级表明，公司融资业务中存在一定比例的高额融资活动，可能涉及关键项目、战略扩张或重要资本运作。具体融资分布和资金用途可以通过进一步细化的数据分析获得，但本报告仅限于总数统计。\n\n## 结论\n\n综合系统查询结果，公司内部数据库中单笔金额超过5000万美元的融资交易共有41笔，涵盖所有时间和类型的融资活动。该数字为决策层提供了清晰的量化参考，支持后续关于大型融资策略和风险管控的深入讨论。\n\n---\n\n### 参考资料\n\n[1] 公司内部数据库 (funding_rounds表)，SQL查询命令：`SELECT COUNT(*) AS total_transactions_above_50M FROM funding_rounds WHERE amount_usd > 50000000;`",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_DhO1fjUlVcoZUqhPoJG6ZDYn"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004475
+  }
+}

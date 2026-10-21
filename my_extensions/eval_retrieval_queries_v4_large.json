@@ -1,0 +1,713 @@
+{
+ "version": "4-large-kb-v0.1",
+ "status": "FROZEN_QUERIES_NO_API_YET",
+ "note": "针对 knowledge_base_v3（46 个 chunk）的第二批新查询 60 条，在看到任何检索排名之前写定并冻结（2026-10-13）。类型比例沿用 v3（entity/semantic/keyword/no_answer），写作时已看过 v3 的结果摘要（标题头对向量检索方向偏正），所以这批只能作为‘确认性’检验，不得作为调参依据。冻结后不得为改善指标修改查询或标注。",
+ "types": {
+  "entity": "直接点名实体的事实问",
+  "semantic": "刻意不复述原文关键词的语义问",
+  "keyword": "稀有字面词",
+  "no_answer": "知识库无答案"
+ },
+ "queries": [
+  {
+   "id": "V01",
+   "type": "entity",
+   "query": "SynthMotion 的核心研发人员大约有多少人？",
+   "targets": [
+    [
+     "doc01_synthmotion_intro",
+     "核心团队"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V02",
+   "type": "entity",
+   "query": "SynthMotion 的核心技术方向是什么？",
+   "targets": [
+    [
+     "doc01_synthmotion_intro",
+     "技术方向"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V03",
+   "type": "entity",
+   "query": "SM-Alpha 主要面向哪些应用场景？",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "主打产品：SM-Alpha 双足人形机器人平台"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V04",
+   "type": "entity",
+   "query": "SynthMotion 的目标客户是哪类企业？",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "目标客户"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V05",
+   "type": "entity",
+   "query": "SynthMotion 的电池和减速器是自己做的吗？",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "技术布局"
+    ],
+    [
+     "doc08_meeting_notes_synthmotion",
+     "待观察风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V06",
+   "type": "entity",
+   "query": "RoboWorks 的工程化和量产经验从哪里来？",
+   "targets": [
+    [
+     "doc03_roboworks_intro",
+     "团队背景"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V07",
+   "type": "entity",
+   "query": "AtlasAI 的机器人本体运动能力怎么样？",
+   "targets": [
+    [
+     "doc04_atlasai_intro",
+     "核心技术"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V08",
+   "type": "entity",
+   "query": "2026 年整个赛道的融资活跃度是什么趋势？",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "总体趋势"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V09",
+   "type": "entity",
+   "query": "NeuralPath 眼下的客户接洽进展如何？",
+   "targets": [
+    [
+     "doc06_neuralpath_funding_news",
+     "公司近况"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V10",
+   "type": "entity",
+   "query": "赛道里的四家代表性企业分别走什么方向？",
+   "targets": [
+    [
+     "doc07_competitive_landscape",
+     "主要参与者"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V11",
+   "type": "entity",
+   "query": "RoboWorks 和 AtlasAI 相比，谁的客户付费能力更清晰？",
+   "targets": [
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "市场定位对比"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V12",
+   "type": "entity",
+   "query": "谁对 SynthMotion 的供应链问题持乐观态度？",
+   "targets": [
+    [
+     "doc10_meeting_notes_followup",
+     "关于 SynthMotion 的补充意见"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V13",
+   "type": "entity",
+   "query": "RoboWorks 的特种钢材向哪里采购？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "核心零部件来源"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V14",
+   "type": "entity",
+   "query": "RoboWorks 计划年底把整机良率提高到多少？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "产能与良率"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V15",
+   "type": "entity",
+   "query": "RoboWorks 的第二供应商认证大概需要多长时间？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "供应中断风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V16",
+   "type": "entity",
+   "query": "SynthMotion 的试点合同一般签多长时间？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "试点客户构成"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V17",
+   "type": "entity",
+   "query": "SynthMotion 去年试点期间现场服务触发了多少次？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "售后服务机制"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V18",
+   "type": "entity",
+   "query": "NeuralPath 推力扰动恢复成功率比上一版本提升了多少？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "评测基准"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V19",
+   "type": "entity",
+   "query": "AtlasAI 要求参加试点的家庭同意什么？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "家庭试点计划"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V20",
+   "type": "entity",
+   "query": "NeuralPath 上层的步态策略用的是什么方法？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "控制算法架构"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V21",
+   "type": "semantic",
+   "query": "哪家公司的运动控制分成上下两层，一层学习、一层计算？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "控制算法架构"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V22",
+   "type": "semantic",
+   "query": "谁的训练数据主要来自虚拟环境里生成的样本？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "训练数据来源"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V23",
+   "type": "semantic",
+   "query": "哪家公司的设备返修最常见的原因是调校不准？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "产能与良率"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V24",
+   "type": "semantic",
+   "query": "要是核心芯片突然买不到了，哪家公司最危险？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "供应中断风险"
+    ],
+    [
+     "doc11_roboworks_supply_chain",
+     "核心零部件来源"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V25",
+   "type": "semantic",
+   "query": "哪家公司的试点客户主要是造车零件的工厂和网店仓库？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "试点客户构成"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V26",
+   "type": "semantic",
+   "query": "从签合同到第一台机器到场，时间主要耗在哪几步？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "交付周期"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V27",
+   "type": "semantic",
+   "query": "哪家公司承诺出问题后几个小时内有人远程响应？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "售后服务机制"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V28",
+   "type": "semantic",
+   "query": "家里装了机器人，它拍到的室内画面会怎么处理？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "隐私与合规"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V29",
+   "type": "semantic",
+   "query": "谁打算先找三十户人家试用三个月？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "家庭试点计划"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V30",
+   "type": "semantic",
+   "query": "哪家公司最近走了关键的算法带头人？",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "核心人员流动"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V31",
+   "type": "semantic",
+   "query": "想了解各家公司现在大概有多少员工",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "团队规模对比"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V32",
+   "type": "semantic",
+   "query": "哪家公司在抢懂隐私合规和语音交互的人才？",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "招聘重点"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V33",
+   "type": "semantic",
+   "query": "光线很暗的时候，哪家的识别容易出错？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "技术风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V34",
+   "type": "semantic",
+   "query": "组合里哪几家公司的资金能撑一年半以上？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "资金风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V35",
+   "type": "semantic",
+   "query": "安全标准如果收紧，家用产品要付出什么代价？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "政策与合规风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V36",
+   "type": "semantic",
+   "query": "工厂用的机器人大概多久能形成规模化需求？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "市场规模测算"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V37",
+   "type": "semantic",
+   "query": "准备通过什么渠道把家用机器人卖给消费者？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "销售渠道"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V38",
+   "type": "semantic",
+   "query": "目标售价控制在三万以内的是哪类产品？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "定价区间"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V39",
+   "type": "semantic",
+   "query": "哪几家公司更看重工业场景，量产节奏也更快？",
+   "targets": [
+    [
+     "doc07_competitive_landscape",
+     "差异化观察"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V40",
+   "type": "semantic",
+   "query": "地域上，珠三角和长三角各自擅长什么？",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "地域分布"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V41",
+   "type": "semantic",
+   "query": "两份会议纪要对 SynthMotion 有哪些共同认可的地方？",
+   "targets": [
+    [
+     "doc10_meeting_notes_followup",
+     "关于 SynthMotion 的补充意见"
+    ],
+    [
+     "doc08_meeting_notes_synthmotion",
+     "讨论要点"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V42",
+   "type": "semantic",
+   "query": "备忘录是怎么评价 AtlasAI 的长期空间的？",
+   "targets": [
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "备忘录判断"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V43",
+   "type": "keyword",
+   "query": "力矩传感器",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "核心零部件来源"
+    ],
+    [
+     "doc11_roboworks_supply_chain",
+     "供应中断风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V44",
+   "type": "keyword",
+   "query": "第二供应商认证",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "供应中断风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V45",
+   "type": "keyword",
+   "query": "末端执行器",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "售后服务机制"
+    ],
+    [
+     "doc16_risk_register",
+     "技术风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V46",
+   "type": "keyword",
+   "query": "现场环境勘测",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "交付周期"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V47",
+   "type": "keyword",
+   "query": "步态策略",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "控制算法架构"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V48",
+   "type": "keyword",
+   "query": "推力扰动",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "评测基准"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V49",
+   "type": "keyword",
+   "query": "不上传云端",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "隐私与合规"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V50",
+   "type": "keyword",
+   "query": "光线不足 误识别",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "技术风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V51",
+   "type": "keyword",
+   "query": "渠道折扣",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "销售渠道"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V52",
+   "type": "keyword",
+   "query": "烧钱速度",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "资金风险"
+    ]
+   ],
+   "reason": "目标段落见 targets；写定于看到任何检索排名之前。"
+  },
+  {
+   "id": "V53",
+   "type": "no_answer",
+   "query": "RoboWorks 力矩传感器芯片的单价是多少？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V54",
+   "type": "no_answer",
+   "query": "SynthMotion 去年试点期间的总收入是多少？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V55",
+   "type": "no_answer",
+   "query": "NeuralPath 的强化学习训练用了多少块 GPU？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V56",
+   "type": "no_answer",
+   "query": "AtlasAI 第一批试点家庭分布在哪些城市？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V57",
+   "type": "no_answer",
+   "query": "四家公司里谁的估值最高？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V58",
+   "type": "no_answer",
+   "query": "家庭陪伴型机器人的预计年出货量是多少？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V59",
+   "type": "no_answer",
+   "query": "SM-Alpha 的续航时间有多久？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  },
+  {
+   "id": "V60",
+   "type": "no_answer",
+   "query": "谁是 RoboWorks 的首席技术官？",
+   "targets": [],
+   "reason": "知识库没有该信息。"
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+# 未部署：这些清单只做了离线校验（kubeconform），没有在真实集群上运行过。
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: odr
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: odr-secrets
+  namespace: odr
+type: Opaque
+stringData:
+  # 示例占位，真实值请用 `kubectl create secret` 或外部密钥管理注入，不要提交。
+  OPENAI_API_KEY: "REPLACE_ME"
+  SERVICE_API_KEYS: "REPLACE_ME_1,REPLACE_ME_2"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: odr-config
+  namespace: odr
+data:
+  REDIS_URL: "redis://odr-redis:6379/0"

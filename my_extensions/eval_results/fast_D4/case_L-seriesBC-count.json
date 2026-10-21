@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seriesBC-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Series B 和 Series C 两种轮次加起来一共有几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seriesBC-count-689778cf",
+  "started_at": "2026-10-13T15:12:15.061595+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.502,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中Series B和Series C轮次融资统计报告\n\n## 概述\n\n本报告基于公司内部数据库的最新查询结果，针对Series B和Series C两种融资轮次的笔数进行了准确统计，严格按照数据库数据，不凭印象推测。通过对数据库的直接查询，得出这两个轮次的融资笔数及其合计，为管理层及相关部门提供准确、可核验的融资情况数据支持。\n\n## Series B轮次融资笔数概况\n\n根据数据库查询结果，Series B轮次的融资笔数为**15笔**。该轮次通常代表企业在完成初步产品市场验证后，通过资金加速业务扩展的阶段。拥有15笔融资表明公司在这一成长阶段拥有一定数量的投资活动，支持公司业务的中期发展需求。\n\n## Series C轮次融资笔数概况\n\nSeries C轮次的融资笔数为**13笔**。此轮次一般体现企业在进一步扩大市场份额、提升产品线或为上市做准备时所开展的融资行为。公司获得13笔此类融资，说明在更高成长和扩张阶段，投资者依旧保持积极的资金支持态度。\n\n## Series B和Series C轮次总融资笔数\n\n将两轮融资笔数相加，Series B和Series C轮次合计融资笔数为：\n\n- Series B融资笔数：15笔\n- Series C融资笔数：13笔\n- 合计融资笔数：**28笔**\n\n该累计数据为公司整体中后期融资活动的实际反映，有助于财务及战略部门进行资金规划、风险判断及未来融资策略制定。\n\n## 结论\n\n公司内部数据库显示，Series B和Series C轮次的融资总笔数为28笔，其中Series B为15笔，Series C为13笔。此结果完全基于数据库直接查询，确保数据的准确性和权威性。该数据能够为公司未来融资节奏的把控、资本结构优化，以及投资者关系管理提供科学依据。\n\n---\n\n### 说明\n\n- 本报告所有数据均直接来源于公司内部数据库查询，符合数据真实和客观的要求。\n- 报告不包含主观评价或推测，严格依托事实。\n- 如需进一步细化某轮次融资的时间、金额或投资方信息，可在数据库中进行针对性深化查询。\n\n---\n\n### Sources\n\n无外部链接资源，数据均为公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_d2pudzA8r7Q25JUrasbolv7O"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003348
+  }
+}

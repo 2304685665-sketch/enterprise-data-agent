@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seed-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，所有 Seed 轮的融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seed-sum-6df48906",
+  "started_at": "2026-10-13T15:11:54.308749+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.752,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中 Seed 轮融资金额合计报告\n\n## 概述\n\n本报告旨在准确回答公司内部数据库中所有 Seed 轮融资金额的总和，确保提供的数字基于数据库的直接查询结果，而非主观印象或估算。Seed 轮融资通常是初创企业在创立早期阶段获得的第一轮外部资金，金额虽不是特别巨大，但对于推动企业成长至关重要。\n\n## Seed 轮融资金额合计数据\n\n通过对公司内部数据库的直接查询，得出以下准确数据：\n\n- **所有 Seed 轮融资金额合计：1,253,346,000 美元**\n\n该数字反映了数据库中所有记录的 Seed 轮融资金额的总和，涵盖了所有符合 Seed 轮定义的融资案例。\n\n## 数据准确性与完整性\n\n- 数据来源：公司内部数据库，查询涵盖所有 Seed 轮相关记录。\n- 统计范围：只计算 Seed 轮融资金额，不包含天使轮、Pre-Seed 或后续融资（如A轮、B轮等）。\n- 货币单位统一为美元，系统内无多币种混淆。\n\n该结果为数据库的实时查询结果，保证了数据的准确性，适合用于财务分析、投资决策或业务报告。\n\n## 结论\n\n基于公司内部数据库查询，所有 Seed 轮融资金额合计达到 12.53亿美元（约合十二点五三亿美元）。这一数字为公司对早期投资力度的量化体现，为进一步研究各轮融资趋势及企业发展提供了坚实的数据基础。\n\n### 后续建议\n\n- 可基于此数据进一步细分 Seed 轮融资金额在不同产业、地区及时间段的分布。\n- 结合后续融资轮数，分析 Seed 轮融资对企业后续成长的影响。\n- 定期更新数据库数据，以保证数据的时效性和完整性。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库 查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_DSoAfq0dvlpzxnS85DHkAz32"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003131
+  }
+}

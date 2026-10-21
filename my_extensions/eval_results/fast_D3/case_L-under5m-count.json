@@ -1,0 +1,42 @@
+{
+  "case_id": "L-under5m-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔金额不足 500 万美元的融资一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-under5m-count-d4c48109",
+  "started_at": "2026-10-13T15:14:22.678180+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.582,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 查询报告：公司内部数据库中单笔融资金额不足500万美元的融资记录总数\n\n## 查询目的\n本次查询旨在精确获得公司内部数据库中所有单笔融资金额低于500万美元的融资记录数量。查询范围不限定融资类型、时间区间等，覆盖所有相关融资记录，确保结果的全面性和准确性。\n\n## 查询结果概述\n通过直接访问公司内部数据库并执行相应筛选条件，获得的具体数据如下：\n\n- 单笔融资金额小于500万美元的融资记录总数为**4笔**。\n\n此统计涵盖所有融资类型（如种子轮、A轮、B轮等）和所有时间段，保证了查询结果在范围上的最大覆盖。\n\n## 数据说明\n\n1. **金额标准**：严格按照单笔融资金额 “不足500万美元” 进行筛选，未含等值或四舍五入处理，数据来源直接对应数据库中的融资金额字段。\n2. **时间与融资类型**：由于未限制时间范围和融资类别，所有历史融资数据均被包含，体现了融资记录的完整性。\n3. **数据库权限与数据准确性**：查询基于公司内部数据库的真实数据，排除任何主观估算或印象，确保数据准确性和可靠性。\n\n## 结论\n根据公司内部数据库的查询结果，目前单笔融资金额不足500万美元的融资记录共有4笔。该结果满足了查询要求，能够为后续财务分析、投资决策等提供有效数据支持。\n\n---\n\n### Sources\n\n无外部信息源引用，数据来源为公司内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_kA4P8fs2hev20SGCKKuSH4jR"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003323
+  }
+}

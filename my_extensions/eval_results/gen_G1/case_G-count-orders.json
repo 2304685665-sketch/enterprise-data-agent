@@ -1,0 +1,41 @@
+{
+  "case_id": "G-count-orders",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-count-orders-a45737ec",
+  "started_at": "2026-10-13T15:10:35.996481+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.203,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中订单总数的综合报告\n\n## 背景说明\n\n本报告旨在回答关于公司内部数据库中订单总数量的具体问题。用户要求通过直接查询公司内部数据库获取准确、完整的订单数目，不依赖任何估计和记忆，且不对数据按时间段、类别等进行任何筛选或限制。查询涵盖数据库中至当前日期为止的所有订单记录。\n\n## 查询方法及执行过程\n\n为保证数据的准确性和完整性，采用以下SQL语句直接对内部数据库中的订单表进行统计：\n\n```sql\nSELECT COUNT(*) AS total_orders FROM orders;\n```\n\n- 该语句无任何过滤条件，确保统计结果涵盖数据库中所有的订单记录。\n- 查询执行时基于截至2026年10月13日的最新数据。\n- 查询执行依赖于公司内部数据库访问权限和安全策略，保证数据隐私和安全。\n\n## 具体查询结果\n\n通过上文SQL查询语句获得的查询结果显示：\n\n- 数据库中**订单总数**为 **79** 笔。\n- 该数字代表数据库中所有已录入订单的完整且当前的累计记录，不分时间、类别、状态等其他维度。\n- 该结果完全符合用户“不做任何过滤，统计所有订单”的要求。\n\n## 数据准确性与完整性分析\n\n- 该统计基于原始数据库订单表，未经过任何计算或外部合并，确保原始、准确性。\n- 数据截止日期为2026年10月13日，能够满足截至当前时间的订单统计需求。\n- 由于查询为单纯计数操作，误差可能性极低。\n- 该数据可作为公司各类业务分析、财务核对和运营评估的重要参考依据。\n\n## 结论\n\n截至2026年10月13日，公司内部数据库中**订单的准确总笔数为79笔**。这一结果通过直接查询数据库获得，完全符合不依赖记忆和估计、且不进行任何数据筛选的要求。该数字代表公司至今累计录入的全部订单数量，能够为后续业务分析提供坚实的数据基础。\n\n---\n\n### 参考资料\n\n[1] 内部公司数据库查询结果 — 订单表总订单数统计 (2026/10/13)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_MBhVZ5zBonQ0mV8L68ZK4QAF"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006074
+  }
+}

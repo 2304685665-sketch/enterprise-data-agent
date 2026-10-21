@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-top-category",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个品类的订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-category-c0537062",
+  "started_at": "2026-10-13T15:16:09.583192+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 23.422,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库订单金额累计最高品类调研报告\n\n## 一、调研背景与研究目标\n\n本次调研旨在通过查询公司内部数据库，准确统计各产品品类的订单金额累计值，找出订单累计金额最高的产品品类。调研特别强调：必须基于真实数据库记录获取准确数字，不依赖主观印象或估算，且涵盖所有可用订单数据，无时间或其他条件筛选。此举确保能为产品经营及市场策略调整提供客观、可靠的参考依据。\n\n## 二、数据来源与查询方法\n\n为满足调研需求，使用公司内部数据库中的订单数据和产品信息表，执行以下SQL查询语句：\n\n```sql\nSELECT p.category, SUM(o.amount_usd) AS total_order_amount\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nGROUP BY p.category\nORDER BY total_order_amount DESC;\n```\n\n该查询通过关联订单表（orders）与产品表（products），统计每个产品类别（category）对应的累计订单金额（amount_usd），并按金额降序排列，涵盖了全部订单数据，无任何层面限制。\n\n## 三、调研结果与数据分析\n\n查询结果显示公司各产品品类的订单金额累计如下（单位：美元）：\n\n| 产品品类    | 订单金额累计（USD）  |\n|-----------|-------------------|\n| Home（家居）   | 15,071.73          |\n| Tools（工具）   | 14,202.50          |\n| Kitchen（厨房） | 7,487.86           |\n| Electronics（电子）| 2,187.51           |\n\n### 3.1 订单金额最高品类\n\n- **家居（Home）**品类订单累计金额最高，为$15,071.73，占比明显领先其他品类。\n- 排名第二的工具（Tools）类别金额为$14,202.50，与家居类别差距约$869.23，仍属于接近区间。\n- 其他品类如厨房（Kitchen）和电子（Electronics）金额明显较低，分别为$7,487.86与$2,187.51。\n\n### 3.2 订单金额分布特点\n\n- 订单金额集中在两个主要品类，家居与工具类别累计订单额度占总额的绝大部分，表明公司主营业务核心在这两类产品。\n- 厨房和电子品类订单金额占比较小，可能显示这些品类在公司整体销售结构中属于辅助或成长阶段。\n- 结果未加入时间等额外筛选因素，反映了从数据库全部订单历史累计的真实状态，具有全面代表性。\n\n## 四、结论\n\n基于公司内部数据库的实际记录，明确得出以下结论：\n\n- **家居（Home）品类是公司订单金额累计最高的产品类别，总金额达到$15,071.73。**\n- 工具（Tools）类别紧随其后，金额为$14,202.50，略低于家居品类。\n- 其他品类订单累计金额明显少于前两者，显示销售重点和市场表现侧重于家居与工具领域。\n- 这些数据为产品线规划、市场策略调整提供了有效的量化依据，推荐后续可以针对高金额类别继续加强投入和优化管理。\n\n---\n\n## 五、附录：相关SQL查询代码\n\n```sql\nSELECT p.category, SUM(o.amount_usd) AS total_order_amount\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nGROUP BY p.category\nORDER BY total_order_amount DESC;\n```\n\n---\n\n## 六、参考来源\n\n[1] 公司内部数据库订单与产品品类查询结果\n\n---\n\n### Sources\n\n[1] 公司内部数据库查询结果：[内部数据库]",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_1H8HElS1Gm9Va35INKSsmjM5"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00541
+  }
+}

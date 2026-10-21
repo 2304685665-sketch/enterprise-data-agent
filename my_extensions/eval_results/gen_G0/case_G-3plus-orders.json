@@ -1,0 +1,49 @@
+{
+  "case_id": "G-3plus-orders",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，下过 3 笔及以上订单的客户一共有几位？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-3plus-orders-5c51a53d",
+  "started_at": "2026-10-13T15:19:40.825612+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 53.217,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司数据库中下过三笔及以上订单的客户数量研究报告\n\n## 研究背景\n\n本次研究旨在基于公司内部数据库，准确统计至今所有累计下过三笔及以上订单的客户总数。用户明确指出：\n\n- 要直接使用数据库查询获得精确数字，不能凭借印象或估算。\n- 查询无任何额外条件限制，如时间区间、客户分类、订单状态等，需覆盖数据库中全部订单数据和客户数据。\n\n此报告将详细说明数据源结构、查询过程、关键发现以及最终准确的客户数量，确保信息完整、精准、专业。\n\n## 数据库结构概况\n\n经查询，公司内部数据库包含以下关键表：\n\n- **customers（客户表）**  \n  包含客户的唯一ID、姓名、地区、注册年份等信息。  \n  结构示例：\n  ```sql\n  CREATE TABLE customers (\n    customer_id INTEGER PRIMARY KEY,\n    customer_name TEXT,\n    region TEXT,\n    signup_year INTEGER\n  );\n  ```\n\n- **orders（订单表）**  \n  记录订单详细，包括订单ID、对应客户ID、产品ID、数量、金额、订单日期和状态等。  \n  结构示例：\n  ```sql\n  CREATE TABLE orders (\n    order_id INTEGER PRIMARY KEY,\n    customer_id INTEGER,\n    product_id INTEGER,\n    quantity INTEGER,\n    amount_usd REAL,\n    order_date TEXT,\n    status TEXT,\n    FOREIGN KEY(customer_id) REFERENCES customers(customer_id),\n    FOREIGN KEY(product_id) REFERENCES products(product_id)\n  );\n  ```\n\n- **products（产品表）**  \n  包含产品ID、名称、类别、单价等商品信息。  \n  结构示例：\n  ```sql\n  CREATE TABLE products (\n    product_id INTEGER PRIMARY KEY,\n    product_name TEXT,\n    category TEXT,\n    unit_price REAL\n  );\n  ```\n\n本次研究只涉及客户与订单相关维度，产品表不涉及数量统计。\n\n## 数据查询过程\n\n为了精确统计所有累计下单三次及以上的唯一客户数，采取如下SQL步骤：\n\n1. **初步查询**  \n   按客户ID分组，统计其订单数量；选择订单数≥3的客户列表。  \n   查询样例：\n   ```sql\n   SELECT customer_id, COUNT(order_id) AS order_count \n   FROM orders \n   GROUP BY customer_id \n   HAVING order_count >= 3;\n   ```\n\n2. **统计满足条件的客户数量**  \n   利用上述客户筛选结果，统计不重复客户数。  \n   采用子查询方法计数：\n   ```sql\n   SELECT COUNT(*) AS total_unique_customers_with_3_or_more_orders \n   FROM (\n     SELECT customer_id \n     FROM orders \n     GROUP BY customer_id \n     HAVING COUNT(order_id) >= 3\n   );\n   ```\n\n该方法覆盖了所有订单数据，无需任何限制条件，确保统计的完整性和准确性。\n\n## 主要发现\n\n- 经过准确数据库查询，符合“累计下单≥3笔”标准的客户合计为 **15人**。\n- 具体客户及订单笔数示例包括：\n  - 用户ID 2，3单\n  - 用户ID 4，6单\n  - 用户ID 5，5单\n  - …（此处略列部分）\n  - 用户ID 25，7单\n\n- 查询未排除任何订单状态、日期或客户分类的限制，确保利用了全量数据。\n\n- 反复验证查询逻辑避免了误用 `COUNT(DISTINCT customer_id)` 与分组的逻辑冲突，最终采用了正确的嵌套子查询语法保证结果准确。\n\n## 结论\n\n基于公司内部订单数据库的最新数据，至今共有 **15位** 唯一客户满足“累计下过三笔及以上订单”的条件。此结果经过严格SQL查询确认，具有权威性和实时性，完全符合研究要求，无任意估算或猜测成分。\n\n该指标可作为客户活跃度、复购率及订单行为的核心基础数据，后续可结合其他维度进行更深入的客户分析与营销策略设计。\n\n---\n\n### 参考文献与数据来源\n\n[1] 公司内部数据库结构及表信息（sqlite_master查询）  \n查询语句：  \n```sql\nSELECT name, sql FROM sqlite_master WHERE type='table';\n```\n\n[2] 客户订单笔数查询  \n查询语句：  \n```sql\nSELECT customer_id, COUNT(order_id) AS order_count FROM orders GROUP BY customer_id HAVING order_count >= 3;\n```\n\n[3] 满足三笔及以上订单客户总数查询  \n查询语句：  \n```sql\nSELECT COUNT(*) AS total_unique_customers_with_3_or_more_orders FROM (SELECT customer_id FROM orders GROUP BY customer_id HAVING COUNT(order_id) >= 3);\n```\n\n---\n\n### Sources\n\n[1] 内部数据库表结构信息: sqlite_master 查询结果  \n[2] 客户订单次数分组查询结果  \n[3] 满足条件客户总数统计查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 4,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 4,
+    "sql_call_ids": [
+      "call_FEwrBlsL6h2KsHubo5U443t7",
+      "call_NOOYjLwK310e0gPxVtb3cNrE",
+      "call_UVqDroaoxNdpDMBVWdFPkwor",
+      "call_d4MIpHYOotTpFNMTW6jhbp6L"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 13,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.012727
+  }
+}

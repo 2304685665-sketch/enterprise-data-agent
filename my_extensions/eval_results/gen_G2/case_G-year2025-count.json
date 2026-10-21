@@ -1,0 +1,50 @@
+{
+  "case_id": "G-year2025-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2025 年全年一共有几笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-year2025-count-0a988502",
+  "started_at": "2026-10-13T15:13:10.215632+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 17.527,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2025年公司内部数据库订单总数查询报告\n\n## 查询目的与背景\n\n本次研究围绕用户提出的需求：**准确获取公司内部数据库中2025年度全年所有订单的总笔数**。用户明确要求直接从数据库查询，不依赖记忆或估算，并且未提出任何过滤条件或其他限制，故需涵盖2025年全年所有时间段的订单记录。\n\n## 查询方法与执行\n\n为保证数据准确与完整，采用以下SQL语句直接从公司官方订单数据库中进行全量统计：\n\n```sql\nSELECT COUNT(*) AS total_orders_2025 \nFROM orders \nWHERE order_date >= '2025-01-01' AND order_date < '2026-01-01';\n```\n\n此查询覆盖了2025年1月1日0时0分0秒起至2025年12月31日23时59分59秒前所有订单，无遗漏，无重复。\n\n## 关键结果\n\n- 根据数据库实际查询结果，2025年全年公司总订单数为：**20笔**。\n- 该结果准确反映数据库记录，未使用任何估计或推断。\n- 查询涵盖全部订单，无筛选条件，确保统计的完整性和权威性。\n\n## 数据准确性与完整性说明\n\n- 订单数据来源于公司内部官方数据库，是最权威的数据源，确保数据真实性。\n- 时间范围严格限定2025年全年，避开不同年度数据混淆的风险。\n- 统计为总计笔数，未包含订单状态、渠道、金额等其他维度，避免数据解释上的误差。\n\n## 结论\n\n针对查询需求，最终得出2025年公司内部数据库内订单总数为**20笔**。此数字可以作为公司年度订单数据的官方参考值，适用于财务、运营、管理等各类相关业务分析与后续决策。\n\n如需进一步按订单类型、客户维度或其他细分条件进行分析，建议基于同一数据库进行追加且明确的定向查询。\n\n---\n\n### 来源\n\n[1] 公司内部订单数据库查询结果 (SQL执行结果，2026年10月13日)\n\n---\n\n如对该统计查询内容有更多需求或需对订单数据的其他维度进行研究，欢迎提出具体要求。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2025-01-01",
+        "2025-12-31",
+        "2026-01-01"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_l5m90mL0WTE9I7LHCyNjCCnO"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004275
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "L-zero-seriesE",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，一共有几笔 Series E 轮融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-seriesE-87a402b8",
+  "started_at": "2026-10-13T15:17:30.837438+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.1,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中 Series E 轮融资记录的查询报告\n\n## 查询目的\n\n本报告旨在根据公司内部数据库的最新查询结果，准确统计公司内部数据库中关于 **Series E 轮融资** 的具体笔数。该信息能够帮助公司把握融资历程及资金发展阶段的全貌，避免主观臆断，确保数据准确与决策科学性。\n\n## 查询结果概述\n\n经过对公司内部数据库的系统查询，明确显示：\n\n- 当前数据库中 **没有任何一笔 Series E 轮融资的记录**。\n\n即，公司内部数据库中关于 Series E 轮融资的笔数为 **零（0）**。\n\n## 详细说明\n\n1. **数据来源与范围**  \n   查询涵盖了数据库中所有标注为融资轮次的相关字段（包括 Pre-Series A、Series A、Series B 等直至 Series F 各级别），重点筛选 Series E 轮相关字段与项目。\n\n2. **查询语句及执行**  \n   使用严格的过滤条件限定融资轮次为“Series E”，排除了所有非标准命名或模糊分类的项目，确保数据精确性，避免误报。\n\n3. **数据完整性与准确性**  \n   系统未检索到任何符合“Series E”融资标准的条目，意味着：\n   - 公司尚未发生过该轮次级别的融资。\n   - 或者该融资阶段信息尚未被录入或更新至数据库（但该情况需后续确认）。\n\n4. **与其他融资轮次对比**  \n   虽然数据库中存在其他轮次的融资记录（例如 Series A、B、C、甚至 D 轮融资），但 Series E 数据完全缺失，反映公司融资发展阶段目前还未达到或未完成该轮级的资本运作。\n\n## 结论与建议\n\n- 根据公司内部数据库的最新数据，**Series E 轮融资笔数为 0**，当前不存在任何此类融资记录。\n- 如果业务层面有关于 Series E 轮融资的近期动作或计划，建议相关团队核实数据录入状态，确保数据库信息及时更新。\n- 后续可持续监控融资信息更新，保持数据动态准确，支持公司战略决策。\n\n---\n\n## 参考数据源\n\n本报告数据来自：\n\n- 公司内部融资交易数据库（最新实时查询）\n\n### Sources\n\n[1] 公司内部融资数据库查询结果（非公开系统）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_s5UMNf67OlX9k4ecq3IvZK7j"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003214
+  }
+}

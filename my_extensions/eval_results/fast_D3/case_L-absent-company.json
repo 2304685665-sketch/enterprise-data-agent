@@ -1,0 +1,44 @@
+{
+  "case_id": "L-absent-company",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，OmegaBot 最新一轮融资金额是多少？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-company-3d790c8d",
+  "started_at": "2026-10-13T15:22:21.432523+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.284,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# OmegaBot 最新一轮融资金额查询报告\n\n## 查询背景\n\n根据需求，需准确获取我公司内部数据库中OmegaBot最新一轮融资金额。要求严格依据内网数据库数据，不依赖于记忆或外部假设，确保信息完全基于数据库查询结果。\n\n## 数据库查询结果\n\n经过在公司内部数据库的全面检索，关于“OmegaBot”的以下查询结果汇总如下：\n\n- 在数据库中进行的所有相关查询均成功执行，但返回结果均为空。\n- 数据库中无任何关于名为“OmegaBot”的公司记录。\n- 因为无公司记录，数据库内亦无任何关于该公司融资轮次或融资金额的任何记录。\n\n由此确认：\n\n> 我公司内部数据库中不存在OmegaBot的任何融资记录，无法获取其最新融资金额。\n\n## 分析与说明\n\n- 可能原因之一是“OmegaBot”尚未向公司数据库注册，或未被纳入数据库的监控范围。\n- 另外，OmegaBot也可能是尚未完成任何公开或公司内部注册的融资轮，故无融资金额数据录入。\n- 鉴于数据来源和权限限定，不能使用其他外部数据渠道补充此信息。\n- 如需进一步确认，可以考虑核实公司数据库的收录范围及更新周期，或提供不同名称或拼写以便重新查询。\n\n## 结论\n\n根据目前数据库信息，无法提供OmegaBot最新一轮融资金额。数据库中无任何该公司融资相关数据。请确认是否有其他渠道或更多信息辅助查询。\n\n如需查询其他公司或相关信息，欢迎继续提供需求。\n\n---\n\n### 参考来源\n\n以上数据均源自我公司**内部数据库查询结果**，并基于数据库实际返回状态整理，无外部资料引用。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_Hp37qhROIMYumgxXfpdrLqoo",
+      "call_aF6Wl21CDix6ZiVkDKYKfvim"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004115
+  }
+}

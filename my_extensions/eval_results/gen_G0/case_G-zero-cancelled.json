@@ -1,0 +1,43 @@
+{
+  "case_id": "G-zero-cancelled",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，状态为 cancelled 的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-zero-cancelled-b556e40e",
+  "started_at": "2026-10-13T15:26:19.517642+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 27.558,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中状态为“cancelled”的订单数量报告\n\n## 概述\n\n本报告旨在准确统计公司内部数据库中所有状态为“cancelled”（已取消）的订单总数。此次统计不包括任何附加筛选条件，如时间范围或订单类型，旨在通过直接查询数据库获得精确的数字，确保数据的全面性与准确性。本报告基于对内部数据库中的订单表执行的SQL查询结果，完全依赖原始数据源，避免任何主观推测或间接统计。\n\n## 查询过程与方法\n\n为了获取准确的订单取消数量，执行了以下SQL查询语句：\n\n```sql\nSELECT COUNT(*) AS cancelled_orders_count FROM orders WHERE status = 'cancelled';\n```\n\n此查询直接统计了订单表中，`status`字段值等于`'cancelled'`的所有记录数。查询无任何时间或订单类型过滤条件，覆盖了数据库内所有历史及现有订单数据。\n\n执行环境保证了对最新、最完整数据库快照的访问，因此所得结果具有最高的时效性和权威性。\n\n## 查询结果与分析\n\n查询返回结果显示：\n\n- 取消订单总数为 **0**。\n\n这意味着：\n\n- 数据库中当前无任何“cancelled”状态的订单记录。\n- 在无时间与订单类型限制的情况下，整个订单数据集中均未记录任何被标记为取消的订单。\n- 该结果反映了当前订单系统状态，可能暗示订单管理流程中取消订单状态尚未被使用或尚无人为操作出该状态。\n\n## 结论\n\n基于直接且完整的数据库查询，当前公司内部订单数据库中状态为“cancelled”的订单总数为零。此数量严格符合研究需求的“无附加筛选”条件，充分保证了数据的准确性和权威性。\n\n若未来需要监控“cancelled”订单的产生动态或跨时间段统计，建议建立定期数据采集机制或使用时间条件进一步细分查询。本报告现阶段已满足即时查询需求。\n\n---\n\n### 备注\n\n- 本次查询仅限于已有数据库权限范围内的只读操作，没有对数据做任何修改。\n- “cancelled”状态定义基于数据库中订单状态字段的标准值。若数据库存在状态记录误差或名称变更，结果可能受影响。\n- 本报告未引用任何外部文献或资源，所有结论均来源于公司内部数据库的直接查询。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库 — SQL查询结果 (内部数据访问)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_W3PJQPqwqyvDnJACMhgxDmLt"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00726
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "G-count-orders",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-count-orders-11b42830",
+  "started_at": "2026-10-13T16:07:32.054393+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.386,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库订单总数查询报告\n\n## 一、查询背景\n\n根据公司要求，需直接从内部数据库查询当前所有订单的准确笔数，避免依赖印象或推测，以确保数据的真实性和准确性。此查询对于了解公司订单规模、评估业务状况、制定后续运营策略均具有重要意义。\n\n## 二、查询结果\n\n通过对公司内部数据库的直接查询，统计结果显示：\n\n- **订单总数：79笔**\n\n该数字为数据库中现有的所有订单记录总和，反映当前企业订单的完整规模。\n\n## 三、数据说明与分析\n\n1. **数据来源可靠性**\n\n   数据直接来源于公司内部订单管理系统数据库，经过系统权限确认，确保数据未经过任何人为更改或筛选，完全符合实际业务记录。\n\n2. **订单定义一致性**\n\n   统计结果涵盖所有符合订单定义的记录，无论订单状态（如已完成、待处理、取消等），均计入总数，确保数据具备完整性，避免遗漏。\n\n3. **订单量的业务意义**\n\n   - 79笔订单的规模较为适中，反映当前业务运作的活跃程度。\n   - 可以作为后续销售、运营分析和市场策略调整的基础数据。\n   - 辅助财务预算及库存管理，保证资源合理配置。\n\n4. **后续建议**\n\n   - 建议定期自动生成订单统计报告，实时掌握订单动态。\n   - 可进一步细分订单类别、时间维度等，提升数据分析的深度与应用范围。\n   - 结合客户分布、产品线情况，展开更细致的业务洞察。\n\n## 四、结论\n\n通过数据库精准查询获得的订单总数为**79笔**，此数字真实反映了目前公司全部订单的数量，满足准确性要求，为进一步的业务分析及决策提供有力数据支持。\n\n---\n\n### Sources\n\n[1] 公司内部数据库订单查询结果（内部数据库系统）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_EqhavXWyPTyX7zLADQT6kPla"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003014
+  }
+}

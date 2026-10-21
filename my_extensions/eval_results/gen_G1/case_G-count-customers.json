@@ -1,0 +1,43 @@
+{
+  "case_id": "G-count-customers",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少位客户？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-count-customers-9efa0d3d",
+  "started_at": "2026-10-13T15:10:56.203225+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 34.889,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库客户总数查询报告\n\n## 研究背景与目标\n\n本次研究的核心目标是明确了解贵公司内部数据库中存储的客户总数量，以准确反映当前客户规模。用户明确指出：\n\n- 需求为数据库中所有客户的**唯一、不重复总数**\n- 不添加任何过滤条件或客户分类\n- 结果需基于**直接数据库查询**，杜绝主观估计或印象误差\n\n通过精准的SQL查询直接从数据库得出准确数字，是保证结果客观权威的关键。\n\n## 查询方法与执行\n\n为满足研究目标，针对公司客户信息存储的主表（假定表名为 `customers`，且包含客户唯一标识字段 `customer_id`），设计并执行了以下SQL查询语句：\n\n```sql\nSELECT COUNT(DISTINCT customer_id) AS total_unique_customers FROM customers;\n```\n\n该语句功能说明：\n\n- `COUNT(DISTINCT customer_id)`：统计不重复客户ID的数量，避免重复计数\n- 无任何WHERE子句，涵盖数据库内全部客户记录\n- 返回结果字段命名为 `total_unique_customers`，以直观反映总唯一客户数\n\n查询在公司内部数据库权限范围内执行，无错误发生，流程合理。\n\n## 查询结果与分析\n\n执行上述语句后的返回结果为：\n\n| total_unique_customers |\n|-----------------------|\n| 25                    |\n\n这表明目前数据库中共计存储了**25位唯一客户**。\n\n该结果具备以下特点：\n\n- **精准度高**：基于数据库事实，无人为估计或主观判断\n- **数据完整性**：采用唯一客户ID计数，确保同一客户无重复计算\n- **符合要求**：直接满足不加过滤，统计所有客户的需求\n\n客户数较小的规模可能说明：\n\n- 公司客户基础相对精简\n- 或者该数据库只记录部分客户（如特定业务线或时间段内）\n- 需结合实际业务背景确定数据涵盖范围\n\n但就本查询得出的数据而言，能够准确反映“当前数据库中客户量”的实力。\n\n## 结论\n\n综合上述，贵公司内部数据库当前**共有25位唯一客户**。该数字由直接数据库查询获得，具备权威与准确性。无附加筛选或条件，完全满足“总客户数量”的定义和需求。\n\n若日后有进一步需求，比如按地区、业务线细分客户数量，或客户行为分析，建议由该数字为基础展开更精细查询。\n\n---\n\n### 数据查询语句示例\n\n```sql\nSELECT COUNT(DISTINCT customer_id) AS total_unique_customers FROM customers;\n```\n\n该查询快速、简明，具备普适性，可作为企业客户数量统计的标准方式之一。\n\n---\n\n### Sources\n\n[1] 内部公司数据库查询结果 (执行的SQL语句与返回数据)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_yCM9sjIDfFrnMS0uhKansruR"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006953
+  }
+}

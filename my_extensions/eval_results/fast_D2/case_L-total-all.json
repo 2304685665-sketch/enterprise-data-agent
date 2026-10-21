@@ -1,0 +1,42 @@
+{
+  "case_id": "L-total-all",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有公司的融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-total-all-1fac0b1a",
+  "started_at": "2026-10-13T15:09:23.971834+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.134,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有公司的融资金额总计报告\n\n## 总体结论\n\n根据对公司内部数据库的直接查询，汇总所有记录中的融资金额（以美元计），得到的准确最新总融资额为**4,037,176,000美元**。此金额基于数据库“funding_rounds”表中的“amount_usd”字段，涵盖了所有公司、所有时间段的融资数据，没有应用任何过滤条件或时间限制，确保数据的完整性和时效性。\n\n## 数据来源与查询方法\n\n通过执行以下SQL查询，直接从公司内部数据库获取了该数据：\n\n```sql\nSELECT SUM(amount_usd) AS total_funding_usd FROM funding_rounds;\n```\n\n- 该查询汇总了`funding_rounds`表中字段`amount_usd`的所有数值。\n- 无过滤或分组条件，保证了数据的覆盖是全库所有公司和所有融资轮次。\n- 使用该字段的总和直接反映了公司数据库中全部融资金额的确切累计值。\n\n## 数据准确性与完整性分析\n\n- **不依赖记忆或估算**：数值来自实时查询数据库，排除了人为估算和历史记忆误差。\n- **无过滤条件**：未对时间、公司类型、融资轮次等任何条件限制，确保融资总额包含所有记录在册的融资事件。\n- **货币单位统一**：所有融资金额均为美元（USD），避免了汇率换算误差。\n- **数据更新及时**：查询结果基于最新数据库快照，体现当前所有融资金额的最新汇总。\n\n## 备注与限制\n\n- 本次统计仅基于公司内部数据库数据，未包含任何外部数据源或市场公开数据。\n- 如果数据库中存在尚未录入的融资事件，则总额可能会在实际情况中有所变动，但本报告数据即是最准确的当前记录。\n- 数据库未提供估值、市场价值或其他财务指标，本报告仅统计融资金额总和。\n\n## 总结\n\n通过直接数据查询确认，公司内部数据库中所有公司融资金额累计高达4,037,176,000美元。该数字完整、准确，反映了截至当前数据库记录中的全部融资事件金额合计，满足了无需任何估算及过滤条件的要求。\n\n---\n\n### 数据来源\n\n- 公司内部数据库查询结果，表`funding_rounds`中`amount_usd`字段累计总和。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_i6Eag34eySaBHvQwce0KnkOe"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004407
+  }
+}

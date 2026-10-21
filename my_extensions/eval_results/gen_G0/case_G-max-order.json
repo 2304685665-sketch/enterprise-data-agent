@@ -1,0 +1,44 @@
+{
+  "case_id": "G-max-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔金额最大的订单是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-max-order-726ba45a",
+  "started_at": "2026-10-13T15:10:21.233575+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 52.935,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中单笔订单最大金额的研究报告\n\n## 研究目的\n\n本报告旨在通过直接查询公司内部数据库，准确获取单笔订单金额的最大美元数值。该金额应基于真实数据，不参照任何印象或估计，也不对订单的日期、产品类别等属性做任何过滤。目的是为公司管理层和相关部门提供详实、权威的数据信息支持。\n\n## 数据库结构及查询方法\n\n为确保调研工作的准确性，首先对公司内部数据库中的表结构进行了系统性梳理，重点搜索包含“order”、“sale”或“transaction”等关键词的表名。确认有一张名为`orders`的表存储订单信息，其主要字段包括：\n\n- `order_id`：订单编号，主键\n- `customer_id`：客户编号\n- `product_id`：产品编号\n- `quantity`：订单商品数量\n- `amount_usd`：订单金额（美元）\n- `order_date`：订单日期\n- `status`：订单状态\n\n确认此表结构后，执行了针对`amount_usd`字段的最大值查询，无任何条件筛选。SQL语句如下：\n\n```sql\nSELECT MAX(amount_usd) AS max_order_amount FROM orders;\n```\n\n该查询直接返回了所有历史订单中最高的单笔订单金额。\n\n## 研究结果与分析\n\n根据查询结果，数据库中记录的单笔最大订单金额为 **2580.28美元**。该数字是从完整的所有订单数据中获得，没有排除任何记录或基于任何维度进行过滤，完全符合调研要求。\n\n这一金额反映了目前公司历史上单笔订单的最高成交金额，对评估销售能力、客户消费水平以及潜在业务发展规模具有重要参考价值。\n\n### 相关备注\n\n- 本查询未区分订单的日期、产品类别或客户等级，保证全面性和唯一性。\n- 数据库中订单金额字段为`REAL`类型，确保金额数据的精确存储和计算。\n- 若未来需求增加对最大订单的进一步细分（如按时间段或产品类别），亦可基于此基础查询加以扩展。\n\n## 结论\n\n依据公司内部数据库的准确查询，当前单笔最大订单金额是 **2580.28美元**。该数据是实际业务数据的真实体现，无任何推测成分，可作为基准数据应用于公司对销售分析、业务优化和战略制定。\n\n---\n\n### 参考文献\n\n[1] 公司内部数据库订单表结构及查询结果 (内部SQL查询执行系统)  \n[2] 执行SQL查询语句：`SELECT MAX(amount_usd) FROM orders` (内部SQL查询执行系统)\n\n### Sources\n\n[1] 内部数据库架构查询结果  \n[2] 最大订单金额SQL查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_Zm2J3A9iOZBzrT1baVTGWVt8",
+      "call_v3FI51ZzQD1nWrMa6gE24d0U"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008225
+  }
+}

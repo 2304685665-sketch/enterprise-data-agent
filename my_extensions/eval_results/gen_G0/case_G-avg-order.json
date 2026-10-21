@@ -1,0 +1,45 @@
+{
+  "case_id": "G-avg-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有订单的平均订单金额是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-avg-order-65bbcc68",
+  "started_at": "2026-10-13T15:09:53.643515+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 27.587,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有订单的平均订单金额报告\n\n## 研究目的\n\n本报告旨在通过直接查询公司官方内部订单数据库，准确获取并报告公司全部订单的平均订单金额（美元）。查询不受时间范围和订单类型的限制，确保覆盖数据库中所有订单记录，以实现数据的全面性和准确性。\n\n---\n\n## 数据库结构及查询过程\n\n### 订单数据库表结构\n\n通过查询内部数据库架构，相关查询结果显示，订单信息主要存储于名为 `orders` 的表中。该表结构定义如下：\n\n- `order_id`（INTEGER）：订单唯一标识，主键\n- `customer_id`（INTEGER）：客户ID，关联客户信息表\n- `product_id`（INTEGER）：产品ID，关联产品信息表\n- `quantity`（INTEGER）：订单中商品数量\n- `amount_usd`（REAL）：订单金额，单位为美元\n- `order_date`（TEXT）：订单日期\n- `status`（TEXT）：订单状态\n\n该表设计支持记录订单的基本关键信息，`amount_usd` 字段直接反映每笔订单的美元金额。\n\n### 数据查询执行\n\n为满足需求，无需筛选任何时间或订单类型，执行以下 SQL 查询获取订单金额的平均值：\n\n```sql\nSELECT AVG(amount_usd) AS average_order_amount FROM orders;\n```\n\n该查询覆盖订单表内全部订单数据，确保平均值反映公司数据库的完整记录。\n\n---\n\n## 查询结果与分析\n\n- **平均订单金额（美元）**：493.03 USD（精确到小数点后两位，实际计算值为493.032911392405 USD）\n\n- 该平均值体现了公司所有订单的整体金额水平，包括所有时间段和订单类型的订单。\n\n- 无任何过滤条件和数据排除，确保数据的全面性与代表性。\n\n- 订单金额字段采用实数类型，数据直接来源于实际交易记录，保证准确性。\n\n### 结果的应用与意义\n\n- 平均订单金额为企业财务分析、销售绩效评估及市场策略制定提供关键量化依据。\n\n- 该数据可用于监测业务增长趋势，优化定价策略和客户分层管理。\n\n- 数据的准确性确保决策基础的可靠性，有助于提升企业运营管理水平。\n\n---\n\n## 结论\n\n通过对公司内部订单数据库的直接查询，得到的所有订单的平均订单金额为 **493.03美元**。此数字是基于公司数据库中完整订单数据计算得到的，未受任何时间或订单类型筛选影响，确保了数据的全面性和准确性。\n\n该结果可作为企业订单金额总体水平的权威数据参考，支持相关业务分析和决策制定需求。\n\n---\n\n## 参考资料与数据来源\n\n- [1] 公司内部订单数据库（orders表结构及相关SQL查询结果）\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库，orders表结构及查询结果 (内部系统)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_SvhH4FQAqjg0lAnFtAgm6CQb",
+      "call_prLUriGqj6M78tnO8nbne5vz"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008343
+  }
+}

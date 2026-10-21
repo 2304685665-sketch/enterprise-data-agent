@@ -1,0 +1,59 @@
+{
+  "case_id": "L-absent-hq",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Helixon 的总部设在哪座城市？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-hq-6edc21b8",
+  "started_at": "2026-10-13T15:28:26.217601+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 39.672,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于 Helixon 总部所在地的内部数据库查询报告\n\n## 研究目的\n\n本次研究的目标是依据贵公司内部的数据库系统，精准查询 Helixon 公司总部所在的具体城市。要求严格基于内部公司数据系统，不依赖任何外部信息或个人记忆。\n\n---\n\n## 数据查询过程概述\n\n对内部数据库进行了多轮查询，主要针对以下内容：\n\n- Helixon 公司基本信息（包括名称、所属行业、成立年份等）\n- Helixon 公司融资记录\n- 公司唯一标识符（公司ID）查询\n- 公司及融资相关表结构和字段内容验证\n- 针对城市或总部所在地相关字段的专门查询\n\n---\n\n## 数据库结构与数据字段说明\n\n通过对数据库schema的查询和验证，确认涉及Helixon的主要表及字段如下：\n\n- **companies 表**  \n  - 字段示例：id (主键), name (公司名称), industry (行业), founded_year (成立年份)  \n  - **无 city、location 或类似代表城市/地址字段**\n\n- **funding_rounds 表**  \n  - 字段示例：id (主键), company_id (外键), round_type (融资轮次), amount_usd (融资金额), round_date (融资时间)  \n  - **无城市或总部所在地字段**\n\n---\n\n## 查询结果与分析\n\n1. **Helixon 的公司基础信息**  \n   - 公司名称：Helixon  \n   - 行业类别：Climate Tech（气候科技）  \n   - 成立时间：2019年  \n   - 公司ID：4  \n   （来源：companies 表[1][3][7]）\n\n2. **融资信息记录**  \n   - 包含多轮融资，数据完整且时间线明确  \n   - 不包含总部城市信息  \n   （来源：funding_rounds 表[2][8]）\n\n3. **关于总部所在地字段的查询尝试**  \n   - 查询 companies 表及 funding_rounds 表中均无 city/location 字段  \n   - 多次尝试通过 DISTINCT 或特定字段名检索所在地信息均失败，数据库报错表明无此字段  \n   （来源：失败的尝试查询记录[5][9][10]）\n\n4. **结论**  \n   - 以现有公司内部数据库的表结构和数据内容来看，没有任何字段或数据直接或间接标明 Helixon 的总部具体城市  \n   - 因此，无法从内部数据库得到准确的 Helixon 总部所在地信息\n\n---\n\n## 总结\n\n根据对贵司内部数据库的全面检索与验证：\n\n- 公司基础数据、融资信息被详细记录  \n- 缺乏任何包含城市、地址或总部位置信息的字段和数据  \n- 数据库结构上根本不存在可供提取总部城市的字段  \n- 依据数据库现有内容，无法满足“查询 Helixon 总部位于哪座城市”的需求\n\n建议后续可考虑：\n\n- 与相关业务系统或人力资源数据库核对是否存有地址信息  \n- 进一步拓展数据库表结构，增加可存储公司总部等关键属性字段  \n- 在公司知识库或企业信息管理系统中同步相关数据，以便后续准确提取\n\n---\n\n## 参考来源\n\n[1] Internal Database Query: Company details for Helixon (companies table)  \n[2] Internal Database Query: Funding rounds for Helixon (funding_rounds joined with companies)  \n[3] Internal Database Query: Company ID lookup for Helixon (companies table)  \n[4] Internal Database Query: Full companies table schema (sqlite_master)  \n[5] Internal Database Query: Attempted but failed queries for location/city columns in companies and funding_rounds tables\n\n---\n\n### Sources\n\n[1] Helixon 公司基本信息查询结果（内部数据库）: internal_db/companies  \n[2] Helixon 融资数据查询结果（内部数据库）: internal_db/funding_rounds  \n[3] Helixon 公司ID查询结果（内部数据库）: internal_db/companies  \n[4] 公司表结构查询（sqlite_master）: internal_db/sqlite_master  \n[5] 关于定位字段查询失败记录: internal_db/query_logs",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 10
+    },
+    "sql_calls": 10,
+    "sql_call_ids": [
+      "call_1WHoq2SNIEA7a5PUgwzXkqxP",
+      "call_Cd6kp8fuxyuhytdhewWbAo0p",
+      "call_DJzVxJTXXkAy0IRiVSW2CsbP",
+      "call_H9CrT98V3jW99wvRWZVzlbi8",
+      "call_Ht044rUPX5aUR07DrFclu4DO",
+      "call_Kf718FCBg0XVR13cmbTKM4n1",
+      "call_TySBAayGIRQcQI1yPC2IhgIG",
+      "call_XATea0VoHqB5pMlo82VHQFaM",
+      "call_ceUSLwpqjNKHg88gMkSltZ4t",
+      "call_nqqekhFwN3jNDv2NS4RUos4C"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "error",
+      "success",
+      "success",
+      "success",
+      "error",
+      "error"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 13,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.0117
+  }
+}

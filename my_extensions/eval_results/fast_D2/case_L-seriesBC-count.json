@@ -1,0 +1,43 @@
+{
+  "case_id": "L-seriesBC-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Series B 和 Series C 两种轮次加起来一共有几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seriesBC-count-ec613021",
+  "started_at": "2026-10-13T15:13:48.502406+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.179,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库Series B与Series C融资笔数统计报告\n\n## 查询目的与范围概述\n\n本次查询旨在准确获取公司内部数据库中标注为“Series B”及“Series C”融资轮次的所有融资笔数总和。要求不添加任何时间或其他业务筛选条件，仅依据数据库中现有的融资轮次字段，确保结果真实反映数据库记录，排除个人主观判断或估算。\n\n---\n\n## 查询执行与结果说明\n\n针对该需求，执行了以下SQL查询语句：\n\n```sql\nSELECT COUNT(*) AS total_series_b_c_deals \nFROM funding_rounds \nWHERE round_type IN ('Series B', 'Series C');\n```\n\n- 该语句依据“funding_rounds”表中“round_type”字段，筛选符合“Series B”或“Series C”融资轮次的记录。\n- 查询未对时间或其他条件进行限制，涵盖数据库中迄今所有相关融资记录。\n\n最终得到的结果为：\n\n- **融资笔数合计：28笔**\n\n这意味着公司数据库中累计存在28笔融资被明确标识为“Series B”或“Series C”轮次。\n\n---\n\n## 结果分析\n\n- **准确性保障**：结果直接基于数据库结构化数据，无任何人为主观判断。  \n- **数据覆盖全面**：无时间或其他筛选条件限制，涵盖所有相关融资记录，确保统计的完整性。  \n- **轮次分类合并**：统计结果为两轮次加总，方便了解中后期融资整体规模。\n\n---\n\n## 限制与说明\n\n- 查询依赖数据库中对融资轮次的标注准确性，若轮次字段存在标注错误或遗漏，则可能影响统计结果。  \n- 本统计未区分融资金额大小、行业、地域或年度，仅聚焦轮次分类的融资笔数。  \n- 若后续需要细分时间、金额等多维度分析，可基于现有基础进行拓展查询。\n\n---\n\n## 结论\n\n综上，基于公司内部数据库现有信息，截止查询时点，**Series B和Series C融资轮次合计共有28笔融资记录**。此数据完全来源于数据库，不含任何主观估计，满足准确、客观统计的需求。\n\n---\n\n### 来源\n\n本报告所有数据均摘取自公司内部数据库，无外部来源。\n\n[1] 公司内部数据库融资记录查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_3is00JfQ5oJdShaiSQZ0hmbq"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004285
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "L-top-industry-total",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，哪个行业的公司累计融资金额最多？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-top-industry-total-aaf638ba",
+  "started_at": "2026-10-13T15:12:33.243055+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 22.986,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中累计融资金额最高的行业分析报告\n\n## 研究背景与目的\n\n本报告旨在基于我司内部融资数据库的真实记录，精准统计各行业累计融资金额，进而确定哪个行业的累计融资金额最高。分析不依赖于主观印象或外部推断，而是通过直接查询公司内部数据库的原始融资数据完成，涵盖数据库内所有企业及其融资记录，且无时间限制，保证结论科学严谨、数据全面。\n\n## 数据来源与方法\n\n依据公司内部数据库结构，结合企业所属行业分类与对应融资数据，执行SQL脚本以求得各行业的累计融资金额。具体查询语句为：\n\n```sql\nSELECT c.industry, SUM(f.amount_usd) AS total_financing\nFROM companies c\nJOIN funding_rounds f ON c.id = f.company_id\nGROUP BY c.industry\nORDER BY total_financing DESC\nLIMIT 1;\n```\n\n此查询执行流程如下：\n\n- **数据表**：`companies`表包含公司基本信息及所属行业，`funding_rounds`表记录各公司融资轮次及金额。\n- **连接条件**：通过公司ID关联融资记录与公司数据。\n- **统计指标**：对每个行业的所有融资金额求和。\n- **排序筛选**：按融资总额降序排列，获取融资金额最高的一行数据。\n- **时间范围**：涵盖数据库内至今所有可用融资信息，无时间筛选限制。\n\n此方法确保统计范围完整，数据来源统一，计算结果准确可信。\n\n## 核心发现\n\n查询结果显示：\n\n- **累计融资金额最高的行业**为 **金融科技（Fintech）**。\n- 该行业累计融资总额为 **924,871,000.0 美元**。\n\n该金额基于所有数据库记录的公司融资数据累计计算而成，反映了该行业在我司数据库中融资规模的绝对领先地位。\n\n## 结论与意义\n\n通过严格数据查询与统计，可断定：\n\n- 金融科技行业在我司内部数据库所涵盖的所有行业中，累计融资金额最高，表明该领域资本热度及投资活跃度显著。\n- 这一结果为公司未来行业拓展、资源配置及风险管理提供了重要数据支持，明确了重点关注与投入的行业领域。\n- 该结论完全基于内部真实数据，无外部假设或估计，具备高度信度和应用价值。\n\n公司可依据此数据，结合市场环境和战略目标开展进一步研究和决策。\n\n## 附录：查询语句说明\n\n- 使用`SUM()`聚合函数累计融资金额。\n- 按`industry`分组，统计各行业总融资。\n- 联结公司及融资表，确保数据完整对应。\n\n---\n\n### Sources\n\n[1] Internal Company Financing Database—SQL query results on cumulative financing by industry sector.",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_SAHTlhYgHSN3rzmRKHqAIBVa"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004952
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-largest-round",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪家公司拿到过金额最大的一笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-largest-round-7ce47e1c",
+  "started_at": "2026-10-13T15:14:46.872057+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 13.754,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中最大单笔融资金额及对应公司分析报告\n\n## 最大融资金额及公司概况\n\n根据公司内部数据库查询，**Junoflow** 公司获得的单笔融资金额为**98,551,000美元**，为数据库中金额最大的一笔融资。  \n\n- 融资金额：约9855.1万美元  \n- 公司名称：Junoflow  \n\n该数据为实际数据库记录的融资金额，非估算或推测，确保信息的准确性与权威性。\n\n## 资金规模的重要性分析\n\nJunoflow此次融资规模达到约9855万美元，说明其在投资者中获得了较高的认可度，资金支持对于企业的技术研发、市场拓展及业务规模扩大均具有重要意义。  \n\n- 资金规模大，通常意味着投资者对企业商业模式、技术能力及市场潜力充满信心。  \n- 充足资金能够推动企业快速发展，提升其市场竞争力。  \n- 此类大额融资在内部数据库中相对罕见，体现出Junoflow具有较高的战略价值。\n\n## 内部数据库视角下的融资环境\n\n通过数据库比对，Junoflow获得近亿美金融资额度的情况目前为内部最高，反映出公司在所属行业或领域中的领先地位。此融资金额也可作为后续投资分析、行业对比的重要参考指标。  \n\n- 与其他公司的融资情况对比，Junoflow单笔融资金额显著领先，显示其融资事件的独特性。  \n- 此融资数据为内部数据库内部整合结果，具备高度权威性，不依赖外部传媒报道或市场预测。  \n- 企业通过此笔资金可望完成产品升级、市场拓展或资本结构优化，进一步提升公司价值。\n\n## 结论\n\n综合数据库查询结果，Junoflow公司以约9855.1万美元的融资金额成为公司内部数据库中获得最大单笔融资的企业。这不仅反映了Junoflow在资本市场的竞争力和吸引力，而且为分析公司整体融资环境和行业投资热点提供了精准数据支持。\n\n---\n\n### 参考资料\n\n暂无公开外部链接，数据均源自公司内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_bAZBmbPla35a0CjyaXkKSdkm"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003289
+  }
+}

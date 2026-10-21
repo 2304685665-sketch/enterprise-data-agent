@@ -1,0 +1,45 @@
+{
+  "case_id": "L-cyber-rounds",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Cybersecurity 行业的公司一共完成了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cyber-rounds-016f28ca",
+  "started_at": "2026-10-13T15:15:07.808602+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 17.375,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中Cybersecurity行业公司融资轮次数的调研报告\n\n## 调研背景\n\n此次调研的核心目标是直接从公司内部数据库查询，准确统计属于Cybersecurity（网络安全）行业的公司完成的融资轮次数。调研要求避免基于记忆或估算，需完全依赖数据库中的实际数据。由于未限定时间、地域或融资阶段，统计口径涵盖所有记录中的融资事件。\n\n## 调研过程与数据核查\n\n为了确保数据的准确性，调研先后进行了以下关键核查：\n\n- **核实Cybersecurity行业公司数量**：首先查询数据库中标记为Cybersecurity行业的公司总量，确认样本公司基数。\n- **统计Cybersecurity公司融资轮次**：基于确认的Cybersecurity公司，查询其所有融资记录的合计数。\n\n## 调研结果展示\n\n- **Cybersecurity行业公司数量**：数据库中未检索到任何标记为Cybersecurity行业的公司。  \n  结果显示总计为0。\n  \n- **Cybersecurity行业公司融资轮次数**：由于没有对应行业的公司录入，因此融资轮数同样为0。\n\n整体结论基于数据库现有的数据结构和分类，没有检测到网络安全领域的公司存在，进一步导致无相关融资数据。\n\n## 结论与建议\n\n当前公司内部数据库未包含任何Cybersecurity行业的公司记录，因此无法提供任何关于该行业融资轮次数的实证数据。在此基础上得出以下几点建议：\n\n- **数据库维护与完善**：建议核查内部数据库的行业分类及公司录入流程，确认网络安全领域企业是否应被纳入录入范畴。\n- **未来数据采集加强**：如希望开展针对Cybersecurity行业的深入分析，应考虑补充相关公司的数据录入和融资事件记录。\n- **多维度数据对照验证**：除了内部数据库，也可结合外部权威数据源进行交叉验证，以确保网络安全行业相关融资动态不被遗漏。\n\n本次调研结果完全基于实际数据库内容，无任何推测或间接估计。\n\n---\n\n## 参考数据\n\n- 内部数据库中Cybersecurity公司数目：0\n- 内部数据库中Cybersecurity融资轮次数：0\n\n---\n\n### Sources\n\n无外部公开数据引用，数据均来自公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 2,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_0nbhjszw2Pmv8paQmVsAzrv8",
+      "call_NtFu01ZmzsVSV2KxiyE0657k"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 7,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.005254
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "G-zero-cancelled",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，状态为 cancelled 的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-zero-cancelled-9417863b",
+  "started_at": "2026-10-13T16:12:25.554824+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.796,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中状态为 cancelled 的订单数量的调研报告\n\n## 查询目的\n\n本次调研旨在通过直接数据库查询，准确获取并确认公司内部数据库中所有状态为 **\"cancelled\"**（已取消）订单的具体数量，确保数据来源于实际记录而非主观印象，满足业务上精确统计和管理需求。\n\n## 数据库查询结果\n\n通过对公司内部订单管理数据库的状态字段进行筛选，专门统计状态字段为 **\"cancelled\"** 的订单笔数，查询发现：\n\n- 状态为 **\"cancelled\"** 的订单数量为 **0笔**。\n\n即当前数据库中不存在任何订单是处于已取消状态的记录。\n\n## 结果分析\n\n- **暂无已取消订单的情况说明**：数据库未显示任何取消订单，表明目前系统中的订单流程可能较为顺畅，几乎无订单被客户或系统取消；或是取消订单的状态在系统内使用了不同的状态标识，需确认数据库设计及状态定义。\n- **数据准确性与完整性**：结果基于直接查询数据库所得，具备高度准确性。若存在其他可能的状态定义（如 \"voided\"、\"refunded\" 等），建议进一步核实以确保不会遗漏实际的取消处理订单。\n- **后续建议**：如业务需要精细区分订单各种状态，建议核查数据库文档与状态定义表，确认所有可能代表订单取消含义的状态字段，避免统计口径不一致。\n\n## 总结\n\n目前，公司内部数据库中状态为 **\"cancelled\"** 的订单总计为 **零笔**。该结果基于实时数据库查询，确保了准确性和权威性。如果需要更全面的取消订单数据覆盖，建议核实系统中是否存在其他替代的取消状态标识。\n\n---\n\n### 参考文献\n\n- 本报告数据源自公司内部订单数据库直接查询结果，无外部链接。\n\n### Sources\n\n无外部参考链接，数据直接来源于内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_PiiuCTCyfj0A3p6QsEHjN3E7"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003075
+  }
+}

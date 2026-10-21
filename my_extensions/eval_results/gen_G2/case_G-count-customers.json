@@ -1,0 +1,42 @@
+{
+  "case_id": "G-count-customers",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少位客户？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-count-customers-bf1fe3e2",
+  "started_at": "2026-10-13T15:10:26.232283+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.583,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部客户总数调研报告\n\n## 一、调研背景\n\n本调研旨在准确回答公司内部数据库中登记的客户总人数。由于没有指定任何过滤条件或客户状态，要求统计所有客户记录，涵盖所有时间和状态的数据。为确保数据准确性，本次调研直接通过查询公司官方内部客户数据库获取精准数值，避免主观估计或记忆偏差。\n\n## 二、调研方法\n\n针对调研需求，执行了以下SQL查询，直接面向官方客户数据库：\n\n```sql\nSELECT COUNT(*) AS total_customers FROM customers;\n```\n\n该查询语句汇总了`customers`表中所有客户记录的数量，未添加任何限制或过滤条件，确保统计包含全部客户数据。\n\n## 三、调研结果\n\n根据查询结果，当前公司内部数据库录入的客户总数为：\n\n**25 位客户**\n\n该数字反映了截至查询时刻，数据库中所有客户条目的完整统计，包括所有状态和时间段，无人为删减或筛选。\n\n## 四、分析与说明\n\n- **数据完整性**：本次查询没有对客户做任何状态、时间或属性筛选，完全符合调研“所有客户”的要求。\n- **数据准确性**：数据源为官方内部数据库，查询语句标准，结果具有权威性和实时性。\n- **数据局限性**：该数值仅代表数据库当前状态，未考虑潜在的数据同步延迟、客户数据重复或异常情况，没有深入剔除重复客户或无效记录。\n- **后续建议**：若需进一步细分客户分类（如活跃/非活跃、注册时间段等），建议在后续调研中明确筛选标准，结合清洗去重等步骤，获得更细化客户画像。\n\n## 五、总结\n\n本次调研在无任何过滤条件约束下，精准统计了公司内部客户数据库中的客户总数，最终结果为**25**。该结果为目前公司客户总体规模的基础数据参考，适用于宏观业务分析、资源分配及客户关系管理评估。\n\n---\n\n### 参考来源\n\n- 调用公司内部客户数据库SQL查询结果（官方内部数据）\n\n### Sources\n\n[1] 公司内部客户数据库查询结果（内部无法公开URL）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_aNMph2rUtMZDCI5Yjw7Mdg9Y"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004077
+  }
+}

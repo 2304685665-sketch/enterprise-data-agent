@@ -1,0 +1,8 @@
+healthz (200, {'status': 'ok', 'redis': 'up'})
+A submit 202
+A redis killed -> healthz (503, {'status': 'degraded', 'redis': 'down'}) | status (503, {'detail': 'storage unavailable, retry later'}) | submit (503, {'detail': 'storage unavailable, retry later'})
+A after restart (AOF) status (200, {'task_id': '6189e14b1af142e08df001d0c818e4b1', 'status': 'succeeded', 'created_at': '1791814000.751', 'updated_at': '1791814013.685', 'result': 'answer:scenario A'})
+A healthz (200, {'status': 'ok', 'redis': 'up'})
+B status immediately after new process (200, {'task_id': '5311ce629d9c4901a0fec7d165bc8080', 'updated_at': '1791814028.203', 'status': 'failed', 'created_at': '1791814023.692', 'error': 'OrphanedTask: no heartbeat from any worker (process restarted or storage was unavailable); result lost'})
+B status after >stale (200, {'task_id': '5311ce629d9c4901a0fec7d165bc8080', 'updated_at': '1791814028.203', 'status': 'failed', 'created_at': '1791814023.692', 'error': 'OrphanedTask: no heartbeat from any worker (process restarted or storage was unavailable); result lost'})
+B replay idempotent POST (202, {'task_id': 'b3b8e24ff22e4c8aa553fb5fbb2118c4', 'status_url': '/research/b3b8e24ff22e4c8aa553fb5fbb2118c4', 'idempotent_replay': False})

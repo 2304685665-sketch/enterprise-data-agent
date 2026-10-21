@@ -1,0 +1,234 @@
+{
+ "confirmatory_new_v4": {
+  "bm25": {
+   "hit1_gained": 2,
+   "hit1_lost": 0,
+   "p_hit1": 0.5,
+   "rank_better": 4,
+   "rank_worse": 0,
+   "p_rank": 0.125
+  },
+  "vector": {
+   "hit1_gained": 11,
+   "hit1_lost": 2,
+   "p_hit1": 0.0225,
+   "rank_better": 11,
+   "rank_worse": 3,
+   "p_rank": 0.0574
+  },
+  "hybrid": {
+   "hit1_gained": 8,
+   "hit1_lost": 0,
+   "p_hit1": 0.0078,
+   "rank_better": 8,
+   "rank_worse": 0,
+   "p_rank": 0.0078
+  },
+  "levels": {
+   "bm25": {
+    "index_v1": {
+     "n": 52,
+     "hit1": 0.8846153846153846,
+     "mrr": 0.9189102564102564
+    },
+    "index_v2": {
+     "n": 52,
+     "hit1": 0.9230769230769231,
+     "mrr": 0.9519230769230769
+    }
+   },
+   "vector": {
+    "index_v1": {
+     "n": 52,
+     "hit1": 0.7115384615384616,
+     "mrr": 0.8218337218337217
+    },
+    "index_v2": {
+     "n": 52,
+     "hit1": 0.8846153846153846,
+     "mrr": 0.928525641025641
+    }
+   },
+   "hybrid": {
+    "index_v1": {
+     "n": 52,
+     "hit1": 0.8076923076923077,
+     "mrr": 0.892094017094017
+    },
+    "index_v2": {
+     "n": 52,
+     "hit1": 0.9615384615384616,
+     "mrr": 0.9775641025641026
+    }
+   }
+  }
+ },
+ "pooled_new_v3_v4": {
+  "bm25": {
+   "hit1_gained": 5,
+   "hit1_lost": 1,
+   "p_hit1": 0.2188,
+   "rank_better": 8,
+   "rank_worse": 3,
+   "p_rank": 0.2266
+  },
+  "vector": {
+   "hit1_gained": 18,
+   "hit1_lost": 3,
+   "p_hit1": 0.0015,
+   "rank_better": 20,
+   "rank_worse": 5,
+   "p_rank": 0.0041
+  },
+  "hybrid": {
+   "hit1_gained": 11,
+   "hit1_lost": 1,
+   "p_hit1": 0.0063,
+   "rank_better": 11,
+   "rank_worse": 1,
+   "p_rank": 0.0063
+  },
+  "levels": {
+   "bm25": {
+    "index_v1": null,
+    "index_v2": null
+   },
+   "vector": {
+    "index_v1": null,
+    "index_v2": null
+   },
+   "hybrid": {
+    "index_v1": null,
+    "index_v2": null
+   }
+  }
+ },
+ "heldout": {
+  "bm25": {
+   "hit1_gained": 0,
+   "hit1_lost": 0,
+   "p_hit1": 1.0,
+   "rank_better": 1,
+   "rank_worse": 1,
+   "p_rank": 1.0
+  },
+  "vector": {
+   "hit1_gained": 0,
+   "hit1_lost": 3,
+   "p_hit1": 0.25,
+   "rank_better": 4,
+   "rank_worse": 4,
+   "p_rank": 1.0
+  },
+  "hybrid": {
+   "hit1_gained": 2,
+   "hit1_lost": 2,
+   "p_hit1": 1.0,
+   "rank_better": 4,
+   "rank_worse": 2,
+   "p_rank": 0.6875
+  },
+  "levels": {
+   "bm25": {
+    "index_v1": {
+     "n": 8,
+     "hit1": 0.5,
+     "mrr": 0.640625
+    },
+    "index_v2": {
+     "n": 8,
+     "hit1": 0.5,
+     "mrr": 0.6447916666666667
+    }
+   },
+   "vector": {
+    "index_v1": {
+     "n": 8,
+     "hit1": 0.375,
+     "mrr": 0.5031791125541125
+    },
+    "index_v2": {
+     "n": 8,
+     "hit1": 0.0,
+     "mrr": 0.39479166666666665
+    }
+   },
+   "hybrid": {
+    "index_v1": {
+     "n": 8,
+     "hit1": 0.5,
+     "mrr": 0.6333333333333333
+    },
+    "index_v2": {
+     "n": 8,
+     "hit1": 0.5,
+     "mrr": 0.7291666666666666
+    }
+   }
+  }
+ },
+ "old_v1": {
+  "bm25": {
+   "hit1_gained": 0,
+   "hit1_lost": 0,
+   "p_hit1": 1.0,
+   "rank_better": 0,
+   "rank_worse": 3,
+   "p_rank": 0.25
+  },
+  "vector": {
+   "hit1_gained": 4,
+   "hit1_lost": 2,
+   "p_hit1": 0.6875,
+   "rank_better": 9,
+   "rank_worse": 2,
+   "p_rank": 0.0654
+  },
+  "hybrid": {
+   "hit1_gained": 3,
+   "hit1_lost": 0,
+   "p_hit1": 0.25,
+   "rank_better": 4,
+   "rank_worse": 1,
+   "p_rank": 0.375
+  },
+  "levels": {
+   "bm25": {
+    "index_v1": {
+     "n": 27,
+     "hit1": 0.7777777777777778,
+     "mrr": 0.8423280423280424
+    },
+    "index_v2": {
+     "n": 27,
+     "hit1": 0.7777777777777778,
+     "mrr": 0.8310383032605254
+    }
+   },
+   "vector": {
+    "index_v1": {
+     "n": 27,
+     "hit1": 0.5925925925925926,
+     "mrr": 0.6974132863021751
+    },
+    "index_v2": {
+     "n": 27,
+     "hit1": 0.6666666666666666,
+     "mrr": 0.7975308641975309
+    }
+   },
+   "hybrid": {
+    "index_v1": {
+     "n": 27,
+     "hit1": 0.5925925925925926,
+     "mrr": 0.7477072310405644
+    },
+    "index_v2": {
+     "n": 27,
+     "hit1": 0.7037037037037037,
+     "mrr": 0.8125220458553791
+    }
+   }
+  }
+ }
+}

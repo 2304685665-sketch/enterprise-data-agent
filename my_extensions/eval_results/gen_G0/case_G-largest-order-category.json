@@ -1,0 +1,51 @@
+{
+  "case_id": "G-largest-order-category",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，金额最大的那笔订单，买的商品属于哪个品类？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-largest-order-category-2799b49c",
+  "started_at": "2026-10-13T15:24:49.883783+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 56.146,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中金额最大订单的商品品类分析报告\n\n## 研究目的与背景\n\n本报告旨在准确识别我司内部数据库中有记录以来订单金额最高的那笔订单对应的商品品类。应邀直接通过数据库查询获取相关的精确数据，排除基于印象或假设的回答，且不限定任何时间段或地点，涵盖公司内部所有可用订单数据。\n\n## 数据源与数据库结构\n\n为完成此项研究，已对公司内部数据库进行了彻底调研，数据库中核心涉及三张相关表：\n\n- **orders** 表：记录订单信息，包括订单编号、客户编号、产品编号、数量、金额（美元）、订单日期及订单状态等。\n- **products** 表：记录产品信息，包括产品编号、产品名称、所属品类及单价。\n- **customers** 表：记录客户信息（本研究中未涉及此表的详细使用）。\n\n### orders 表结构详解\n\n```sql\nCREATE TABLE orders (\n  order_id INTEGER PRIMARY KEY,\n  customer_id INTEGER,\n  product_id INTEGER,\n  quantity INTEGER,\n  amount_usd REAL,\n  order_date TEXT,\n  status TEXT,\n  FOREIGN KEY(customer_id) REFERENCES customers(customer_id),\n  FOREIGN KEY(product_id) REFERENCES products(product_id)\n)\n```\n\n此表以 `amount_usd` 字段体现每笔订单的总金额（美元计价），是本研究确定最大金额订单的核心字段。\n\n### products 表结构详解\n\n```sql\nCREATE TABLE products (\n  product_id INTEGER PRIMARY KEY,\n  product_name TEXT,\n  category TEXT,\n  unit_price REAL\n)\n```\n\n通过 `product_id` 外键关联到订单表，可获取订单中产品的具体品类信息。\n\n## 查询方法与结果\n\n通过数据库执行以下关键 SQL 查询：\n\n```sql\nSELECT o.amount_usd, p.category\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nORDER BY o.amount_usd DESC\nLIMIT 1;\n```\n\n该查询步骤具体说明：\n\n- 使用 `JOIN` 操作，将订单表与产品表通过产品编号关联。\n- 根据订单金额 `amount_usd` 降序排序，确保最高金额订单排名靠前。\n- 通过 `LIMIT 1` 获取金额最高的单一订单记录。\n\n### 查询结果\n\n- 最高订单金额：**2580.28 美元**\n- 对应商品品类：**“Tools”（工具类）**\n\n此数据基于当前公司所有订单数据，既涵盖所有时间（无时间限制），也涵盖所有业务地点，故为有记录以来的最大订单。\n\n## 结论与分析\n\n分析确认，目前公司数据库中记录的单笔订单金额最高值为 2580.28 美元，该订单对应的商品为工具类（Tools）。此结果排除任何猜测和假设，完全来自对数据库的直接查询，具备高度可信性。\n\n此结论反映了公司内部销售体系中，在所有历史交易里，单笔最大金额订单的产品类别具有业务上的代表意义，可能提示工具类产品在高价值交易里占据重要位置。\n\n作为管理层或业务决策支持，该洞见可为采购策略、库存管理及销售重点产品品类提供参考依据。\n\n## 参考与附录\n\n### 1. 数据库表结构与索引查询\n\n- 查询所有表名：  \n  `SELECT name FROM sqlite_master WHERE type='table';`\n\n- 查询表结构定义：  \n  - `orders` 表结构：  \n    `SELECT sql FROM sqlite_master WHERE name='orders';`  \n  - `products` 表结构：  \n    `SELECT sql FROM sqlite_master WHERE name='products';`\n\n### 2. 核心数据查询语句\n\n```sql\nSELECT o.amount_usd, p.category\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nORDER BY o.amount_usd DESC\nLIMIT 1;\n```\n\n### 3. 数据库查询结果确认\n\n- 最高金额订单金额：2580.28 美元\n- 最高金额订单产品品类：Tools\n\n---\n\n### 总结\n\n本报告准确识别了公司内部订单数据库中金额最大订单的商品品类为工具类（Tools），订单金额为 2580.28 美元。该结论基于直接数据库查询，保证数据准确有效，未引入任何外部假设。\n\n如需进一步分析该订单的详细信息、趋势分析或品类战略建议，建议结合更多数据维度开展后续研究。\n\n---\n\n# Sources\n\n[1] SQLite system table to list tables: https://sqlite.org/faq.html#q7  \n[2] SQLite retrieval of table creation statements: https://sqlite.org/metadata.html  \n[3] SQL query executed on internal database orders and products tables (internal company database)  \n[4] Researcher annotation and reflection on data results",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 5,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 5,
+    "sql_call_ids": [
+      "call_Rad4KfBO4YwxL2EcW3scqcQ7",
+      "call_UavjmIZcAtJb3XTHNZuRy8Pa",
+      "call_eDbX1h9JWKZu3qWsNUOOmzps",
+      "call_sZxhTu7dRB0SF1gpZMPw0fTX",
+      "call_v4vI1bp7KpoBS9xCjpjQGvr2"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "error",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 14,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.012726
+  }
+}

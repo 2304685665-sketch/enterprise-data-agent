@@ -1,0 +1,59 @@
+{
+  "case_id": "G-absent-email",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Alderwick Foods 的联系人邮箱是什么？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-absent-email-3b535268",
+  "started_at": "2026-10-13T15:20:32.165015+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 41.772,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "## Alderwick Foods 联系邮箱查询报告\n\n### 1. 查询目的与范围\n\n本次调研旨在从贵公司的内部数据库中，准确、最新地获取“Alderwick Foods”的联系人邮箱地址。调研严格按照要求，仅依赖内部数据库真实数据，避免凭个人记忆或外部资源推断和补充，确保数据权威性和准确性。\n\n---\n\n### 2. 数据库查询过程\n\n- **确认客户存在性**  \n  通过查询 `customers` 表，确认数据库中确实存在名为 “Alderwick Foods” 的客户记录。该客户登记的区域为“East”，注册年份为2020年，客户ID为1。\n\n- **相关表与字段查询**  \n  针对客户ID为1的“Alderwick Foods”，尝试在 `customers` 表及相关的订单 (`orders`) 表中搜索联系方式信息，尤其关注邮箱地址字段。\n\n- **表结构及字段限制**  \n  数据库结构查询受限，无法获取完整元数据（如字段列表）。所有尝试获得电子邮箱的查询均未返回含邮箱地址的字段。\n\n---\n\n### 3. 主要调研结果\n\n- **Alderwick Foods 客户详情**\n  - `customer_name`: Alderwick Foods\n  - `customer_id`: 1\n  - `region`: East\n  - `signup_year`: 2020\n  - 相关订单：存在至少一条订单信息，但无邮箱相关字段\n\n- **联系人邮箱未存储**\n  尽管对多张表进行了查询，但未发现任何包含“Alderwick Foods”联系邮箱的数据字段。当前数据库内无 `email`、`contact_email` 或类似字段的有效记录与该客户相关。\n\n- **数据库权限限制**\n  由于查询权限限制，未能访问或查看可能存储邮箱信息的其它表（例如联系人详细信息表、客户通信表等），这限制了邮箱查找的可能。\n\n---\n\n### 4. 结论及建议\n\n基于数据库直接查询结果：\n\n- **内部数据库中未存储 Alderwick Foods 的联系人邮箱地址。**  \n  当前数据结构及权限范围内未检索到任何匹配Email字段或类似联系信息。\n\n- 若需获取该邮件地址，建议：\n  - **联系公司内负责客户数据管理的部门或人员**，确认是否有专门的客户联系人信息数据库或CRM系统。\n  - **检查是否存在权限限制**，阻止访问包含客户联系方式的表。\n  - **考虑补充数据库**，确保客户基本联系方式在数据库中有存档，满足未来业务需求。\n\n---\n\n### 5. 附录：主要执行的查询示例\n\n```sql\nSELECT customer_name, region, signup_year FROM customers WHERE customer_name LIKE '%Alderwick Foods%';\n\nSELECT customer_id FROM customers WHERE customer_name = 'Alderwick Foods';\n\nSELECT * FROM customers WHERE customer_id = 1;\n```\n\n以上查询均证实客户存在且信息基本完整，但无邮箱数据。\n\n---\n\n## 来源\n\n本报告所引用的数据均来自贵公司内部数据库的实时SQL查询结果，未采用任何外部公开资源。\n\n---\n\n### Sources\n\nN/A – 内部数据库查询，无外部链接。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 10
+    },
+    "sql_calls": 10,
+    "sql_call_ids": [
+      "call_48cyL8R1Xvo4cQg7o5rGJEWI",
+      "call_58OKkw24sIiJUW3AVTK0wXU4",
+      "call_8BiElrYN9rzdTIiQPwHO6aVH",
+      "call_FBb8ciswpdZgtZ8EQ97mABQS",
+      "call_Qu4bRy3GBOLWijnx5baa30Nq",
+      "call_eHMfY91Ct9TI5w7cIa2xAxme",
+      "call_f43dVptTmbRgrCylOgJE3ryp",
+      "call_g2NL7mJtLUobvIM90Vob9Vqu",
+      "call_uyA3U6J0jloNCJfTpdbAiXHk",
+      "call_zDkmmaIaj2vPQdCiTECpYDcx"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "error",
+      "success",
+      "success",
+      "success",
+      "success",
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 13,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.010476
+  }
+}

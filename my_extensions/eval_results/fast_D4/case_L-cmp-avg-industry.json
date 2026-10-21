@@ -1,0 +1,43 @@
+{
+  "case_id": "L-cmp-avg-industry",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个行业的平均单笔融资金额最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-avg-industry-7e921c8c",
+  "started_at": "2026-10-13T15:15:45.148123+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.512,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中平均单笔融资金额最高的行业研究报告\n\n## 结论概述\n\n根据公司内部数据库的最新查询结果，**生物技术（Biotech）行业**的平均单笔融资金额最高，达到了约6,577万美元。这一数据基于公司所有行业融资轮的数据计算而得，具有高度的权威和准确性。\n\n## 数据分析与详细解读\n\n### 平均单笔融资金额最高的行业\n\n- **行业名称**：生物技术（Biotech）\n- **平均单笔融资金额**：65,773,083.33 美元（约合6,577万美元）\n\n该结果表明，生物技术领域在融资规模上表现出显著的资本需求和投资热度。相比于其他行业，生物技术的项目通常涉及高研发成本、长周期和高风险，因此吸引了更大额度的融资支持。\n\n### 资金规模与行业特性的关系\n\n生物技术行业融资金额远高于一般技术或消费品行业，原因包括：\n\n- **高研发投入**：生物技术产品从研发到商业化一般周期较长，且研发成本巨大，需要大量资金支持。\n- **资本密集型行业**：技术复杂，需要实验设备、临床试验等多方面投入。\n- **潜在高回报**：虽然风险大，但一旦取得突破，市场回报空间极大，吸引大规模资本进入。\n\n这些因素综合导致了单笔融资金额的显著提升。\n\n### 其他行业融资情况（数据库中暂无详细数据）\n\n本次查询主要聚焦于平均单笔融资金额最高的行业。虽然数据库中包含了多个行业的融资数据，但当前研究只提取了平均最高者的数据。未来若需更全面的行业融资对比分析，可以进一步查询和整理。\n\n## 结语\n\n结合公司内部真实数据，生物技术行业无疑是公司数据库里平均单笔融资金额最高的行业。这反映了该行业在资本市场的特殊地位和投资特点，为公司未来的投资策略和行业布局提供了重要参考依据。\n\n---\n\n## 参考资料\n\n[1] 公司内部融资数据库查询结果 (2026年10月13日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ZgQikQnrOIGPlMW4AJYFEKGg"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003256
+  }
+}

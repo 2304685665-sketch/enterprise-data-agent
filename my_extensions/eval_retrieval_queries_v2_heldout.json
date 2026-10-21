@@ -1,0 +1,137 @@
+{
+ "version": "2-heldout-v0.2",
+ "status": "FROZEN_QUERIES_NO_API_YET",
+ "note": "查询文本、目标标注与评分规则在查看任何检索排名（含 BM25）之前写定并冻结（2026-10-12）。冻结不等于授权调用 embedding API。冻结后不得为改善指标修改查询或标注；发现标注错误须保留本版本并新增版本号说明。",
+ "purpose": "检验“给 chunk 添加公司名和文档标题（上下文头）是否改善检索”；不针对 E6/S6/S8/S9/M1 的回退调优。同一批查询要在 v1 索引和 v2 索引上都跑。",
+ "queries": [
+  {
+   "id": "H01",
+   "type": "entity",
+   "query": "NeuralPath 最近的发展状况怎么样？",
+   "targets": [
+    [
+     "doc06_neuralpath_funding_news",
+     "公司近况"
+    ]
+   ],
+   "reason": "v1 查询集没有任何查询以该 chunk 为目标；文中只有 doc06 公司近况谈团队规模和客户接洽。"
+  },
+  {
+   "id": "H02",
+   "type": "entity",
+   "query": "AtlasAI 的技术投入主要放在哪些方面？",
+   "targets": [
+    [
+     "doc04_atlasai_intro",
+     "核心技术"
+    ]
+   ],
+   "reason": "v1 没有以该 chunk 为目标的查询；自然语言交互与家庭环境感知只在此处。"
+  },
+  {
+   "id": "H03",
+   "type": "semantic",
+   "query": "哪家公司更侧重软件层面的能力，而不是机器人本体硬件？",
+   "targets": [
+    [
+     "doc04_atlasai_intro",
+     "核心技术"
+    ],
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "技术路线对比"
+    ]
+   ],
+   "reason": "doc09 技术路线对比明确写“聚焦软件层、本体硬件相对基础”；doc04 核心技术用不同的词表达同一意思（交互/感知投入多、运动能力基础）。注意：“软件/硬件”二字只出现在 doc09，所以这条对词面匹配有利，是已知偏置。"
+  },
+  {
+   "id": "H04",
+   "type": "semantic",
+   "query": "今年资本市场对这个赛道的热度怎么样？",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "总体趋势"
+    ]
+   ],
+   "reason": "“热度/活跃”出现在 doc05 总体趋势；地域分布 chunk 也含“活跃”，但讲的是分布，不作为目标。"
+  },
+  {
+   "id": "H05",
+   "type": "semantic",
+   "query": "哪家公司的研发周期相对更长？",
+   "targets": [
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "技术路线对比"
+    ]
+   ],
+   "reason": "“研发投入周期较长”只在 doc09 技术路线对比。"
+  },
+  {
+   "id": "H06",
+   "type": "keyword",
+   "query": "小批量试产",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "目标客户"
+    ],
+    [
+     "doc05_industry_report",
+     "值得关注的现象"
+    ]
+   ],
+   "reason": "“小批量/试产”只出现在这两个 chunk（已用字符串检索核对）。"
+  },
+  {
+   "id": "H07",
+   "type": "semantic",
+   "query": "哪些公司的量产推进速度更快？",
+   "targets": [
+    [
+     "doc07_competitive_landscape",
+     "差异化观察"
+    ],
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "市场定位对比"
+    ]
+   ],
+   "reason": "“节奏”只出现在这两个 chunk（doc07 差异化观察：量产节奏相对领先；doc09 市场定位对比：落地节奏）。已避开“工业”一词：它出现在 7 个 chunk，标注会不完整。"
+  },
+  {
+   "id": "H08",
+   "type": "semantic",
+   "query": "两次会议在对 SynthMotion 的看法上有哪里不一致？",
+   "targets": [
+    [
+     "doc10_meeting_notes_followup",
+     "关于 SynthMotion 的补充意见"
+    ]
+   ],
+   "reason": "与 v1 的 S6 目标 chunk 相同（同一 chunk，不同问法）；保留以观察同一目标在新措辞下的表现，报告时单独标注。"
+  },
+  {
+   "id": "N7",
+   "type": "no_answer",
+   "query": "AtlasAI 签下的第一份商业合同金额是多少？",
+   "targets": [],
+   "reason": "知识库没有合同金额（已检索“合同”二字，无命中）。"
+  },
+  {
+   "id": "N8",
+   "type": "no_answer",
+   "query": "NeuralPath 最近一轮融资后的估值是多少？",
+   "targets": [],
+   "reason": "知识库没有估值（已检索“估值”二字，无命中）；doc06 融资背景讲融资用途，是最可能的干扰项。"
+  }
+ ],
+ "reporting_rules": [
+  "以查询为单位报告 Hit@1 / MRR；多目标查询(H03/H06/H07)另报 Coverage@k；无答案查询(N7/N8)只做描述性记录。",
+  "H03 因“软件/硬件”二字只出现在 doc09，对词面匹配有利：单独标记，不当作纯语义泛化的证据。",
+  "H08 的目标 chunk 与 v1 的 S6 相同：不是完全独立的证据样本，汇总时单独标注，并给出去掉 H08 的结果。",
+  "同一批查询在 v1 索引与 v2 索引上用同样的 BM25 / 向量 / Hybrid 参数各跑一次；不得只拿 v2 与旧的 33 条结果比。",
+  "样本只有 8 条有答案查询，差异很可能不显著；如实写，不做外推。"
+ ]
+}

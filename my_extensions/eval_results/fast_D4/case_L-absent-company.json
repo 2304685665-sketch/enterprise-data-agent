@@ -1,0 +1,46 @@
+{
+  "case_id": "L-absent-company",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，OmegaBot 最新一轮融资金额是多少？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-company-75e549ba",
+  "started_at": "2026-10-13T15:19:45.314057+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.248,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# OmegaBot 最新一轮融资金额查询报告\n\n## 查询背景与目的\n\n本次研究旨在准确获取我们公司内部数据库中关于**OmegaBot**公司最新一轮融资的具体金额。为确保信息的准确性，所有数据均来自于公司内部数据库的结构化查询结果，严格避免基于印象或外部非官方渠道的猜测。\n\n## 查询过程及结果\n\n### 查询方式\n\n- 在内部数据库中的**companies**表中，以公司名称“OmegaBot”作为查询关键词，确认是否存在该公司基本资料。\n- 在**funding_rounds**表中，以相同名称检索对应的融资记录及金额信息。\n- 针对可能存在的名称拼写或记录变体，尝试扩大查询范围，但均以数据库中确切匹配结果为准。\n\n### 查询结果\n\n- 查询“OmegaBot”公司名称在**companies**和**funding_rounds**两个主要相关数据库表中均未返回任何记录。\n- 无论是公司基本信息还是最新融资轮次，数据库中均无可供参考的条目。\n- 初始化的三次独立查询均确认结果一致：无符合条件的数据库记录。\n\n### 进一步分析\n\n- 该结果可能表明：\n  - “OmegaBot”作为公司名称未被录入内部数据库，可能记载有不同的名称、拼写或缩写，需要确认公司名称的准确性或别名。\n  - 该公司可能尚未进行过已登记的融资活动，或融资活动未被同步录入当前数据库。\n- 建议确认该公司的标准注册名称或相关备选名称，方便进一步检索。\n- 也可考虑查询相关业务部门是否有未同步至数据库的内部信息。\n\n## 结论\n\n截至目前，基于公司内部数据库的系统性查询，**无法获取OmegaBot最新一轮融资金额的任何具体数据**。数据库中无OmegaBot相关融资记录，无法直接提供准确的融资金额数字。\n\n为获得该数据，建议：\n\n- 由用户确认公司名称的正式登记名称或是否有其他备选名称。\n- 进一步协调内部负责融资信息录入的部门，确认是否有未更新的资料。\n- 若允许，也可考虑从外部正规融资数据库或公告渠道补充验证。\n\n## 附录\n\n| 查询内容         | 结果                  |\n|------------------|-----------------------|\n| 公司名称查询     | 无“OmegaBot”记录      |\n| 融资轮次查询     | 无融资信息记录        |\n| 名称变体及扩展查询 | 未发现其他相关记录    |\n\n---\n\n### 来源\n\n本报告数据和结果完全基于内部数据库相关表的正式查询，未采用任何第三方或外部信息。\n\n---\n\n# Sources\n\n由于本报告信息完全来源于内部数据库查询，暂无外部链接引用。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_0e6l03boDv4RqD1WiVPlJIum",
+      "call_2dGIO2TbghNyufwGyc8W5Y5E",
+      "call_uOpZzKg5P29ojbPtMmFJdkcC"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004973
+  }
+}

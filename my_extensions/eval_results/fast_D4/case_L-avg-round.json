@@ -1,0 +1,42 @@
+{
+  "case_id": "L-avg-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有融资轮次的平均金额是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-avg-round-b2fbbc68",
+  "started_at": "2026-10-13T15:09:29.018742+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.417,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有融资轮次的平均金额研究报告\n\n## 概述\n\n本报告基于公司内部数据库的最新数据，准确回答了“所有融资轮次的平均金额是多少美元？”这一问题。数据直接来源于内部数据库查询，确保回答完全基于事实，而非印象或推测。  \n\n## 融资轮次平均金额数据分析\n\n根据对公司数据库中所有融资记录的统计分析，计算得出：\n\n- **所有融资轮次的美元平均金额为约 53,120,737 美元。**\n\n该数据涵盖了公司内部记录的全部融资轮次，不同阶段（如种子轮、天使轮、A轮、B轮及后续轮次）均被纳入统计，体现了融资规模的综合平均水平。  \n\n### 数据来源及准确性\n\n- 数据直接来源于公司内部数据库，查询时未作任何抽样或估计。\n- 所有融资金额均以美元计价，避免了币种转换产生的误差。\n- 平均值反映的是所有轮次的融资总额除以轮次数，能较好反映融资金额的整体水平。\n- 该平均金额可能受极高融资额的轮次影响偏高，但因涵盖全部轮次，整体具备代表性。\n\n## 融资轮次金额概览的重要性\n\n融资轮次的平均资金规模是衡量公司融资能力、投资者信心以及市场环境的重要指标。了解该平均金额有助于：\n\n- 评估公司在各融资阶段的资本获取表现\n- 指导未来融资策略的制定\n- 辅助投资者对公司融资情况的客观判断\n- 辅助财务规划和资源分配\n\n## 总结\n\n通过直接查询公司内部数据库，所有融资轮次的平均融资金额为约 **53,120,737 美元**。该数据为准确反映公司融资活动整体规模的关键参考数字，具有重要的战略和运营价值。\n\n---\n\n### 参考资料\n\n[1] 公司内部融资数据库查询结果（2026年10月13日）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_TTzvY5PXdHYAHDNmKF4nuo2y"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003139
+  }
+}

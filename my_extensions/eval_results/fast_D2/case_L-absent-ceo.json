@@ -1,0 +1,55 @@
+{
+  "case_id": "L-absent-ceo",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Brightforge 的首席执行官是谁？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-ceo-529521a4",
+  "started_at": "2026-10-13T15:27:34.335043+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 51.876,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Brightforge 公司首席执行官信息调研报告\n\n## 调研背景\n\n应调研需求，需从我司内部数据库中直接查询 Brightforge 公司的现任首席执行官（CEO）信息，旨在确保提供的资料准确可靠，避免依赖个人记忆或外部未经验证的资料来源。\n\n## Brightforge 公司基本信息\n\n经数据库检索，确认 Brightforge 公司记录确实存在，且相关基本信息如下：\n\n- 公司ID：3\n- 所属行业：生物科技（Biotech）\n- 成立时间：2020年\n- 融资情况：2020年10月5日完成一轮种子轮融资，金额为26,506,000美元\n\n此信息展示公司运营及融资历史轨迹，有助于判断其活跃度与规模，但公司内部数据库未涉及详细的员工高管职务记录。\n\n## 首席执行官信息查询结果分析\n\n针对 Brightforge CEO 直接查询的尝试，包括：\n\n- 查询内部数据库中可能存储高管信息的表（如 company_executives）  \n- 利用关键字检索内部文档和资料库（关键词如“CEO of Brightforge”、“Brightforge CEO”、“Brightforge leadership”）\n\n均未检索到任何明确的 CEO 姓名或相关职位信息。  \n\n### 数据库表查询\n\n- 内部数据库中无专门存储公司高管职务的表结构。特别是未发现任何名为“company_executives”或类似的表格，故无法从结构化数据中直接提取首席执行官信息。\n\n### 内部文档搜索\n\n- 多次关键词检索覆盖了公司内部相关业务介绍、竞争环境分析等多个文档。检索结果中提及了多家竞争公司及其领导成员，例如 SynthMotion、RoboWorks、NeuralPath、AtlasAI 等，但都未涉及 Brightforge 及其领导团队。\n\n- 最相关的三份文档（doc07_competitive_landscape、doc01_synthmotion_intro、doc03_roboworks_intro）均未包含 Brightforge CEO 信息。\n\n## 结论\n\n基于对公司内部数据库及文档资料的全面检索，同时遵守不依赖记忆和非官方渠道的原则，可得出的结论是：\n\n- **我司内部数据库及文档中当前不包含 Brightforge 公司现任首席执行官的名称或相关任职信息。**\n- 由于缺乏专门的高管数据库或足够覆盖的内部资料，无法准确提供该数据。\n- 建议后续可考虑完善内部高管数据记录体系，或通过公司授权的正式对外查询渠道获取该信息。\n\n## 资料参考\n\n- Brightforge 公司基础数据 - 内部数据库 companies 表查询结果  \n- 融资轮次信息 - 内部数据库 funding_rounds 表查询  \n- 内部企业文件及竞争对手分析文档关键词检索结果  \n\n---\n\n### Sources\n\n[1] 内部数据库 companies 表查询结果  \n[2] 内部数据库 funding_rounds 表查询结果  \n[3] 内部文档关键词搜索结果（doc07_competitive_landscape, doc01_synthmotion_intro, doc03_roboworks_intro）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 6,
+      "think_tool": 1,
+      "internal_doc_search": 3
+    },
+    "sql_calls": 6,
+    "sql_call_ids": [
+      "call_9wiQW4bKt9vYrjC6qTTOVpJK",
+      "call_TsU6go2Md2xC7We4DaYgK18T",
+      "call_WWWMIOjvBZLme9Msq3iJRVk8",
+      "call_XBdObsu6HkjuxmYiMj7rWGkE",
+      "call_qwUXrbrKEP1fn5PWeC3SLoHy",
+      "call_rBtVlpqGtX3SB15XlDRogcQ5"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "error"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {
+      "internal_doc_search": 3
+    },
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 13,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.01071
+  }
+}

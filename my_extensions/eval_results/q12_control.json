@@ -1,0 +1,62 @@
+{
+  "input_question": "我们公司内部的文档知识库里，有没有关于'SynthMotion'的记录？比如公司介绍、产品信息，或者我们内部对这家公司的评估意见。",
+  "run_config": {
+    "configurable": {
+      "allow_clarification": false
+    }
+  },
+  "started_at": "2026-09-20T12:58:11.172310+00:00",
+  "thread_id": "01a0bee5-4366-7612-ba75-5ac10669e2d9",
+  "run_id": "01a0bee5-4368-71a1-8f53-8191103ba79f",
+  "run_status": "success",
+  "wall_clock_seconds": 23.49555341701489,
+  "final_report": "# 关于 SynthMotion 的内部知识库文档综述报告\n\n## 公司简介与背景\n\nSynthMotion 是一家聚焦于高动态平衡控制算法的人工智能与机器人公司，致力于为工业场景提供先进的双足人形机器人解决方案。公司自成立以来，核心技术研发持续迭代，形成了较强的算法与硬件一体化能力。在公司内部相关文档与会议纪要中，SynthMotion 被多次提及为该赛道具备领先技术积累的重要企业之一【1】【2】【3】【4】。\n\n截至 2026 年，SynthMotion 已完成多轮融资，并在资本市场获得较高关注。根据我司内部模拟融资数据库，本年度最新一轮为 C 轮融资，融资金额达 8000 万美元，显示其资本认可度与扩张动力均处于行业前列【1】【2】【3】【4】。\n\n## 产品信息\n\nSynthMotion 的主打产品为面向工业应用的双足人形机器人平台。产品亮点主要体现在以下几个方面：\n\n- 基于自研动态平衡控制算法，实现复杂工业环境下高可靠性的移动与作业能力。\n- 在传感融合、环境感知、力控以及末端执行方面具备高度集成的技术方案，降低对外围协作设备的依赖。\n- 重点场景包括但不限于工业质检、仓储分拣与重载搬运，相关产品在多家龙头企业进行试点并取得积极反馈。\n- 量产节奏较快，工业场景下的落地速度优于市场普遍预期，为其提升市场份额提供了有力支撑【1】【2】【3】【4】。\n\n## 公司内部评估与意见\n\n### 技术与产品竞争力\n\n我司在多份会议纪要和竞品分析报告中，对 SynthMotion 的技术实力与产品定位进行了系统性评估：\n\n- 一致认为其动态平衡控制算法技术在行业中具备一定领先性，特别是在高动态复杂环境下的稳定性表现突出。\n- 会议记录显示，相关与会成员认为，SynthMotion 的工业应用产品落地速度显著快于同期同类公司，工程化及商业化进展顺利。\n- 供应链管理能力近年来稳步提升，仅剩中游关键部件存在阶段性瓶颈，与会成员整体持乐观态度，预计在下一阶段可逐步缓解【2】【4】。\n\n### 风险与关注点\n\n- 虽然技术路线和落地能力受到积极评价，但关于量产进度和供应链瓶颈，内部观点略有分歧：8 月份会议纪要曾持谨慎态度，而最新跟进会议则部分成员表达了更为乐观的看法。不过分歧主要集中于“问题解决时间预期”，对于其核心技术路线没有否定意见。\n- 目前公司决策层已将 SynthMotion 列为后续重点持续跟踪对象，暂未作出最终投资或深度合作决定【2】【4】。\n\n### 行业地位对比\n\n在最近整理的竞品分析报告中，SynthMotion 被视为与 RoboWorks 共同定位于工业场景的标杆企业，两者的量产和市场推进节奏均优于其他同赛道公司。对比来看，AtlasAI 主要面向消费端，商业化路径更长；NeuralPath 则更多聚焦在算法供应，暂未有自有整机产品落地。【3】\n\n## 结论\n\n综上所述，公司内部知识库已涵盖 SynthMotion 的公司背景、产品信息与评价意见。总体来看，SynthMotion 在工业人形机器人领域具备领先的技术实力和较快的市场转化能力，受到公司内部持续关注。截至目前，相关内部结论整体倾向于积极乐观，关注点主要集中于量产及供应链层面的短期不确定性。\n\n## Sources\n\n[1] doc01_synthmotion_intro  \n[2] doc08_meeting_notes_synthmotion  \n[3] doc07_competitive_landscape  \n[4] doc10_meeting_notes_followup  ",
+  "raw_notes": [
+    "\n[Source: doc01_synthmotion_intro, section: 技术方向, relevance_distance: 0.428]\n## 技术方向\nSynthMotion 的核心技术方向是高动态平衡控制算法，主打产品是面向工业场景的双足人形机器人平台。\n\n---\n\n[Source: doc01_synthmotion_intro, section: 融资历程, relevance_distance: 0.500]\n## 融资历程\n截至2026年，SynthMotion 已完成多轮融资。公司内部模拟融资数据库记录显示，最近一轮为 Series C，融资金额为8000万美元。\n\n---\n\n[Source: doc08_meeting_notes_synthmotion, section: 讨论要点, relevance_distance: 0.507]\n## 讨论要点\n与会人员一致认为 SynthMotion 的动态平衡控制算法在同类公司中具备一定技术领先性，\n在工业质检场景的落地速度也快于预期。\n\n---\n\n[Source: doc10_meeting_notes_followup, section: 关于 SynthMotion 的补充意见, relevance_distance: 0.555]\n## 关于 SynthMotion 的补充意见\n本次会议上，有与会人员对 SynthMotion 的量产进度表示相对乐观，\n认为其供应链问题预计可在下一阶段逐步缓解，与8月会议纪要中的谨慎态度相比略有分歧，\n但双方均认可其技术路线本身具备竞争力，分歧主要集中在供应链问题解决的时间预期上，不涉及技术评价本身。\n\n---\n\n[Source: doc08_meeting_notes_synthmotion, section: 结论, relevance_distance: 0.562]\n## 结论\n会议决定将 SynthMotion 列为重点跟踪标的，暂不作出最终投资判断。\nname\ncompanies\nfunding_rounds\n[Source: doc01_synthmotion_intro, section: 融资历程, relevance_distance: 0.431]\n## 融资历程\n截至2026年，SynthMotion 已完成多轮融资。公司内部模拟融资数据库记录显示，最近一轮为 Series C，融资金额为8000万美元。\n\n---\n\n[Source: doc01_synthmotion_intro, section: 技术方向, relevance_distance: 0.432]\n## 技术方向\nSynthMotion 的核心技术方向是高动态平衡控制算法，主打产品是面向工业场景的双足人形机器人平台。\n\n---\n\n[Source: doc08_meeting_notes_synthmotion, section: 讨论要点, relevance_distance: 0.501]\n## 讨论要点\n与会人员一致认为 SynthMotion 的动态平衡控制算法在同类公司中具备一定技术领先性，\n在工业质检场景的落地速度也快于预期。\n\n---\n\n[Source: doc08_meeting_notes_synthmotion, section: 结论, relevance_distance: 0.537]\n## 结论\n会议决定将 SynthMotion 列为重点跟踪标的，暂不作出最终投资判断。\n\n---\n\n[Source: doc10_meeting_notes_followup, section: 关于 SynthMotion 的补充意见, relevance_distance: 0.538]\n## 关于 SynthMotion 的补充意见\n本次会议上，有与会人员对 SynthMotion 的量产进度表示相对乐观，\n认为其供应链问题预计可在下一阶段逐步缓解，与8月会议纪要中的谨慎态度相比略有分歧，\n但双方均认可其技术路线本身具备竞争力，分歧主要集中在供应链问题解决的时间预期上，不涉及技术评价本身。\n[Source: doc01_synthmotion_intro, section: 技术方向, relevance_distance: 0.404]\n## 技术方向\nSynthMotion 的核心技术方向是高动态平衡控制算法，主打产品是面向工业场景的双足人形机器人平台。\n\n---\n\n[Source: doc01_synthmotion_intro, section: 融资历程, relevance_distance: 0.469]\n## 融资历程\n截至2026年，SynthMotion 已完成多轮融资。公司内部模拟融资数据库记录显示，最近一轮为 Series C，融资金额为8000万美元。\n\n---\n\n[Source: doc08_meeting_notes_synthmotion, section: 讨论要点, relevance_distance: 0.491]\n## 讨论要点\n与会人员一致认为 SynthMotion 的动态平衡控制算法在同类公司中具备一定技术领先性，\n在工业质检场景的落地速度也快于预期。\n\n---\n\n[Source: doc10_meeting_notes_followup, section: 关于 SynthMotion 的补充意见, relevance_distance: 0.514]\n## 关于 SynthMotion 的补充意见\n本次会议上，有与会人员对 SynthMotion 的量产进度表示相对乐观，\n认为其供应链问题预计可在下一阶段逐步缓解，与8月会议纪要中的谨慎态度相比略有分歧，\n但双方均认可其技术路线本身具备竞争力，分歧主要集中在供应链问题解决的时间预期上，不涉及技术评价本身。\n\n---\n\n[Source: doc07_competitive_landscape, section: 差异化观察, relevance_distance: 0.531]\n## 差异化观察\nSynthMotion 和 RoboWorks 更偏工业场景，量产节奏相对领先；AtlasAI 面向消费端，商业化路径更长；\nNeuralPath 聚焦算法层，更偏技术供应商角色，尚未明确自有整机产品方向。\n[Source: doc08_meeting_notes_synthmotion, section: 讨论要点, relevance_distance: 0.529]\n## 讨论要点\n与会人员一致认为 SynthMotion 的动态平衡控制算法在同类公司中具备一定技术领先性，\n在工业质检场景的落地速度也快于预期。\n\n---\n\n[Source: doc01_synthmotion_intro, section: 技术方向, relevance_distance: 0.539]\n## 技术方向\nSynthMotion 的核心技术方向是高动态平衡控制算法，主打产品是面向工业场景的双足人形机器人平台。\n\n---\n\n[Source: doc10_meeting_notes_followup, section: 关于 SynthMotion 的补充意见, relevance_distance: 0.540]\n## 关于 SynthMotion 的补充意见\n本次会议上，有与会人员对 SynthMotion 的量产进度表示相对乐观，\n认为其供应链问题预计可在下一阶段逐步缓解，与8月会议纪要中的谨慎态度相比略有分歧，\n但双方均认可其技术路线本身具备竞争力，分歧主要集中在供应链问题解决的时间预期上，不涉及技术评价本身。\n\n---\n\n[Source: doc08_meeting_notes_synthmotion, section: 结论, relevance_distance: 0.563]\n## 结论\n会议决定将 SynthMotion 列为重点跟踪标的，暂不作出最终投资判断。\n\n---\n\n[Source: doc01_synthmotion_intro, section: 融资历程, relevance_distance: 0.578]\n## 融资历程\n截至2026年，SynthMotion 已完成多轮融资。公司内部模拟融资数据库记录显示，最近一轮为 Series C，融资金额为8000万美元。\n\nReflection recorded: A comprehensive set of internal document search results returned multiple relevant excerpts from documents such as company introductions, meeting notes, and competitive analyses. These cover SynthMotion’s background (technical focus and financing), product information (bipedal robots for industrial applications), and internal assessments (noting competitive advantages and also concerns about supply chain and production pace). Many snippets are repeated or highly similar, indicating saturation on these themes. SQL schema listed tables but did not reveal additional structured SynthMotion-specific data. I now need to organize and summarize findings with a focus on company background, products, and internal evaluations, incorporating any document metadata that is apparent.\n\n"
+  ],
+  "tasks_errors": [],
+  "run_error": null,
+  "finished_at": "2026-09-20T12:58:34.694351+00:00",
+  "question_id": "Q12_control",
+  "evidence": {
+    "raw_notes_retrieval_fingerprint": {
+      "internal_doc_search_content_detected": true,
+      "returned_doc_ids": [
+        "doc01_synthmotion_intro",
+        "doc07_competitive_landscape",
+        "doc08_meeting_notes_synthmotion",
+        "doc10_meeting_notes_followup"
+      ],
+      "note": "命中是预期中的正常情况：检索没有相似度阈值，查询不存在的实体也几乎必然会返回若干篇真实文档，这不代表回答本身有问题，只用于帮助人工核对模型实际看到过哪些真实内容。"
+    },
+    "synthmotion_reference_keyword_hits": [
+      "动态平衡",
+      "工业"
+    ],
+    "tool_invocation_structurally_confirmed": false
+  },
+  "human_review_status": "not_reviewed",
+  "notes_for_reviewer": "",
+  "knowledge_base_ground_truth_check": {
+    "verified_doc_files": [
+      "doc01_synthmotion_intro.md",
+      "doc02_synthmotion_product.md",
+      "doc03_roboworks_intro.md",
+      "doc04_atlasai_intro.md",
+      "doc05_industry_report.md",
+      "doc06_neuralpath_funding_news.md",
+      "doc07_competitive_landscape.md",
+      "doc08_meeting_notes_synthmotion.md",
+      "doc09_memo_roboworks_vs_atlasai.md",
+      "doc10_meeting_notes_followup.md"
+    ],
+    "xyz_present_in_knowledge_base": false,
+    "known_company_names": [
+      "SynthMotion",
+      "RoboWorks",
+      "NeuralPath",
+      "AtlasAI"
+    ],
+    "known_company_names_all_found": true
+  }
+}

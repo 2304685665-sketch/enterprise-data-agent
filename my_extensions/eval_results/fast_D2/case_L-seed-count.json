@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seed-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，一共有几笔 Seed 轮融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seed-count-ee36ec8f",
+  "started_at": "2026-10-13T15:12:56.232829+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 21.565,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Seed轮融资笔数统计报告\n\n## 一、研究背景与目标\n\n本次研究旨在从公司内部数据库中，准确查询并统计所有属于Seed轮（种子轮）融资的笔数。根据研究简报要求，查询过程严格依托数据库真实数据，不基于记忆或主观印象。查询不设时间范围或其他过滤条件，确保涵盖数据库中所有有关Seed轮的融资记录。\n\n## 二、数据库查询方法\n\n为了精确获得Seed轮融资的笔数，执行了以下SQL查询指令：\n\n```sql\nSELECT COUNT(*) AS seed_round_count FROM funding_rounds WHERE round_type = 'Seed';\n```\n\n- **表名及字段说明**：\n  - `funding_rounds`：存储所有融资轮次信息的数据库表\n  - `round_type`：表明融资轮次类别的字段，筛选条件为`Seed`\n- 查询未添加时间或其他限制参数，意在提取数据库中所有标记为Seed轮的融资记录。\n\n## 三、查询结果\n\n经过数据库准确查询，获得的Seed轮融资笔数如下：\n\n- **Seed轮融资总笔数：25笔**\n\n这一数据是基于截至目前数据库中所有相关项目完整统计，不存在遗漏和时间或类别上的筛选限制。\n\n## 四、结果分析与说明\n\n1. **数据完整性**  \n   由于无时间限制，25笔Seed轮融资反映公司数据库中所有的记录，无论早期抑或近期均包括在内。\n\n2. **数据准确性**  \n   直接查询数据库字段，无需依赖主观判断或估算，数据具有较高可信度。\n\n3. **数据使用限制**  \n   - 未涉及融资金额、公司名称、资本方信息等详细内容，数据库未被指明包含这些字段，或此次需求未涉及。\n   - 本报表仅统计笔数，如需进一步分类（如按行业、时间、地域等）需申请额外查询。\n\n## 五、总结\n\n基于公司内部数据库对融资轮次字段的精确查询，截至当前时点，公司已有完整记录的Seed轮融资笔数为25笔。该数字覆盖了数据库中所有符合Seed轮标准的融资事件，能够作为公司Seed轮融资活动的量化参考。\n\n如需后续细化分析（例如金额分析、投资方参与详情、时间序列趋势等），可基于此基础数据展开更深入的数据库挖掘。\n\n---\n\n## 六、参考来源\n\n[1] 公司内部融资数据库查询结果（SQL执行记录）\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_DUViR9sROS7pnXFr5cdDPi1J"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004242
+  }
+}

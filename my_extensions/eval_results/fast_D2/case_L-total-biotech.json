@@ -1,0 +1,42 @@
+{
+  "case_id": "L-total-biotech",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，Biotech 行业的公司融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-total-biotech-94d3d5e5",
+  "started_at": "2026-10-13T15:12:14.852126+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.388,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 内部数据库中生物技术行业公司融资总额汇报\n\n## 融资总金额概览\n\n根据对贵公司内部数据库的直接查询，生物技术（Biotech）行业公司截至目前记录的融资总金额为**7.89277亿美元（$789,277,000）**。该数据涵盖了数据库中所有被归类为“Biotech”行业的公司，无论其所处细分行业或发展阶段如何。数据库中所有相关融资记录均被纳入统计，时间维度未做限制，涵盖了所有可用融资数据。\n\n## 数据查询与处理方法\n\n为确保结果的准确性和权威性，融资数据完全来自对内部数据库的SQL查询，具体查询语句如下：\n\n```sql\nSELECT SUM(f.amount_usd) AS total_biotech_financing_usd\nFROM funding_rounds f\nJOIN companies c ON f.company_id = c.id\nWHERE c.industry = 'Biotech';\n```\n\n- 数据库中的融资金额字段`amount_usd`已以美元为统一币种，无需额外货币转换处理。\n- 公司行业标签严格为“Biotech”，确保抓取至所有生物技术相关公司，不遗漏任何子领域。\n- 加入所有可用融资轮次，保证融资总额完整覆盖。\n\n## 关于数据完整性与一致性\n\n- 数据库保持融资金额的货币单位统一为美元，这避免了因多币种而产生的计算偏差。\n- 所有符合条件的公司和融资轮数据均计入结果，排除了估计与主观判断的可能，符合精确统计要求。\n- 数据库无时间限定，涵盖所有记录的融资历史，确保尽可能全方位反映生物技术领域的融资规模。\n\n## 结论\n\n基于上述直接且精确的数据库查询，贵公司内部数据库中生物技术行业公司的融资总额为**7.89277亿美元**。该数据代表所有相关记录的累计融资金额，是针对您需求的准确且权威的内部数据结果。\n\n如需更细分的融资时间段、公司名单、细分行业融资情况分析，均可基于现有数据库做进一步查询。\n\n---\n\n### 来源\n\n- 内部数据库SQL查询结果（本报告唯一数据源）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_twZ8IimzqK3x9JpuiesYe56Y"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004901
+  }
+}

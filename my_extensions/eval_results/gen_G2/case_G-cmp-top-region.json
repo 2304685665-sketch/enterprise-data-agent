@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-top-region",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个区域的客户订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-region-be25e121",
+  "started_at": "2026-10-13T15:16:33.008177+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.667,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 哪个区域的客户订单金额累计最高？——基于公司内部数据库的精准查询分析报告\n\n## 研究目的\n\n本次研究旨在通过直接查询公司内部数据库，精准识别客户订单金额累计最高的地理区域，并返回该区域对应的准确数字总额。所有数据均来自数据库，无任何主观臆断或估算，确保结果的权威性与准确性。\n\n## 数据查询方法\n\n为实现研究目标，使用了如下SQL查询语句，直接对客户信息表（customers）与订单信息表（orders）进行关联统计：\n\n```sql\nSELECT c.region, SUM(o.amount_usd) AS total_order_amount \nFROM customers c \nJOIN orders o ON c.customer_id = o.customer_id \nGROUP BY c.region \nORDER BY total_order_amount DESC \nLIMIT 1;\n```\n\n该查询通过：\n\n- 按客户所属地区（region）分组计算订单总金额\n- 汇总各地区所有客户的订单金额（以美元计）\n- 对结果按总金额降序排序\n- 取金额最高的单一区域及其累计金额\n\n从而保证结果完全基于公司内部数据的真实记录。\n\n## 研究发现\n\n根据上述直接查询，公司内部数据库显示：\n\n- **累计客户订单金额最高的区域是“Central”区域**。\n- 该区域的累计订单总金额精确数值为 **15,575.97 美元**。\n\n此数据完全基于订单与客户基础数据表的实际记录计算，无任何估算、主观判断或推断。\n\n## 结果分析\n\n- “Central”区域的客户在订单金额方面表现最为突出，累计超过其他所有区域。\n- 精确金额15,575.97美元反映了该区域客户的集中采购力或订单频率较高，可能是公司重点市场或资源倾斜区域。\n- 通过此数据，公司可以针对该区域制定更有针对性的营销策略、客户管理及资源分配计划，以维持和提升销售业绩。\n- 其他区域的数据虽未详细展示，但此结果显示了显著的地域订单集中趋势。\n\n## 结论\n\n基于公司内部数据库的直接数据查询，**Central 区域以15,575.97美元的客户订单累计金额位列全公司最高**。此信息为公司制定区域发展策略及客户资源分配提供了实证依据，具备高度参考和决策价值。\n\n---\n\n### 数据来源\n\n[1] 内部公司数据库客户与订单信息查询结果 (SQL查询执行)  \n\n---\n\n### Sources\n\n[1] 内部公司数据库客户与订单信息查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_Who795KmnZ0rSBhb5orziXY2"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004603
+  }
+}

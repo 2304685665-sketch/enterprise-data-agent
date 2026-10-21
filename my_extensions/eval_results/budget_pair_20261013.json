@@ -1,0 +1,53 @@
+{
+  "a": "main_final",
+  "b": "budget_C_react4",
+  "n": 53,
+  "calls": {
+    "mean_a": 13.3019,
+    "mean_b": 13.1321,
+    "mean_diff_b_minus_a": -0.1698,
+    "median_diff": -1,
+    "n_nonzero": 46,
+    "W_plus": 474.5,
+    "z": 0.718,
+    "p": 0.4729
+  },
+  "cost": {
+    "mean_a": 0.0109,
+    "mean_b": 0.011,
+    "mean_diff_b_minus_a": 0.0001,
+    "median_diff": -0.0006,
+    "n_nonzero": 53,
+    "W_plus": 649.0,
+    "z": 0.584,
+    "p": 0.559
+  },
+  "sql": {
+    "mean_a": 4.2642,
+    "mean_b": 4.0566,
+    "mean_diff_b_minus_a": -0.2075,
+    "median_diff": 0,
+    "n_nonzero": 36,
+    "W_plus": 307.0,
+    "z": 0.404,
+    "p": 0.6864
+  },
+  "v1": {
+    "pass_a": 42,
+    "pass_b": 44,
+    "a_only_pass": 1,
+    "b_only_pass": 3,
+    "mcnemar_exact_p": 0.625
+  },
+  "v2": {
+    "pass_a": 47,
+    "pass_b": 49,
+    "a_only_pass": 1,
+    "b_only_pass": 3,
+    "mcnemar_exact_p": 0.625
+  },
+  "ungrounded_cases": {
+    "a": 5,
+    "b": 9
+  }
+}

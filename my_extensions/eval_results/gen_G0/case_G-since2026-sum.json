@@ -1,0 +1,47 @@
+{
+  "case_id": "G-since2026-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2026 年 1 月 1 日及以后的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-since2026-sum-61a01883",
+  "started_at": "2026-10-13T15:16:46.570906+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 39.921,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于2026年1月1日及以后订单金额合计的详细报告\n\n## 一、背景与问题概述\n\n本报告旨在精准回答您提出的关于**公司内部数据库中所有订单，且订单日期在2026年1月1日及其之后的订单金额总计**的问题。用户请求直接从公司的内部数据库查询该时段内的订单金额总和，确保数据准确、实时，排除任何估算或印象性的回答。\n\n查询的截止日期为2026年10月13日，确保所呈现的数据反映截至今日最新的财务情况。\n\n---\n\n## 二、数据库查询过程及验证\n\n### 1. 初步查询尝试\n\n- 初始使用SQL语句尝试计算订单金额总和时，选定的字段名称为 `order_amount`。\n- 但执行时出现数据库错误提示：“no such column: order_amount”（无此列）。\n- 该错误提示表明数据库表结构中不包含 `order_amount` 列，需进一步确认正确的字段名称。\n\n### 2. 确认数据库结构\n\n- 对存储订单信息的`orders`表结构进行检查。\n- 发现该表包含以下关键字段：\n  - `order_id`：订单编号\n  - `customer_id`：客户编号\n  - `product_id`：产品编号\n  - `quantity`：数量\n  - `amount_usd`：订单金额（美元）\n  - `order_date`：订单日期\n  - `status`：订单状态\n\n- 由此确认，正确代表订单美元金额的字段名称为`amount_usd`。\n\n### 3. 正确SQL查询语句\n\n利用正确字段，执行以下SQL聚合查询：\n\n```sql\nSELECT SUM(amount_usd) AS total_order_amount\nFROM orders\nWHERE order_date >= '2026-01-01';\n```\n\n该查询精确计算出自2026年1月1日起所有订单的美元金额总和。\n\n---\n\n## 三、查询结果及分析\n\n- 查询结果显示，2026年1月1日及以后所有订单的累计美元金额为：\n\n  **16,093.21 美元（USD）**\n\n- 该金额是基于公司内部权威数据库最新数据，反映至2026年10月13日为止的全部相关订单金额，无任何估计或推断。\n\n- 数据表明，在过去近十个月的时间里，公司的订单金额总额维持在上述水平，体现了精确的销售财务表现。\n\n---\n\n## 四、总结\n\n- 本次查询严格遵循原始需求，完全基于公司内部数据库官方数据进行SQL实时查询。\n- 通过确认正确字段名`amount_usd`后，获得了精确且无误的订单金额总和。\n- 查询结果为16,093.21美元，准确截止于2026年10月13日当天。\n- 本数据可直接用于贵公司的财务报告、业绩分析及决策支持，不包含任何估计成分。\n- 如需进一步细分或基于其他筛选条件的统计，也可基于此基础数据做细化分析。\n\n---\n\n## 五、相关信息来源\n\n- 本次报告所有数据均来自公司内部数据库的`orders`订单表，未涉及任何外部数据来源或推算。\n- 查询依赖于数据库架构验证，并通过精确SQL语句获取，确保结果极高的准确性和时效性。\n\n---\n\n### 相关引用\n\n无外部引用，所有数据均为即时数据库查询所得。\n\n---\n\n# 总结\n\n| 时间区间          | 订单金额总计（美元） |\n|-------------------|---------------------|\n| 2026年1月1日起至10月13日 | 16,093.21 USD       |\n\n该数字为公司内部权威数据库中真实准确的统计结果，符合您的需求。\n\n---\n\n### Sources\n\n无外部来源，数据来自公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_B9idKhUJZuli3bKVBD1hRR6N",
+      "call_UtmLe3iGgaEKq9qTu1aUvX0p",
+      "call_WpvlxTFzrOfVigFZMaQhepx7"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 12,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00984
+  }
+}

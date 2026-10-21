@@ -1,0 +1,49 @@
+{
+  "case_id": "L-year2024-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2024 年全年一共发生了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-year2024-count-d9331794",
+  "started_at": "2026-10-13T15:14:42.063284+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.244,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2024年公司内部数据库融资笔数统计报告\n\n## 总览\n\n本报告基于公司内部数据库的直接查询，精确统计了2024年全年在公司内部数据库中记录的融资交易总数。数据来源于数据库中融资相关表的时间戳字段，确保结果为准确、无估算成分的真实统计。\n\n## 数据查询方法\n\n通过执行以下SQL查询语句，从数据库的融资记录表`funding_rounds`中筛选出2024年1月1日至2024年12月31日期间的所有融资交易，并返回计数结果：\n\n```sql\nSELECT COUNT(*) AS financing_transactions_2024 \nFROM funding_rounds \nWHERE round_date >= '2024-01-01' AND round_date <= '2024-12-31';\n```\n\n该查询严格依托于已存储的融资日期字段，过滤出完整的2024年内所有融资轮次，无遗漏地统计了发生的实际融资交易数量。\n\n## 统计结果\n\n- 2024年全年，公司内部数据库中共发生融资交易笔数：**6笔**\n\n这一数字代表在规定时间内所有通过公司数据库记录的融资轮数。每笔融资均有对应的时间戳，保证了数据的准确性及权威性。\n\n## 结论\n\n利用数据库直连查询，确认2024年度公司内部确认的融资交易共计6笔。该数字精确反映了公司融资活动的数量规模，无依赖于人为记忆或估算，具备高度可信度。为后续财务分析、投资回顾等工作提供了可靠的数据支持。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库融资交易数据 (2024年1月1日–2024年12月31日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2024-01-01",
+        "2024-12-31"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_RV28y2c6VMafUDbru55X74w5"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004068
+  }
+}

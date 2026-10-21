@@ -1,0 +1,515 @@
+{
+ "version": "3-large-kb-v0.1",
+ "status": "FROZEN_QUERIES_NO_API_YET",
+ "note": "针对 knowledge_base_v3（46 个 chunk：原 25 个加 doc11–doc17 的 21 个）的新查询 44 条，在看到任何检索排名之前写定并冻结（2026-10-13）。评测时与 v1 的 33 条、v2 held-out 的 10 条一起作为总查询集（共 87 条，其中 8 条 held-out 和 44 条新查询均未参与任何调参）。冻结后不得为改善指标修改查询或标注；发现标注错误须保留本版本并新增版本号说明。",
+ "types": {
+  "entity": "直接点名实体的事实问",
+  "semantic": "刻意不复述原文关键词的语义问",
+  "keyword": "稀有字面词",
+  "no_answer": "知识库无答案"
+ },
+ "queries": [
+  {
+   "id": "K01",
+   "type": "entity",
+   "query": "RoboWorks 的力矩传感器芯片从哪里采购？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "核心零部件来源"
+    ]
+   ],
+   "reason": "芯片来源只在 doc11 核心零部件来源。"
+  },
+  {
+   "id": "K02",
+   "type": "entity",
+   "query": "RoboWorks 苏州工厂的月产能是多少台？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "产能与良率"
+    ]
+   ],
+   "reason": "月产能在 doc11 产能与良率。"
+  },
+  {
+   "id": "K03",
+   "type": "entity",
+   "query": "SynthMotion 目前有多少家试点客户？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "试点客户构成"
+    ]
+   ],
+   "reason": "7 家试点客户在 doc12 试点客户构成。"
+  },
+  {
+   "id": "K04",
+   "type": "entity",
+   "query": "SynthMotion 从签约到首台设备进场要多久？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "交付周期"
+    ]
+   ],
+   "reason": "平均 9 周在 doc12 交付周期。"
+  },
+  {
+   "id": "K05",
+   "type": "entity",
+   "query": "NeuralPath 的控制算法是怎么分层的？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "控制算法架构"
+    ]
+   ],
+   "reason": "分层结构在 doc13 控制算法架构。"
+  },
+  {
+   "id": "K06",
+   "type": "entity",
+   "query": "NeuralPath 的训练数据有多少来自仿真？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "训练数据来源"
+    ]
+   ],
+   "reason": "70% 仿真在 doc13 训练数据来源。"
+  },
+  {
+   "id": "K07",
+   "type": "entity",
+   "query": "AtlasAI 的产品路线图分几步？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "产品路线图"
+    ]
+   ],
+   "reason": "三步路线在 doc14 产品路线图。"
+  },
+  {
+   "id": "K08",
+   "type": "entity",
+   "query": "AtlasAI 打算招募多少户家庭参加试点？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "家庭试点计划"
+    ]
+   ],
+   "reason": "30 户在 doc14 家庭试点计划。"
+  },
+  {
+   "id": "K09",
+   "type": "entity",
+   "query": "四家公司里谁的团队规模最大？",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "团队规模对比"
+    ]
+   ],
+   "reason": "RoboWorks 约 210 人在 doc15 团队规模对比。"
+  },
+  {
+   "id": "K10",
+   "type": "entity",
+   "query": "NeuralPath 过去一年有哪些人离职？",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "核心人员流动"
+    ]
+   ],
+   "reason": "两名算法负责人离职在 doc15 核心人员流动。"
+  },
+  {
+   "id": "K11",
+   "type": "entity",
+   "query": "AtlasAI 的现金还能撑多久？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "资金风险"
+    ]
+   ],
+   "reason": "约 14 个月在 doc16 资金风险。"
+  },
+  {
+   "id": "K12",
+   "type": "entity",
+   "query": "工业人形机器人整机现在报价大概多少？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "定价区间"
+    ]
+   ],
+   "reason": "45 万到 70 万元在 doc17 定价区间。"
+  },
+  {
+   "id": "K13",
+   "type": "entity",
+   "query": "SynthMotion 的售后响应承诺是多久？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "售后服务机制"
+    ]
+   ],
+   "reason": "4 小时响应在 doc12 售后服务机制。"
+  },
+  {
+   "id": "K14",
+   "type": "entity",
+   "query": "RoboWorks 整机一次下线良率是多少？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "产能与良率"
+    ]
+   ],
+   "reason": "86% 在 doc11 产能与良率。"
+  },
+  {
+   "id": "K15",
+   "type": "semantic",
+   "query": "哪家公司的某种关键物料只有唯一的来源，一旦断供就很麻烦？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "核心零部件来源"
+    ],
+    [
+     "doc11_roboworks_supply_chain",
+     "供应中断风险"
+    ]
+   ],
+   "reason": "单一来源物料与备货只够十周分别在 doc11 两段。"
+  },
+  {
+   "id": "K16",
+   "type": "semantic",
+   "query": "有没有公司已经启动了备用供应商的评估？",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "供应中断风险"
+    ]
+   ],
+   "reason": "第二供应商认证在 doc11 供应中断风险。"
+  },
+  {
+   "id": "K17",
+   "type": "semantic",
+   "query": "试点客户里有没有人已经愿意正式下单买？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "试点客户构成"
+    ]
+   ],
+   "reason": "尚无客户转入正式采购在 doc12 试点客户构成。"
+  },
+  {
+   "id": "K18",
+   "type": "semantic",
+   "query": "设备用坏得最多的是哪个部位？",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "售后服务机制"
+    ]
+   ],
+   "reason": "末端执行器磨损在 doc12 售后服务机制。"
+  },
+  {
+   "id": "K19",
+   "type": "semantic",
+   "query": "哪家公司承认自己用到的真实世界样本太少？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "训练数据来源"
+    ]
+   ],
+   "reason": "真实数据偏少在 doc13 训练数据来源。"
+  },
+  {
+   "id": "K20",
+   "type": "semantic",
+   "query": "被人推了一把之后还能站稳的成功率是多少？",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "评测基准"
+    ]
+   ],
+   "reason": "推力扰动恢复成功率 81% 在 doc13 评测基准。"
+  },
+  {
+   "id": "K21",
+   "type": "semantic",
+   "query": "哪家公司承诺拍到的画面不会传到云端？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "隐私与合规"
+    ]
+   ],
+   "reason": "本地处理不上传在 doc14 隐私与合规。"
+  },
+  {
+   "id": "K22",
+   "type": "semantic",
+   "query": "哪家公司打算先让机器人学会聊天，再学做家务？",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "产品路线图"
+    ]
+   ],
+   "reason": "先对话再递送再家务在 doc14 产品路线图。"
+  },
+  {
+   "id": "K23",
+   "type": "semantic",
+   "query": "哪家公司急着要找懂强化学习的人？",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "招聘重点"
+    ]
+   ],
+   "reason": "NeuralPath 招强化学习研究员在 doc15 招聘重点。"
+  },
+  {
+   "id": "K24",
+   "type": "semantic",
+   "query": "谁家的员工里搞生产和检测的占了一大半？",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "团队规模对比"
+    ]
+   ],
+   "reason": "RoboWorks 制造与测试人员占比过半在 doc15 团队规模对比。"
+  },
+  {
+   "id": "K25",
+   "type": "semantic",
+   "query": "哪家公司离“钱烧完”最近？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "资金风险"
+    ]
+   ],
+   "reason": "跑道最短在 doc16 资金风险。"
+  },
+  {
+   "id": "K26",
+   "type": "semantic",
+   "query": "如果监管要求变严，哪家公司的产品可能要晚点上市？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "政策与合规风险"
+    ]
+   ],
+   "reason": "重新做安全认证可能延迟在 doc16 政策与合规风险。"
+  },
+  {
+   "id": "K27",
+   "type": "semantic",
+   "query": "家用机器人什么时候才会有大规模需求？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "市场规模测算"
+    ]
+   ],
+   "reason": "家庭场景晚两到三年在 doc17 市场规模测算。"
+  },
+  {
+   "id": "K28",
+   "type": "semantic",
+   "query": "卖给工厂的和卖给家庭的，价格差了多少倍？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "定价区间"
+    ]
+   ],
+   "reason": "工业与家庭价格带在 doc17 定价区间。"
+  },
+  {
+   "id": "K29",
+   "type": "semantic",
+   "query": "经销商一般要拿走多少折扣？",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "销售渠道"
+    ]
+   ],
+   "reason": "系统集成商约 15% 渠道折扣在 doc17 销售渠道。"
+  },
+  {
+   "id": "K30",
+   "type": "semantic",
+   "query": "哪些技术短板是几家公司各自面临的？",
+   "targets": [
+    [
+     "doc16_risk_register",
+     "技术风险"
+    ]
+   ],
+   "reason": "三项技术风险在 doc16 技术风险。"
+  },
+  {
+   "id": "K31",
+   "type": "keyword",
+   "query": "谐波减速器 特种钢材",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "核心零部件来源"
+    ]
+   ],
+   "reason": "谐波减速器只在 doc11。"
+  },
+  {
+   "id": "K32",
+   "type": "keyword",
+   "query": "关节标定偏差",
+   "targets": [
+    [
+     "doc11_roboworks_supply_chain",
+     "产能与良率"
+    ]
+   ],
+   "reason": "关节标定偏差只在 doc11 产能与良率。"
+  },
+  {
+   "id": "K33",
+   "type": "keyword",
+   "query": "台月计费",
+   "targets": [
+    [
+     "doc12_synthmotion_customers",
+     "试点客户构成"
+    ]
+   ],
+   "reason": "台月计费只在 doc12。"
+  },
+  {
+   "id": "K34",
+   "type": "keyword",
+   "query": "200 赫兹 参考轨迹接口",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "控制算法架构"
+    ]
+   ],
+   "reason": "该接口只在 doc13 控制算法架构。"
+  },
+  {
+   "id": "K35",
+   "type": "keyword",
+   "query": "模型预测控制器",
+   "targets": [
+    [
+     "doc13_neuralpath_algorithm",
+     "控制算法架构"
+    ]
+   ],
+   "reason": "MPC 只在 doc13。"
+  },
+  {
+   "id": "K36",
+   "type": "keyword",
+   "query": "个人信息保护 外部律所",
+   "targets": [
+    [
+     "doc14_atlasai_roadmap",
+     "隐私与合规"
+    ]
+   ],
+   "reason": "只在 doc14 隐私与合规。"
+  },
+  {
+   "id": "K37",
+   "type": "keyword",
+   "query": "股权激励 竞争对手",
+   "targets": [
+    [
+     "doc15_hiring_and_org",
+     "核心人员流动"
+    ]
+   ],
+   "reason": "只在 doc15 核心人员流动。"
+  },
+  {
+   "id": "K38",
+   "type": "keyword",
+   "query": "家电零售渠道",
+   "targets": [
+    [
+     "doc17_market_sizing",
+     "销售渠道"
+    ]
+   ],
+   "reason": "只在 doc17 销售渠道。"
+  },
+  {
+   "id": "K39",
+   "type": "no_answer",
+   "query": "RoboWorks 的力矩传感器芯片供应商叫什么名字？",
+   "targets": [],
+   "reason": "doc11 只说“境外供应商”，没有名字。"
+  },
+  {
+   "id": "K40",
+   "type": "no_answer",
+   "query": "SynthMotion 的试点客户里有哪家具体的汽车厂商？",
+   "targets": [],
+   "reason": "doc12 没有客户名称。"
+  },
+  {
+   "id": "K41",
+   "type": "no_answer",
+   "query": "NeuralPath 离职的算法负责人去了哪家公司？",
+   "targets": [],
+   "reason": "doc15 只说“竞争对手”，没有公司名。"
+  },
+  {
+   "id": "K42",
+   "type": "no_answer",
+   "query": "AtlasAI 试点家庭的招募条件里有没有收入要求？",
+   "targets": [],
+   "reason": "doc14 没有收入要求。"
+  },
+  {
+   "id": "K43",
+   "type": "no_answer",
+   "query": "2027 年工业人形机器人的采购台数预测是多少？",
+   "targets": [],
+   "reason": "doc17 只给了“数千台”的模糊说法，没有分年预测。"
+  },
+  {
+   "id": "K44",
+   "type": "no_answer",
+   "query": "谁是四家公司的共同最大股东？",
+   "targets": [],
+   "reason": "知识库没有股东信息。"
+  }
+ ]
+}

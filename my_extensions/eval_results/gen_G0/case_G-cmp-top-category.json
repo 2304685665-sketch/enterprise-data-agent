@@ -1,0 +1,45 @@
+{
+  "case_id": "G-cmp-top-category",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个品类的订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-category-2855e8cb",
+  "started_at": "2026-10-13T15:23:35.021655+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 38.408,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 报告：公司内部数据库中各产品品类累计订单金额分析\n\n## 概述\n\n本报告基于对公司内部数据库的直接查询，旨在明确各产品品类的累计订单金额，精准识别订单金额总和最高的品类。报告内容基于数据库中订单与产品相关表的联结和统计，未使用任何估算或印象式判断，确保数据的真实性和完整性。\n\n## 数据库架构与调研方法\n\n公司内部数据库包含多个相关表结构，订单和产品信息主要分布在以下表中：  \n\n- **products（产品表）**：包含产品ID、名称、品类、单价等字段。\n- **orders（订单表）**：包含订单ID、客户ID、产品ID、数量、订单金额USD、订单日期、订单状态等字段。\n\n使用SQL直接查询，对`orders`表中的订单金额进行汇总，依据`products`表中的产品品类进行分组统计。具体执行的SQL语句如下：\n\n```sql\nSELECT p.category, SUM(o.amount_usd) AS total_cumulative_order_amount \nFROM orders o \nJOIN products p ON o.product_id = p.product_id \nGROUP BY p.category \nORDER BY total_cumulative_order_amount DESC;\n```\n\n该查询将所有订单金额按产品品类精确累加，结果按降序排列，以便快速定位累计订单金额最高的品类。\n\n## 各产品品类累计订单金额明细\n\n数据库查询结果显示各品类累计订单金额（单位：美元）如下：\n\n| 产品品类   | 累计订单金额（USD）  |\n|----------|------------------|\n| Home     | 15,071.73        |\n| Tools    | 14,202.50        |\n| Kitchen  | 7,487.86         |\n| Electronics | 2,187.51      |\n\n可见，**Home**类别订单金额累计最高，达15,071.73 美元，明显领先其他品类。其次为**Tools（工具）**类，累计金额14,202.50美元，略低于Home类。厨房（Kitchen）品类与电子产品（Electronics）品类的累计金额相对较少，分别只有7,487.86美元和2,187.51美元。\n\n## 分析与洞见\n\n- **Home品类主导订单金额**：Home品类累计订单金额明显高于其他品类，表明该品类产品在市场中的销售表现突出，用户需求旺盛，可能涉及该品类产品种类丰富、价格范围较高或销售量大。\n- **Tools品类紧随其后**：工具类产品同样表现良好，接近Home品类的累计订单金额，显示该品类亦是公司的重要收入来源。\n- **Kitchen与Electronics品类相对较低**：厨房用品和电子产品品类的累计订单金额较低，或许由于产品价格较低，销量不足，或者品类内产品种类有限，值得关注是否存在市场开拓或产品优化空间。\n- **数据质量与全面性**：所有数据均来源于实际订单记录，确保统计结果的准确性。未包含任何估计成分，能够完全反映真实销售业绩。\n\n## 结论\n\n通过对公司内部真实订单数据的精确查询和统计，明确得出：  \n\n- **Home品类是公司内部数据库中累计订单金额最高的产品品类，总计达到15,071.73美元。**  \n- 其他较大品类依次为Tools（14,202.50美元）、Kitchen（7,487.86美元）和Electronics（2,187.51美元）。  \n\n该排名直观反映公司业务收入结构中Home品类的主导地位，有助于公司针对重点品类制定营销和采购策略，提升业务效益与市场竞争力。\n\n---\n\n### Sources\n\n[1] Internal Database Schema and Tables: 查询公司内部数据库表结构（`SELECT name, sql FROM sqlite_master WHERE type='table';`）\n\n[2] Cumulative Order Amounts by Product Category: SQL查询执行结果  \n  ```sql\n  SELECT p.category, SUM(o.amount_usd) AS total_cumulative_order_amount \n  FROM orders o \n  JOIN products p ON o.product_id = p.product_id \n  GROUP BY p.category \n  ORDER BY total_cumulative_order_amount DESC;\n  ```",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_s478ZoqcEOLKOcdug5yOLgTu",
+      "call_suPKrHB7pSoo3pvVg6TLrkVw"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.009997
+  }
+}

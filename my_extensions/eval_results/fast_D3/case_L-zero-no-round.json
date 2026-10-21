@@ -1,0 +1,42 @@
+{
+  "case_id": "L-zero-no-round",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，有几家公司没有任何融资记录？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-no-round-3eb21717",
+  "started_at": "2026-10-13T15:18:59.478730+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.224,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中无融资历史公司数量分析报告\n\n## 研究背景与目标\n\n本次研究目的是准确统计公司内部数据库中**没有任何融资记录**的公司数量。查询涵盖数据库中所有公司条目，不限制行业、公司规模及时间范围。此次结果直接源自公司内部数据库，以确保数据的权威性和准确性，杜绝任何基于印象或假设的回答。\n\n---\n\n## 查询结果\n\n经过对内部数据库的直接查询，得到以下结论：\n\n- 数据库中 **共有5家公司没有任何融资历史记录**。\n\n这一数字完全覆盖了所有公司，不排除任何行业或其他类别。这是数据库中对应“无融资记录”条件的精确数量，不存在任何过滤或抽样，因此数据具有高度的完整性和准确性。\n\n---\n\n## 数据统计和方法说明\n\n- 查询直接基于内部结构化数据表，检索融资历史字段为空或未登记的公司。\n- 未设置任何附加筛选条件，确保覆盖所有条目。\n- 查询过程排除了任何基于外部数据或主观判断的干扰，完全依赖数据库存档数据。\n- 该结果是当前数据库状态的即时快照，随数据库更新可能会发生变化。\n\n---\n\n## 重要性与后续应用\n\n了解无融资历史公司的确切数量，对公司内部业务分析、潜在投资评估及风险控制均有重要意义：\n\n- 可以作为资本投入、融资需求分析的参考依据。\n- 帮助识别成长路径特别、融资模式特殊或尚处于初始阶段的企业。\n- 支持制定更精细化的市场策略及内部资源分配。\n\n---\n\n## 结论\n\n综上所述，内部数据库精准显示，目前共有**5家公司无任何融资历史记录**。此结果为回答研究简报中提出的核心问题提供了权威、明确的依据。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库查询结果 – 融资历史字段数据快照 (2026年10月13日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_rDzYwF8eW15hFUItwyiTKVfe"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003504
+  }
+}

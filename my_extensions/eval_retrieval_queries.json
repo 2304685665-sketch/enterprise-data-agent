@@ -1,0 +1,403 @@
+{
+ "version": 1,
+ "frozen_note": "查询集在看到任何检索结果之前写定。评测运行后不得为了改善指标修改查询、标注或检索参数（RRF k=60，候选池上限 50，BM25 k1=1.5 b=0.75 均已预先固定）；如发现标注错误，必须保留原版本并新增版本号说明。",
+ "target_format": "[doc_id, section]，section 为切分脚本产生的二级标题文本",
+ "types": {
+  "entity": "直接点名实体的事实问",
+  "semantic": "刻意不复述原文关键词的语义问",
+  "keyword": "稀有字面词/型号",
+  "no_answer": "知识库无答案或索引里没有"
+ },
+ "queries": [
+  {
+   "id": "E1",
+   "type": "entity",
+   "query": "SynthMotion 最近一轮融资是什么轮次？",
+   "targets": [
+    [
+     "doc01_synthmotion_intro",
+     "融资历程"
+    ]
+   ],
+   "reason": "融资轮次只在 doc01 的融资历程段落里。"
+  },
+  {
+   "id": "E2",
+   "type": "entity",
+   "query": "SynthMotion 的主打产品叫什么？",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "主打产品：SM-Alpha 双足人形机器人平台"
+    ]
+   ],
+   "reason": "产品名在 doc02 第一个二级标题里。"
+  },
+  {
+   "id": "E3",
+   "type": "entity",
+   "query": "AtlasAI 目前处于什么发展阶段？",
+   "targets": [
+    [
+     "doc04_atlasai_intro",
+     "发展阶段"
+    ]
+   ],
+   "reason": "阶段描述（早期原型验证）只在 doc04 发展阶段段落。"
+  },
+  {
+   "id": "E4",
+   "type": "entity",
+   "query": "NeuralPath 这轮融资的资金主要用来做什么？",
+   "targets": [
+    [
+     "doc06_neuralpath_funding_news",
+     "融资背景"
+    ]
+   ],
+   "reason": "资金用途（团队扩充和算法研发）在 doc06 融资背景段落。"
+  },
+  {
+   "id": "E5",
+   "type": "entity",
+   "query": "2026年融资的地域分布是怎样的？",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "地域分布"
+    ]
+   ],
+   "reason": "地域分布只在 doc05 地域分布段落。"
+  },
+  {
+   "id": "E6",
+   "type": "entity",
+   "query": "8月的内部会议对 SynthMotion 提出了哪些风险担忧？",
+   "targets": [
+    [
+     "doc08_meeting_notes_synthmotion",
+     "待观察风险"
+    ]
+   ],
+   "reason": "风险担忧在 doc08 待观察风险段落；doc10 是9月会议，不是答案。"
+  },
+  {
+   "id": "E7",
+   "type": "entity",
+   "query": "9月跟进会议之后有什么后续安排？",
+   "targets": [
+    [
+     "doc10_meeting_notes_followup",
+     "后续安排"
+    ]
+   ],
+   "reason": "后续安排只在 doc10 后续安排段落。"
+  },
+  {
+   "id": "E8",
+   "type": "entity",
+   "query": "会议最终决定怎么对待 SynthMotion？",
+   "targets": [
+    [
+     "doc08_meeting_notes_synthmotion",
+     "结论"
+    ]
+   ],
+   "reason": "决定（重点跟踪、暂不作最终判断）在 doc08 结论段落。"
+  },
+  {
+   "id": "S1",
+   "type": "semantic",
+   "query": "哪家公司的目标用户是普通家庭而不是工厂？",
+   "targets": [
+    [
+     "doc07_competitive_landscape",
+     "差异化观察"
+    ],
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "市场定位对比"
+    ]
+   ],
+   "reason": "doc04 对应表述在被过滤的“开头”chunk 里不可检索；可检索的是 doc07 差异化观察（AtlasAI 面向消费端）与 doc09 市场定位对比（家庭消费场景）。"
+  },
+  {
+   "id": "S2",
+   "type": "semantic",
+   "query": "谁的核心零部件基本都是自己做、不用靠外部采购？",
+   "targets": [
+    [
+     "doc03_roboworks_intro",
+     "技术路线"
+    ],
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "技术路线对比"
+    ]
+   ],
+   "reason": "doc03 技术路线（全栈自研、供应链自主可控）与 doc09 技术路线对比都表达了这一点。"
+  },
+  {
+   "id": "S3",
+   "type": "semantic",
+   "query": "有没有哪款机器人能在凹凸不平的路面上走得很稳？",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "主打产品：SM-Alpha 双足人形机器人平台"
+    ]
+   ],
+   "reason": "“不平整地面保持稳定行走”在 doc02 主打产品段落；查询用的是不同的词。"
+  },
+  {
+   "id": "S4",
+   "type": "semantic",
+   "query": "投资人为什么越来越不愿意投刚起步的团队？",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "值得关注的现象"
+    ]
+   ],
+   "reason": "早期阶段新入局企业减少、资本更倾向已验证企业，在 doc05 值得关注的现象段落。"
+  },
+  {
+   "id": "S5",
+   "type": "semantic",
+   "query": "哪家公司更像是给别人提供技术的供应商，而不是自己做整机？",
+   "targets": [
+    [
+     "doc07_competitive_landscape",
+     "差异化观察"
+    ]
+   ],
+   "reason": "NeuralPath 偏技术供应商角色在 doc07 差异化观察段落。"
+  },
+  {
+   "id": "S6",
+   "type": "semantic",
+   "query": "两次内部讨论对供应链问题多久能缓解，看法有什么差别？",
+   "targets": [
+    [
+     "doc10_meeting_notes_followup",
+     "关于 SynthMotion 的补充意见"
+    ]
+   ],
+   "reason": "两次会议对供应链预期的分歧在 doc10 补充意见段落明确对比。"
+  },
+  {
+   "id": "S7",
+   "type": "semantic",
+   "query": "从确定性角度看，RoboWorks 和 AtlasAI 哪个落地更有把握？",
+   "targets": [
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "备忘录判断"
+    ],
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "市场定位对比"
+    ]
+   ],
+   "reason": "备忘录判断段落给出结论；市场定位对比里也说了落地节奏清晰度。"
+  },
+  {
+   "id": "S8",
+   "type": "semantic",
+   "query": "SynthMotion 走到量产阶段最大的隐患是什么？",
+   "targets": [
+    [
+     "doc08_meeting_notes_synthmotion",
+     "待观察风险"
+    ]
+   ],
+   "reason": "隐患（核心部件依赖外部供应商）在 doc08 待观察风险段落。"
+  },
+  {
+   "id": "S9",
+   "type": "semantic",
+   "query": "SynthMotion 的产品现在已经能大批量卖给客户了吗？",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "目标客户"
+    ]
+   ],
+   "reason": "“小批量试产、尚未大规模商业化交付”在 doc02 目标客户段落。"
+  },
+  {
+   "id": "K1",
+   "type": "keyword",
+   "query": "SM-Alpha",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "主打产品：SM-Alpha 双足人形机器人平台"
+    ]
+   ],
+   "reason": "产品型号只出现在 doc02 的标题和正文。"
+  },
+  {
+   "id": "K2",
+   "type": "keyword",
+   "query": "Series C 8000万美元",
+   "targets": [
+    [
+     "doc01_synthmotion_intro",
+     "融资历程"
+    ]
+   ],
+   "reason": "该融资金额和轮次只在 doc01 融资历程。"
+  },
+  {
+   "id": "K3",
+   "type": "keyword",
+   "query": "伺服电机",
+   "targets": [
+    [
+     "doc03_roboworks_intro",
+     "技术路线"
+    ]
+   ],
+   "reason": "“伺服电机”只出现在 doc03 技术路线段落。"
+  },
+  {
+   "id": "K4",
+   "type": "keyword",
+   "query": "电池和减速器",
+   "targets": [
+    [
+     "doc02_synthmotion_product",
+     "技术布局"
+    ],
+    [
+     "doc08_meeting_notes_synthmotion",
+     "待观察风险"
+    ]
+   ],
+   "reason": "“电池和减速器”同时出现在 doc02 技术布局与 doc08 待观察风险（doc03 只有减速器，没有电池）。"
+  },
+  {
+   "id": "K5",
+   "type": "keyword",
+   "query": "种子轮 A轮",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "值得关注的现象"
+    ]
+   ],
+   "reason": "“种子轮/A轮”只出现在 doc05 值得关注的现象段落。"
+  },
+  {
+   "id": "K6",
+   "type": "keyword",
+   "query": "长三角",
+   "targets": [
+    [
+     "doc05_industry_report",
+     "地域分布"
+    ]
+   ],
+   "reason": "“长三角”只出现在 doc05 地域分布段落。"
+  },
+  {
+   "id": "M1",
+   "type": "semantic",
+   "query": "SynthMotion 的核心团队是什么背景？",
+   "targets": [
+    [
+     "doc01_synthmotion_intro",
+     "核心团队"
+    ]
+   ],
+   "reason": "团队背景在 doc01 核心团队段落。"
+  },
+  {
+   "id": "M2",
+   "type": "semantic",
+   "query": "内部会议是否认为 SynthMotion 的控制算法技术领先？",
+   "targets": [
+    [
+     "doc08_meeting_notes_synthmotion",
+     "讨论要点"
+    ]
+   ],
+   "reason": "“具备一定技术领先性”在 doc08 讨论要点段落。"
+  },
+  {
+   "id": "M3",
+   "type": "semantic",
+   "query": "RoboWorks 的核心团队来自哪些行业？",
+   "targets": [
+    [
+     "doc03_roboworks_intro",
+     "团队背景"
+    ]
+   ],
+   "reason": "团队来源（传统工业机器人和自动化行业）在 doc03 团队背景段落。"
+  },
+  {
+   "id": "M4",
+   "type": "semantic",
+   "query": "哪家公司的商业化时间表还不明确？",
+   "targets": [
+    [
+     "doc04_atlasai_intro",
+     "发展阶段"
+    ],
+    [
+     "doc07_competitive_landscape",
+     "差异化观察"
+    ],
+    [
+     "doc09_memo_roboworks_vs_atlasai",
+     "市场定位对比"
+    ]
+   ],
+   "reason": "doc04 发展阶段（无明确时间表）、doc07 差异化观察（商业化路径更长）、doc09 市场定位对比（时间表更不确定）都表达；这是一条目标较宽的查询。"
+  },
+  {
+   "id": "N1",
+   "type": "no_answer",
+   "query": "SynthMotion 2025年的营收是多少？",
+   "targets": [],
+   "reason": "知识库没有任何营收数据。"
+  },
+  {
+   "id": "N2",
+   "type": "no_answer",
+   "query": "AtlasAI 的 CEO 是谁？",
+   "targets": [],
+   "reason": "知识库没有任何人名或高管信息。"
+  },
+  {
+   "id": "N3",
+   "type": "no_answer",
+   "query": "SynthMotion 成立于哪一年？",
+   "targets": [],
+   "reason": "原文 doc01 有成立年份，但它位于第一个二级标题之前，会被切分脚本的“开头”过滤规则丢弃，不在索引里：这条用来观察“源文档有、索引里没有”时系统是否给出看似相关的结果。"
+  },
+  {
+   "id": "N4",
+   "type": "no_answer",
+   "query": "NeuralPath 本轮融资的具体金额是多少？",
+   "targets": [],
+   "reason": "doc06 明确说金额请以内部融资数据库为准，文档里没有具体金额。"
+  },
+  {
+   "id": "N5",
+   "type": "no_answer",
+   "query": "特斯拉 Optimus 的量产计划是什么？",
+   "targets": [],
+   "reason": "知识库之外的实体。"
+  },
+  {
+   "id": "N6",
+   "type": "no_answer",
+   "query": "公司年会定在哪一天？",
+   "targets": [],
+   "reason": "与知识库完全无关的问题。"
+  }
+ ]
+}

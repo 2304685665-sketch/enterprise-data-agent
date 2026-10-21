@@ -1,0 +1,57 @@
+{
+  "case_id": "G-zero-2027",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，2027 年的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-zero-2027-437a51d6",
+  "started_at": "2026-10-13T15:26:47.079416+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 35.308,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2027 年公司内部数据库订单数量报告\n\n## 订单查询背景\n\n根据要求，需准确查询公司内部数据库，获得 2027 年全年（2027 年 1 月 1 日至 2027 年 12 月 31 日）的订单总数，必须直接从数据库执行 SQL 查询，确保结果绝对准确，不依赖任何记忆或估计。\n\n本次查询基于公司的内部数据库系统，涉及的主要数据表为 `orders`。查询流程包括确认数据库结构、订单表的字段以及针对 2027 年的订单数量统计。\n\n---\n\n## 数据库订单表结构分析\n\n通过对数据库的结构检查，确认存在以下已定义数据表：\n\n- `customers`（客户信息表）\n- `products`（产品信息表）\n- `orders`（订单信息表）\n\n针对订单表 `orders` 的详细结构如下：\n\n```sql\nCREATE TABLE orders (\n    order_id INTEGER PRIMARY KEY,\n    customer_id INTEGER,\n    product_id INTEGER,\n    quantity INTEGER,\n    amount_usd REAL,\n    order_date TEXT,\n    status TEXT,\n    FOREIGN KEY(customer_id) REFERENCES customers(customer_id),\n    FOREIGN KEY(product_id) REFERENCES products(product_id)\n)\n```\n\n说明：\n\n- `order_date` 字段以文本格式储存订单日期，用于筛选具体年份的订单。\n- 表中包含订单基本字段，如数量、金额、客户和产品外键等。\n\n---\n\n## 2027 年订单数量查询结果\n\n执行关键 SQL 查询语句统计 2027 年的订单数量：\n\n```sql\nSELECT COUNT(*) AS order_count_2027 \nFROM orders \nWHERE order_date >= '2027-01-01' AND order_date < '2028-01-01'\n```\n\n查询结果显示：\n\n- 2027 年期间录入的订单总数为 **0** 笔。\n\n即，在当前数据库记录中，尚无任何订单在 2027 年的日期范围内被注册。\n\n---\n\n## 结果分析与说明\n\n- 本次查询覆盖了完整的 2027 年日历年度，保证数据的全面性和准确性。\n- 订单数量为零，意味着截至当前数据库更新时间（2026 年 10 月 13 日），尚无任何预录或已录入 2027 年日期的订单。\n- 该结果排除了任何基于记忆或推测的可能误差，确切反映数据库中实际数据状态。\n\n此状况可能由多种原因造成，例如：\n\n- 2027 年订单尚未开始录入。\n- 订单录入系统或流程尚未启动针对 2027 年的登记。\n- 数据库中所有订单均集中于 2026 年及之前年份。\n\n建议后续定期监控数据库更新情况，确认 2027 年订单录入状态，并根据业务运行情况调整数据采集策略。\n\n---\n\n## 总结\n\n- 公司内部数据库的 `orders` 表结构已确认完整且字段合理。\n- 目前数据库中，2027 年的订单数量查询结果为零。\n- 该信息来源直接、准确，完全基于实时数据库数据，无任何估计成分。\n- 后续如需持续追踪 2027 年订单数量变化，可基于同样的方法定期查询。\n\n---\n\n## 参考来源\n\n- 公司内部数据库：订单信息表（`orders`）结构及数据查询结果  \n- SQL 查询语句执行结果，时间点：2026年10月13日\n\n### Sources\n\n[1] 公司内部数据库订单表结构与数据查询 (内部系统)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2027-01-01",
+        "2027-12-31",
+        "2028-01-01"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 4,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 4,
+    "sql_call_ids": [
+      "call_hzTPVl2KjjSWHx1e8vdkGA1Q",
+      "call_kynt9PmmaG9l0zmC8pgQvK1L",
+      "call_mQZzQV6Qpset1N0CiKpGxjdw",
+      "call_nWZHvmR1Rf7VRELBR4DkdlPL"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 13,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.009651
+  }
+}

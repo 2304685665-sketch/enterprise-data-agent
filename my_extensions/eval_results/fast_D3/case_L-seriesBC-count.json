@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seriesBC-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Series B 和 Series C 两种轮次加起来一共有几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seriesBC-count-3ddcb4ef",
+  "started_at": "2026-10-13T15:12:51.955393+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.559,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中Series B和Series C轮融资总笔数调研报告\n\n## 调研目标\n\n本次调研旨在准确统计公司内部数据库中所有被归类为Series B和Series C轮融资的总笔数。统计过程中未设置任何额外筛选条件，如时间范围、行业类别或地域限制，确保涵盖数据库中所有相关记录。结果基于数据库的直接查询，无任何估算或主观推断。\n\n## 数据查询与结果\n\n通过对公司内部融资数据库进行精确查询，筛选出融资轮次为Series B和Series C的所有融资记录，统计结果如下：\n\n- **Series B和Series C融资轮次总计笔数：28笔**\n\n这一数字代表目前数据库中所有Series B和Series C类别融资的累计总数。\n\n## 结果分析与说明\n\n1. **数据准确性保证**  \n   本次统计严格依赖公司内部数据库实录记录，排除了任何依赖记忆、估算或二手信息的可能，确保了数字的直接有效性和权威性。\n\n2. **无筛选限制**  \n   统计包括数据库中历史以来所有涉及的融资轮次，无论时间、行业和地域，保证了数据的全面性。\n\n3. **数据的业务价值**  \n   这28笔融资轮次为公司在中后期融资阶段的深度布局提供数据依据，便于后续分析融资趋势、评估投资组合风险和识别成长潜力企业。\n\n4. **后续建议**  \n   - 持续更新数据库，确保统计数据的实时性；  \n   - 可进一步细化各轮次融资的行业分布、地域分布、融资金额等指标，提升分析深度和决策支持能力。\n\n## 总结\n\n经公司内部数据库直接查询，截止当前，所有Series B与Series C轮融资的累计笔数为28笔。此数字为系统真实记录，不包含任何主观猜测或推断，完全满足调研需求。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果（私有数据，内部系统）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_h4sq6RxDoPKugiRRv8wwr40x"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002823
+  }
+}

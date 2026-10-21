@@ -1,0 +1,43 @@
+{
+  "case_id": "L-latest-date",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有融资记录里最晚的一笔发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-latest-date-e4915342",
+  "started_at": "2026-10-13T15:10:48.643414+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.256,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中融资记录的最新时间报告\n\n## 概述\n\n本报告针对公司内部数据库中所有融资记录，精确查询后得出最新一笔融资发生的日期。通过直接访问和分析数据库中的融资记录数据，确保结论依据的是最新、准确、完整的内部信息，而非主观印象。\n\n## 最新融资时间查询结果\n\n根据公司内部数据库中融资记录的查询结果显示：\n\n- 最新一笔融资记录发生的日期是 **2026年9月11日**。\n\n该日期为数据库中所有融资记录中时间最晚的条目，完整体现了截止目前的最新融资活动时间。\n\n## 数据准确性与完整性说明\n\n- 本数据来源于公司内部正式维护的融资记录数据库，保证其权威性与实时更新。\n- 数据库记录的融资事件涵盖了多轮融资、不同投资方以及各阶段融资详情。\n- 数据库中均有具体的时间戳字段（round_date），并以此字段作为查询依据，确保按时间先后排序的准确性。\n- 本次查询严格依照数据库最新更新时间，无任何主观揣测。\n\n## 相关业务与战略意义\n\n- 确认最新融资时间对公司财务计划、资本运作和战略布局具有重要意义。\n- 了解最新融资活动的时间节点，有助于评估公司资金链状态及未来融资动作的临近度。\n- 投资决策层及相关部门可基于此数据开展进一步分析，如资金使用效率、融资速度和估值变化趋势。\n\n## 总结\n\n基于公司内部数据库检索，当前所有融资记录中最晚的一笔发生在 **2026年9月11日**。这一信息为精准掌握公司最新融资动态和制定后续战略提供了可靠的数据基础。\n\n---\n\n### 资料来源\n\n[1] 公司内部融资记录数据库 (数据查询截止2026年10月13日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_TMZOsx7l9VSJ9OaTqwnFlHZm"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003023
+  }
+}

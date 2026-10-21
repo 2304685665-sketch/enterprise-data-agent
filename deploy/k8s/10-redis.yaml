@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odr-redis
+  namespace: odr
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: odr-redis}
+  template:
+    metadata:
+      labels: {app: odr-redis}
+    spec:
+      containers:
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
+          readinessProbe:
+            exec: {command: ["redis-cli", "ping"]}
+            periodSeconds: 5
+          livenessProbe:
+            exec: {command: ["redis-cli", "ping"]}
+            periodSeconds: 10
+          resources:
+            requests: {cpu: 50m, memory: 64Mi}
+            limits: {memory: 256Mi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: odr-redis
+  namespace: odr
+spec:
+  selector: {app: odr-redis}
+  ports:
+    - port: 6379
+      targetPort: 6379

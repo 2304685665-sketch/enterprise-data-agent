@@ -1,0 +1,42 @@
+{
+  "case_id": "L-count-rounds",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少笔融资记录？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-count-rounds-e239f37f",
+  "started_at": "2026-10-13T15:10:32.016660+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.684,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中融资记录总数的查询报告\n\n## 查询目的与背景\n\n本报告旨在准确回答“公司内部数据库中一共有多少笔融资记录”的问题。用户要求基于数据库的直接查询结果，明确无误地统计所有融资记录的总数，不涉及任何估算、印象或过滤条件。查询涵盖数据库中所有融资类型、所有时间段的完整融资数据，以保证结果的全面和准确。\n\n## 查询方法\n\n针对该需求，在公司的内部数据库中执行了如下SQL查询语句：\n\n```sql\nSELECT COUNT(*) AS total_financing_records FROM funding_rounds;\n```\n\n- 查询对象为存储融资信息的核心表 `funding_rounds`，该表涵盖全部融资条目。\n- 没有对时间、融资类型、项目状态等任何字段加以筛选或限制，确保统计的是所有现存融资记录。\n- 该查询语句经过优化，能够快速准确返回完整融资记录数。\n\n此方法保证了查询结果的精确性，所得结果完全依赖于数据库实际存储的数据，不包含任何人工推测或外部估计。\n\n## 查询结果\n\n通过直接查询数据库，得出公司内部融资记录的准确总数如下：\n\n- 融资记录总数：**76笔**\n\n该数字代表数据库当前所有可用融资条目的总和，完全集成所有类型和时间段的记录。\n\n## 结果分析\n\n- 76笔融资记录的数量说明公司内部融资数据规模相对适中，便于后续详细分析和管理。\n- 该数值是经过数据库系统精确计算得出，数据来源权威，消除了信息不完整或人工统计偏差的问题。\n- 无筛选限制使结果具备最大范围的代表性，满足用户对“全部融资记录数量”的明确需求。\n- 若未来需要根据时间、融资阶段等条件细分融资趋势，可基于该基础数据进一步拆分和分析。\n\n## 总结\n\n基于公司内部数据库的直接查询，融资记录总数为76笔。该数字完全反映当前数据库中存储的全部融资信息，无任何遗漏或估算。此数据对于企业财务分析、融资历史审计及相关决策支持具有可靠的基础价值。\n\n如需进一步细化分析或数据扩展，建议结合具体业务需求，采用相应条件过滤查询。\n\n---\n\n### 资料来源\n\n[1] 公司内部数据库直接查询结果（funding_rounds表的SQL统计）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_hg62bWUYp401XxxN0uwDJQgc"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004281
+  }
+}

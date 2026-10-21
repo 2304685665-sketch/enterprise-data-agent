@@ -1,0 +1,41 @@
+{
+  "case_id": "G-pending-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 pending 的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-pending-sum-af9ef623",
+  "started_at": "2026-10-13T16:09:00.925108+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 9.485,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中状态为 Pending 的订单金额合计的报告\n\n## 订单金额合计概述\n\n根据对公司内部数据库的直接查询，当前所有订单状态为 **pending（待处理）** 的订单金额合计为 **9,227.03 美元**。此数据来源于最新的数据库实时信息，保证了数值的准确和权威，避免了凭印象或历史数据推测可能带来的误差。\n\n## 数据查询及统计方法\n\n- 通过SQL查询语句针对订单状态字段筛选条件设为 \"pending\"。\n- 对满足条件的订单金额字段进行合计求和操作，确保所有处于待处理状态的订单金额均被完整统计。\n- 查询过程完全基于公司现有内部数据库数据，无任何外部数据源或历史缓存数据介入，保证了数据的实时和准确性。\n\n## 数据分析与影响\n\n待处理订单的总金额反映了当前公司的资金流动中仍处于未完成状态的部分资金量。该数据的分析有助于：\n\n- 了解当前公司财务账目中尚未实现的销售额。\n- 评估订单处理效率及可能存在的阻碍流程。\n- 为资金规划与业务预测提供有效的依据。\n\n9,227.03美元的待处理金额处于合理范围，若与历史数据对比可辅助分析订单处理的趋势和时效性（本报告未包含历史数据对比，需额外查询）。\n\n## 结论\n\n公司内部数据库中状态为 pending 的订单金额合计为 **9,227.03 美元**。这一数字为公司财务部门和管理层提供了明确的资金待确认现状，也是后续跟进订单处理和资金回笼工作的重要参考数据。\n\n---\n\n### 参考资料\n\n[1] 公司内部数据库订单金额查询结果（实时数据）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_riehLnUHbjzm2Tt8QPvVWVNM"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 3,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002369
+  }
+}

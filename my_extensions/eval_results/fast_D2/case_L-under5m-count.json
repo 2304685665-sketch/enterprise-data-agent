@@ -1,0 +1,42 @@
+{
+  "case_id": "L-under5m-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔金额不足 500 万美元的融资一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-under5m-count-4b8be0da",
+  "started_at": "2026-10-13T15:15:57.310285+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.507,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中金额低于500万美元的融资交易笔数统计报告\n\n## 研究背景与目标\n\n本次研究旨在准确统计公司内部数据库中所有融资交易中，单笔融资金额低于500万美元的交易总笔数。基于研究简报的明确要求，需通过直接查询数据库获取精确数量，不可使用任何估计或主观印象。此外，查询不受时间或其他属性限制，需涵盖数据库内所有相关融资记录。\n\n## 数据查询方法\n\n依据研究需求，已执行了以下标准SQL查询以获取精确结果：\n\n```sql\nSELECT COUNT(*) AS financing_transaction_count\nFROM funding_rounds\nWHERE amount_usd < 5000000;\n```\n\n此查询筛选了所有融资金额（`amount_usd`字段）严格低于5,000,000美元的条目，并统计其数量。\n\n## 数据分析与结果\n\n- 查询结果显示，公司数据库中满足金额小于500万美元的融资交易共有**4笔**。\n- 此统计结果覆盖了数据库内全部相关融资交易数据，无论交易时间、项目类型或其他任何字段属性，确保了数据的全面性和准确性。\n- 该数字为直接查询结果，无任何推断或估计，因此具备高度可信度。\n\n## 结论\n\n截至目前，公司内部数据库中单笔融资金额低于500万美元的融资交易共有4笔。该数字反映了数据库中完全真实的记录情况。基于无任何时间或其他约束，统计包含了所有相关历史及现存数据条目，结果准确而完整。\n\n## 附注\n\n- 本次研究未涉及对数据库内容之外的数据来源的引用，所有统计均由公司内部数据库直接提供。\n- 如需进一步细分（例如按照年份、行业、融资阶段进行分类），可在此基础上增加相应的查询条件。\n\n---\n\n### 参考资料\n\n无外部数据源。全数数据均由公司内部数据库查询结果提供。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_QsLHXzEN4M6DqbC5vHt9LvTm"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004243
+  }
+}

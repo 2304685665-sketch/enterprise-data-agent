@@ -1,0 +1,50 @@
+{
+  "case_id": "L-spread-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔融资金额最大值与最小值相差多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-spread-round-914890d0",
+  "started_at": "2026-10-13T15:09:49.409237+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.107,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库单笔融资金额最大值与最小值差异分析报告\n\n## 一、概述\n\n通过直接查询公司内部数据库中关于单笔融资金额的数据，可以准确得出最大融资金额与最小融资金额的数值，以及二者之间的差异。这对于了解公司融资规模的波动范围、风险评估以及资金管理等方面具有重要参考价值。\n\n## 二、单笔融资金额最大值与最小值数据\n\n- **最大单笔融资金额**：98,551,000 美元  \n- **最小单笔融资金额**：2,790,000 美元\n\n以上数据均为数据库中真实查询获取的数值，确保回答的精确性，排除主观猜测或印象估计。\n\n## 三、金额差异计算\n\n根据以上最大值和最小值数据，计算得出：\n\n\\[\n差异 = 最大值 - 最小值 = 98,551,000 - 2,790,000 = 95,761,000 \\text{ 美元}\n\\]\n\n即，公司内部数据库中单笔融资金额的最大值与最小值相差 **95,761,000美元**。\n\n## 四、分析与意义\n\n- **融资金额范围广泛**：融资金额跨度近1亿美元，说明公司参与的融资项目在规模上存在显著差异，涉及融资规模较小的项目，也涵盖了资金需求极大的大型融资案件。\n- **资金结构多样性**：这种金额差异反映了公司融资业务覆盖的多样性，既包括初创期、中小型企业融资，也包含成熟企业或大型项目的资本投入。\n- **风险管理启示**：融资金额幅度如此悬殊，提示资金管理和风险控制策略需灵活多样，应针对不同规模融资调整相应的审查和监控标准。\n- **未来数据追踪**：建议定期更新和分析此类数据，极值的变化趋势可反映市场融资环境和业务调整，为战略决策提供数据基础。\n\n## 五、总结\n\n通过数据库直接查询，明确得出公司单笔融资金额最大值为9855.1万美元，最小值为279万美元，二者相差9576.1万美元。此差异反映公司融资业务的规模多样性和资金需求的广泛性，对公司的资金规划及风险管理均具有重要意义。\n\n---\n\n### 参考来源\n\n本报告数据直接来源于公司内部数据库查询结果，确保准确无误。\n\n---\n\n### Sources\n\n无公开链接，数据来自公司内部数据库",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": [
+        100000000.0
+      ]
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "python_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ikxND8oUxHih6hPxadbEocc9"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00401
+  }
+}

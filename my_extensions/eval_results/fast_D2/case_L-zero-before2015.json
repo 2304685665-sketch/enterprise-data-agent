@@ -1,0 +1,49 @@
+{
+  "case_id": "L-zero-before2015",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，2015 年之前一共发生了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-before2015-733bef17",
+  "started_at": "2026-10-13T15:23:22.619915+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 17.713,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2015年及之前公司内部数据库中融资交易数量的准确统计报告\n\n## 研究背景与问题描述\n\n本次研究目标是明确统计出截至2015年（包含2015年）为止，公司内部数据库中记录的所有融资交易的精确数量。用户要求直接从内部数据库查询获取结果，不依赖记忆或任何估计。由于未对融资类型、资金金额、融资地点等设定任何限制，统计范围涵盖数据库中所有类别和属性的融资交易。\n\n## 数据查询方法\n\n为确保统计结果的准确性，采用了直接查询公司内部数据库的方式。执行的SQL语句如下：\n\n```sql\nSELECT COUNT(*) AS financing_count FROM funding_rounds WHERE round_date <= '2015-12-31';\n```\n\n- 此条件确保只统计日期在2015年12月31日及之前发生的融资事件。\n- 未加入任何额外筛选条件，符合用户要求的“所有融资交易”。\n\n## 查询结果与分析\n\n- 查询结果返回的融资交易总数为 **0**。\n- 这表明在公司数据库中，截止2015年底，没有任何融资交易被记录。\n- 由于查询覆盖了全部融资类型和金额，无论交易大小或金融属性如何，均无融资事件登记。\n\n### 影响与可能原因\n\n- 该结果可能反映出公司或数据库在2015年及之前尚未有融资活动，或者相关融资活动未录入数据库中。\n- 也可能由于数据库建立时间较晚，早期数据未迁移或未纳入系统。\n- 若需进一步确认融资历史真实性，建议结合其他记录或系统进行交叉验证，或与财务、投资部门核对相关文件。\n\n## 结论\n\n截至2015年12月31日，公司内部数据库显示的融资交易数为零，即无任何融资事件被记录。此数字为数据库直接查询所得的精确统计，不包含任何估计或推测，完全符合研究需求和用户指令。\n\n---\n\n## 参考来源\n\n本报告数据源自公司内部数据库，查询结果为：\n\n- financing_count = 0（截止2015年12月31日之前所有融资交易）\n\n无外部数据引用。\n\n---\n\n### Sources\n\n[1] 公司内部数据库融资交易记录查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2015-12-31"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_F9M7906m1TfqcXaxyT2rjHGh"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004309
+  }
+}

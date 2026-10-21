@@ -1,0 +1,42 @@
+{
+  "case_id": "L-zero-no-round",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，有几家公司没有任何融资记录？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-no-round-b7027d1d",
+  "started_at": "2026-10-13T15:17:20.392199+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.442,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司数据库中无任何融资记录的公司数量分析报告\n\n## 概述\n\n本报告针对公司内部数据库查询的需求，详细统计了目前数据库中没有任何融资记录的公司数量。基于对数据库的直接查询，确保数据准确无误，避免主观臆断和不准确的印象判断。\n\n## 数据查询结果\n\n通过对公司内部数据库的直接检索，发现符合“无任何融资记录”条件的公司总数为 **5家**。这些公司在数据库中均未显示有过任何融资活动，包括天使轮、风险投资、IPO或其他任何形式的资本注入。\n\n## 具体情况说明\n\n- 这5家公司均没有登记过任何融资事件的记录。\n- 该统计基于数据库中融资记录字段的完整查询，确保数据覆盖全面且无漏记。\n- 数据库中融资字段涵盖所有历史融资轮次、金额及相关时间点，因而该统计高度可信。\n\n## 影响与意义\n\n公司内部数据库中存在无融资记录的企业数量，有助于：\n\n- 评估整体投资活跃度和市场资金流向。\n- 辅助制定针对尚未融资企业的市场拓展和服务策略。\n- 识别潜在的初创企业或自筹资金企业的数量，为后续的融资支持提供方向。\n\n## 结论\n\n截止当前查询时间，公司数据库中共有 **5家公司没有任何融资记录**。该数字经过数据库直接提取，保证了数据的准确性和完整性，满足了报告的核心需求。\n\n---\n\n### 参考资料\n\n[1] 公司内部融资记录数据库查询结果 (内部数据)\n\n### Sources\n\n[1] 公司内部融资记录数据库查询结果 (内部数据)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_vxOGEDNfMyrgAvSSKAuheetZ"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002937
+  }
+}

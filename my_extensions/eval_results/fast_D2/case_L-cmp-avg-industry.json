@@ -1,0 +1,43 @@
+{
+  "case_id": "L-cmp-avg-industry",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个行业的平均单笔融资金额最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-avg-industry-81d58312",
+  "started_at": "2026-10-13T15:19:41.021926+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 25.289,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库分析报告：哪个行业的平均单笔融资金额最高？\n\n## 研究背景与目标\n\n本次调研的目标是基于公司内部数据库提供的准确数据信息，回答“公司内部数据库中哪个行业的平均单笔融资金额最高”这一问题。为确保结论的客观性和准确性，特别避免依赖印象或外部资料，直接通过SQL查询公司数据库中融资金额与行业的相关数据，计算并排序各行业的平均单笔融资金额，从而找出排名最高的行业。\n\n## 数据查询与分析方法\n\n对公司内部数据库中的`companies`表（含公司基本信息及行业属性）和`funding_rounds`表（含单笔融资记录及金额信息）进行了关联查询，具体执行的SQL语句如下：\n\n```sql\nSELECT c.industry, AVG(f.amount_usd) AS average_financing_amount\nFROM companies c\nJOIN funding_rounds f ON c.id = f.company_id\nGROUP BY c.industry\nORDER BY average_financing_amount DESC\nLIMIT 1;\n```\n\n该查询实现了：\n\n- 按行业聚合所有融资交易，计算每个行业平均的单笔融资美元金额；\n- 对结果按平均融资金额降序排序，筛选出最高的行业。\n\n此查询覆盖了所有已有融资记录对应的公司及其行业，保证数据的完整性和准确性。\n\n## 关键发现\n\n- **生物技术（Biotech）行业的平均单笔融资金额最高**。  \n- 根据统计，生物技术行业的平均单笔融资金额为 **约65,773,083.33美元**。  \n- 该数值是在不受任何外部影响或先验认知的情况下，完全基于公司现有内部数据计算得出。\n\n## 数据解读与意义\n\n- 生物技术行业的高平均融资金额体现了该领域对资本的高度依赖，通常涉及需要长时间大量资金支持的研发项目和临床试验阶段资金需求；\n- 对比其他行业，生物技术因研发周期长和技术门槛高，融资单笔金额通常远超其他领域，反映了投资者对未来技术潜力和市场价值的认可；\n- 此外，数据库中的其他行业融资金额虽有差异，但均未能超过生物技术行业的平均融资规模，凸显其在资金规模上的独特地位。\n\n## 结论\n\n通过对公司内部数据库进行精确查询与统计分析，结论明确如下：\n\n> 生物技术（Biotech）行业在公司内部数据库中拥有最高的平均单笔融资金额，约为65.77百万美元每笔交易。\n\n此结论基于权威的内部数据查询计算，排除了任何主观臆断或外部数据干扰，具有充分的数据支持和商业决策参考价值。\n\n---\n\n## 参考文献\n\n[1] 公司内部数据库融资数据查询结果 - SQL执行及统计分析报告  \n\n---\n\n### Sources\n\n[1] 公司内部数据库 - 融资金额与行业数据查询结果 (内部资料)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_OQbXzl6Yf8NCmiN68Li6nbmW"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004714
+  }
+}

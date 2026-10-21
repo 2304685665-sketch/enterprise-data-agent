@@ -1,0 +1,42 @@
+{
+  "case_id": "L-zero-over100m",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，单笔金额超过 1 亿美元的融资一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-over100m-df44eeb2",
+  "started_at": "2026-10-13T15:23:40.335528+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 21.032,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔融资金额超过1亿美元的交易数量调查报告\n\n## 研究目的\n\n本研究旨在准确统计贵公司内部数据库中，所有单笔融资金额超过1亿美元（即1亿美金）的融资交易数量。需直接基于数据库进行查询，不基于主观记忆或估计，且无其他筛选条件，包括不限日期、行业或任何其他参数，确保覆盖了数据库中所有符合条件的融资轮次记录。\n\n## 查询方法与数据获取\n\n针对该需求，已直接在公司内部数据库的`funding_rounds`表中执行了如下SQL查询语句：\n\n```sql\nSELECT COUNT(*) AS deal_count FROM funding_rounds WHERE amount_usd > 100000000;\n```\n\n此查询条件明确筛选了所有融资金额字段`amount_usd`大于1亿美金的记录，统计其具体笔数。该查询语句未添加任何额外过滤条件，确保包括数据库内所有相关记录。\n\n## 查询结果\n\n根据以上查询，数据库内单笔融资金额超过1亿美元的融资交易数量为：\n\n- **0笔融资交易**\n\n即在当前数据库记录中，没有任何一笔融资交易的金额超过1亿美元。\n\n## 说明与分析\n\n- 查询涵盖了公司数据库内所有融资轮次，不限时间、行业或其他类别。\n- 数据来源直接来自数据库结构化查询结果，无任何主观估计或推测成分。\n- 目前数据库中融资规模大于1亿美元的记录不存在，可能原因包括：\n  - 该数据库中记录融资的最大金额低于1亿美元。\n  - 1亿美元以上的大额融资交易尚未录入数据库。\n  - 数据库结构可能存在对于极大型融资类别的特殊处理或分表存储（但据现有信息，此表包含所有融资记录）。\n\n## 结论\n\n直接数据库查询结果表明，当前公司内部数据库内**无单笔融资金额超过1亿美元的交易记录**。此数字是基于确切数据库数据得出，符合研究要求的准确统计结果。\n\n---\n\n### 参考来源\n\n[1] 内部数据库查询结果，SQL语句：  \n`SELECT COUNT(*) AS deal_count FROM funding_rounds WHERE amount_usd > 100000000`\n\n---\n\n## 附注\n\n- 本报告仅基于内部数据库实际存储的数据，未对数据完整性进行评估。\n- 若未来需进一步细化统计，例如根据行业、时间区间划分，可在基础查询上增加相应筛选条件。  \n- 若怀疑数据遗漏或记录有误，建议进一步核查数据录入流程及数据库完整性。\n\n---\n\n### Sources\n\n[1] 内部公司数据库融资交易金额查询结果: — internal company database query (not publicly accessible)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_AJLuAbJAVEet5opSMVLAqvWH"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004622
+  }
+}

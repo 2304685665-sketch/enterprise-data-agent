@@ -1,0 +1,46 @@
+{
+ "main2（63 例）": {
+  "base": {
+   "dir": "main2_final",
+   "calls": 838,
+   "input": 1274930,
+   "output": 130776,
+   "usd": 0.719214,
+   "total": 1405706
+  },
+  "treat": {
+   "dir": "fast_D4",
+   "calls": 281,
+   "input": 411698,
+   "output": 43171,
+   "usd": 0.233753,
+   "total": 454869
+  },
+  "total_change_pct": -67.6,
+  "input_change_pct": -67.7,
+  "output_change_pct": -67.0,
+  "usd_change_pct": -67.5
+ },
+ "泛化 gen（40 例）": {
+  "base": {
+   "dir": "gen_G0",
+   "calls": 500,
+   "input": 743066,
+   "output": 81678,
+   "usd": 0.427911,
+   "total": 824744
+  },
+  "treat": {
+   "dir": "gen_G3",
+   "calls": 175,
+   "input": 257086,
+   "output": 24953,
+   "usd": 0.142759,
+   "total": 282039
+  },
+  "total_change_pct": -65.8,
+  "input_change_pct": -65.4,
+  "output_change_pct": -69.4,
+  "usd_change_pct": -66.6
+ }
+}

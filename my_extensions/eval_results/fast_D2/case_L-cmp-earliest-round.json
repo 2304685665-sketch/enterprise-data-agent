@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-earliest-round",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪家公司拥有时间最早的一笔融资记录？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-earliest-round-44133697",
+  "started_at": "2026-10-13T15:19:00.493892+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.39,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于内部数据库中最早融资记录的调研报告\n\n## 调研背景\n\n本次调研旨在确定我司内部数据库中哪家公司的融资记录时间最早。为确保数据的准确性，本次调研采用了直接查询内部数据库的方式，避免凭记忆或印象而做出的回答。此次查询涵盖数据库中所有公司的所有融资记录，未对融资类型或行业进行任何限制。\n\n## 数据查询方法\n\n通过执行以下SQL查询语句，获取了数据库中融资时间最早的公司及对应融资日期：\n\n```sql\nSELECT companies.name, MIN(funding_rounds.round_date) AS earliest_financing_date\nFROM companies\nJOIN funding_rounds ON companies.id = funding_rounds.company_id\nGROUP BY companies.id\nORDER BY earliest_financing_date ASC\nLIMIT 1;\n```\n\n该查询按融资日期从早到晚排序，取出融资时间最早的单个公司及其对应的融资时间。\n\n## 调研结果\n\n- **最早融资公司的名称**：Mosaiq\n- **对应的最早融资事件日期**：2016年2月2日（2016-02-02）\n\n调研明确显示，Mosaiq公司拥有本数据库记录中最早的融资时间点，融资日为2016年2月2日。此结果是由数据库直接检索得出，确保精确且全面覆盖所有融资记录。\n\n## 结论及分析\n\n本次数据检索全面涵盖了公司数据库中所有融资记录，无论融资类型和所属行业均未施加限制，得出的结论可靠可信。结果显示，没有比Mosaiq公司2016年2月2日更早的融资事件被记录在案。由此得出的最早资金投入时间点可为企业历史融资活动分析、投资项目回顾及战略规划提供数据支持。\n\n如需进一步详细分析不同融资轮次之间的时间排列、行业分布或融资金额等，也可在后续调研中进行更深层次的数据筛选和分析。\n\n---\n\n### 参考来源\n\n[1] 内部公司数据库融资时间最早记录查询结果报告（基于内部SQL查询）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ugcYgZ43sWvFV09voG9geGIi"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003659
+  }
+}

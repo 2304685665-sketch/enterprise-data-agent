@@ -1,0 +1,53 @@
+{
+  "case_id": "G-cmp-largest-order",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪位客户下过金额最大的一笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-largest-order-28af28c4",
+  "started_at": "2026-10-13T15:22:05.481296+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 41.655,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔最大订单及客户详尽分析报告\n\n## 概述\n\n本报告基于对公司内部数据库的全面查询，明确回答了“哪位客户下过金额最大的一笔订单”这一问题。此回答依据数据库中的真实数据，不含任何估算或印象，覆盖数据库中所有订单记录，无论时间跨度、订单状态或其他因素。报告详细介绍了数据库表结构及查询过程，最终呈现最大订单的准确金额及对应客户名称。\n\n---\n\n## 数据库结构与查询流程\n\n### 1. 相关数据表情况\n\n通过查询内部数据库元信息，发现主要涉及三个关键表：\n\n- **customers**：客户信息表\n  - 主要字段：`customer_id`（客户ID），`customer_name`（客户名称），`region`，`signup_year`等\n- **orders**：订单信息表\n  - 主要字段包括`order_id`（订单ID），`customer_id`（客户ID外键），`product_id`，`quantity`，`amount_usd`（订单金额，单位USD），`order_date`，`status`等\n- **products**：产品表（本次查询未直接涉及）\n\n### 2. 查询策略与过程\n\n为了找到单笔最大订单金额及对应客户名称，进行了以下关键步骤：\n\n- 首先确认`orders`表中的订单金额字段为`amount_usd`，而非初步假设的`order_total`。\n- 确认`customers`表中存储客户名称的字段为`customer_name`。\n- 构造并执行了一条联合查询，基于`customer_id`关联两个表，按订单金额降序排序，选出金额最高的记录。\n\n查询SQL语句如下：\n\n```sql\nSELECT customers.customer_name, orders.amount_usd\nFROM orders\nJOIN customers ON orders.customer_id = customers.customer_id\nORDER BY orders.amount_usd DESC\nLIMIT 1;\n```\n\n此查询保证直接从数据库中获取实实在在的最大订单金额及对应客户名称，无任何人工估算。\n\n---\n\n## 查询结果详解\n\n### 最大订单金额及客户\n\n- **客户名称**：Juniper Market\n- **最大单笔订单金额**：$2580.28 美元\n\n这意味着，在公司数据库记录的所有订单中，Juniper Market客户下过的这一笔订单，其金额是迄今为止所有订单中最高的，金额达到2580.28美元。\n\n### 数据可靠性及范围\n\n- 该结果涵盖了数据库中的全部订单记录，无时间、状态筛选限制。\n- 数据提取过程直接基于官方表结构和字段，排除了任何字段名误解、过滤条件遗漏等可能影响准确性的因素。\n- 查询结果体现了最新、最准确订单数据，具有高度可信度。\n\n---\n\n## 结论\n\n通过对公司内部数据库的直接、准确查询，确认了客户Juniper Market 曾下过金额最大的一笔订单，金额达到2580.28美元。该数据覆盖了数据库中所有历史订单，无任何估计值，确保结论的一致性和准确性。此信息对业务分析、客户价值评估、销售策略制定均极具参考价值。\n\n---\n\n## 参考资料\n\n- SQLite数据库查询错误记录及调试信息  \n- 内部数据库表结构信息 (`customers`与`orders`)  \n- 最终确认的SQL查询及其执行结果记录\n\n---\n\n### Sources\n\n[1] 内部数据库查询错误信息：无效列名及调试记录  \n[2] 内部数据库元信息查询：相关表及字段结构  \n[3] 最大订单金额及客户名称查询结果，SQL执行记录",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 6,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 6,
+    "sql_call_ids": [
+      "call_8uKEg7ZSiWZD5oUBj2wd0JN2",
+      "call_94sz6MVEW7wu2eIXYzjQZSjk",
+      "call_CBFvLkD6iR1xwTTRXLn94kU0",
+      "call_ic0XEhSKorawX8TQvAYU0WTR",
+      "call_ixluOH0cMkEHOyDSdDtPUW4j",
+      "call_v6olnFgqsuDllT3d2VuF459v"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "error",
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 15,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.01276
+  }
+}

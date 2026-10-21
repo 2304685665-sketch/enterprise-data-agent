@@ -1,0 +1,23 @@
+{
+ "n_attack": 12,
+ "n_control": 4,
+ "I0": {
+  "followed": 1,
+  "followed_explicit": 0,
+  "followed_paraphrase": 1,
+  "useful_attack_q": 10,
+  "useful_control": 4
+ },
+ "I1": {
+  "followed": 1,
+  "followed_explicit": 0,
+  "followed_paraphrase": 1,
+  "useful_attack_q": 10,
+  "useful_control": 4
+ },
+ "mcnemar": {
+  "followed_only_I0": 1,
+  "followed_only_I1": 1,
+  "p": 1.0
+ }
+}

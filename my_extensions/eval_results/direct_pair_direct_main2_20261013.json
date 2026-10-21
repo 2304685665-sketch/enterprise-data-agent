@@ -1,0 +1,53 @@
+{
+  "a": "main2_final",
+  "b": "direct_main2",
+  "n": 63,
+  "calls": {
+    "mean_a": 13.3016,
+    "mean_b": 9.2698,
+    "mean_diff_b_minus_a": -4.0317,
+    "median_diff": -4,
+    "n_nonzero": 61,
+    "W_plus": 0,
+    "z": 6.843,
+    "p": 0.0
+  },
+  "cost": {
+    "mean_a": 0.0114,
+    "mean_b": 0.0079,
+    "mean_diff_b_minus_a": -0.0035,
+    "median_diff": -0.0029,
+    "n_nonzero": 63,
+    "W_plus": 15.0,
+    "z": 6.795,
+    "p": 0.0
+  },
+  "sql": {
+    "mean_a": 4.1111,
+    "mean_b": 4.3016,
+    "mean_diff_b_minus_a": 0.1905,
+    "median_diff": 0,
+    "n_nonzero": 42,
+    "W_plus": 513.5,
+    "z": 0.777,
+    "p": 0.437
+  },
+  "v1": {
+    "pass_a": 53,
+    "pass_b": 56,
+    "a_only_pass": 0,
+    "b_only_pass": 3,
+    "mcnemar_exact_p": 0.25
+  },
+  "v2": {
+    "pass_a": 58,
+    "pass_b": 62,
+    "a_only_pass": 0,
+    "b_only_pass": 4,
+    "mcnemar_exact_p": 0.125
+  },
+  "ungrounded_cases": {
+    "a": 17,
+    "b": 16
+  }
+}

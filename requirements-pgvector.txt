@@ -1,0 +1,2 @@
+# 可选依赖：ODR_VECTOR_BACKEND=pgvector 时需要（不在 pyproject 里）
+psycopg[binary]>=3.1

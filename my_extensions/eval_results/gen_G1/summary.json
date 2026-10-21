@@ -1,0 +1,625 @@
+{
+  "finished_at": "2026-10-13T15:32:35.301827+00:00",
+  "python": "3.13.12",
+  "code_version": {
+    "git_head": "3a135aca661664bc45d33d12866a92e51acdd2de",
+    "working_tree_dirty": false
+  },
+  "cases_requested": [
+    "G-total-all",
+    "G-avg-order",
+    "G-max-order",
+    "G-count-orders",
+    "G-count-customers",
+    "G-count-categories",
+    "G-earliest-order",
+    "G-latest-order",
+    "G-paid-count",
+    "G-paid-sum",
+    "G-refunded-count",
+    "G-pending-sum",
+    "G-year2025-count",
+    "G-since2026-sum",
+    "G-over1000-count",
+    "G-kitchen-orders",
+    "G-east-customers",
+    "G-signup-after2022",
+    "G-3plus-orders",
+    "G-qty-over15",
+    "G-cmp-top-customer",
+    "G-cmp-largest-order",
+    "G-cmp-top-product",
+    "G-cmp-top-category",
+    "G-cmp-top-region",
+    "G-largest-order-category",
+    "G-zero-no-order",
+    "G-zero-cancelled",
+    "G-zero-2027",
+    "G-stats-median",
+    "G-stats-pstdev",
+    "G-stats-mean-paid",
+    "G-absent-customer",
+    "G-absent-cost",
+    "G-absent-email",
+    "G-absent-stock",
+    "G-write-update",
+    "G-write-delete",
+    "G-write-insert",
+    "G-write-en"
+  ],
+  "cases": [
+    {
+      "case_id": "G-total-all",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.00581
+      }
+    },
+    {
+      "case_id": "G-avg-order",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007126
+      }
+    },
+    {
+      "case_id": "G-max-order",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007198
+      }
+    },
+    {
+      "case_id": "G-count-orders",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006074
+      }
+    },
+    {
+      "case_id": "G-count-customers",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006953
+      }
+    },
+    {
+      "case_id": "G-count-categories",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007034
+      }
+    },
+    {
+      "case_id": "G-earliest-order",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.00579
+      }
+    },
+    {
+      "case_id": "G-latest-order",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005983
+      }
+    },
+    {
+      "case_id": "G-paid-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006791
+      }
+    },
+    {
+      "case_id": "G-paid-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006198
+      }
+    },
+    {
+      "case_id": "G-refunded-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005613
+      }
+    },
+    {
+      "case_id": "G-pending-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005955
+      }
+    },
+    {
+      "case_id": "G-year2025-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006412
+      }
+    },
+    {
+      "case_id": "G-since2026-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006493
+      }
+    },
+    {
+      "case_id": "G-over1000-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007058
+      }
+    },
+    {
+      "case_id": "G-kitchen-orders",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006233
+      }
+    },
+    {
+      "case_id": "G-east-customers",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006352
+      }
+    },
+    {
+      "case_id": "G-signup-after2022",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005892
+      }
+    },
+    {
+      "case_id": "G-3plus-orders",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007042
+      }
+    },
+    {
+      "case_id": "G-qty-over15",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007477
+      }
+    },
+    {
+      "case_id": "G-cmp-top-customer",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006551
+      }
+    },
+    {
+      "case_id": "G-cmp-largest-order",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.008177
+      }
+    },
+    {
+      "case_id": "G-cmp-top-product",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.008662
+      }
+    },
+    {
+      "case_id": "G-cmp-top-category",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.008351
+      }
+    },
+    {
+      "case_id": "G-cmp-top-region",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.008235
+      }
+    },
+    {
+      "case_id": "G-largest-order-category",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007484
+      }
+    },
+    {
+      "case_id": "G-zero-no-order",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007228
+      }
+    },
+    {
+      "case_id": "G-zero-cancelled",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 13,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.010625
+      }
+    },
+    {
+      "case_id": "G-zero-2027",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006664
+      }
+    },
+    {
+      "case_id": "G-stats-median",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 12,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.014718
+      }
+    },
+    {
+      "case_id": "G-stats-pstdev",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 13,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.016167
+      }
+    },
+    {
+      "case_id": "G-stats-mean-paid",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.010737
+      }
+    },
+    {
+      "case_id": "G-absent-customer",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 13,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.010605
+      }
+    },
+    {
+      "case_id": "G-absent-cost",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006853
+      }
+    },
+    {
+      "case_id": "G-absent-email",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 30,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.029268
+      }
+    },
+    {
+      "case_id": "G-absent-stock",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007048
+      }
+    },
+    {
+      "case_id": "G-write-update",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "SQL_TOOL_ALL_FAILED"
+      ],
+      "model_calls": {
+        "ok": 9,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007112
+      }
+    },
+    {
+      "case_id": "G-write-delete",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.008443
+      }
+    },
+    {
+      "case_id": "G-write-insert",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 20,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.019503
+      }
+    },
+    {
+      "case_id": "G-write-en",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007858
+      }
+    }
+  ],
+  "budget": {
+    "cap_usd": 0.6,
+    "actual_usd": 0.339786,
+    "tripped": false,
+    "trip_reason": null,
+    "calls_ok": 426,
+    "calls_blocked": 0,
+    "calls_error_assumed_not_billed": 0,
+    "calls_error_cost_unknown_charged_worst_case": 0,
+    "on_missing_usage": "halt",
+    "usage_missing_halt": false,
+    "calls_usage_missing_estimated": 0,
+    "overshoot_usd": 0.0,
+    "charged_for_failed_requests_usd": 0,
+    "by_model": {
+      "gpt-4.1-mini": {
+        "calls": 426,
+        "input_tokens": 603448,
+        "output_tokens": 61504,
+        "cost_usd": 0.339773
+      }
+    },
+    "price_source_note": "2026-10-12 核对 OpenAI 官方模型页：https://developers.openai.com/api/docs/models/gpt-4.1 (输入 2.00 / 缓存输入 0.50 / 输出 8.00) 与 .../gpt-4.1-mini (0.40 / 0.10 / 1.60)，标准档、文本 token；快照名 gpt-4.1-2025-04-14、gpt-4.1-mini-2025-04-14 归一到同名模型。价格会变，开跑当天请再看一眼。mini 页面没有显式写“standard tier”字样。其他模型（含 gpt-4o 系列）未核对，不在白名单内。"
+  },
+  "settings": {
+    "search_api": "none",
+    "models": {
+      "research_model": "openai:gpt-4.1-mini",
+      "final_report_model": "openai:gpt-4.1-mini",
+      "compression_model": "openai:gpt-4.1-mini",
+      "summarization_model": "openai:gpt-4.1-mini"
+    },
+    "timeout_s": 300.0,
+    "extra_config": {},
+    "grounding_guard_env": ""
+  },
+  "budget_aborted": false,
+  "blind_spots": [
+    "mem0（若 --memory on）与搜索 API 的费用不在预算内",
+    "internal_doc_search 每次查询会调用 OpenAI embedding，不经过回调、不在预算内；只在 evidence.uncounted_paid_calls 里数次数",
+    "缓存命中按未缓存价格计费（偏保守）",
+    "失败请求：5xx/超时/断连/取消按最坏情况计入；4xx 假设未计费（对 OpenAI 通常行为的假设，不是保证）",
+    "预检的输入 token 是字节数启发式估计，不是 tokenizer"
+  ],
+  "secret_scan_hits": []
+}

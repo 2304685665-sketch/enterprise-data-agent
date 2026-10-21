@@ -1,0 +1,42 @@
+{
+  "case_id": "L-stats-mean-A",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，所有 Series A 轮融资金额的平均值是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-stats-mean-A-4994ebb1",
+  "started_at": "2026-10-13T15:25:48.040316+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.489,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中Series A轮融资金额的平均值报告\n\n## 概述\n\n本报告旨在严格根据公司内部数据库数据，精准计算和提供公司所有记录的Series A轮融资金额的美元平均值。由于最初的调研简报未设定任何筛选条件（如时间段、行业或地理区域），因此本分析涵盖数据库内所有标记为“Series A”类型的融资轮次完整数据。目标是保证输出结果为实数值，避免任何主观估计。\n\n## 数据查询方法\n\n对公司内部数据库的查询使用了如下SQL语句：\n\n```sql\nSELECT AVG(amount_usd) AS average_series_a_amount FROM funding_rounds WHERE round_type = 'Series A';\n```\n\n此查询汇总所有Series A融资纪录，并计算`amount_usd`（融资金额，以美元计）的平均数。条件仅限定轮次类型为“Series A”，无其他筛选，确保数据样本覆盖数据库中所有相关融资记录。\n\n## 具体计算结果\n\n根据数据库直接返回的结果，Series A轮融资金额的平均值为：\n\n**54,580,666.67美元**（约合5458万美元）\n\n该平均值体现了目前公司数据库中所有Series A融资条目的整体融资水平，无论具体行业、融资时间或地理位置。\n\n## 结果分析\n\n- 该平均水平远高于市场上一些行业平均的Series A融资额（传统认知为百万级别资金），这可能说明数据库中既包含了早期创业公司融资，也记录了资本密集型或快速扩展型公司的较大单轮融资。\n- 数据库记录的Series A融资用美元计价，保证了跨国数据的统一度量标准，使得平均值具备较强的参考价值。\n- 由于未做时间限制，平均值综合了早期和最新的数据，可能受到极端高融资金额案例的影响，因此平均数较大，体现整体融资金额偏高的特征。\n- 若需要对平均金额进行更细致分析与分解（例如按时间、行业等），建议后续根据特定需求进行针对性的筛选和分组统计。\n\n## 结论\n\n基于公司内部数据库的精准数据计算，所有Series A融资轮次的平均融资金额为**54,580,666.67美元**。该数据准确反映了当前数据库中Series A融资的整体融资水平，是进行进一步决策和研究的坚实基础。\n\n---\n\n### 信息来源\n\n[1] 公司内部数据库Series A融资金额查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_zyrVtIRDNnH2aFqFTQ1jiEED"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003587
+  }
+}

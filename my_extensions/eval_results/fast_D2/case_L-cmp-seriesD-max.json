@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-seriesD-max",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，Series D 融资里，哪家公司拿到的金额最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-seriesD-max-c5fa42a2",
+  "started_at": "2026-10-13T15:19:20.886338+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.132,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中Series D轮融资最高金额的查询报告\n\n## 查询目的与背景\n\n本次研究的目的是精准获得公司内部数据库中关于最高Series D轮融资金额及对应公司的信息。需要特别注意：\n\n- 查询必须完全基于公司内部数据库实际记录，杜绝主观臆断或外部资料依赖。\n- 聚焦于“Series D”融资轮次，不涉及其他融资阶段。\n- 提供数据的时效性与准确性，反映最新的数据库存量。\n\n## 查询方法与执行\n\n为确保数据的准确有效，利用SQL对数据库进行直接查询，筛选条件和排序规则如下：\n\n- 筛选融资轮次字段为“Series D”。\n- 根据融资金额（美元计价）降序排序，取金额最高的第一条记录。\n- 联结公司表以获取对应公司名称。\n\nSQL 查询语句如下：\n\n```sql\nSELECT companies.name, funding_rounds.amount_usd \nFROM funding_rounds \nJOIN companies ON funding_rounds.company_id = companies.id \nWHERE funding_rounds.round_type = 'Series D' \nORDER BY funding_rounds.amount_usd DESC \nLIMIT 1;\n```\n\n## 查询结果\n\n根据上述查询，内部数据库中Series D融资轮次获得最高金额的公司及具体数字如下：\n\n- **公司名称**：Nectar Climate\n- **融资金额**：64,565,000美元\n\n此数据完全来源于内部系统最新存储，不包括任何其他轮次融资，也未受外部估计或推断影响。\n\n## 结果分析\n\n- Nectar Climate在Series D阶段获得了超过六千四百五十六万美元的融资，金额显著体现公司在该轮的资本吸引力。\n- 该资金规模反映了公司业务及市场潜力被投资方广泛认可。\n- 本数据为单轮融资金额，不代表累计融资总额或公司估值。\n- 内部数据库的及时更新保证了数据的权威性和时效性，这对于公司战略决策或竞争分析极具参考价值。\n\n## 结论\n\n基于公司内部数据库的直接查询结果，Nectar Climate公司以64,565,000美元的资金数额，成为Series D融资轮中融资金额最高的公司。该信息准确无误，代表公司数据库当前掌握的最权威融资数据。\n\n---\n\n### 资料来源\n\n- 本次查询涉及的数据均来自公司内部融资数据库，无公开链接或外部资源引用。\n\n### Sources\n\n无外部公开数据链接，所有数据均来自公司内部数据库。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_f5nCEHyEraa6LWA4iPoQyYGJ"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00471
+  }
+}

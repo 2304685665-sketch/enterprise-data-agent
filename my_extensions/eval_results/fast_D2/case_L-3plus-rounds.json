@@ -1,0 +1,47 @@
+{
+  "case_id": "L-3plus-rounds",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，完成过 3 轮及以上融资的公司一共有几家？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-3plus-rounds-1a8a2d32",
+  "started_at": "2026-10-13T15:21:04.101249+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 30.259,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中完成三轮及以上融资公司的数量报告\n\n## 一、研究背景及目标\n\n本次研究旨在通过直接查询公司内部数据库，精准统计完成过三轮及以上融资的公司数量。用户明确要求获得准确数字，并排除任何基于印象或估计的答案。由于融资轮数是公司成长及资本运作的重要指标，准确掌握该数据有助于管理层进行战略决策、资源配置及后续分析。\n\n## 二、数据库查询方法与过程\n\n### 1. 数据库结构与关键字段说明\n\n- **funding_rounds表**：记录了所有融资轮次的详细信息。\n- **company_id**：每条融资信息对应的唯一公司标识。\n- **id**：具体融资轮次的唯一标识。\n\n该表结构设计适合按照公司ID分组统计融资次数。\n\n### 2. 初步查询尝试\n\n为了找出所有完成三轮及以上融资的公司，首先进行了如下查询：\n\n```sql\nSELECT company_id\nFROM funding_rounds\nGROUP BY company_id\nHAVING COUNT(id) >= 3;\n```\n\n该查询返回所有融资轮数不少于3的公司ID列表。\n\n### 3. 计数查询优化\n\n为了得出准确的公司数量，使用了嵌套查询统计结果条数：\n\n```sql\nSELECT COUNT(*) AS total_companies_3_or_more_rounds\nFROM (\n  SELECT company_id\n  FROM funding_rounds\n  GROUP BY company_id\n  HAVING COUNT(id) >= 3\n) AS qualified_companies;\n```\n\n这一查询直接返回满足融资轮数条件的公司总数。\n\n## 三、查询结果及分析\n\n- 查询结果显示，共有**15家**公司在内部数据库中完成了三轮及以上的融资。\n- 这一结果为直接数据库查询所得，不含任何人为估计或推断，保证了数据的准确性和可信度。\n- 初始查询和最终计数查询结果一致，确认了统计方法的有效性。\n\n## 四、结论\n\n基于数据库内融资轮次的详细记录，通过标准SQL查询得出，公司内部数据库中完成三轮及以上融资的公司总数为**15家**。该数据符合查询需求，实现了对查询精确度的严格把控。\n\n该结果可作为后续战略制定、业务分析和资本运作的基础参考，确保决策依托事实数据，无需再进行数据猜测或预估。\n\n## 五、备注\n\n- 数据库记录仅反映当前存储状态，如存在数据更新或新增融资信息，统计结果会相应变化。\n- 本次查询范围限于内部数据库的数据，未涉及外部数据源。\n\n---\n\n### 参考来源\n\n[1] 内部数据库融资轮次统计查询结果 (内部SQL查询执行结果，无外部链接)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_9LogK1v9SAuqf7sJ9rxrQNAr",
+      "call_jzhwKJ8gD8BmquGC4hmCaFq8",
+      "call_oxeuZOmcp3DHCaU9Q16txbIs"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 8,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006307
+  }
+}

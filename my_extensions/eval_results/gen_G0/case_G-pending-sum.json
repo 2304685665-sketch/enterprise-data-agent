@@ -1,0 +1,46 @@
+{
+  "case_id": "G-pending-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 pending 的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-pending-sum-23593332",
+  "started_at": "2026-10-13T15:15:39.908889+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 37.685,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中状态为“pending”的订单金额总计的调研报告\n\n## 研究背景与目的\n\n本次调研旨在准确获得公司内部数据库中所有订单状态为“pending”的订单金额总和，金额单位为美元（USD）。客户明确要求：  \n- 必须直接查询内部数据库以获取最新、准确的数据  \n- 不得凭印象或经验估算，只能给出数据库中实时查询得到的精确数值  \n\n调研重点在于通过数据库查询确认“pending”状态的订单总金额，避免因字段命名或数据库结构误解而导致查询失误，确保数据的精确性和完整性。\n\n## 数据库查询过程及校验\n\n在查询过程中，针对订单金额字段和状态字段的正确列名进行了确认。具体流程如下：\n\n### 1. 初步查询尝试\n\n- 查询尝试使用字段 `order_amount_usd` ，SQL语句为：  \n  ```sql\n  SELECT SUM(order_amount_usd) AS total_pending_order_amount FROM orders WHERE status = 'pending';\n  ```\n- 结果返回错误：表中无 `order_amount_usd` 这一列  \n\n### 2. 字段名称探查\n\n- 查询数据库中 `orders` 表结构，确认包含的字段名，发现金额字段为 `amount_usd`（REAL类型），并非初始尝试的字段名  \n- `orders` 表中相关字段示例结构：  \n  ```sql\n  CREATE TABLE orders (\n    order_id INTEGER PRIMARY KEY, \n    customer_id INTEGER,\n    product_id INTEGER,\n    quantity INTEGER,\n    amount_usd REAL,\n    order_date TEXT,\n    status TEXT,\n    ...\n  );\n  ```\n\n### 3. 正确字段的最终查询\n\n- 使用正确字段名 `amount_usd` 将查询语句修正为：  \n  ```sql\n  SELECT SUM(amount_usd) AS total_pending_order_amount FROM orders WHERE status = 'pending';\n  ```\n- 查询结果显示状态为“pending”的订单的总金额为： **9227.03美元**\n\n## 结论\n\n通过实际查询公司内部数据库，以当前最新数据为准，所有状态为“pending”的订单的金额总计为 **9227.03美元**。\n\n该金额基于数据库中 `orders` 表的 `amount_usd` 字段汇总，统计条件严格限定为 `status` 字段值等于 `'pending'`，确保数据的准确性和针对性。\n\n## 备注说明\n\n- 查询仅限于数据库现有字段和数据，未做任何估算和假设  \n- 数据库权限仅为只读，未进行任何数据修改  \n- 数据时效性基于当前数据库记录，未来订单状态或金额变更将影响总金额  \n\n---\n\n### Sources\n\n[1] Company Internal Database – Orders Table Schema and Data Query Logs (Internal SQL Execution Records)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_4JwON0nhbWUruFmb3OQ6WPMK",
+      "call_X8fFh0FkepfayA3I2UwLLQ6r",
+      "call_yLEWgnILVTpVQuBxub037CzK"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 12,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.009302
+  }
+}

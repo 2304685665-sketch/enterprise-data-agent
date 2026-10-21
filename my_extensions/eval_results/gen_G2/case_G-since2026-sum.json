@@ -1,0 +1,42 @@
+{
+  "case_id": "G-since2026-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2026 年 1 月 1 日及以后的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-since2026-sum-9e82ba7f",
+  "started_at": "2026-10-13T15:13:27.746060+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.724,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我公司2026年1月1日及以后订单金额合计调研报告\n\n## 一、调研背景与目标\n\n本报告旨在精准核算我公司内部数据库中订单日期在2026年1月1日及以后的所有订单的美元金额总和。根据调研需求，不涉及任何订单状态或其他过滤条件，要求涵盖自2026年1月1日起所有订单数据，确保数据准确、实时，避免基于记忆或假设的估算。\n\n## 二、数据查询过程\n\n为获取精准数据，直接访问了我公司内部订单数据库，并执行了以下SQL查询语句：\n\n```sql\nSELECT SUM(amount_usd) AS total_amount_usd FROM orders WHERE order_date >= '2026-01-01';\n```\n\n该查询涵盖所有订单记录，只限制订单日期不早于2026年1月1日，未对订单状态、客户类别或任何其他属性设限，致力于全面反映该时间段内公司的订单交易总额。\n\n## 三、查询结果及数据分析\n\n查询结果显示，2026年1月1日及以后所有订单的美元累计金额为 **16,093.21美元**。\n\n- 该金额包括所有订单，无论其是已完成、待处理、还是取消状态，只要订单日期符合条件均计入合计。\n- 时间跨度涵盖从2026年1月1日至当前2026年10月13日，为约10个月期间的全量订单金额统计。\n\n此数据为库存数据库的实时汇总结果，确保其权威性和准确性，能够为公司财务审核、运营分析及高层决策提供可靠依据。\n\n## 四、结论\n\n根据最新的数据检索，我公司自2026年1月1日起至今所有订单的美元金额合计为16,093.21美元。该数字完整涵盖所有符合日期条件的订单，无任何遗漏或人为过滤，充分满足调研要求。\n\n未来若需更细粒度分析（例如分月、按订单状态分类或客户地域统计），可基于此次总量基础进行进一步的数据库细化查询。\n\n---\n\n### 参考资料\n\n[1] 内部公司数据库订单金额汇总查询结果: 2026年1月1日及以后总金额 16,093.21美元",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_7aRdRzomRF28EqPa4FlxZ3eB"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003511
+  }
+}

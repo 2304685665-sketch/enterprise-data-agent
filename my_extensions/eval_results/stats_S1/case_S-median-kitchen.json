@@ -1,0 +1,42 @@
+{
+  "case_id": "S-median-kitchen",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，Kitchen 品类商品的订单，金额的中位数是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-median-kitchen-3df53b05",
+  "started_at": "2026-10-13T15:52:51.274950+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 22.464,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Kitchen品类商品订单金额中位数研究报告\n\n## 研究背景\n\n本报告旨在准确回答关于公司内部数据库中Kitchen品类商品订单金额的中位数问题。用户明确要求基于内部数据库的精确数据，不依赖主观印象或外部估算，以确保结果的准确性和权威性。\n\n## 数据查询与结果\n\n通过对公司内部订单数据库的直接查询，针对Kitchen（厨房用品）品类下的所有订单金额数据进行统计分析，得出如下核心结论：\n\n- **Kitchen品类商品订单金额的中位数为：294.69美元。**\n\n中位数是一种描述数据集中趋势的统计量，代表将所有订单金额从小到大排列时处于正中间位置的值。它能有效避免极端高价或低价订单对平均值的影响，更真实地反映了典型订单金额水平。\n\n## 结果解读与分析\n\n- 中位数294.69美元表明，大部分Kitchen品类订单的金额集中在约300美元附近。\n- 这一数值提供了对Kitchen品类商品销售结构的基础认识，有助于评估产品定价、客户购买力以及营销策略效果。\n- 与平均值相比，中位数具有更强的抗离群点能力，因此适合用于日常业务分析与财务规划。\n- 该数字可作为后续业务决策的数据支持，比如制定促销方案、库存管理策略等。\n\n## 结论\n\n根据公司内部数据库查询，Kitchen品类商品订单金额的中位数是**294.69美元**。这一结果精准反映了Kitchen品类订单金额的典型水平，能够为业务分析和管理提供重要参考依据。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (内部系统数据，无公开链接)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_SJ0ri7RHK4yHlja2aLwoG4hX"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003163
+  }
+}

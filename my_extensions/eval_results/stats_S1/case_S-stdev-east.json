@@ -1,0 +1,42 @@
+{
+  "case_id": "S-stdev-east",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，East 地区客户下的订单，金额的样本标准差（n-1）是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-stdev-east-ffb6640e",
+  "started_at": "2026-10-13T15:51:57.890376+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 13.376,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# East地区客户订单金额样本标准差报告\n\n## 研究背景\n\n本报告旨在回应关于公司内部数据库中，East地区客户下的订单金额样本标准差（采用n-1分母，即样本标准差）的查询请求。订单金额的样本标准差是衡量订单金额波动性和分布广度的重要统计指标，对于评估该地区客户消费行为的稳定性和风险管理具有重要意义。\n\n## 样本标准差的定义与计算方法\n\n样本标准差是用于反映数据样本中各个数据点与样本均值的偏离程度的统计量，公式为：\n\n\\[\ns = \\sqrt{\\frac{1}{n-1}\\sum_{i=1}^n (x_i - \\bar{x})^2}\n\\]\n\n其中，\n- \\(n\\) 是样本容量，\n- \\(x_i\\) 是第 i 个样本数据，\n- \\(\\bar{x}\\) 是样本均值。\n\n选择用 \\(n-1\\) 作为分母，是为了获得无偏估计，尤其在样本量较小的情况下，更准确地估计总体标准差。\n\n## East地区客户订单金额的样本标准差结果\n\n通过对公司内部数据库的直接查询，精确提取了East地区客户订单金额的样本标准差，具体数据如下：\n\n- **样本标准差（n-1） = 530.05 美元**\n\n此结果基于完整的订单数据样本，代表了East地区客户在订单金额上的典型波动幅度，反映出该地区订单金额在平均水平上下约530美元的变动范围。\n\n## 结果分析\n\n- **波动幅度相对显著**：530.05美元的标准差说明East地区订单金额存在一定程度的差异化，可能由客户类型多样、订单规模从小到大不等所带来。\n- **风险评估意义**：该波动性提示运营和财务部门应注意大订单与小订单的分布，制定合理的信用、库存及服务策略。\n- **与其他地区对比的基础**：若未来需要，将该标准差与其他地区订单金额波动情况进行比较，有助于发现East地区市场的独特性与机会点。\n\n## 结论\n\n根据对公司内部数据库的直接数据查询，East地区客户订单金额的样本标准差（n-1）为**530.05美元**。这一统计数据为业务分析、风险管理及区域市场策略制定提供了可靠的量化依据。\n\n---\n\n### 参考文献\n\n[1] 公司内部订单数据库数据查询结果 (内部数据，无公开链接)\n\n### Sources\n\n[1] 公司内部订单数据库数据查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_aPHWVBYM79918HiyNF1pZLqA"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003578
+  }
+}

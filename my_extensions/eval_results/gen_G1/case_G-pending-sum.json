@@ -1,0 +1,41 @@
+{
+  "case_id": "G-pending-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 pending 的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-pending-sum-0338eacf",
+  "started_at": "2026-10-13T15:14:13.798274+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 23.589,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部状态为“pending”订单美元金额统计报告\n\n## 1. 研究任务概述\n\n本次研究聚焦于公司内部数据库中所有订单状态为“pending”的订单金额总和，旨在获取该金额的准确美元数值。用户明确指出需直接从数据库查询，确保结果的精准性，不能依赖印象或估算。\n\n## 2. 数据查询方法与过程\n\n为保证结果的准确性，使用内部数据库执行SQL查询，筛选出状态为“pending”的订单，并对其金额进行求和。具体SQL语句示例如下：\n\n```sql\nSELECT SUM(amount_usd) AS total_pending_amount\nFROM orders\nWHERE status = 'pending';\n```\n\n此查询确保计算所有符合条件订单的金额总和，数据未经任何估算或预测，仅以数据库中录入的真实数据为准。\n\n## 3. 查询结果与分析\n\n经过查询，得到的状态为“pending”的订单美元金额合计为：\n\n**$9,227.03**\n\n该数字代表当前数据库中所有待处理订单的累计金额，反映了公司尚未完成结算但已确认的潜在收入规模。  \n\n### 3.1 结果的准确性保障\n\n- 结果为数据库直接返回的求和数值，无中间环节估算或人工调整。\n- 确认订单状态字段的值严格匹配“pending”，避免数据误计。\n- 金额字段为美元，以公司规范的货币单位呈现，排除汇率波动或多币种混杂问题。\n\n## 4. 结果意义及后续建议\n\n- **财务分析**：9,227.03美元代表一笔尚待处理的订单资金量，有助于风险控制与现金流预测。\n- **运营跟进**：合理安排资源以加速“pending”订单的处理与转化。\n- **定期监控**：建议建立自动化机制，周期性获取此类数据，动态掌握业务进展。\n\n## 5. 结论\n\n基于直接数据库查询，当前所有状态为“pending”订单的美元金额总计为9227.03美元。该数据为精准结果，不含估算或推测，可作为公司财务及运营决策的重要参考。\n\n---\n\n### 参考资料\n\n本报告数据来源于公司内部订单数据库的SQL查询，无外部数据或资料引用。\n\n---\n\n### Sources\n\n无外部来源，数据由公司内部数据库查询获得。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_x2Su8xjsvNG0Zu41dzofvSur"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.005955
+  }
+}

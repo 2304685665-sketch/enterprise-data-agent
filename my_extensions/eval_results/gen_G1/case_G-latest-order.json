@@ -1,0 +1,41 @@
+{
+  "case_id": "G-latest-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，最晚的一笔订单发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-latest-order-1740b516",
+  "started_at": "2026-10-13T15:12:25.512111+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 32.7,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中最晚订单日期调研报告\n\n## 调研背景与目标\n\n本次调研旨在精准获取公司内部数据库中，所有订单记录中“最晚发生的一笔订单”的具体日期。用户明确要求：\n\n- 直接通过对数据库的查询获得准确的最新订单日期。\n- 不依赖主观记忆或估算。\n- 不对订单数据做任何过滤或额外限制，涵盖数据库中所有订单。\n\n因此，本调研的核心目标是执行针对所有订单记录的最高时间戳检索，准确给出该日期。\n\n## 数据库查询方法\n\n对此需求，采取了标准的SQL查询方法，针对订单信息表（通常表名为`orders`或类似名称），利用聚合函数`MAX()`直接获得最大订单日期字段值。\n\n执行的SQL语句为：\n\n```sql\nSELECT MAX(order_date) AS most_recent_order_date FROM orders;\n```\n\n- `order_date`字段用于表示订单的发生日期。\n- 该查询不带任何WHERE条件，确保覆盖整个订单数据集。\n\n## 查询结果及分析\n\n从执行结果得出，数据库记录中最晚的一笔订单发生日期为：\n\n**2026年9月23日**\n\n此结果为数据库直接提供的唯一最大订单日期，完全符合用户对准确性和全面性的要求。\n\n该日期意味着：\n\n- 截至当前（2026年10月13日），最近的订单记录大约发生在三周前。\n- 这份数据反映了公司的订单录入更新及时性。\n- 可以用于支持后续业务分析、订单跟踪和库存管理的时间轴参考。\n\n## 结论\n\n基于公司内部数据库的实际查询，最晚发生的一笔订单日期为**2026年9月23日**。该数据精准可靠，符合无筛选、全订单范围查询的要求，满足用户调研目的。同时，此时间数据可为业务相关活动提供准确的时间节点支持。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库订单表最大日期查询结果 (SQL直接执行数据)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_pkk70Rvga7SVH6Zk4HNXMrRO"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.005983
+  }
+}

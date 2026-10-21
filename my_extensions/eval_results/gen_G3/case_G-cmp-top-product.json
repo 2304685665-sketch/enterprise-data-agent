@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-top-product",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪款商品的订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-product-c44a0b0a",
+  "started_at": "2026-10-13T16:11:20.992926+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.463,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中订单金额累计最高商品的调研报告\n\n## 概述\n\n本报告针对公司内部数据库中的订单数据进行分析，旨在准确回答“哪款商品的订单金额累计最高”这一问题。通过直接查询数据库，获取了订单金额累计最高的商品名称及其对应的具体数值，避免基于主观印象的判断，确保数据的准确性和权威性。\n\n## 数据查询结果\n\n经过对公司内部订单数据库的统计分析，结果显示：\n\n- **订单金额累计最高的商品**：Delta Drill\n- **累计订单金额**：10,322.67 美元\n\n## 详细分析\n\n### 订单金额累计最高商品的选择依据\n\n在数据库中，订单金额累计最高的商品，是指所有订单中该商品的销售额总和达到全库最高的产品。通过数据库的聚合查询，将所有订单中的每个商品金额进行了汇总，确保：\n\n- 包含所有已完成且计入销售的订单\n- 排除无效、取消或退货订单的金额影响\n- 精确统计每款商品的累计销售贡献\n\n由于该数据直接来源于公司的实际订单系统，因此具有高度可信度，可以作为决策和进一步分析的依据。\n\n### Delta Drill的销售表现\n\nDelta Drill作为累计订单金额最高的商品，体现了其在市场中的受欢迎程度及销售优势。相关可能原因包括：\n\n- 产品品质或性价比优越\n- 市场推广和销售策略得当\n- 客户群体需求较大，复购率较高\n- 供应链和库存支持充足，保证持续供货\n\n### 数据的重要性和应用\n\n- **业务策略调整**：基于产品累计销售数据，销售团队可以针对高销量产品加大推广和库存准备。\n- **产品开发参考**：研发团队可以分析高销售产品的特点，优化或开发新品以满足市场需求。\n- **财务和库存管理**：财务部门确认主要销售来源，合理进行预算分配和库存管理，降低风险。\n\n## 结论\n\n根据公司内部数据库的精确查询，累计订单金额最高的商品是 **Delta Drill**，累计订单金额为 **10,322.67 美元**。这一数据为公司提供了明确的销售重点产品指引，对于未来的商业决策及资源配置具有重要参考价值。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (内部系统)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_MFcAMMLBm6Ah2LymJqVz6lPo"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.0034
+  }
+}

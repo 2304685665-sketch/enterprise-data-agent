@@ -1,0 +1,43 @@
+{
+  "case_id": "L-latest-date",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有融资记录里最晚的一笔发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-latest-date-e0500104",
+  "started_at": "2026-10-13T15:11:39.464220+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.182,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部融资记录中最新融资日期的查询结果报告\n\n## 一、调研背景与目标\n\n本次调研旨在准确获取公司内部数据库中所有融资记录里最新的一笔融资发生的具体日期。为避免凭印象判断，必须直接查询公司内部融资数据库，通过数据查询方式提取最新融资交易的时间点，确保信息的准确性和权威性。\n\n## 二、数据查询方法\n\n针对调研目标，执行了对公司内部融资记录数据库的结构化查询：\n\n- 采用的SQL查询语句：  \n  ```sql\n  SELECT MAX(round_date) AS latest_financing_date FROM funding_rounds;\n  ```\n- 该查询语句直接提取了融资事件中记录的最大日期（即最近的融资日期），无需中间计算或人工判断。\n\n此方式确保了完全基于现有数据源的精准提取，无主观猜测或历史记忆的干扰。\n\n## 三、调研结果\n\n查询结果显示，公司内部数据库中最新一笔融资的具体日期为：\n\n- **2026年9月11日**\n\n这一日期代表截至目前，公司数据库中所有融资记录的最晚时间点。自此日期起，尚未记录到比该日更晚的融资事件。\n\n## 四、结论\n\n基于直接数据库查询的结果，确认公司内部融资记录里最新的一笔融资发生在2026年9月11日。该数据点是通过内部数据库“funding_rounds”表中取最大融资日期字段“round_date”计算来的，具有权威性和准确性，完全符合调研要求。\n\n截至当前日期（2026年10月13日），该数据反映了公司融资活动的最近时间节点。\n\n---\n\n## 五、数据来源\n\n[1] 公司内部融资记录数据库 — 通过SQL查询语句获取最新融资日期数据\n\n---\n\n### Sources\n\n[1] 公司内部融资记录数据库查询结果 (内部数据，无公开URL)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_VQuoPkfJf5oVpcAlJ1dxbbP9"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004002
+  }
+}

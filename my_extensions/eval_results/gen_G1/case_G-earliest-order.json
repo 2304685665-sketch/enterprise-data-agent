@@ -1,0 +1,41 @@
+{
+  "case_id": "G-earliest-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，最早的一笔订单发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-earliest-order-097dd3b4",
+  "started_at": "2026-10-13T15:12:00.776485+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 24.733,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中最早订单日期的准确查询报告\n\n## 研究背景与目的\n\n本次研究的核心需求是准确获取公司内部数据库中记录的最早一笔订单的具体日期。用户明确指出，回答需基于数据库中的真实数据，严禁凭记忆、经验或估算作答，要求提供唯一且准确的最早订单日期。该信息对公司历史订单管理、业务进展评估及相关数据分析具有重要参考价值。\n\n## 数据查询方法及过程\n\n为满足用户对“最早订单日期”的严谨要求，工作步骤如下：\n\n- 使用公司内部数据库中的“orders”订单表作为数据来源。\n- 通过SQL语句查询订单日期的最小值，确保取得最早的订单时间点。\n- 执行的SQL语句为：\n\n  ```sql\n  SELECT MIN(order_date) AS earliest_order_date FROM orders;\n  ```\n\n- 该查询聚焦唯一列“order_date”，排除任何非日期格式字段，确保数据真实性与准确性。\n\n## 查询结果与分析\n\n执行上述SQL查询后，系统返回的准确最早订单日期为：\n\n**2024年2月15日**\n\n此日期是数据库中订单数据字段中所能检索到的最早一笔订单成交时间。未发现更早的订单记录，说明数据库从该日期开始或之前尚无订单录入数据。\n\n此结果具备以下特征和意义：\n\n- 该日期为数据库中存在的绝对最早订单时间，没有任何插补或预测成分。\n- 反映公司订单系统开始记录或早期订单数据的起点。\n- 为后续业务分析（如用户增长、销售趋势追踪）提供了时间基准。\n\n## 结论\n\n公司内部数据库中记录的最早一笔订单发生在**2024年2月15日**，该日期经过精确数据库查询验证，完全符合用户对精确性、无假设及无记忆依赖的要求。该信息为公司订单数据分析及历史回溯研究提供了坚实基础。\n\n## 参考资料\n\n- [1] 公司内部订单表（orders），SQL查询结果，内部数据库查询工具(sql_executor)\n\n---\n\n### Sources\n\n[1] Internal company orders table, SQL query result from sql_executor",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_M4zlE0rusRHfRRJtrPTNk3mw"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00579
+  }
+}

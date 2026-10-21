@@ -1,0 +1,42 @@
+{
+  "case_id": "G-paid-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 paid 的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-paid-sum-99171d9f",
+  "started_at": "2026-10-13T15:11:53.896548+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.263,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中状态为“paid”的订单金额汇总报告\n\n## 查询目的与背景\n\n本报告旨在准确统计并反馈公司内部数据库中所有订单状态标记为“paid”的订单金额总和，金额单位为美元。要求基于数据库执行直接且精确的查询，杜绝任何估算或主观推断，确保提供的金额数据为确切数值。\n\n## 数据查询方法与执行\n\n为获得准确金额，执行了以下SQL查询：\n\n```sql\nSELECT SUM(amount_usd) AS total_paid_amount FROM orders WHERE status = 'paid';\n```\n\n该查询针对`orders`表中所有`status`字段值为`paid`的订单记录，对`amount_usd`（订单金额，单位美元）字段进行求和，直接获得符合条件的总金额。\n\n该方法保证了金额汇总的完整性与精确性，符合研究需求。\n\n## 查询结果分析\n\n经过数据库直接查询，得到如下结果：\n\n- 所有状态为“paid”的订单金额总和为 **22,085.46 美元**。\n\n该结果代表数据库当前截至查询时间所有已支付订单的累计金额。金额精确到小数点后两位，直接反映实际资金流入订单的总额。\n\n## 额外说明与数据完整性\n\n- 查询涵盖数据库中所有记录，未对任何时间、客户或订单类别进行筛选。\n- 数据库中`amount_usd`字段专门用于记录订单的美元金额，保证了金额的货币一致性与准确性。\n- 本次查询为只读操作，无任何数据变动，确保数据安全与完整。\n- 报告结果完全基于内部数据库数据，没有使用外部估算或推断，符合对直接准确数据的需求。\n\n## 总结\n\n通过对公司内部数据库的直接查询，精确获取了所有已标记为“paid”订单的金额总和为22,085.46美元。该金额为实际计入系统的付款订单金额总和，是衡量公司已收订单业务规模的重要财务指标。\n\n如需进一步细化分析（如按时间段、客户分类等），可基于此基础数据设计更多查询方案。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库查询结果报告",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_KCJ0N2Cr8mPPnxkG8Bf8Il7x"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003328
+  }
+}

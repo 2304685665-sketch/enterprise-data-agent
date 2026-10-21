@@ -1,0 +1,51 @@
+{
+  "case_id": "G-paid-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 paid 的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-paid-count-aed86b71",
+  "started_at": "2026-10-13T15:13:49.686444+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 38.5,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 报告：公司内部数据库中状态为“paid”的订单总数查询结果\n\n## 背景与问题说明\n\n本次调研的核心需求是获得公司内部数据库中所有订单状态标记为“paid”的订单总数量。此数据必须由对数据库的直接查询获得，确保其准确性和实时性，并且需要覆盖所有相关订单记录，不根据日期、客户、产品类型等其他属性进行筛选。查询过程中需严格依据数据库的结构设计执行，以防因字段名称或表结构理解错误导致的数据偏差。\n\n---\n\n## 数据库结构和查询准备\n\n### 1. 数据库表结构确认\n\n最初尝试直接执行如下查询时出现错误：\n\n```sql\nSELECT COUNT(*) AS total_paid_orders FROM orders WHERE order_status = 'paid';\n```\n\n错误信息提示“no such column: order_status”，表明`orders`表中并无`order_status`字段。随后，查询数据库内包含的表：\n\n```sql\nSELECT name FROM sqlite_master WHERE type='table';\n```\n\n返回了三张表：\n\n- customers\n- products\n- orders\n\n由于需查询的订单信息显然来自`orders`表，进一步确认其结构。虽然不能直接运行`PRAGMA`语句获取表结构，但通过获取该表创建语句确认：\n\n```sql\nSELECT sql FROM sqlite_master WHERE name='orders';\n```\n\n返回的创建SQL如下：\n\n```sql\nCREATE TABLE orders (\n  order_id INTEGER PRIMARY KEY,\n  customer_id INTEGER,\n  product_id INTEGER,\n  quantity INTEGER,\n  amount_usd REAL,\n  order_date TEXT,\n  status TEXT,\n  FOREIGN KEY(customer_id) REFERENCES customers(customer_id),\n  FOREIGN KEY(product_id) REFERENCES products(product_id)\n)\n```\n\n从表结构中可以确定，表示订单状态的字段名为`status`，而非`order_status`。\n\n### 2. 修正查询语句\n\n基于正确字段`status`，对订单状态为“paid”的订单总数进行统计的查询语句应为：\n\n```sql\nSELECT COUNT(*) AS total_paid_orders FROM orders WHERE status = 'paid';\n```\n\n---\n\n## 查询结果与分析\n\n执行上述修正后查询，得到的结果为：\n\n- 订单状态为“paid”的订单总数量：**49**笔\n\n该数量为当前数据库中所有标记为已支付订单的准确数量，无任何额外条件限制，完整覆盖了所有时间、客户及产品类型的订单记录。\n\n### 结果的可靠性\n\n- 查询基于官方数据库的实时数据，非估算或记忆回忆。\n- 使用了正确的订单状态字段名，确保了数据的准确提取。\n- 查询覆盖了数据库中定义的全部订单记录，无任何人为筛选。\n- 数据库未限制状态取值，与“paid”对应的订单均被正确计数。\n\n---\n\n## 结论\n\n针对“我公司内部数据库中状态为‘paid’的订单一共有几笔？”的研究问题，已通过直接查询内部数据库获取了准确数值：\n\n- **状态为‘paid’的订单总计为49笔。**\n\n本结果完全符合需求，保证了数据的准确性、实时性和全面性。\n\n---\n\n## 附加说明\n\n- 由于访问权限限制，无法使用某些查看表结构的特定命令，但通过获取表的建表语句成功确认了数据库结构。\n- 本次检索未涉及任何数据修改操作，保证数据完整无误且无风险。\n\n---\n\n### 参考资料\n\n[1] 公司内部数据库查询结果 — 订单表结构及状态为“paid”的订单计数  \n(本报告所有数据均来源于公司内部数据库的SQL查询，无外部链接)\n\n---\n\n### Sources\n\n[1] Internal SQL Query Results from Company Database - orders table schema and paid order count via internal `sql_executor`.",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 5,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 5,
+    "sql_call_ids": [
+      "call_YlZPP1yP4jjfVbMlcG18l5sd",
+      "call_ZWiu7FbjnErygXAQFMazSEmT",
+      "call_fSVR8eG5FtW9Q1oT69KAllVW",
+      "call_i7D0bHo01npmi0ePyFzS4cuI",
+      "call_tW13wvNlZYKKWhzgkXNZvaa7"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "success",
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 14,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.011327
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "L-edtech-companies",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Edtech 行业一共有几家公司？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-edtech-companies-4e411f69",
+  "started_at": "2026-10-13T15:14:43.958827+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.978,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 内部数据库中Edtech行业公司的数量报告\n\n## 研究目标\n\n本次研究旨在准确了解我司内部数据库中被归类为“Edtech”行业的公司总数。根据需求，查询必须直接从数据库实时获得，确保信息准确无误，不依赖于记忆或假设。\n\n## 数据查询结果概述\n\n经过对我司内部数据库的直接查询，得出如下明确数据：\n\n- Edtech 行业下公司数量总计为：**5家**\n\n本结果体现了当前数据库中明确归类为Edtech行业的实体公司数目。\n\n## 数据准确性及信息完整性\n\n- 查询结果基于最新数据库状态，确保数据的时效性和准确性。\n- 数据库仅包含已录入的公司信息，可能不反映市面上所有存在的Edtech公司，仅限于我司内部系统收录的对象。\n- 由于数据库字段限制，本次查询未涉及单个公司详细信息、市场表现或行业细分说明，仅统计公司数量。\n\n## 总结\n\n截至目前，我司内部数据库中Edtech行业共登记有5家公司。该数字为数据库实时查询结果，不依赖主观判断或非结构化数据抽取，具备高度的准确性与权威性。\n\n如需进一步细分这些公司或了解更多信息，可考虑进行更深入的数据库字段检索和数据分析。\n\n---\n\n### 参考来源\n本报告数据基于内部数据库查询结果，无公开引用链接。\n\n",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_OaPnCjOn5SU2w9ojAk9SpJeW"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003171
+  }
+}

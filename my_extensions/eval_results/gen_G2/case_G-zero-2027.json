@@ -1,0 +1,42 @@
+{
+  "case_id": "G-zero-2027",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，2027 年的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-zero-2027-979f7d5c",
+  "started_at": "2026-10-13T15:17:45.985929+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.226,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2027 年公司内部数据库订单数量查询报告\n\n## 查询目的概述\n\n本次研究旨在准确统计我公司内部数据库中，2027 年所有订单的总笔数。要求严苛限定为直接查询数据库结果，杜绝任何基于经验估计或个人印象的回答。目的是获得最精确、最权威的订单计数数据，用于业务分析及未来战略规划。\n\n## 查询方法与执行过程\n\n- 直接通过 SQL 语句访问内部订单数据库。\n- 针对订单日期字段，筛选年份为 2027 年的所有订单。\n- 使用聚合函数 COUNT(*) 进行订单总数计数，保证结果为精确数值。\n\n执行的核心查询语句如下：\n\n```sql\nSELECT COUNT(*) as total_orders_2027 FROM orders WHERE order_date LIKE '2027%'\n```\n\n其中 `order_date` 字段包含订单日期，采用字符串匹配以“2027”开头的所有记录。\n\n## 查询结果总结\n\n经过直接数据库查询，结果显示：\n\n- 2027 年共计的订单笔数为 **0**。\n- 即当前数据库中并无任何记录显示 2027 年发生过订单。\n\n此结果是基于实时数据库数据提取，无任何推测成分，完全履行了“精确数字”的要求。\n\n## 结论与分析\n\n- 当前公司数据库尚未存在 2027 年订单的任何记录，这可能与时间点（2026 年10月13日为当前日期）有关，2027 年尚未来临或数据尚未录入。\n- 该情况提醒相关业务部门，2027 年订单数据尚未产生或需加快数据采集及录入速度，确保未来统计分析顺利开展。\n- 未来如需监测订单变化，应持续跟踪数据库更新，定期复查。\n\n## 补充说明\n\n- 本次查询未涉及订单金额、客户来源、订单类型等细分数据，若有进一步需求可追加查询。\n- 查询仅限于已存在数据库架构及字段，若内部数据库结构发生变更，查询语句及结果可能受影响。\n\n---\n\n## 参考来源\n\n本报告数据来源完全基于本次对公司内部数据库的直接 SQL 查询，无外部参考文献。\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (2026年10月13日执行)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_QgZTdRNVcPuL2ZSX3fxC4ZIh"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004342
+  }
+}

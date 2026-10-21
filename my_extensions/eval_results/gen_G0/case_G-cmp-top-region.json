@@ -1,0 +1,44 @@
+{
+  "case_id": "G-cmp-top-region",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个区域的客户订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-region-a9487f7c",
+  "started_at": "2026-10-13T15:24:13.434558+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 36.442,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库按区域累计客户订单金额分析报告\n\n## 研究背景\n\n本次研究旨在精准确定我司内部数据库中，哪个定义的地理区域客户累计订单金额最高。要求基于数据库内实际的订单交易数据，统计截止当前日期所有有效订单的金额总和。区域分类严格按照公司内部客户资料中的“region”字段定义，不允许基于估算或印象推断。通过对数据库进行结构分析及订单数据汇总，得出准确结果，为公司决策提供数据支持。\n\n## 数据库结构概述\n\n经查询，我司内部数据库涉及本次研究核心的表结构及字段如下：\n\n- **customers** 表：存储客户基本信息，包括 `customer_id`, `customer_name`, `region`（地理区域）, `signup_year` 等。\n- **orders** 表：记录客户订单信息，重要字段包括 `order_id`, `customer_id`（关联客户）, `product_id`, `quantity`, `amount_usd`（订单金额，美元计价）, `order_date`, `status` 等。\n- **products** 表：产品目录及价格信息，不直接用于本次统计，只为参考。\n\n本次订单金额统计通过关联 `orders` 和 `customers` 表的 `customer_id` 字段，结合客户所在区域进行总金额累计。\n\n## 累计客户订单金额按区域统计结果\n\n基于以下SQL查询完成数据统计：\n\n```sql\nSELECT c.region, SUM(o.amount_usd) AS total_order_amount\nFROM orders o\nJOIN customers c ON o.customer_id = c.customer_id\nWHERE o.order_date <= DATE('now')\nGROUP BY c.region\nORDER BY total_order_amount DESC;\n```\n\n该查询保证覆盖截止当前日期的所有订单数据，且按照公司定义的 `region` 进行分组汇总金额。\n\n统计结果如下（金额单位均为美元）：\n\n| 区域   | 累计订单金额 (USD) |\n|--------|------------------|\n| Central | 15,575.97         |\n| East    | 7,124.75          |\n| South   | 6,564.87          |\n| West    | 6,409.14          |\n| North   | 3,274.87          |\n\n## 结果分析\n\n- **Central（中部）区域**的客户累计订单金额最高，达到 $15,575.97，远高于其他区域，几乎是以下各区域订单金额的两倍或以上。这表明Central地区客户的订单活跃度及金额贡献对于公司整体业绩占有举足轻重的地位。\n  \n- **East（东部）和South（南部）区域**分别以 $7,124.75 和 $6,564.87 紧随其后，两个区域订单金额相近，都显著低于Central区域，但又明显高于West和North区域。\n  \n- **West（西部）和North（北部）区域**累计订单金额较低，分别为 $6,409.14 和 $3,274.87。这可能暗示这两个区域的市场开发需要加强，或者客户基数较少、消费金额偏低。\n\n整体来看，公司各区域订单金额分布呈现出Central区域占据主导优势，East和South处于中等水平，West和North略显落后。此信息不仅有助于反映区域市场表现，也可作为后续资源调配、市场推广及销售策略制定的依据。\n\n## 结论\n\n根据公司内部数据库的精确数据统计，截至目前，累计客户订单金额排名第一的地理区域为 **Central（中部）**，其累计订单金额为 **$15,575.97**。该区域的订单贡献显著超过其他区域，是公司最重要的销售及客户市场区域。\n\n建议针对Central区域持续深耕，加强维护与挖掘潜在客户，同时对East、South等中等贡献区域制定针对性增长策略，提升West和North区域的市场表现，从而实现整体业绩优化。\n\n## 依据与来源\n\n- 公司内部数据库中客户表 `customers` 与订单表 `orders`\n- 订单金额统计SQL查询结果，确保覆盖所有有效订单记录及目前为止的累计数据\n\n### Sources\n\n[1] 公司内部数据库结构及客户区域定义查询结果  \n[2] 按区域累计订单金额SQL查询结果（2026年10月13日执行）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_LzGJio3ikmdOhz6rCmXKadWh",
+      "call_hl1p8J8SodSFMCo2cQ0GnaUx"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.009726
+  }
+}

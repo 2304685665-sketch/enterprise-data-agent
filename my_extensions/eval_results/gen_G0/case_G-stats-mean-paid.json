@@ -1,0 +1,47 @@
+{
+  "case_id": "G-stats-mean-paid",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，状态为 paid 的订单，金额的平均值是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-stats-mean-paid-9db623f2",
+  "started_at": "2026-10-13T15:29:09.705840+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 41.783,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中状态为“paid”的订单平均金额研究报告\n\n## 概述\n\n本报告针对公司内部数据库中所有订单状态为“paid”的订单，精确测算其平均订单金额（以美元计）。研究目的是通过直接查询数据库获取准确数值，避免依赖主观估计或记忆。报告涵盖数据库表结构的分析、查询过程及最终计算结果，确保提供全面且准确的数据支持。\n\n## 数据库架构及关键字段说明\n\n在执行查询前，对数据库架构进行了详细检查，以确定正确的表名和字段名。发现关键表和字段如下：\n\n- **表名**：`orders`\n- **相关字段**：\n  - `order_id`：订单唯一标识\n  - `customer_id`：客户标识\n  - `product_id`：产品标识\n  - `quantity`：产品数量\n  - **`amount_usd`**：订单金额，单位为美元（浮点型字段）\n  - `order_date`：订单日期\n  - **`status`**：订单状态文本字段，含“paid”等状态\n\n该信息通过查询`sqlite_master`系统表确认，确保后续的平均值计算基于正确字段。\n\n## 查询逻辑及执行\n\n基于上述结构，直接执行下述SQL查询以计算平均订单金额：\n\n```sql\nSELECT AVG(amount_usd) AS average_paid_order_amount\nFROM orders\nWHERE status = 'paid';\n```\n\n- `AVG()`聚合函数用于求所有满足条件订单的金额平均值。\n- 只考虑`status`等于“paid”的所有订单，不施加其他时间、客户或产品的过滤条件。\n\n初次尝试因字段命名错误而失败，数据库返回“no such column: order_amount”错误。经过架构确认后，改用正确字段`amount_usd`，查询成功执行。\n\n## 查询结果\n\n查询返回的平均订单金额（所有状态为“paid”的订单）为：\n\n**450.72367346938773 美元**\n\n这一数值表示公司内部所有已支付订单的平均交易额，涵盖所有时间段与客户，无任何筛选限制。\n\n## 分析与解读\n\n- 该平均金额反映了“paid”订单的整体经济规模水平，可用于财务报告、预算制定及营销策略参考。\n- 数据包括历史及最新订单，具备全面性，避免了单独时段或客户群体的偏差。\n- 计算基于内部数据库真实数据，准确性高，无估算或间接推断，与真实经营情况高度一致。\n\n如果后续需要分时间段、客户类型或产品类别进一步细分分析，建议基于此基础数据进行数据切片处理。\n\n## 结论\n\n综合数据库结构与直接查询结果，确认公司内部所有状态为“paid”的订单平均订单金额约为**450.72美元**。该数值精确来源于数据库实时数据，不涉及任何估算或主观猜测，具备高度可信度和应用价值。\n\n---\n\n### Sources\n\n[1] 公司内部SQL数据库订单表结构与查询结果 (内部数据库，无公开链接)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_1kqERhf38HGop5Ejw6J8WQJ8",
+      "call_E4zi2pPQOX5CZm50J4sSfZZo",
+      "call_zdlmlXGkTOMESHuXvF2FgIuO"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 12,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.009541
+  }
+}

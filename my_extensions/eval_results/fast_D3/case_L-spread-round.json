@@ -1,0 +1,43 @@
+{
+  "case_id": "L-spread-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔融资金额最大值与最小值相差多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-spread-round-0812a7ad",
+  "started_at": "2026-10-13T15:10:08.390151+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.333,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部单笔融资金额差异分析报告\n\n## 数据查询结果概述\n\n根据对公司内部数据库的权威查询，得到了以下关于单笔融资金额的精准数值：\n\n- **单笔融资最大金额：98,551,000.0 美元**  \n- **单笔融资最小金额：2,790,000.0 美元**\n\n以上数据均直接来自内部数据库，确保了数值的准确性和权威性，未基于任何假设或过去印象。\n\n## 最大值与最小值之间的差额计算\n\n根据上述数据，计算单笔融资最大金额与最小金额之间的差距如下：\n\n\\[\n98,551,000.0 - 2,790,000.0 = 95,761,000.0 \\text{ 美元}\n\\]\n\n即，单笔融资最大金额和最小金额之间的绝对差额为 **95,761,000.0 美元**。\n\n## 分析与意义\n\n- 该差额显示了公司内部单笔融资金额的极大波动范围，反映出融资项目或客户规模在极大程度上存在差别。\n- 对于财务风险管理和资金配置策略，理解这一差额有助于制定更合理的资源分配方案，避免某些融资项目因金额过小而无法满足预期收益，或因金额过大而产生过高风险。\n- 此外，该差异还可能受项目类型、行业特点、市场环境及融资阶段等多重因素影响，建议结合具体业务背景进一步细化分析。\n\n## 结论\n\n直接查询公司内部数据库得出，单笔融资最大金额为98,551,000.0美元，最小金额为2,790,000.0美元，两者相差95,761,000.0美元。该差距明确且量化，为后续财务分析及融资策略调整提供了重要依据。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库融资金额数据 (内部授权访问)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "python_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_mdUsk99irzeKJM4NPIQKSkIn"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003423
+  }
+}

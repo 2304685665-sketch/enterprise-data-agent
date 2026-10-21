@@ -1,0 +1,50 @@
+{
+  "case_id": "S-stdev-east",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，East 地区客户下的订单，金额的样本标准差（n-1）是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-stdev-east-eef98583",
+  "started_at": "2026-10-13T15:53:30.812281+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 31.137,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# East地区客户订单金额样本标准差研究报告\n\n## 研究背景与目的\n\n本报告旨在解答关于我司内部数据库中East地区客户订单金额的统计指标，特别是订单金额的样本标准差（n-1），以精确的数据支持业务分析和决策。该指标反映了East地区订单金额的波动情况，对于分析客户订单的稳定性、风险评估以及市场策略调整具有重要意义。\n\n---\n\n## 数据来源与处理方法\n\n此次计算基于公司内部数据库中East地区客户的订单金额数据。数据列表如下：\n\n- 108.01\n- 540.17\n- 1677.18\n- 712.19\n- 1677.20\n- 128.32\n- 403.33\n- 324.34\n- 253.85\n- 124.65\n- 368.66\n- 320.17\n- 486.68\n\n以上金额单位均为美元。\n\n计算方法采用样本标准差的公式，即使用(n-1)作为分母，保证对样本数据的无偏估计。计算步骤包括：\n\n1. 计算样本均值\n2. 计算每个样本数据与均值的差的平方\n3. 将平方差之和除以自由度(n-1)\n4. 对结果开平方得到标准差\n\n---\n\n## 计算结果与分析\n\n根据上述数据运算，East地区客户订单金额的样本标准差（n-1）约为：\n\n**530.05美元**\n\n该标准差体现出East地区客户订单金额具有较大的波动范围，个别订单金额远高于平均水平（如1677美元左右的订单），导致整体波动幅度较大。这可能反映了East地区客户订单的多样化，涵盖小额订单与大额订单。\n\n此数据的具体价值包括：\n\n- **风险管理**：较高的样本标准差提示订单金额的不确定性较大，需针对大额订单风险制定相应策略。\n- **客户细分**：波动较大的地区订单金额可以进一步细分，查明高价值客户与常规客户，优化资源分配。\n- **市场策略调整**：基于订单金额波动情况，可以设计分级促销或量身定制的销售策略，提高客户满意度和订单转化率。\n\n---\n\n## 结论\n\n通过对内部数据库East地区订单金额进行采集与计算，得出订单金额样本标准差（n-1）为**530.05美元**。此值准确反映了East地区订单金额整体波动特征，为公司后续业务分析及决策提供了重要依据。\n\n---\n\n## 参考来源\n\n[1] 公司内部订单数据库 — East地区客户订单金额数据 (内部数据提取结果)\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库 — East地区客户订单金额数据 (数据查询日期：2026年10月13日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "1677-18-71",
+        "1677-20-12"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "python_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_1H2JkpoR7S6BaOO8gNc52UVi"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004542
+  }
+}

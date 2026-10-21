@@ -1,0 +1,41 @@
+{
+  "case_id": "L-since2025-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2025 年 1 月 1 日及以后一共发生了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-since2025-count-969dae32",
+  "started_at": "2026-10-13T15:14:08.685196+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.303,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于2025年1月1日及以后公司内部数据库中融资交易笔数的查询报告\n\n## 查询目的与背景\n\n本次查询旨在明确回答“公司内部数据库中自2025年1月1日起发生的融资交易总笔数”。该信息有助于准确掌握公司近两年多期间融资活动的数量，支持公司内部管理和后续数据分析工作。查询结果基于公司的真实数据库数据，完全不依赖记忆或假设，确保数据的准确性和可靠性。\n\n## 数据库查询实施情况\n\n针对研究需求，执行了如下SQL查询：\n\n```sql\nSELECT COUNT(*) AS financing_transaction_count FROM funding_rounds WHERE round_date >= '2025-01-01';\n```\n\n该查询语句的含义为：统计“funding_rounds”表中“round_date”字段在2025年1月1日及之后的融资记录总数。\n\n## 查询结果与分析\n\n- **融资交易笔数**：查询结果显示，截至目前，公司数据库中记录的2025年1月1日及以后发生的融资交易共计12笔。\n\n- **数据准确性**：该数字直接来源数据库统计，反映真实数据，无主观臆断或人为干预。\n\n- **时间范围覆盖**：该数据涵盖了从2025年1月1日零时起至当前（2026年10月13日）的所有融资记录，具备完整性。\n\n- **表结构与字段说明**：\n  - `funding_rounds`：存储融资轮次详情的主表\n  - `round_date`：融资发生日期字段，用于时间筛选\n\n## 结论\n\n基于对公司内部数据库的直接查询，截至2025年1月1日及以后，共发生12笔融资交易。该数据揭示了公司近期融资活动的数量规模，为公司战略制定、财务管理和业务分析提供了真实可靠的依据。\n\n---\n\n### 备注\n\n- 本次查询仅对融资交易数量进行统计，未涉及融资金额、投资方信息、融资轮次类型等其他维度数据，若需进一步分析可追加专项查询。\n- 查询过程遵循数据真实性原则，仅展示数据库内真实存储数据，未进行任何预测或估算。\n\n---\n\n### 参考资料\n\n[1] 公司内部数据库融资记录查询结果, SQL执行于2026年10月13日。\n\n### Sources\n\n[1] 公司内部数据库融资记录查询结果: 内部执行，无公开链接",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_s9t3qXN0YMlyl0fLwaNAsid0"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003428
+  }
+}

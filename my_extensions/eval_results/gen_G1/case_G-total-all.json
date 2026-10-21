@@ -1,0 +1,42 @@
+{
+  "case_id": "G-total-all",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有订单（不论状态）的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-total-all-4161a232",
+  "started_at": "2026-10-13T15:09:17.028911+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 27.463,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司所有订单金额合计查询报告\n\n## 研究目的\n\n本报告旨在准确统计并呈现我司内部数据库中所有订单的订单金额合计（单位：美元），无论订单的当前状态如何。此次查询基于公司内部数据库进行，确保数据精准来源，不包含任何估算或主观判断。\n\n## 数据查询方法\n\n为确保数据的准确性与完整性，通过直接执行SQL语句，针对储存在公司内部数据库中的订单数据进行汇总计算。SQL查询针对订单金额的美元字段进行了求和操作，涵盖所有订单记录，不排除任何状态类别。\n\n所执行的SQL语句如下：\n\n```sql\nSELECT SUM(amount_usd) AS total_order_amount_usd FROM orders;\n```\n\n该语句对`orders`表中`amount_usd`字段的值进行累加，得到所有订单金额的总和。\n\n## 查询结果\n\n经数据库查询，所有订单（无论状态）的订单金额总和为：\n\n**38,949.6 美元**\n\n该金额为基于现有数据库中全部订单数据的精准统计结果，确保全面覆盖，无遗漏。\n\n## 结论与分析\n\n- 该数值涵盖所有订单状态，确保了数据的完整性，不会因筛选条件而产生偏差。\n- 如需进一步细分（例如按订单状态、时间区间或地区分析订单金额），可基于此基础查询进行扩展。\n- 当前结果直接反映公司的历史订单规模的一个重要财务指标，有助于公司对销售总额的宏观把控。\n\n## 备注\n\n此次查询只进行了数据读取操作，无涉及任何数据库数据的修改或更新，确保数据安全和完整性。\n\n---\n\n### 来源\n\n[1] 公司内部数据库订单数据查询结果 (sql_executor)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_2vIzgMbqTuqrVngLKjomR5PY"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00581
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "L-cmp-2026-top",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，2026 年内融资金额合计最高的是哪家公司？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-2026-top-6da6985a",
+  "started_at": "2026-10-13T15:17:35.411931+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.761,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2026年融资金额最高公司研究报告\n\n## 公司融资总额最高情况概述\n\n根据公司内部数据库查询，2026年度内融资金额合计最高的公司为 **Nectar Climate**。数据库提供的准确数据表明，该公司在2026年内实现的融资总额为 **152,629,000美元**。\n\n此数据经过系统直接查询汇总，保证了信息的准确性和权威性，严格按照数据库中存储的融资记录统计，完全排除任何主观印象或推测。\n\n## Nectar Climate融资总额分析\n\nNectar Climate作为2026年融资金额最高的企业，其融资表现突出，明显领先于公司数据库中其他竞对。融资总额达到1.526亿多美元，反映出投资者对其业务模式、市场潜力及未来发展计划认可度较高。\n\n该融资规模通常表明：\n\n- 公司拥有较强的资本市场吸引力\n- 战略布局和项目推进具备较高的竞争力\n- 获得充足资金支持，有利于加快产品研发、市场扩展和技术升级\n\n尽管数据库中未细化不同融资轮次或资金来源构成，但整体金额已能充分体现该企业在2026年资本运作上的领先地位。\n\n## 数据来源与准确性保证\n\n- 本报告基于公司内部数据库最新刷新数据查询，确保信息时效截至2026年10月13日。\n- 查询过程中未发现其他公司融资总额超过Nectar Climate的记录。\n- 数据库查询采用标准结构化查询语言（SQL）及财务数据聚合处理，所有融资金额均以美元计价。\n- 无任何主观假设或外部估计介入，完全依据实际记录。\n\n## 结论\n\n综上所述，根据公司内部数据库数据，2026年融资金额合计最高的公司是**Nectar Climate**，其融资总额精确为 **152,629,000美元**。这一数值代表了公司全年资本筹集能力的顶峰，反映出其在业务发展和市场地位上的显著竞争优势。\n\n---\n\n### 来源\n\n[1] 公司内部融资数据库查询结果 (2026年最新)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_GhaTypb046Eh2YOU9gRJaIqU"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003556
+  }
+}

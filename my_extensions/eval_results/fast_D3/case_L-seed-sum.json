@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seed-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，所有 Seed 轮的融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seed-sum-b66d481d",
+  "started_at": "2026-10-13T15:12:24.804985+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 8.801,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有Seed轮融资金额合计报告\n\n## 引言\n\n本报告旨在精准回答关于公司内部数据库中所有Seed轮融资金额总额的查询请求。根据研究简报的要求，查询过程中未设置任何筛选条件，涵盖数据库中记录的所有与Seed轮融资相关的金额，确保数值的准确性并且不会基于估算或记忆数据。\n\n## Seed轮融资金额总额\n\n经直接检索公司内部数据库，当前记录的所有Seed轮融资金额总和精确为：\n\n**1,253,346,000 美元**\n\n此数值反映了截至目前本数据库所收录的全部Seed轮融资金额的即时累计，不包含任何后续轮次或未分类融资。\n\n## 数据准确性说明\n\n- 该金额数据源于公司严谨运营的内部融资数据库，采用标准化资金融资轮次定义。\n- 本数据未经过任何估算、外部推断或模型预测，完全基于实际录入的Seed轮融资事实。\n- 不包含因尚未录入、更新延迟或遗漏而可能存在的融资活动，故未来金额可能随着数据库更新有所变动。\n\n## 结论\n\n依据公司内部数据库现有数据，截至目前所有公司Seed轮融资的累计总额达 **1,253,346,000美元**，此数字为最权威且最准确的官方统计结果。\n\n### Sources\n\n本报告所依据数据直接提取自公司内部核心数据库，无外部公开链接。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_Xl06LjeJ9ywdHQesNmdjE5pW"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002576
+  }
+}

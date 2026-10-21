@@ -1,0 +1,82 @@
+rule_files:
+  - alerts.yml
+evaluation_interval: 1m
+tests:
+  # 1) 服务抓取失败 -> ServiceDown
+  - interval: 1m
+    input_series:
+      - series: 'up{job="odr",instance="a"}'
+        values: '1 1 0 0 0 0 0'
+    alert_rule_test:
+      - eval_time: 6m
+        alertname: ODRServiceDown
+        exp_alerts:
+          - exp_labels: {severity: critical, job: odr, instance: a}
+            exp_annotations: {summary: "研究服务抓取失败（实例 a）"}
+      - eval_time: 1m
+        alertname: ODRServiceDown
+        exp_alerts: []
+  # 2) 新任务不断进来但没有成功（额度耗尽的典型形态）-> NoTaskSucceeding
+  - interval: 1m
+    input_series:
+      - series: 'odr_tasks_created_total'
+        values: '0+1x30'
+      - series: 'odr_tasks_succeeded_total'
+        values: '5+0x30'
+    alert_rule_test:
+      - eval_time: 25m
+        alertname: ODRNoTaskSucceeding
+        exp_alerts:
+          - exp_labels: {severity: critical}
+            exp_annotations: {summary: "15 分钟内收到 >=3 个任务但无一成功"}
+  # 3) 正常运行（有成功）-> 不告警
+  - interval: 1m
+    input_series:
+      - series: 'odr_tasks_created_total'
+        values: '0+1x30'
+      - series: 'odr_tasks_succeeded_total'
+        values: '0+1x30'
+      - series: 'odr_tasks_failed_total'
+        values: '0+0x30'
+    alert_rule_test:
+      - eval_time: 25m
+        alertname: ODRNoTaskSucceeding
+        exp_alerts: []
+      - eval_time: 25m
+        alertname: ODRHighFailureRatio
+        exp_alerts: []
+  # 4) 失败占比 50% 且样本足够 -> HighFailureRatio；样本不足(只有 2 个完成)不告警
+  - interval: 1m
+    input_series:
+      - series: 'odr_tasks_failed_total'
+        values: '0+1x40'
+      - series: 'odr_tasks_succeeded_total'
+        values: '0+1x40'
+    alert_rule_test:
+      - eval_time: 35m
+        alertname: ODRHighFailureRatio
+        exp_alerts:
+          - exp_labels: {severity: warning}
+            exp_annotations: {summary: "近 30 分钟任务失败占比超过 30%"}
+  - interval: 1m
+    input_series:
+      - series: 'odr_tasks_failed_total'
+        values: '0x20 2x20'
+      - series: 'odr_tasks_succeeded_total'
+        values: '0x40'
+    alert_rule_test:
+      # 窗口内失败占比 100%，但只有 2 个任务完成（<5），不应告警；若把最小样本量改成 1 这条会失败
+      - eval_time: 36m
+        alertname: ODRHighFailureRatio
+        exp_alerts: []
+  # 5) p95 超过 10 分钟 -> SlowTasksP95
+  - interval: 1m
+    input_series:
+      - series: 'odr_task_duration_ms{quantile="0.95"}'
+        values: '700000x20'
+    alert_rule_test:
+      - eval_time: 15m
+        alertname: ODRSlowTasksP95
+        exp_alerts:
+          - exp_labels: {severity: warning, quantile: "0.95"}
+            exp_annotations: {summary: "任务时长 p95 超过 10 分钟"}

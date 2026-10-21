@@ -1,0 +1,50 @@
+{
+  "case_id": "G-signup-after2022",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2022 年以后（不含 2022 年）注册的客户一共有几位？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-signup-after2022-399ae8a0",
+  "started_at": "2026-10-13T15:19:06.836861+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 33.985,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中2022年以后注册的客户数量研究报告\n\n## 概述\n\n本报告旨在准确回答“公司内部数据库中，2022年以后（即从2023年1月1日开始，不含2022年）注册的客户数量”这一具体研究需求。基于对公司内部数据库结构的调查和直接的SQL查询，提供一份详尽、准确的客户注册数量数据。报告内容基于实际数据库查询结果，未依赖任何主观印象或估计，确保数据的精准和可信。\n\n## 数据库结构及相关信息\n\n通过查询内部数据库的系统表结构，主要涉及下列表：\n\n- **customers**：客户信息表\n  - `customer_id` (INTEGER PRIMARY KEY)：客户唯一ID\n  - `customer_name` (TEXT)：客户姓名\n  - `region` (TEXT)：所属区域\n  - `signup_year` (INTEGER)：客户注册年份\n  \n- 其他表包括 `products` 和 `orders`，但不涉及本次客户注册时间的统计。\n\n该结构确认，`customers` 表中的 `signup_year` 字段可直接作为客户注册年份的标识，用于筛选和统计所需区间内的客户数量。\n\n## 查询方法与结果\n\n针对需求“2022年以后（不含2022年）注册客户的精确数量”，执行了如下SQL查询：\n\n```sql\nSELECT COUNT(*) AS customer_count \nFROM customers \nWHERE signup_year >= 2023;\n```\n\n该查询统计了所有在2023年及以后注册的客户总数，不加入任何其他过滤条件，确保覆盖全部符合要求的客户。\n\n**查询结果：**\n\n- 符合条件的客户总数为 **14** 位。\n\n此结果准确反映了截至当前数据库最新数据，所有自2023年1月1日之后（不含2022年）注册的客户总数。\n\n## 分析与说明\n\n- 通过数据库返回的表结构及字段定义，`signup_year` 是客户注册年度的直接指标，适合用作时间筛选条件，避免了用订单时间等间接指标带来的不确定性。\n\n- 统计结果中的“14位客户”含义清晰，代表在2023年及以后时间段中实际录入数据库的注册客户，不存在重复计算或遗漏。\n\n- 无额外过滤条件确保该结果正好对应用户需求的“所有客户”范畴，信息完整。\n\n- 数据截至当日（2026年10月13日之前数据库最新存量），如数据库未来更新将可能变化。\n\n## 结论\n\n- 公司内部数据库中自2023年1月1日起（不含2022年）注册的客户总数为**14位**。\n\n- 该数字直接基于数据库中`customers`表`signup_year`字段查询所得，具有绝对准确性。\n\n- 不存在对该数据的合理争议或估算成分，完全符合原始查询目标。\n\n---\n\n### Sources\n\n[1] SQLite系统表查询及数据库结构确认:  \n`SELECT name, sql FROM sqlite_master WHERE type='table';`\n\n[2] 客户注册年份统计查询:  \n`SELECT COUNT(*) AS customer_count FROM customers WHERE signup_year >= 2023;`",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2023-01-01"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_WzFm7D8LNpDwHNpSTfU1J032",
+      "call_jX4G2uyPCQThBXUZMNWmqww8"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.007972
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "G-zero-2027",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，2027 年的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-zero-2027-dfa0f1a1",
+  "started_at": "2026-10-13T15:22:54.167055+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 25.548,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于2027年公司内部数据库中订单数量的调研报告\n\n## 概述\n\n本报告旨在准确回答“2027年公司内部数据库中订单总数”的查询需求。报告基于直接对公司内部数据库的查询结果，确保数据的真实性与准确性，避免任何主观估计或记忆偏差。报告详细说明了查询方法、结果及结论。\n\n## 数据查询方法\n\n针对用户提出的需求，采取了以下措施：\n\n- 直接访问公司内部的订单数据库。\n- 使用标准的SQL语言对订单表进行查询，过滤出订单日期属于2027年的所有记录。\n- 执行的SQL语句为：\n\n  ```sql\n  SELECT COUNT(*) AS total_orders_2027 FROM orders WHERE order_date LIKE '2027-%'\n  ```\n\n该查询语句的原理如下：\n\n- `orders` 表假定为存储订单信息的主表。\n- `order_date` 字段采用标准日期格式，过滤条件使用`LIKE '2027-%'`确保仅选取2027年内的订单记录。\n- `COUNT(*)` 计数所有符合条件的订单行。\n\n## 查询结果与分析\n\n- 查询结果显示，2027年订单总数为 **0笔**。\n- 此结果意味着在2027年期间，公司数据库中没有记录任何订单。\n- 该数字是直接从数据库检索得出，具有权威性，排除了任何凭经验或估算得出的误差。\n- 结合当前时间（2026年10月13日）来看，这一结果也符合实际，因为未来年份订单通常未生成或录入。\n\n### 进一步分析\n\n- 2027年目前没有订单，可能由于多种原因：\n  - 2027年度尚未开始或相关订单尚未录入系统。\n  - 公司订单策略或系统尚未覆盖未来年份的数据。\n- 若2027年订单在未来有变动，应保持动态监控数据库以更新数据。\n\n## 结论\n\n基于对公司内部数据库的直接SQL查询，2027年订单数量确切为零。这个数字为权威、即时反映，完全符合现阶段数据库记录状态。\n\n针对用户需求，以下要点总结：\n\n- 2027年订单数为0。\n- 数据基于“orders”表中“order_date”字段的直接查询。\n- 结论排除任何猜测或主观判断。\n\n本报告可作为2027年订单情况的权威数据参考。\n\n## 附注\n\n由于目前时间在2026年，2027年订单数量为零的情况在时间逻辑上合理，建议在2027年实际业务开展后，定期刷新查询以获得最新数据。\n\n## 来源\n\n- 公司内部订单数据库，orders表，字段 order_date  \n- SQL查询执行结果（内部系统）\n\n---\n\n### Sources\n\n暂无外部公开来源，所有数据均来自公司内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_4ZiYzG3UoicPBlnCYvjTRsjY"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006664
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "G-3plus-orders",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，下过 3 笔及以上订单的客户一共有几位？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-3plus-orders-bb504e1f",
+  "started_at": "2026-10-13T15:14:43.468523+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 19.831,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中下过三笔及以上订单客户数量的详尽报告\n\n## 研究目标概述\n\n本报告旨在准确回答公司内部数据库中，下过三笔及以上订单的客户人数总计。需求明确提出不依赖任何印象或估计，必须通过数据库直接查询获得精确数字，并且涵盖数据库中所有客户记录，无任何额外筛选或限制条件。\n\n## 数据查询方法及过程\n\n为确保结果准确可靠，执行了以下SQL查询操作：\n\n```sql\nSELECT COUNT(*) AS customers_with_3_or_more_orders \nFROM (\n  SELECT customer_id \n  FROM orders \n  GROUP BY customer_id \n  HAVING COUNT(order_id) >= 3\n);\n```\n\n- 该查询以订单表（orders）为数据来源。\n- 首先分组统计每个客户（customer_id）的订单数（order_id）。\n- 保留订单数大于等于3的客户。\n- 通过外层查询对满足条件的客户数目进行计数。\n\n此查询涵盖数据库中的所有客户，无任何条件或过滤，确保统计范围完整。\n\n## 查询结果\n\n- 通过该查询，得出的**符合条件（三笔及以上订单）的客户总数为15个**。\n- 该数字为当前数据库中的绝对准确值，实时反映了所有客户的订单行为。\n\n## 结果分析\n\n- 总数15表明，在客户总群体中，有一小部分表现为多次下单客户，体现出一定的客户忠诚度和复购能力。\n- 这部分客户可能是重点维护和深化关系的目标群体，有利于制定针对性的促销和客户关系管理策略。\n- 若需进一步分析，可结合客户画像及订单金额进行深入挖掘，优化营销资源分配。\n\n## 结论\n\n基于完整且无任何过滤的数据统计，当前公司内部数据库中下过三笔及以上订单的客户人数为**15位**。该数据为标准、权威的业务指标，适合作为后续市场及客户管理决策的参考依据。\n\n---\n\n### 数据来源\n\n所有信息直接来自公司内部数据库，通过SQL查询获得，无任何外部数据或推测成分。\n\n### 参考文献\n\n无外部资料引用，数据全部基于内部数据库查询结果。 \n\n---\n\n# 附录：查询执行代码\n\n```sql\nSELECT COUNT(*) AS customers_with_3_or_more_orders \nFROM (\n  SELECT customer_id \n  FROM orders \n  GROUP BY customer_id \n  HAVING COUNT(order_id) >= 3\n);\n```\n\n---\n\n### Sources\n\n无外部来源，仅由公司内部数据库查询得出。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_0ISmFSChpOrC8jpD90EHlZ1Q"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003647
+  }
+}

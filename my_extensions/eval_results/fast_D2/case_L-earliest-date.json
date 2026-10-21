@@ -1,0 +1,42 @@
+{
+  "case_id": "L-earliest-date",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有融资记录里最早的一笔发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-earliest-date-aafea6cc",
+  "started_at": "2026-10-13T15:11:23.839359+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.622,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中最早融资记录日期研究报告\n\n## 概述\n\n本报告旨在针对用户提出的“公司内部数据库中所有融资记录中最早的一笔融资发生日期”这一具体问题，直接查询公司内部融资记录数据库，获取准确的最早融资日期，避免任何依赖印象或假设的数据推断，确保信息客观、准确。\n\n## 数据查询方法\n\n针对研究问题，执行了如下数据库查询：\n\n```sql\nSELECT MIN(round_date) AS earliest_financing_date FROM funding_rounds;\n```\n\n该SQL语句用于检索内部融资记录中，融资日期（round_date）字段的最早时间点。\n\n## 研究结果\n\n经过数据库查询，得出的公司融资记录中最早融资日期为：\n\n- **2016年2月2日**（2016-02-02）\n\n这一日期表示公司内部记录的融资历史最早一笔正式融资活动的准确时间节点，不依赖任何主观记忆或假设，来源于最权威的企业内部数据库。\n\n## 结果分析与意义\n\n- 2016年2月2日的融资记录，标志着公司在该日期之前尚无任何融资记载，反映出公司融资历史最早可追溯至此。\n- 该信息对公司财务历史梳理、战略规划及投资者关系管理均具有一定参考价值。\n- 准确掌握最早融资时间能够帮助财务部门制定更科学的融资统计和分析报表。\n- 公司可基于此日期进一步分析融资节奏，了解公司发展历程中的资本变动节点。\n\n## 限制说明\n\n- 本报告仅基于内部融资数据库中现有字段和记录，未涵盖未录入或外部来源的融资信息。\n- 只检索融资时间字段，不包括融资额度、投资方或融资轮次等其他数据维度。\n\n## 结论\n\n公司内部数据库中融资记录最早发生的日期经直接查询确定为**2016年2月2日**，这是数据库中存储的最早融资时间，代表公司融资历史中的起始时间节点。\n\n### 来源\n\n[1] 内部融资记录数据库查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_BArs996rBbhLuYEzeREYrr1K"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003187
+  }
+}

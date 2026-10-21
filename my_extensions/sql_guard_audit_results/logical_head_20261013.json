@@ -1,0 +1,343 @@
+{
+ "label": "当前 HEAD",
+ "n": 42,
+ "changed": 0,
+ "rows": [
+  {
+   "id": "A01",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A02",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A03",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A04",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A05",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A06",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A07",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A08",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A09",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A10",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A11",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A12",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A13",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A14",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A15",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A16",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A17",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A23",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A18",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A19",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A20",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A21",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A22",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A24",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A25",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A26",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A27",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A28",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A29",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A30",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A31",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A32",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A33",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A34",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A35",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A36",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A37",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A38",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A39",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A40",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A41",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  },
+  {
+   "id": "A42",
+   "logical_change": false,
+   "dump_changed": false,
+   "pragma_changed": false,
+   "new_files": [],
+   "infra_failure": null
+  }
+ ]
+}

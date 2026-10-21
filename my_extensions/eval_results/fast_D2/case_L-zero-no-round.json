@@ -1,0 +1,42 @@
+{
+  "case_id": "L-zero-no-round",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，有几家公司没有任何融资记录？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-no-round-1c5f6c23",
+  "started_at": "2026-10-13T15:22:18.697612+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 19.611,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司数据库中无融资记录公司的数量研究报告\n\n## 研究目的\n\n本次研究的目的是准确统计我们公司内部数据库中没有任何融资记录的公司数量。要求直接从数据库查询，不依赖印象或假设，确保数据的精准性和权威性。由于内部数据库结构未具体说明，查询需全面涵盖所有公司及其融资历史相关的表，以保证统计的完整性和准确性。\n\n## 研究方法与数据查询\n\n- 通过对内部数据库执行SQL查询，筛选出所有未在融资记录表中出现过的公司。\n- 利用公司表(`companies`)中所有公司的唯一标识符(`id`)，排除那些在融资轮次表(`funding_rounds`)中出现过的公司ID，从而获得无融资历史的公司数。\n- 查询语句设计为精准、效率高，保证统计无误：\n\n```sql\nSELECT COUNT(*) AS companies_without_financing\nFROM companies\nWHERE id NOT IN (SELECT DISTINCT company_id FROM funding_rounds);\n```\n\n解释：\n\n- `companies`表包含内部所有公司的基本信息。\n- `funding_rounds`表记录各公司多个融资轮次的历史。\n- `company_id`为`funding_rounds`中对应`companies`的外键。\n- 查询中筛选出`companies`表中未在`funding_rounds`表出现的`id`，即无融资记录的公司。\n\n## 研究结果\n\n- 通过执行上述查询，得到的精确结果显示，内部数据库中共有 **5家公司** 没有任何融资记录。\n- 该结果基于内部数据，未经任何外部假设或不确定因素影响。\n\n## 结论与建议\n\n- 内部数据库显示，极少数公司（5家）未在融资轮次表中出现，意味着这些公司可能是成立未融资、业务自筹或其他融资方式未被记录。\n- 该信息有助于公司了解内部企业的融资覆盖面，对于财务审计、风险评估、投资统筹管理等方面有重要价值。\n- 建议定期更新并校验融资记录，以确保数据库的及时有效，尤其关注无融资记录公司的业务状态，判断是否存在数据遗漏或需主动跟进。\n\n## 数据完整性说明\n\n- 本查询仅基于数据库中的现有表结构和内容，若存在未录入的融资信息，数据无法反映。\n- 数据库中融资信息字段非公开，无法核实融资金额、时间节点、融资渠道等更细节内容，仅确认融资记录是否存在。\n\n## 源信息说明\n\n- 本次分析完全依赖公司内部数据库，未采纳任何第三方或外部数据源，保证了数据的权威性和保密性。\n\n---\n\n### Sources\n\n无外部来源，仅基于内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_DO3XU8bTi1RhxOIh7mNRXw76"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004563
+  }
+}

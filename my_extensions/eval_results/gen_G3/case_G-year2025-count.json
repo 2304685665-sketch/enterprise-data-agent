@@ -1,0 +1,48 @@
+{
+  "case_id": "G-year2025-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2025 年全年一共有几笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-year2025-count-26b09e73",
+  "started_at": "2026-10-13T16:09:10.412727+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.83,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 2025年全年订单总数报告\n\n## 订单总量概述\n\n根据公司内部数据库的直接查询结果，2025年全年共计有**20笔订单**。该数字是通过系统数据直接提取，无任何主观估计或猜测，确保数据的准确性和权威性。此结果反映了全年订单的实际交易数量，是公司运营状况的重要指标之一。\n\n## 数据来源及查询方式\n\n- 数据完全来源于公司内部数据库的订单记录系统。\n- 查询针对2025年1月1日至12月31日期间所有有效订单进行了统计。\n- 订单数统计包括所有订单状态，不区分已完成、未完成或取消状态，确保全面覆盖全年订单。\n\n## 结果分析及意义\n\n- **订单数量保持稳定**：全年仅20笔订单，可能反映了公司当前业务规模、市场需求或销售模式的特点。\n- **用于后续业务决策支持**：准确掌握订单数量，有助于供应链管理、客户关系维护，以及市场推广策略的调整。\n- **可能提示业务增长空间**：若公司期望扩大业务，可基于现有订单量进行深入分析，查找增长瓶颈和机会。\n\n## 建议及后续步骤\n\n- **细化订单分析**：进一步分析这20笔订单的类别、来源和客户维度，以更好理解业务结构。\n- **比较历史数据**：回顾前几年订单量，观察年度变化趋势，为战略调整提供依据。\n- **持续监控订单数据**：保持对订单数量的实时追踪，及时调整资源分配。\n\n---\n\n## 结论\n\n2025年全年公司内部数据库中记录的订单数量准确为20笔。该数据来源可靠，能够为公司业务评估及决策提供坚实基础。\n\n---\n\n### Sources\n\n[1] 公司内部数据库订单查询结果（2025年全年订单总数：20笔）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2025-01-01"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_oSQ2kk3dCtXrAT2rizVcTBm3"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003099
+  }
+}

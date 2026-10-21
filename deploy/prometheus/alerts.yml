@@ -1,0 +1,39 @@
+# Prometheus 告警规则（指标来自 api_service 的 /metrics；规则用 promtool test rules 做了单元测试，见 alerts_test.yml）
+groups:
+  - name: odr-service
+    rules:
+      - alert: ODRServiceDown
+        expr: up{job="odr"} == 0
+        for: 2m
+        labels: {severity: critical}
+        annotations:
+          summary: "研究服务抓取失败（实例 {{ $labels.instance }}）"
+      - alert: ODRNoTaskSucceeding
+        # 15 分钟内有新任务进来，但一个都没成功：模型额度耗尽、上游 API 故障、Redis 写回失败时都会触发
+        expr: increase(odr_tasks_created_total[15m]) >= 3 and increase(odr_tasks_succeeded_total[15m]) == 0
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "15 分钟内收到 >=3 个任务但无一成功"
+      - alert: ODRHighFailureRatio
+        # 失败占比 > 30%，且窗口内完成的任务不少于 5 个（避免小样本误报）
+        expr: |
+          (increase(odr_tasks_failed_total[30m])
+            / (increase(odr_tasks_failed_total[30m]) + increase(odr_tasks_succeeded_total[30m])) > 0.3)
+          and (increase(odr_tasks_failed_total[30m]) + increase(odr_tasks_succeeded_total[30m]) >= 5)
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "近 30 分钟任务失败占比超过 30%"
+      - alert: ODRSlowTasksP95
+        expr: odr_task_duration_ms{quantile="0.95"} > 600000
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "任务时长 p95 超过 10 分钟"
+      - alert: ODRRateLimitSpike
+        expr: increase(odr_rate_limited_total[5m]) > 50
+        for: 5m
+        labels: {severity: info}
+        annotations:
+          summary: "5 分钟内限流拒绝超过 50 次（可能有客户端在重试风暴）"

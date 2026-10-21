@@ -1,0 +1,42 @@
+{
+  "case_id": "L-since2025-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2025 年 1 月 1 日及以后的融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-since2025-sum-07bddf0f",
+  "started_at": "2026-10-13T15:14:23.992482+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.069,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司2025年1月1日及以后融资金额合计报告\n\n## 总体融资金额汇总\n\n根据公司内部数据库最新查询结果，累计记录在案的所有融资金额（不论融资类型或资金来源），从2025年1月1日开始至2026年10月13日的总额为 **874,745,000美元**。该数据涵盖了所有相关交易，无任何排除限制，确保统计的全面性与准确性。\n\n## 数据查询和统计方法\n\n- 数据来源于公司内部数据库中的 `funding_rounds` 表。\n- 查询时间区间从2025年1月1日零点开始，至2026年10月13日（当前日期）收盘。\n- 统计时未限定融资类型（如股权融资、债务融资、混合融资等），任何记录的融资金额均被纳入总额。\n- 交易币种统一换算为美元，确保金额一致性与易读性。\n\n## 结果分析与说明\n\n- 融资总额达到近8.75亿美元，体现了公司在过去近两年半期间融资活动的活跃度和资本筹集能力。\n- 因涵盖所有融资类型，结果反映的是公司融资全景而非单一融资类别，适合制定公司总体资本计划和财务决策参考。\n- 该金额由最近一次的数据库即时查询直接得出，排除任何估算或主观判断，确保数据可信及最新。\n\n## 结论\n\n截至2026年10月13日，公司内部数据库记录的从2025年1月1日起全部融资金额合计为 **874,745,000美元**。该数字完整涵盖了近两年多的融资活动，具备极高的数据准确性和参考价值。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库 `funding_rounds` 表查询结果（2025-01-01至2026-10-13）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_vNumL7KAyIaCZ9xUUDhNdnyl"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004531
+  }
+}

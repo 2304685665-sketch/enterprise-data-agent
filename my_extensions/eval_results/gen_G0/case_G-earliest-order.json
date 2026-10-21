@@ -1,0 +1,45 @@
+{
+  "case_id": "G-earliest-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，最早的一笔订单发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-earliest-order-2183fa7a",
+  "started_at": "2026-10-13T15:12:43.835182+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 37.318,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中最早订单日期的研究报告\n\n## 概述\n\n本报告旨在明确回答“公司内部数据库中记录的最早一笔订单具体发生在哪一天”的问题。为确保数据的准确性与权威性，研究直接基于公司官方内部订单数据库进行查询，排除了任何基于记忆或估计的信息。查询范围涵盖所有订单，没有对订单类型、客户或区域做任何过滤，以保证能准确获取公司历史上最早的订单日期。\n\n## 数据库结构及查询依据\n\n公司内部数据库包含多个与订单及相关业务信息密切相关的表格，经查询，主要涉及以下三张表：\n\n- **customers（客户表）**  \n  记录客户基本信息，包括客户ID、姓名、区域及注册年份。  \n  结构如下：  \n  ```sql\n  CREATE TABLE customers (\n    customer_id INTEGER PRIMARY KEY, \n    customer_name TEXT, \n    region TEXT, \n    signup_year INTEGER\n  );\n  ```\n\n- **products（产品表）**  \n  存储产品相关信息，如产品ID、名称、类别及单价。  \n  结构如下：  \n  ```sql\n  CREATE TABLE products (\n    product_id INTEGER PRIMARY KEY, \n    product_name TEXT, \n    category TEXT, \n    unit_price REAL\n  );\n  ```\n\n- **orders（订单表）**  \n  关键信息存储表，包含订单ID、客户ID、产品ID、数量、金额、订单日期以及订单状态。  \n  结构如下：  \n  ```sql\n  CREATE TABLE orders (\n      order_id INTEGER PRIMARY KEY, \n      customer_id INTEGER, \n      product_id INTEGER, \n      quantity INTEGER,\n      amount_usd REAL, \n      order_date TEXT, \n      status TEXT,\n      FOREIGN KEY(customer_id) REFERENCES customers(customer_id), \n      FOREIGN KEY(product_id) REFERENCES products(product_id)\n  );\n  ```\n\n正是基于这张包含所有订单记录的 `orders` 表，进行最早订单日期的查询。\n\n## 查询过程与结果\n\n为满足全局查询需求，无任何筛选条件，直接对 `orders` 表中 `order_date` 字段求取最小值。查询语句为：\n\n```sql\nSELECT MIN(order_date) AS earliest_order_date FROM orders;\n```\n\n查询得出，公司内数据库中记录的最早订单日期为：\n\n**2024年2月15日**\n\n此日期是基于所有订单完整数据直接得出的，不存在任何人为假设或过滤，完全符合研究简报的要求。\n\n## 结论\n\n基于对公司内部数据库的官方查询，明确确认：\n\n- 公司历史上首次被记录的订单日期是2024年2月15日。  \n- 该日期涵盖了全部订单记录，无论订单类型、客户或地域均未限制，数据权威并且全面。  \n- 查询逻辑清晰，数据源稳定，确保报告结果的高度准确性与可信度。\n\n该信息有助于公司在历史数据分析、业绩回溯及战略规划中精准定位最早业务时间节点。\n\n## 来源\n\n1. 公司内部数据库表结构及表名查询  \n   `SELECT name, sql FROM sqlite_master WHERE type='table';`\n\n2. 公司内部订单表最早订单日期查询  \n   `SELECT MIN(order_date) AS earliest_order_date FROM orders;`\n\n---\n\n### Sources\n\n[1] Internal Company Database schema overview and table listing  \n[2] Internal Company Database earliest order date query result",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_DptVnROJTfVQvI5KUF6oMnB7",
+      "call_NR9JqkrIEL5aNWSmshfyDA8S"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008872
+  }
+}

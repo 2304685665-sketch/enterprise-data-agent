@@ -1,0 +1,3 @@
+# 可选依赖：ODR_VECTOR_BACKEND=faiss 时需要（不在 pyproject 里，避免触动已验证的镜像依赖层）
+faiss-cpu>=1.8
+numpy

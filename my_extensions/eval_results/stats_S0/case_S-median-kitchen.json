@@ -1,0 +1,43 @@
+{
+  "case_id": "S-median-kitchen",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，Kitchen 品类商品的订单，金额的中位数是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-median-kitchen-9fc99fc1",
+  "started_at": "2026-10-13T15:55:05.134190+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 31.896,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Kitchen 品类商品订单金额中位数调研报告\n\n## 调研背景\n\n本次调研旨在准确确定我司内部数据库中Kitchen品类商品订单的金额中位数（Median Order Amount），以帮助管理层准确把握该品类的销售表现。该问题要求直接基于公司数据库数据，不依赖主观印象或外部推测，确保数据的准确性和权威性。\n\n## 数据来源与方法\n\n通过SQL数据查询和数据分析，提取了Kitchen品类所有订单的金额数据，计算订单金额的中位数。中位数是一种最能反映订单金额集中趋势的统计指标，避免了极端值对均值的影响。\n\n检索到的Kitchen品类订单金额样本如下：\n\n- 42.23\n- 42.42\n- 62.48\n- 84.62\n- 89.52\n- 89.53\n- 124.65\n- 138.64\n- 252.31\n- 294.04\n- 294.69\n- 322.3\n- 368.66\n- 378.05\n- 403.33\n- 437.26\n- 589.29\n- 712.19\n- 714.37\n- 979.22\n- 1068.06\n\n以上数据按金额大小排列后，取第11项（中间位置）作为中位数。\n\n## 结果分析\n\n根据上述排序数据计算，Kitchen品类商品订单金额的中位数为 **294.69美元**。\n\n- 该中位数说明，在所有Kitchen品类订单中，一半订单的金额低于294.69美元，另一半高于该数值。\n- 中位数接近300美元，体现了Kitchen品类商品订单金额的较高集中度，反映该品类的客单价偏中高端。\n- 结合订单金额的分布，可以观察到部分大额订单超过700美元，极端订单甚至逼近千美元以上，显示该品类存在多样化的订单规模。\n\n## 商业意义\n\n了解Kitchen品类订单金额的中位数，有助于：\n\n- 评估Kitchen品类产品的客户消费水平与订购习惯。\n- 针对价格区间重点客户群体制定精准营销策略。\n- 优化库存与供应链管理，避免库存积压或缺货。\n- 识别潜在的高价值客户，提升客户生命周期价值。\n\n## 结论\n\n通过直接查询公司内部数据库，明确得出Kitchen品类商品订单的金额中位数为 **294.69美元**。这一数据为公司后续制定经营策略、产品定价和市场推广提供了数据支撑和决策基础。\n\n---\n\n### 参考来源\n\n[1] 公司内部订单数据库 Kitchen品类订单金额数据查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "python_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_UhI4GpC01WLPgyb7MAfVGo1a"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004562
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "S-median-paid",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，状态为 paid 的订单，金额的中位数是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-median-paid-bf5daafe",
+  "started_at": "2026-10-13T15:51:42.400712+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.487,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中状态为 paid 订单金额的中位数分析报告\n\n## 研究背景与需求\n\n本次研究的目的是准确回答“我们公司内部数据库中，状态为 paid 的订单金额的中位数是多少美元？”这个具体问题。用户特别强调需要直接从数据库中查询得出准确数字，而非基于主观印象或经验判断。因此，本次报告基于对公司内部数据库的实际查询结果，给出准确且直接的数值，确保结论的可靠性和权威性。\n\n## 数据查询与计算方法说明\n\n数据库中订单的“状态（status）”字段标明订单的当前处理进度。其中，状态为“paid”的订单指的是已经完成付款流程的有效交易记录。中位数（Median）指的是将所有“paid”订单金额从小到大排列后，正中间位置的数值，可以有效反映数据的典型水平，避免极端值对平均值的影响。\n\n针对本问题，直接执行了如下数据库操作：\n\n```sql\nSELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY amount) AS median_amount\nFROM orders\nWHERE status = 'paid';\n```\n\n该查询语句基于公司内部订单表（orders），筛选所有状态为paid的订单，然后计算金额字段（amount）的中位数。\n\n## 主要发现\n\n- 根据数据库最新查询结果，状态为 paid 的订单金额的中位数为 **322.3 美元**。\n- 这一数值代表了所有已付款订单金额的中位位置，较好地反映了典型订单的交易规模。\n- 由于中位数不受极端大额或小额订单影响，因此此数值对于财务分析、客户行为洞察以及后续业务决策均具有较高的代表性。\n\n## 分析与解读\n\n- **金额中位数322.3美元**表明，超过一半的付款订单金额低于或等于此水平，反映公司当前客户交易资金规模大致处于中等偏低范围。\n- 对比行业常见订单规模，此中位数有助于评估公司订单结构的合理性及潜在优化空间。\n- 若结合订单数量与金额分布进一步分析，可以更细致地识别出高价值订单及潜在增长点。\n- 本中位数也能作为监控指标，为后续不同时间段的订单金额变动趋势分析提供基准。\n\n## 建议\n\n- 后续可考虑定期统计该中位数，观察趋势变化，判断营销活动或市场环境变化对客户支付金额的影响。\n- 结合均值、分位数等更多指标来建立更完整的订单金额统计体系。\n- 在分析中结合不同市场或产品线，探讨不同区间订单金额的性能差异。\n\n---\n\n## 总结\n\n通过对我们公司内部数据库的准确查询，状态为 paid 的订单金额的中位数为 **322.3 美元**。这一数据具备极高的可信度和参考价值，为公司理解客户支付行为及订单结构提供了重要基础。\n\n---\n\n### 参考资料\n\n暂无外部公开来源，数据直接来源于公司内部数据库。  \n\n### Sources\n\n无公开URL，数据基于公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_N9ctEFAp073gZoxO5yceR9PL"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003698
+  }
+}

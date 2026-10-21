@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cyber-rounds",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Cybersecurity 行业的公司一共完成了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cyber-rounds-000fdc11",
+  "started_at": "2026-10-13T15:14:16.164080+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.668,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Cybersecurity 行业公司融资笔数研究报告\n\n## 概述\n\n本报告基于公司内部数据库的直接查询结果，精准统计了Cybersecurity（网络安全）行业相关公司的融资情况。报告聚焦于完成的融资笔数，旨在为公司管理层与业务部门提供数据支持，辅助战略规划及市场分析。\n\n## 数据查询结果\n\n经过对内部数据库的全面检索，针对所有标记为Cybersecurity行业的企业融资记录进行汇总后，得出以下核心结论：\n\n- Cybersecurity 行业的公司一共完成了 **19笔融资**。\n\n该数字基于数据库中现有的融资事件记录，涵盖了所有时间段和融资类型（如种子轮、天使轮、A轮及后续融资等），确保了统计的全面性和准确性。\n\n## 相关分析与说明\n\n- 本次统计严格基于公司内部数据库数据，无任何主观估计或外部推断，确保信息的权威性和真实性。\n- 数据库中的融资记录包含了从初创阶段到成熟期的多阶段融资，能够较为全面反映Cybersecurity行业整体融资活跃度。\n- 19笔融资的数量体现了网络安全行业在当前市场环境下依然保持较强的资本关注度，适合进一步挖掘行业内具体融资案例，分析趋势与潜在投资机会。\n\n## 结论\n\n结合数据库中精确的查询结果，Cybersecurity行业内所有相关公司累计完成的融资笔数为19笔。此数据为公司未来投资与业务拓展决策提供了实证基础，后续可结合融资金额、时间分布等维度进行更深入的分析。\n\n## 来源\n\n[1] 公司内部数据库融资记录查询结果（2026年10月13日）\n\n---\n\n### 注：\n\n若需获得更多维度细节（如融资金额、投资方、具体公司名单等），可基于本次统计结果进一步进行数据库深挖。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_aZ86rAIptaS6l4AOK37Se2OB"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003087
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-seriesD-max",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，Series D 融资里，哪家公司拿到的金额最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-seriesD-max-8183cfba",
+  "started_at": "2026-10-13T15:16:58.968427+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.627,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Series D 融资中获得最高金额的公司研究报告\n\n## 研究背景与目标\n\n此次研究旨在从公司内部数据库中查询所有记录的 Series D 融资轮次，确定哪家公司获得的融资金额最高。研究严格依据数据库中存储的精确数据，确保结论完全基于内部真实数据，不使用外部资料或主观印象，同时无行业或时间的额外筛选条件。\n\n## 数据查询结果\n\n根据数据库的查询结果，当前记录的所有 Series D 融资中，获得融资金额最高的公司是 **Nectar Climate**，其 Series D 融资金额为 **64,565,000 美元**。\n\n| 公司名称         | Series D 融资金额 (美元)   |\n|-----------------|----------------------------|\n| Nectar Climate  | 64,565,000.0               |\n\n此金额来自内部数据库的精确存储，未经任何估算或近似处理，保证数据的真实有效性和准确性。\n\n## 结果分析\n\n- **金额规模**  \n  Nectar Climate 在 Series D 融资阶段获得的 6456.5 万美元代表了数据库内该融资阶段的最高融资额，显示出公司在该轮融资中具有较强的吸引力和市场认可度。\n\n- **影响因素**  \n  虽数据库未细分行业或时间维度信息，但这一最高融资额表明 Nectar Climate 在其细分市场或技术领域可能具备领先优势，或是投资方对其未来增长潜力评价较高，这通常是 Series D 阶段资金规模增加的主要原因。\n\n- **数据库覆盖范围**  \n  因为无行业与时间限制，结论涵盖公司数据库中完整的 Series D 融资记录，具有代表性和权威性。\n\n## 结论\n\n根据公司内部数据库的精确数据，**Nectar Climate** 是在 Series D 融资轮中获得最高融资金额的公司，具体金额为 **64,565,000 美元**。该金额反映了公司在该轮融资阶段的资金实力，也指示了投资者对其业务前景的高度认可。\n\n如果需要进一步细分分析（如按行业、地区、时间段），可在后续研究中进一步筛选数据库记录。\n\n---\n\n### 参考文献\n\n目前本研究结果仅基于公司内部数据库，不涉及外部公开资料。\n\n### Sources\n\n暂无外部链接，数据均来自公司内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_TVKEHhSnZoFbEPFuvaKUkWSQ"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002965
+  }
+}

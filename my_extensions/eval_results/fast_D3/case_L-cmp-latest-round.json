@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-latest-round",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪家公司是最近一次获得融资的？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-latest-round-adbdafb2",
+  "started_at": "2026-10-13T15:16:26.010397+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.039,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中最近一次融资的详细报告\n\n## 概述\n\n本报告旨在明确指出我们公司内部数据库中，哪家公司获得了最近的一轮融资。根据内部数据库的精确查询结果，确定最新融资事件的公司名称及融资日期，以确保信息的准确性和时效性。本报告基于对数据库的直接查询，不依赖任何外部数据或印象，从而确保结论的可靠性。\n\n## 最近融资公司及时间\n\n通过查询内部数据库中的融资事件记录，结果显示：\n\n- **公司名称：** Nectar Climate  \n- **最近融资日期：** 2026年9月11日\n\n这意味着Nectar Climate是目前我们数据库中融资时间最晚的公司，其最近一次融资事件发生在2026年9月11日。\n\n## 数据来源及准确性保证\n\n- 该信息完全来自我们内部企业数据库，确保了数据的真实性，无任何外部信息干扰或假设成分。\n- 查询过程中直接利用了数据库中最新的融资记录时间字段，经过核验，没有比该日期更近的融资数据。\n- 因为数据库只记录了融资发生的公司名称和融资日期，本报告仅包含这两项关键信息，未包含融资金额、投资方等附带数据，因为这些信息未在当前查询中体现。\n\n## 重要性及应用\n\n了解最新融资公司有助于：\n\n- 跟进投资动态，掌握企业内部最新资金流动和战略方向。\n- 提供给投资团队和管理层关于近期融资趋势的实时数据支持。\n- 辅助风险控制和商业决策制定，及时评估公司或行业融资活动的活跃度。\n\n## 总结\n\n根据公司内部数据库的最新数据，**Nectar Climate公司于2026年9月11日完成了最近的一轮融资**，这是目前数据库中时间最接近当前的融资事件，具备权威和参考价值。后续若需进一步融资细节或历史融资趋势分析，可基于此基础展开更深入的数据挖掘和报告编制。\n\n---\n\n### 资料来源\n\n[1] 内部企业融资数据库查询结果 (数据截止至2026年9月11日)\n\n---\n\n若有更具体的数据需求或想要查询更多相关融资信息，可以组织进一步的数据库请求或提供更多查询条件。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_rkfTkzj1tiDhF4zNjSBHmTZi"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003673
+  }
+}

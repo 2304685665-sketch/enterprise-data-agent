@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-top-product",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪款商品的订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-product-ed97d54a",
+  "started_at": "2026-10-13T15:15:48.524314+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 21.055,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部订单数据分析报告：累计订单金额最高的商品\n\n## 概述\n\n本报告针对公司内部数据库中的订单数据进行了全面查询，旨在客观、准确地识别出累计订单金额最高的商品。查询涵盖了全部记录在案的订单数据，确保结论完全基于实际数据库数据，无任何主观臆断。通过SQL查询方式，将订单金额汇总后排序，找出了订单金额总和最高的商品名称及其金额。\n\n## 查询方法\n\n为确保统计结果的准确性，执行了如下SQL查询：\n\n```sql\nSELECT p.product_name, SUM(o.amount_usd) AS total_order_amount\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nGROUP BY p.product_name\nORDER BY total_order_amount DESC\nLIMIT 1;\n```\n\n此查询实现了以下几点：\n\n- 通过内连接（JOIN）将订单表（orders）和产品表（products）以产品ID关联，保证订单金额准确对应具体商品。\n- 按产品名称对所有订单金额进行合计（SUM）。\n- 以合计订单金额降序排序，找到金额最高的单项商品。\n- 限制输出结果为单条，聚焦累计金额最高商品。\n\n该查询覆盖了数据库中所有的历史订单记录，未剔除任何有效数据，保证统计的完整性和客观性。\n\n## 查询结果及分析\n\n通过上述SQL查询，得出以下关键结论：\n\n- **累计订单金额最高的商品是：\"Delta Drill\"（德尔塔钻机）。**\n- 该商品的累计总订单金额为 **$10,322.67** 。\n\n此结果体现了“Delta Drill”在公司所有产品中，是订单金额贡献最大的产品，反映其市场销售表现和客户采购需求的领先地位。\n\n## 重要说明\n\n- 查询结果完全依托数据库真实订单数据，未基于任何主观假设或预判。\n- 数据库当前结构支持精确统计产品订单金额的总和，未发现因数据缺失或格式问题导致的结果偏差。\n- 若未来新增订单或产品信息，结果可能会随之更新。\n- 本报告只涵盖“累计订单金额”的维度，未涉及订单数量、利润率等其他指标。\n\n## 结论\n\n基于公司内部数据库现有的全量订单数据查询，商品“Delta Drill”拥有最高的累计订单金额，共计$10,322.67。这一事实可为销售策略调整、产品管理和市场推广提供量化依据，从而支持公司资源优化分配与重点产品培育。\n\n---\n\n### 参考资料\n\n该分析基于公司内部数据库执行的SQL查询，未引用外部资源。\n\n### Sources\n\n[1] 公司内部数据库订单与产品表查询结果 (内部数据)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_VmsAA0uTkv89EmLyArbl5TIw"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004657
+  }
+}

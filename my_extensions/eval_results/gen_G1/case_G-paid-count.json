@@ -1,0 +1,43 @@
+{
+  "case_id": "G-paid-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 paid 的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-paid-count-f5b82089",
+  "started_at": "2026-10-13T15:12:58.215210+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 26.758,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中状态为“paid”订单的准确数量报告\n\n## 研究目的\n\n本次查询的核心需求是从公司内部数据库中获取所有订单状态为“paid”的订单数量。用户明确要求获得数据库中该状态订单的精确计数，拒绝任何估算或主观印象，且未设置时间或其他筛选条件，确保统计覆盖所有历史记录。\n\n## 查询方法与执行\n\n为了满足需求，直接使用SQL语句查询数据库订单表中状态字段为“paid”的数据条数。所用SQL语句如下：\n\n```sql\nSELECT COUNT(*) AS paid_orders_count FROM orders WHERE status = 'paid';\n```\n\n此语句针对订单表（orders）中所有状态为“paid”的记录进行计数。无任何日期、用户或其他条件限制。\n\n## 查询结果\n\n通过以上SQL查询，数据库返回的结果如下：\n\n- 状态为“paid”的订单总数：**49**笔\n\n该结果为数据库的实时记录，涵盖了系统中所有符合该条件的订单，无过滤或修正。\n\n## 结论\n\n基于公司内部数据库的直接查询，可以确认当前系统中所有订单状态标记为“paid”的订单总共为49笔。此数字为数据库真实存储的订单信息，不包含任何估算、推测或不完整数据分析，完全符合用户“精准统计”的需求。\n\n## 附注\n\n- 该统计未受时间、地域或其他业务维度限制，涵盖订单表的全部历史数据。\n- 查询严格按照用户要求执行，确保输出的数字是数据库的原始存储值。\n- 若未来需要对数据进行更细化分析（如某时间区间内的paid订单数），则可在此基础上筛选对应字段。\n\n---\n\n### 参考资料\n\n本报告数据完全基于公司内部数据库的直接查询，无外部来源。\n\n---\n\n### Sources\n\n本次查询未引用外部资源，仅依赖公司内部数据库。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_Ravq6J4YaYlTXzzBakWyOPKH"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006791
+  }
+}

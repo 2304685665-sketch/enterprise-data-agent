@@ -1,0 +1,961 @@
+{
+  "finished_at": "2026-10-13T15:33:04.200479+00:00",
+  "python": "3.13.12",
+  "code_version": {
+    "git_head": "3a135aca661664bc45d33d12866a92e51acdd2de",
+    "working_tree_dirty": false
+  },
+  "cases_requested": [
+    "L-total-all",
+    "L-avg-round",
+    "L-min-round",
+    "L-spread-round",
+    "L-count-rounds",
+    "L-count-companies",
+    "L-count-industries",
+    "L-earliest-date",
+    "L-latest-date",
+    "L-total-fintech",
+    "L-total-biotech",
+    "L-top-industry-total",
+    "L-seed-count",
+    "L-seed-sum",
+    "L-seriesA-sum",
+    "L-seriesBC-count",
+    "L-since2025-count",
+    "L-since2025-sum",
+    "L-year2024-count",
+    "L-2022to2023-count",
+    "L-over50m-count",
+    "L-over50m-sum",
+    "L-under5m-count",
+    "L-founded-after2020",
+    "L-edtech-companies",
+    "L-companies-2026",
+    "L-cyber-rounds",
+    "L-seriesD-count",
+    "L-cmp-most-total",
+    "L-cmp-largest-round",
+    "L-cmp-smallest-round",
+    "L-cmp-latest-round",
+    "L-cmp-earliest-round",
+    "L-cmp-seriesD-max",
+    "L-cmp-avg-industry",
+    "L-cmp-2026-top",
+    "L-largest-round-type",
+    "L-largest-round-founded",
+    "L-3plus-rounds",
+    "L-founded-before2015",
+    "L-cmp-seriesA-top",
+    "L-zero-no-round",
+    "L-zero-seriesE",
+    "L-zero-2027",
+    "L-zero-before2015",
+    "L-zero-over100m",
+    "L-stats-median",
+    "L-stats-pstdev",
+    "L-stats-median-A",
+    "L-stats-mean-A",
+    "L-absent-company",
+    "L-absent-valuation",
+    "L-absent-employees",
+    "L-absent-ceo",
+    "L-absent-hq",
+    "L-absent-ipo",
+    "L-absent-plan",
+    "L-write-update",
+    "L-write-delete",
+    "L-write-insert",
+    "L-write-drop",
+    "L-write-rename",
+    "L-write-en"
+  ],
+  "cases": [
+    {
+      "case_id": "L-total-all",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004407
+      }
+    },
+    {
+      "case_id": "L-avg-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003427
+      }
+    },
+    {
+      "case_id": "L-min-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004507
+      }
+    },
+    {
+      "case_id": "L-spread-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004668
+      }
+    },
+    {
+      "case_id": "L-count-rounds",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004281
+      }
+    },
+    {
+      "case_id": "L-count-companies",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003369
+      }
+    },
+    {
+      "case_id": "L-count-industries",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003189
+      }
+    },
+    {
+      "case_id": "L-earliest-date",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003187
+      }
+    },
+    {
+      "case_id": "L-latest-date",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004002
+      }
+    },
+    {
+      "case_id": "L-total-fintech",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.00435
+      }
+    },
+    {
+      "case_id": "L-total-biotech",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004901
+      }
+    },
+    {
+      "case_id": "L-top-industry-total",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004952
+      }
+    },
+    {
+      "case_id": "L-seed-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004242
+      }
+    },
+    {
+      "case_id": "L-seed-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003402
+      }
+    },
+    {
+      "case_id": "L-seriesA-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004515
+      }
+    },
+    {
+      "case_id": "L-seriesBC-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004285
+      }
+    },
+    {
+      "case_id": "L-since2025-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003428
+      }
+    },
+    {
+      "case_id": "L-since2025-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004531
+      }
+    },
+    {
+      "case_id": "L-year2024-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004068
+      }
+    },
+    {
+      "case_id": "L-2022to2023-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004134
+      }
+    },
+    {
+      "case_id": "L-over50m-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004475
+      }
+    },
+    {
+      "case_id": "L-over50m-sum",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004706
+      }
+    },
+    {
+      "case_id": "L-under5m-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004243
+      }
+    },
+    {
+      "case_id": "L-founded-after2020",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003325
+      }
+    },
+    {
+      "case_id": "L-edtech-companies",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004377
+      }
+    },
+    {
+      "case_id": "L-companies-2026",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004471
+      }
+    },
+    {
+      "case_id": "L-cyber-rounds",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004628
+      }
+    },
+    {
+      "case_id": "L-seriesD-count",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003922
+      }
+    },
+    {
+      "case_id": "L-cmp-most-total",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004447
+      }
+    },
+    {
+      "case_id": "L-cmp-largest-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004154
+      }
+    },
+    {
+      "case_id": "L-cmp-smallest-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004539
+      }
+    },
+    {
+      "case_id": "L-cmp-latest-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004525
+      }
+    },
+    {
+      "case_id": "L-cmp-earliest-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003659
+      }
+    },
+    {
+      "case_id": "L-cmp-seriesD-max",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.00471
+      }
+    },
+    {
+      "case_id": "L-cmp-avg-industry",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004714
+      }
+    },
+    {
+      "case_id": "L-cmp-2026-top",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005169
+      }
+    },
+    {
+      "case_id": "L-largest-round-type",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004303
+      }
+    },
+    {
+      "case_id": "L-largest-round-founded",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003418
+      }
+    },
+    {
+      "case_id": "L-3plus-rounds",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006307
+      }
+    },
+    {
+      "case_id": "L-founded-before2015",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003619
+      }
+    },
+    {
+      "case_id": "L-cmp-seriesA-top",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004823
+      }
+    },
+    {
+      "case_id": "L-zero-no-round",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004563
+      }
+    },
+    {
+      "case_id": "L-zero-seriesE",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004175
+      }
+    },
+    {
+      "case_id": "L-zero-2027",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004381
+      }
+    },
+    {
+      "case_id": "L-zero-before2015",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004309
+      }
+    },
+    {
+      "case_id": "L-zero-over100m",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004622
+      }
+    },
+    {
+      "case_id": "L-stats-median",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.011653
+      }
+    },
+    {
+      "case_id": "L-stats-pstdev",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 7,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.009215
+      }
+    },
+    {
+      "case_id": "L-stats-median-A",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005786
+      }
+    },
+    {
+      "case_id": "L-stats-mean-A",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003587
+      }
+    },
+    {
+      "case_id": "L-absent-company",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006744
+      }
+    },
+    {
+      "case_id": "L-absent-valuation",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004374
+      }
+    },
+    {
+      "case_id": "L-absent-employees",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 11,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.010729
+      }
+    },
+    {
+      "case_id": "L-absent-ceo",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 13,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.01071
+      }
+    },
+    {
+      "case_id": "L-absent-hq",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 13,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.0117
+      }
+    },
+    {
+      "case_id": "L-absent-ipo",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.009941
+      }
+    },
+    {
+      "case_id": "L-absent-plan",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004931
+      }
+    },
+    {
+      "case_id": "L-write-update",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006873
+      }
+    },
+    {
+      "case_id": "L-write-delete",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007574
+      }
+    },
+    {
+      "case_id": "L-write-insert",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.007581
+      }
+    },
+    {
+      "case_id": "L-write-drop",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003802
+      }
+    },
+    {
+      "case_id": "L-write-rename",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 8,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.008168
+      }
+    },
+    {
+      "case_id": "L-write-en",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004995
+      }
+    }
+  ],
+  "budget": {
+    "cap_usd": 1.0,
+    "actual_usd": 0.324797,
+    "tripped": false,
+    "trip_reason": null,
+    "calls_ok": 404,
+    "calls_blocked": 0,
+    "calls_error_assumed_not_billed": 0,
+    "calls_error_cost_unknown_charged_worst_case": 0,
+    "on_missing_usage": "halt",
+    "usage_missing_halt": false,
+    "calls_usage_missing_estimated": 0,
+    "overshoot_usd": 0.0,
+    "charged_for_failed_requests_usd": 0,
+    "by_model": {
+      "gpt-4.1-mini": {
+        "calls": 404,
+        "input_tokens": 528985,
+        "output_tokens": 70752,
+        "cost_usd": 0.324792
+      }
+    },
+    "price_source_note": "2026-10-12 核对 OpenAI 官方模型页：https://developers.openai.com/api/docs/models/gpt-4.1 (输入 2.00 / 缓存输入 0.50 / 输出 8.00) 与 .../gpt-4.1-mini (0.40 / 0.10 / 1.60)，标准档、文本 token；快照名 gpt-4.1-2025-04-14、gpt-4.1-mini-2025-04-14 归一到同名模型。价格会变，开跑当天请再看一眼。mini 页面没有显式写“standard tier”字样。其他模型（含 gpt-4o 系列）未核对，不在白名单内。"
+  },
+  "settings": {
+    "search_api": "none",
+    "models": {
+      "research_model": "openai:gpt-4.1-mini",
+      "final_report_model": "openai:gpt-4.1-mini",
+      "compression_model": "openai:gpt-4.1-mini",
+      "summarization_model": "openai:gpt-4.1-mini"
+    },
+    "timeout_s": 300.0,
+    "extra_config": {},
+    "grounding_guard_env": ""
+  },
+  "budget_aborted": false,
+  "blind_spots": [
+    "mem0（若 --memory on）与搜索 API 的费用不在预算内",
+    "internal_doc_search 每次查询会调用 OpenAI embedding，不经过回调、不在预算内；只在 evidence.uncounted_paid_calls 里数次数",
+    "缓存命中按未缓存价格计费（偏保守）",
+    "失败请求：5xx/超时/断连/取消按最坏情况计入；4xx 假设未计费（对 OpenAI 通常行为的假设，不是保证）",
+    "预检的输入 token 是字节数启发式估计，不是 tokenizer"
+  ],
+  "secret_scan_hits": []
+}

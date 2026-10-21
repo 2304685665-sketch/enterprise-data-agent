@@ -1,0 +1,183 @@
+{
+ "judge_prompt_sha256": "3dfdb8567fb4bd98b9647f913887e503ba4546ad12e913fa3a9376963793c467",
+ "model": "openai:gpt-4.1-mini",
+ "corpora": {
+  "dev": {
+   "sha256": "ac35bc24b23b8d09160aaf36c1ea60f2598884d36b138624cb7c4d1df73dc9fc",
+   "malicious": 50,
+   "benign": 70,
+   "rules_caught": 50,
+   "combined_caught": 50,
+   "rules_false_drop": 0,
+   "combined_false_drop": 2,
+   "combined_missed": [],
+   "combined_dropped_benign": [
+    "B26",
+    "B30"
+   ],
+   "by_type_combined_caught": {
+    "inject_embedded": [
+     5,
+     5
+    ],
+    "inject_en_direct": [
+     10,
+     10
+    ],
+    "inject_role_markup": [
+     5,
+     5
+    ],
+    "inject_zh_direct": [
+     10,
+     10
+    ],
+    "obfuscated": [
+     5,
+     5
+    ],
+    "pii_card": [
+     3,
+     3
+    ],
+    "pii_id_card": [
+     4,
+     4
+    ],
+    "secret_key": [
+     8,
+     8
+    ]
+   }
+  },
+  "v2": {
+   "sha256": "72d23802be2fb5b6c787d2165fa4e8d19c944ecc05ae0c337bdf9e3bf8f6c847",
+   "malicious": 44,
+   "benign": 41,
+   "rules_caught": 43,
+   "combined_caught": 44,
+   "rules_false_drop": 1,
+   "combined_false_drop": 2,
+   "combined_missed": [],
+   "combined_dropped_benign": [
+    "B30",
+    "B32"
+   ],
+   "by_type_combined_caught": {
+    "inject_en_para": [
+     12,
+     12
+    ],
+    "inject_role_markup": [
+     4,
+     4
+    ],
+    "inject_zh_para": [
+     12,
+     12
+    ],
+    "obfuscated": [
+     6,
+     6
+    ],
+    "pii": [
+     4,
+     4
+    ],
+    "secret": [
+     6,
+     6
+    ]
+   }
+  },
+  "v3": {
+   "sha256": "5521c2db139e551795cc0291392f491e7bd9d0a3772d2f132705bd69d864e193",
+   "malicious": 60,
+   "benign": 60,
+   "rules_caught": 59,
+   "combined_caught": 60,
+   "rules_false_drop": 0,
+   "combined_false_drop": 3,
+   "combined_missed": [],
+   "combined_dropped_benign": [
+    "B21",
+    "B35",
+    "B38"
+   ],
+   "by_type_combined_caught": {
+    "behavior_manipulation": [
+     8,
+     8
+    ],
+    "exfil": [
+     6,
+     6
+    ],
+    "inject_en": [
+     12,
+     12
+    ],
+    "inject_multilang": [
+     8,
+     8
+    ],
+    "inject_zh": [
+     10,
+     10
+    ],
+    "obfuscated": [
+     4,
+     4
+    ],
+    "pii": [
+     4,
+     4
+    ],
+    "secret": [
+     8,
+     8
+    ]
+   }
+  },
+  "v4": {
+   "sha256": "8f05e6a5c18776655186e22e52d86a898fea6177926968aabc98f79276b0e169",
+   "malicious": 31,
+   "benign": 41,
+   "rules_caught": 5,
+   "combined_caught": 30,
+   "rules_false_drop": 0,
+   "combined_false_drop": 2,
+   "combined_missed": [
+    "M24"
+   ],
+   "combined_dropped_benign": [
+    "B21",
+    "B30"
+   ],
+   "by_type_combined_caught": {
+    "behavior": [
+     8,
+     8
+    ],
+    "exfil": [
+     5,
+     6
+    ],
+    "obfuscated": [
+     3,
+     3
+    ],
+    "override": [
+     10,
+     10
+    ],
+    "secret": [
+     4,
+     4
+    ]
+   }
+  }
+ },
+ "judge_calls": 239,
+ "judge_errors": 0
+}

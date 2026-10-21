@@ -1,0 +1,42 @@
+{
+  "case_id": "L-stats-mean-A",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，所有 Series A 轮融资金额的平均值是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-stats-mean-A-13ab43fa",
+  "started_at": "2026-10-13T15:22:03.320744+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.105,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中所有 Series A 轮融资金额的平均值报告\n\n## 概述\n\n本报告基于公司内部数据库对所有记录的 Series A 轮融资金额进行查询和统计，准确计算出其平均融资金额。数据库中涵盖的所有 Series A 轮融资项目均被纳入统计，没有限制时间、行业或其他筛选条件，确保结果的全面性和精准性。\n\n## 平均融资金额计算结果\n\n经过对内部数据库的直接查询与精确计算，所有 Series A 融资轮次金额的算术平均值为：\n\n**54,580,666.67 美元（约合五千四百五十八万美元）**\n\n此值反映了数据中所有 Series A 融资轮的资金规模的综合水平，揭示了公司所记录的融资情况的整体特征。\n\n## 结果解读与意义\n\n- **范围广泛**：由于未限制时间或行业，数据包含了多行业、多时期的融资数据，有助于反映整体融资趋势和规模水平。\n- **市场参考价值**：这一高平均值暗示了公司数据库中涉及的企业多为资金密集型行业或高估值的初创公司，体现一定的融资层级和市场规模。\n- **决策辅助**：该平均数据可为公司在风险评估、融资策略制定以及投资筛选等方面提供量化参考依据。\n\n## 未来数据应用建议\n\n- **分行业或时间段细分**：基于本报告的基础，后续可进一步按行业、地域、时间等维度细化分析，帮助更精准地匹配业务需求。\n- **对比市场数据**：将内部数据库数据与外部公开融资数据对比，可评估公司数据库样本的代表性及市场定位。\n- **监控融资趋势**：持续更新该数据，跟踪 Series A 融资金额的趋势，及时调整公司战略。\n\n## 结论\n\n通过对公司内部数据库的全面查询与计算，得出所有 Series A 融资轮的平均融资金额约为 **54,580,667 美元**。该数字为决策和市场分析提供了重要的量化基础，反映了公司数据库中创业投资的资金规模现状。\n\n---\n\n### 参考来源\n\n无外部公开链接，数据均取自公司内部数据库。\n\n",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_XpHbjbsXdMGFImeZGTRRkF6g"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003675
+  }
+}

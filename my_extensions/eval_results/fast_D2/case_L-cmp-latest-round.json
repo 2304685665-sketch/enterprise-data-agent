@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-latest-round",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪家公司是最近一次获得融资的？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-latest-round-5a663f74",
+  "started_at": "2026-10-13T15:18:45.343932+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.147,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于我司内部数据库中最新融资事件的调研报告\n\n## 调研目标\n\n本次调研的目标是基于我司内部数据库的实际数据，准确识别在所有已记录公司中，哪家公司最近一次成功完成了融资轮次。要求严格基于数据库查询结果，不依赖主观记忆或印象，且不限定行业与地域范围，确保覆盖数据库内所有相关公司。\n\n## 数据查询方法\n\n为满足调研要求，执行了以下SQL查询语句，旨在从数据库中精确提取最近一次融资相关的公司及对应融资时间：\n\n```sql\nSELECT companies.name, funding_rounds.round_date \nFROM funding_rounds \nJOIN companies ON funding_rounds.company_id = companies.id \nORDER BY funding_rounds.round_date DESC \nLIMIT 1;\n```\n\n查询逻辑说明：\n\n- 通过内连接（JOIN）关联了融资轮次表（funding_rounds）和公司表（companies），确保提取的融资记录对应到具体公司名称；\n- 依据融资轮日期（round_date）倒序排列记录，确保第一条记录为最近一笔融资事件；\n- 取结果集的第一条，即最晚的融资轮数据。\n\n## 查询结果及解读\n\n基于上述查询，数据库返回以下精确信息：\n\n- **公司名称**：Nectar Climate  \n- **最近融资日期**：2026年9月11日\n\n这表明在目前录入的所有公司融资记录中，Nectar Climate是最新完成融资的企业，完成时间为2026年9月11日。此信息包括了数据库内所有行业与地域的公司，无任何筛选或限制，具备全面性和准确性。\n\n## 结论\n\n根据严格执行的数据库查询，当前我司内部数据库中最近一次融资事件由Nectar Climate公司完成，融资时间为2026年9月11日。此结论直接基于真实数据，符合调研要求，无主观猜测干扰，具备权威性和准确度。\n\n---\n\n## 参考来源\n\n[1] 内部数据库查询结果，funding_rounds 与 companies 表关联查询，执行时间：2026年10月13日。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_BQYoFBDv9EZEPth6pooabboW"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004525
+  }
+}

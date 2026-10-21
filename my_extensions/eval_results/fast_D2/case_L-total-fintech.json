@@ -1,0 +1,42 @@
+{
+  "case_id": "L-total-fintech",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，Fintech 行业的公司融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-total-fintech-180f3b32",
+  "started_at": "2026-10-13T15:11:57.648233+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 17.2,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Fintech行业公司融资金额汇总报告\n\n## 总体融资金额概况\n\n根据对公司内部数据库的直接查询，当前记录在册的所有Fintech行业公司的融资总金额为 **924,871,000美元**。该数据通过准确执行SQL查询得到，完全基于内部数据库中的实际记录，无任何估算或外部数据的引入，确保了数据的精确性和权威性。\n\n具体执行的SQL查询如下：\n\n```sql\nSELECT SUM(funding_rounds.amount_usd) AS total_financing_usd\nFROM funding_rounds\nJOIN companies ON funding_rounds.company_id = companies.id\nWHERE companies.industry = 'Fintech';\n```\n\n这条查询语句汇总了所有标注为Fintech行业的公司的融资轮金额，涵盖了本数据库中所有相关的融资轮记录。\n\n## 数据来源与准确性说明\n\n- **数据来源**：公司内部数据库，包括`companies`和`funding_rounds`两张表；\n- **查询方法**：直接SQL聚合计算融资金额总和；\n- **数据完整性**：由于查询涵盖了所有已标记为Fintech行业的公司，且融资金额字段为标准美元金额，因此统计数值反映了该行业在本数据库内的全部融资累计情况；\n- **无外部干预**：数据未结合任何外部市场调查、新闻报道或第三方数据，完全由内部系统生成。\n\n## 结论\n\n基于上述数据库直接提取的结果，当前集合于本公司内部数据库中的Fintech领域公司融资金额为 **924,871,000美元**。这是一项精确的实时合计数值，可作为内部决策、行业分析的可靠数据基础。\n\n如需进一步细化分析（例如按时间段、融资阶段或者分地域统计），可基于该数据库展开更细粒度的查询，但就当前需求而言，此数值为最完整且直接的融资总额回答。\n\n---\n\n### 资料来源\n\n[1] 公司内部数据库，2026年10月SQL查询结果（依据`funding_rounds`及`companies`表）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_vrtkDw4NctSmyt5IUVLptFpa"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00435
+  }
+}

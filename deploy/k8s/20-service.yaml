@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odr-service
+  namespace: odr
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}   # 灰度/滚动：先起新 Pod 通过就绪探针再下旧 Pod
+  selector:
+    matchLabels: {app: odr-service}
+  template:
+    metadata:
+      labels: {app: odr-service}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "8000"
+    spec:
+      # 任务在接收它的 Pod 内以后台协程执行；缩容/滚动时给在途任务留出收尾时间。
+      terminationGracePeriodSeconds: 600
+      containers:
+        - name: service
+          image: deploy-service:latest        # 替换为镜像仓库地址与固定 tag
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef: {name: odr-config}
+            - secretRef: {name: odr-secrets}
+          startupProbe:
+            httpGet: {path: /healthz, port: 8000}
+            periodSeconds: 5
+            failureThreshold: 24
+          readinessProbe:
+            httpGet: {path: /healthz, port: 8000}   # /healthz 同时检查 Redis 连通性
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /healthz, port: 8000}
+            periodSeconds: 20
+            failureThreshold: 3
+          resources:
+            requests: {cpu: 250m, memory: 512Mi}
+            limits: {memory: 1Gi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: odr-service
+  namespace: odr
+spec:
+  selector: {app: odr-service}
+  ports:
+    - port: 80
+      targetPort: 8000
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: odr-service
+  namespace: odr
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: odr-service}
+  minReplicas: 2
+  maxReplicas: 6
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 70}
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 600   # 缩容保守，避免打断在途研究任务
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: odr-service
+  namespace: odr
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: {app: odr-service}

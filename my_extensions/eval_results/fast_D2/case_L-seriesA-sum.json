@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seriesA-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，所有 Series A 轮的融资金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seriesA-sum-ffe4592c",
+  "started_at": "2026-10-13T15:13:31.838482+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.661,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中 Series A 轮融资金额总计研究报告\n\n## 一、研究背景与目的\n\n本次研究旨在准确统计公司内部数据库中所有Series A轮融资的总金额（单位：美元），避免任何对外部数据或主观印象的依赖，确保数据的权威性和精确性。根据需求，统计范围涵盖数据库中所有记录的Series A轮融资金额，无时间限制、无地域限制，完全基于官方内部数据仓库中的记录。\n\n## 二、数据查询方法\n\n为了获取最精准、最新的统计结果，直接对公司内部数据库进行结构化查询，使用SQL语句筛选所有融资轮次为“Series A”的记录，并汇总对应的融资金额。具体查询语句如下：\n\n```sql\nSELECT SUM(amount_usd) AS total_series_a_funding FROM funding_rounds WHERE round_type = 'Series A';\n```\n\n该查询确保：\n- 仅涵盖“Series A”融资轮次，符合研究重点。\n- 汇总所有相关融资金额，无任何时间或地理过滤。\n\n## 三、查询结果与分析\n\n通过上述查询，得到的Series A轮融资金额总和为：\n\n**982,452,000 美元**\n\n该数据体现了数据库内所有Series A轮融资数据的最新汇总结果，涵盖公司所有相关轮次，没有遗漏或重复计算。由于数据库为官方内部数据仓库，保证了数据的真实性与权威性。\n\n该结果的具体含义与作用：\n- 明确展现公司已记录的Series A轮融资累计规模。\n- 为企业融资分析、投资决策提供坚实数据基础。\n- 有助于理解公司投融资实力以及合作伙伴的融资能力。\n\n## 四、结论\n\n本研究严格遵循研究要求，通过直接查询公司内部官方数据库，统计得出截至目前全部Series A轮融资金额总计为982,452,000美元。数据完整、准确、无主观臆断，完全满足研究报告对数据精准性和权威性的需求。\n\n该金额可作为公司融资状况和投资动向的重要参考指标，支持相关业务及战略分析。\n\n---\n\n## 参考来源\n\n[1] 公司内部数据库官方数据仓库查询结果 (Internal Company Database Official Data Repository)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_I83R3NsXE1kLG86Vvcyad94P"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004515
+  }
+}

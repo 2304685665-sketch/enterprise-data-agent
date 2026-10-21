@@ -1,0 +1,56 @@
+{
+  "case_id": "G-absent-email",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Alderwick Foods 的联系人邮箱是什么？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-absent-email-d8a5ac60",
+  "started_at": "2026-10-13T16:14:07.988364+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 25.686,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Alderwick Foods 联系人邮箱查询报告\n\n## 1. 查询背景及目标\n\n本次查询的目标是获取我们公司内部数据库中，客户 Alderwick Foods 的联系人邮箱地址。根据研究简报的要求，必须直接从数据库获取准确数据，不可凭印象或推测回答。\n\n---\n\n## 2. 数据库中 Alderwick Foods 信息概述\n\n通过对内部数据库的多次查询，确认 Alderwick Foods 作为客户在公司数据库中信息如下：\n\n- 客户名称（customer_name）：Alderwick Foods\n- 客户ID（customer_id）：1\n- 地区（region）：East\n- 注册年份（signup_year）：2020\n- 订单记录：存在近期订单（order_id 1，金额108.01美元，订单日期2024年12月2日）\n\n这些信息表明 Alderwick Foods 真实存在于客户数据表中，且有正常交易记录，客户ID为1。\n\n---\n\n## 3. 联系人邮箱信息查找过程及结果\n\n### 3.1 查询尝试\n\n- 查询了所有与客户相关的表，包括 customers（客户表）、orders（订单表）、products（产品表）。\n- 重点查找是否存在 contacts 表或者类似的子表存储客户联系人信息或邮箱。\n- 结果显示：数据库中无 contacts 表，客户表及订单表中均无邮箱字段。\n\n### 3.2 结论\n\n- 公司现有的数据库结构中，没有存储 Alderwick Foods 联系人邮箱的字段或表。\n- 内部数据库无任何表结构和字段包含客户联系人邮箱信息。\n\n---\n\n## 4. 建议\n\n- 如果需要联系人邮箱信息，建议向数据库管理员确认是否有其他数据源、系统或独立的联系信息管理平台存储客户邮箱。\n- 也可询问相关同事或客户关系管理（CRM）系统的接口，是否存在邮箱数据。\n- 目前数据库中无法提供Alderwick Foods的联系人邮箱，无法满足查询需求。\n\n---\n\n## 5. 总结\n\n本次查询基于全面检索公司内部数据库有关 Alderwick Foods 的客户和订单信息，但未找到任何包含联系人邮箱的记录或表结构。根据当前数据库信息：\n\n- Alderwick Foods 的联系人邮箱**不在本数据库中存储**。\n- 无法提供准确联系人邮箱数据。\n\n需进一步确认其他数据来源或系统，以获取准确邮箱信息。\n\n---\n\n## 附录：关键查询结果示例\n\n| customer_id | customer_name    | region | signup_year |\n|-------------|------------------|--------|-------------|\n| 1           | Alderwick Foods  | East   | 2020        |\n\n| order_id | customer_id | amount_usd | order_date  | status |\n|----------|-------------|------------|-------------|--------|\n| 1        | 1           | 108.01     | 2024-12-02  | paid   |\n\n---\n\n### Sources\n\n暂无外部参考链接，所有信息均来自内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 8,
+      "think_tool": 1
+    },
+    "sql_calls": 8,
+    "sql_call_ids": [
+      "call_04PkzDoqcNVUwTwEWYP25oy5",
+      "call_1FrVudNfxzhYRSuO5q5KQImG",
+      "call_Qjijg6nd8T9kS4CLYmLDeHkj",
+      "call_R7mzT4TrWdmHRgPqITluG9th",
+      "call_RC9X4tdzpPl3GJSumeSaiNPO",
+      "call_ZqloqPbirtBQEeF6qjVUQJNZ",
+      "call_mwPZme9Zkgnv9JtoARKIOq3l",
+      "call_zwE5Ow0pgssys1liDcx6azKr"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "error",
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008972
+  }
+}

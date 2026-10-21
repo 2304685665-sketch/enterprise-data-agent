@@ -1,0 +1,42 @@
+{
+  "case_id": "L-count-industries",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，这些公司一共分属多少个不同的行业？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-count-industries-52169ec2",
+  "started_at": "2026-10-13T15:11:05.680094+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 18.157,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "## 公司所属不同行业的数量统计报告\n\n### 背景说明\n\n本次研究目的是准确统计我司内部数据库中所存储的公司列表所涵盖的不同“行业”类别的确切数量。此统计需依赖数据库中的实际数据，禁止基于经验、主观判断或外部印象进行估算，确保结果的客观与精准。\n\n### 查询方法\n\n为确保数据的精准性，采用了直接数据库查询的方式。具体执行的SQL语句如下：\n\n```sql\nSELECT COUNT(DISTINCT industry) AS distinct_industry_count FROM companies;\n```\n\n该语句直接计算了`companies`表中`industry`字段的唯一（去重）值数量，反映了该数据库中所有公司的行业类别总数。\n\n### 统计结果\n\n通过上述SQL查询，得出结论：  \n**我司内部数据库中，公司所属的不同“行业”总数为 6 个。**\n\n这一结果代表数据库中所有公司分类所覆盖的独立行业类别数量，没有掺杂任何假设或推断，纯粹基于数据库中记录的实际数据。\n\n### 结果分析与说明\n\n- 6个行业的数量说明公司覆盖面较为集中，没有过度分散在过多的行业领域。\n- 该结果为后续业务分析、市场定位、资源整合等工作提供了数据基础，帮助明确行业覆盖结构。\n- 若需进一步细分，应基于现有数据库的行业分类标准进行详细分析。\n\n### 结论\n\n公司内部数据库中涵盖的公司分布于**6个不同的行业**。该数据完全来源于对数据库的直接查询，杜绝了任何基于印象的估测，确保了结论的真实性和准确性。\n\n---\n\n### 参考资料\n\n[1] 内部数据库查询结果，SQL语句：`SELECT COUNT(DISTINCT industry) AS distinct_industry_count FROM companies;`",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_D8ivDyp15uFWK1MTQTQIPN0s"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003189
+  }
+}

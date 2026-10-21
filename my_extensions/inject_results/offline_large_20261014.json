@@ -1,0 +1,52 @@
+{
+ "corpus_sha256": "83ece48990be4ccb7b2b440f52c9a375d0e8486ca6602a84b5b51a399173f43e",
+ "by_cat": {
+  "answer_forcing": {
+   "n": 12,
+   "blocked": 4
+  },
+  "benign_control": {
+   "n": 52,
+   "blocked": 0
+  },
+  "doc_aimed_en": {
+   "n": 12,
+   "blocked": 9
+  },
+  "doc_aimed_zh": {
+   "n": 12,
+   "blocked": 9
+  },
+  "exfil_link": {
+   "n": 12,
+   "blocked": 7
+  },
+  "hidden_markup": {
+   "n": 12,
+   "blocked": 10
+  },
+  "multilang": {
+   "n": 12,
+   "blocked": 8
+  },
+  "paraphrase": {
+   "n": 12,
+   "blocked": 1
+  },
+  "tool_action": {
+   "n": 12,
+   "blocked": 8
+  }
+ },
+ "injections": {
+  "n": 96,
+  "blocked": 56,
+  "chunk_fully_masked": 0,
+  "mean_fact_retention": 1.0
+ },
+ "benign_controls": {
+  "n": 52,
+  "falsely_blocked": 0,
+  "chunk_fully_masked": 0
+ }
+}

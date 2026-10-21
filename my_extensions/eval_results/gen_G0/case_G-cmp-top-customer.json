@@ -1,0 +1,54 @@
+{
+  "case_id": "G-cmp-top-customer",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪位客户的订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-customer-6d5844e1",
+  "started_at": "2026-10-13T15:21:06.424614+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 59.053,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中订单金额累计最高的客户调研报告\n\n## 研究背景与目的\n\n本研究旨在基于公司内部数据库的精确记录，确定哪位客户的订单金额累计最高。此任务要求直接查询数据库，计算所有客户至今为止的订单总额，确保准确无误地获得累计金额最高的单一客户信息。研究过程中不做任何过滤条件限制，覆盖所有历史订单数据。\n\n## 数据库结构概述\n\n从数据库架构角度出发，本次查询涉及以下核心数据表：\n\n- **customers（客户表）**  \n  表结构定义为：  \n  `customer_id INTEGER PRIMARY KEY`  \n  `customer_name TEXT`  \n  `region TEXT`  \n  `signup_year INTEGER`\n\n- **orders（订单表）**  \n  表结构定义为：  \n  `order_id INTEGER PRIMARY KEY`  \n  `customer_id INTEGER` — 与customers表关联  \n  `product_id INTEGER`  \n  `quantity INTEGER`  \n  `amount_usd REAL` — 订单金额  \n  `order_date TEXT`  \n  `status TEXT`\n\n此外，还有products表，但与本次研究无关。\n\n以上结构保证了可以通过订单表中的customer_id字段，关联到客户表获取客户详细信息。\n\n## 查询方法与过程\n\n1. **确认数据库中存在的表**  \n   通过查询获取系统中的所有表名，确认存在`customers`、`orders`、`products`三个表。\n\n2. **了解表结构及字段用法**  \n   读取`customers`和`orders`表的建表SQL以确认字段定义和关联方式。\n\n3. **计算所有客户累计订单金额**  \n   利用如下SQL语句，按照客户ID分组，将订单金额求和，并按照累计金额降序排列，取最高一条数据：  \n   ```sql\n   SELECT customer_id, SUM(amount_usd) AS total_order_amount\n   FROM orders\n   GROUP BY customer_id\n   ORDER BY total_order_amount DESC\n   LIMIT 1;\n   ```\n\n4. **提取累计金额最高客户的详细信息**  \n   根据上述查询结果中最高订单金额客户的ID，查询对应的客户信息表，获取客户姓名、地区及注册年份。\n\n## 查询结果与发现\n\n- **客户累计订单金额最高：**  \n  - 客户ID：25  \n  - 累计订单金额：6039.82 美元\n\n- **该客户详细信息：**  \n  - 客户名称：Zinnia Home  \n  - 所属地区：Central  \n  - 注册年份：2021年\n\n以上结果严格基于数据库当前记录数据，涵盖了所有客户截至查询时点的订单，无任何过滤或假设条件。\n\n## 结论\n\n根据对公司内部数据库的直接查询统计，可以明确指出：\n\n- **Zinnia Home（客户ID 25）是当前累计订单金额最高的客户，累计金额达 6039.82 美元。**\n\n该客户的订单数据在所有客户中位列第一，充分体现了其在公司业务中的重要性。以上结论完全基于数据库内部的真实数据，无任何主观推断。\n\n## 建议与下一步\n\n- 可以针对该客户进行重点客户管理和营销资源倾斜，以提升客户满意度和重复购买率。\n- 未来可定期自动化执行类似统计，动态监控客户贡献度。\n- 如需对地域或时间维度等作更细致分析，建议设计相应的分组和筛选查询。\n\n---\n\n### 参考来源\n\n[1] 数据库系统查看所有表名的查询结果  \n[2] customers表结构定义查询结果  \n[3] orders表结构定义查询结果  \n[4] 查询所有客户订单金额累计统计及排序结果  \n[5] 查询累计最高客户详细信息结果  \n\n---\n\n### Sources\n\n[1] 数据库表列表查询: `SELECT name FROM sqlite_master WHERE type='table';`  \n[2] customers表结构: `SELECT sql FROM sqlite_master WHERE name='customers';`  \n[3] orders表结构: `SELECT sql FROM sqlite_master WHERE name='orders';`  \n[4] 计算客户累计订单金额最高查询:  \n```sql\nSELECT customer_id, SUM(amount_usd) AS total_order_amount \nFROM orders GROUP BY customer_id ORDER BY total_order_amount DESC LIMIT 1;\n```  \n[5] 获取指定客户详细信息查询: `SELECT * FROM customers WHERE customer_id = 25;`",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 7,
+      "think_tool": 1
+    },
+    "sql_calls": 7,
+    "sql_call_ids": [
+      "call_Jb4XU3WA1KBhJRbu9HeGYfr5",
+      "call_NMDkiYR5zGdn7K2CuUDvNKLA",
+      "call_Szy6LyJxBAV4EQFYzbEBLywk",
+      "call_WiKeNONFcFdV89uWRM0QPuYx",
+      "call_eDbUWNEjMUj3qx2sOMFA5TnP",
+      "call_lYuGopaouVK3BIctmRtnt6Ig",
+      "call_q39jppcVDEMDJLpHW2lj7cpN"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "error",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 16,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.013789
+  }
+}

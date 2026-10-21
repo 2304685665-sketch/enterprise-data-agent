@@ -1,0 +1,42 @@
+{
+  "case_id": "S-pstdev-paid",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，状态为 paid 的订单，金额的总体标准差是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-pstdev-paid-571b5fd9",
+  "started_at": "2026-10-13T15:51:29.119391+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 13.279,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中状态为 paid 的订单金额总体标准差分析报告\n\n## 研究背景与问题定义\n\n本报告旨在准确回答公司内部数据库中，状态为 **paid**（已付款） 的订单金额的总体标准差是多少美元。标准差是一种统计指标，用于衡量数据分布的离散程度，反映订单金额的波动范围。正确掌握此指标对于财务风险管理、订单结构分析及未来业务决策都有重要作用。\n\n用户请求明确要求从数据库中直接查询数据，确保结果的准确性，杜绝凭经验或印象回答。\n\n---\n\n## 数据查询与统计分析方法\n\n为获取订单金额的总体标准差，直接在公司内部数据库中执行了SQL查询，筛选条件为订单状态为 `paid`。统计指标采用总体标准差（population standard deviation），该指标计算的是全部符合条件的订单数据的真实离散度，而非样本标准差。\n\n假设查询语句大致为：\n\n```sql\nSELECT STDDEV_POP(amount) AS stddev_amount_paid_orders\nFROM orders\nWHERE status = 'paid';\n```\n\n- `amount` 为订单金额字段\n- `status = 'paid'` 表示订单已付款\n\n---\n\n## 关键结果\n\n基于数据库查询，得到的状态为 `paid` 订单金额的总体标准差为：\n\n**470.10 美元（约数）**\n\n这表明，在所有已付款订单中，订单金额围绕其均值的离散程度较大，标准差达到470美元左右。具体数值为 470.10317822182475 美元。\n\n---\n\n## 结果解读与业务含义\n\n- **标准差约470美元** 意味着订单金额的变动范围较为宽泛，可能存在从低金额订单到高金额订单的显著差距。\n- 该信息有助于：\n  - 评估订单金额的波动风险，尤其是在资金计划及现金流管理中的应用。\n  - 优化定价策略和促销方案，通过分析金额分布调整不同客户细分的定价梯度。\n  - 支持财务部门进行更加细致的报告和预算编制。\n- 如需更进一步的分析，可结合平均订单金额、中位数、金额分布百分位数等指标，综合描述订单金额全貌。\n\n---\n\n## 结论\n\n经数据库数据直接查询，**公司内部数据库中所有状态为 `paid` 的订单，订单金额的总体标准差约为470.10美元**。该统计指标为当前订单金额的波动范围提供了明确量化，能够辅助公司在资金管理及业务分析中取得更科学的决策依据。\n\n---\n\n## 附注\n\n- 本次查询仅基于目前数据库内状态为 `paid` 的订单数据，数据覆盖范围及更新时效性依赖数据库的实时同步。\n- 若未来订单数据量或业务结构发生变化，建议定期复查该指标。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (2026年)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_bSXGeClgQadZd7UrVKFHsI1Z"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003551
+  }
+}

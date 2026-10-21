@@ -1,0 +1,42 @@
+{
+  "case_id": "G-over1000-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔金额超过 1000 美元的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-over1000-count-04478716",
+  "started_at": "2026-10-13T15:13:42.474401+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.563,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 单笔金额超过1000美元的订单数量报告\n\n## 查询背景和目的\n\n本报告旨在通过直接查询公司内部数据库，获取所有单笔订单金额超过1000美元的订单数量。由于时间范围未做限制，统计涵盖数据库中所有历史订单，确保数据的全面性和准确性。此次统计避免任何估算或依赖记忆，充分利用数据库中存储的真实数据来保证结果的权威性。\n\n## 数据查询方法\n\n针对研究目标，执行了如下SQL查询语句：\n\n```sql\nSELECT COUNT(*) AS high_value_order_count FROM orders WHERE amount_usd > 1000;\n```\n\n该查询筛选出订单金额字段（amount_usd）大于1000美元的所有订单行数，从而得到满足条件订单的精确总数量。\n\n## 查询结果与分析\n\n经过查询，公司内部数据库中单笔订单金额超过1000美元的订单数量为：\n\n- **9 笔订单**\n\n此结果反映了当前数据库所有历史订单记录中，金额超过1000美元的订单总数。该数字为真实数据库直接返回，无任何估算成分，具有高度准确性。\n\n### 结果含义\n\n- 订单金额超过1000美元的订单数量虽非特别庞大，但能反映出一定规模的高价值交易存在。\n- 可作为后续分析客户价值、订单集中度、销售策略调整的基础数据。\n- 若结合时间、客户类型等维度进一步细分，可以为市场和销售部门提供更具针对性的洞察。\n\n## 结论\n\n通过对内部数据库全量订单记录的精准查询，共计有9笔单笔金额超过1000美元的订单。此数据为当前系统中所有此类订单的确切数目，能够帮助相关部门安排后续业务分析与决策。\n\n---\n\n### 参考来源\n\n[1] 内部公司数据库查询结果：SELECT COUNT(*) AS high_value_order_count FROM orders WHERE amount_usd > 1000;",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_myHmx37jNd47VqQBtnm4VqFt"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00426
+  }
+}

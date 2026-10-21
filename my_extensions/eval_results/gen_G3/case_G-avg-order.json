@@ -1,0 +1,41 @@
+{
+  "case_id": "G-avg-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有订单的平均订单金额是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-avg-order-6b6b71d2",
+  "started_at": "2026-10-13T16:07:09.947817+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 9.959,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部所有订单的平均订单金额分析报告\n\n## 概述\n\n本报告针对公司内部数据库中所有订单的平均订单金额进行了精确查询与计算。基于数据库的直接数据提取，报告提供了准确的平均订单金额数值，避免依赖主观印象或估算，确保数据的客观性和可操作性。\n\n## 数据查询结果\n\n通过对公司内部数据库订单数据的分析，计算出所有订单的平均订单金额如下：\n\n- **平均订单金额：493.03美元**\n\n该数值是基于所有存储于数据库中的订单金额进行加权平均计算得出，反映了订单金额的整体水平。\n\n## 结果的意义与应用\n\n- **业务表现评估**  \n  平均订单金额是评估销售质量与客户购买力的重要指标。493.03美元的平均数值表明客户单笔订单的价值处于一定的中高水平，体现了产品或服务的市场定位及客户消费习惯。\n\n- **盈利能力分析**  \n  该指标有助于利润率和销售额预测，为财务规划和预算制定提供基础数据支持。\n\n- **市场及营销策略调整**  \n  根据平均订单金额，营销团队可以优化促销方案，推出针对高价值订单客户的定制优惠，提高回购率和客户忠诚度。\n\n## 进一步分析建议\n\n若需要更深入的洞察，建议从以下维度展开分析：\n\n- **分客户群体或地域的平均订单金额差异**  \n- **不同时间段（季度、年度）的订单金额趋势变化**  \n- **单品或类别对订单金额的贡献比例**  \n- **订单金额与客户生命周期价值（CLV）之间的关联**\n\n这将帮助公司制定更精准的销售和市场策略，提升整体营收表现。\n\n---\n\n### 来源\n\n本报告基于内部数据库的订单金额字段直接提取和计算的结果。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (内部数据，无公开链接)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ntvRNKih1bOjuItEVKpP409j"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 3,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002412
+  }
+}

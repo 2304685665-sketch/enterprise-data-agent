@@ -1,0 +1,44 @@
+{
+  "case_id": "G-zero-no-order",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，有几位客户没有任何订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-zero-no-order-e48aa025",
+  "started_at": "2026-10-13T15:25:46.032707+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 33.48,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 客户数据库中无订单客户数量准确统计报告\n\n## 概述\n\n本报告针对公司内部客户及订单数据库，旨在直接、准确地统计截至2026年10月13日为止，数据库中没有任何订单记录的客户数量。统计过程完全基于数据库查询，排除任何记忆、估计或外部数据干扰，确保结果的真实性和严谨性。\n\n## 数据库结构简介\n\n在执行统计之前，明确数据库中涉及的核心表结构如下：\n\n- **customers（客户表）**  \n  - `customer_id`（客户ID，主键）  \n  - `customer_name`（客户名称）  \n  - `region`（地区）  \n  - `signup_year`（注册年份）\n\n- **orders（订单表）**  \n  - `order_id`（订单ID，主键）  \n  - `customer_id`（客户ID，关联customers表）  \n  - `product_id`（产品ID）  \n  - `quantity`（数量）  \n  - `amount_usd`（金额，美元）  \n  - `order_date`（订单日期）  \n  - `status`（订单状态）\n\n- **products（产品表）**  \n  - 此表不涉及本次查询，但存在于数据库中，包含产品相关信息。\n\n以上结构说明，客户与订单通过`customer_id`建立关联，确保能够准确判断哪些客户有订单，哪些没有。\n\n## 查询方法及执行过程\n\n为满足需求，使用了如下SQL查询语句：\n\n```sql\nSELECT COUNT(*) AS customers_with_no_orders\nFROM customers c\nLEFT JOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_id IS NULL;\n```\n\n**解析：**  \n- 通过`LEFT JOIN`将客户表和订单表关联，保持客户表所有行。  \n- 对于不存在对应订单的客户，订单表中相关字段（如`order_id`）会显示为`NULL`。  \n- 条件筛选`WHERE o.order_id IS NULL`即定位无订单客户。  \n- 使用`COUNT(*)`统计无订单客户数量。\n\n该语句查询结果刷新至2026年10月13日止的所有数据，未加入任何期间或额外条件过滤。\n\n## 统计结果\n\n根据数据库直接查询结果，公司内部数据库中无任何订单的客户数量为：\n\n**3位客户**\n\n## 结论\n\n基于完整的数据库查询，该公司当前共有3位客户在其客户数据库中，但至今未产生任何订单。此数据从根源数据库中获取，无需任何假设或估计，保证了统计的精准性和权威性。\n\n此结果可作为后续营销策略、客户关系维护、资源投放等决策的坚实数据基础。\n\n## 参考来源\n\n- [1] SQLite主数据表结构查询：`SELECT name, sql FROM sqlite_master WHERE type='table';`  \n- [2] 无订单客户统计SQL查询语句及结果：  \n  ```sql\n  SELECT COUNT(*) AS customers_with_no_orders\n  FROM customers c\n  LEFT JOIN orders o ON c.customer_id = o.customer_id\n  WHERE o.order_id IS NULL;\n  ```\n\n---\n\n### Sources\n\n[1] SQLite Master Table Schema Information: Internal company database query  \n[2] SQL Query to count customers with no orders: Internal company database query",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_cc2JWxPzRPAciqxi5Q9JX4DP",
+      "call_gccBq22IXEgWjxduaK7fdANf"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008341
+  }
+}

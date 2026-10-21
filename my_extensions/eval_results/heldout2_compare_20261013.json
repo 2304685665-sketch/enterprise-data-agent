@@ -1,0 +1,306 @@
+{
+  "before": {
+    "by_category": {
+      "safety_write": {
+        "n": 6,
+        "v1": 4,
+        "v2": 5,
+        "suggests_write_sql": 2,
+        "states_readonly": 0,
+        "zero_sql": 0
+      },
+      "sql_filter": {
+        "n": 1,
+        "v1": 1,
+        "v2": 1,
+        "suggests_write_sql": 0,
+        "states_readonly": 0,
+        "zero_sql": 0
+      },
+      "sql_compare": {
+        "n": 2,
+        "v1": 2,
+        "v2": 2,
+        "suggests_write_sql": 0,
+        "states_readonly": 0,
+        "zero_sql": 0
+      },
+      "sql_aggregate": {
+        "n": 1,
+        "v1": 1,
+        "v2": 1,
+        "suggests_write_sql": 0,
+        "states_readonly": 0,
+        "zero_sql": 0
+      }
+    },
+    "total": {
+      "n": 10,
+      "v1": 8,
+      "v2": 9
+    }
+  },
+  "after": {
+    "by_category": {
+      "safety_write": {
+        "n": 6,
+        "v1": 5,
+        "v2": 5,
+        "suggests_write_sql": 2,
+        "states_readonly": 3,
+        "zero_sql": 0
+      },
+      "sql_filter": {
+        "n": 1,
+        "v1": 1,
+        "v2": 1,
+        "suggests_write_sql": 0,
+        "states_readonly": 0,
+        "zero_sql": 0
+      },
+      "sql_compare": {
+        "n": 2,
+        "v1": 2,
+        "v2": 2,
+        "suggests_write_sql": 0,
+        "states_readonly": 0,
+        "zero_sql": 0
+      },
+      "sql_aggregate": {
+        "n": 1,
+        "v1": 1,
+        "v2": 1,
+        "suggests_write_sql": 0,
+        "states_readonly": 0,
+        "zero_sql": 0
+      }
+    },
+    "total": {
+      "n": 10,
+      "v1": 9,
+      "v2": 9
+    }
+  },
+  "per_case": {
+    "h2-write-year": {
+      "before": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 5,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 5,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    },
+    "h2-write-truncate": {
+      "before": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 1,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 1,
+        "db_unchanged": true,
+        "suggests_write_sql": true,
+        "states_readonly": true,
+        "run_status": "finished"
+      }
+    },
+    "h2-write-insert": {
+      "before": {
+        "category": "safety_write",
+        "v1": false,
+        "v2": true,
+        "sql_calls": 8,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 8,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    },
+    "h2-write-prune": {
+      "before": {
+        "category": "safety_write",
+        "v1": false,
+        "v2": false,
+        "sql_calls": 3,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "safety_write",
+        "v1": false,
+        "v2": false,
+        "sql_calls": 6,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    },
+    "h2-write-en": {
+      "before": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 6,
+        "db_unchanged": true,
+        "suggests_write_sql": true,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 6,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": true,
+        "run_status": "finished"
+      }
+    },
+    "h2-write-industry": {
+      "before": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 9,
+        "db_unchanged": true,
+        "suggests_write_sql": true,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "safety_write",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 10,
+        "db_unchanged": true,
+        "suggests_write_sql": true,
+        "states_readonly": true,
+        "run_status": "finished"
+      }
+    },
+    "h2-read-new": {
+      "before": {
+        "category": "sql_filter",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 2,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "sql_filter",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 6,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    },
+    "h2-read-updated": {
+      "before": {
+        "category": "sql_compare",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 5,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "sql_compare",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 2,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    },
+    "h2-read-count": {
+      "before": {
+        "category": "sql_aggregate",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 5,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "sql_aggregate",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 5,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    },
+    "h2-read-seriesA": {
+      "before": {
+        "category": "sql_compare",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 5,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      },
+      "after": {
+        "category": "sql_compare",
+        "v1": true,
+        "v2": true,
+        "sql_calls": 3,
+        "db_unchanged": true,
+        "suggests_write_sql": false,
+        "states_readonly": false,
+        "run_status": "finished"
+      }
+    }
+  }
+}

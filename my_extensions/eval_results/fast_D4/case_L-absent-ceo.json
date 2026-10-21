@@ -1,0 +1,57 @@
+{
+  "case_id": "L-absent-ceo",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Brightforge 的首席执行官是谁？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-ceo-9dd73432",
+  "started_at": "2026-10-13T15:20:49.277554+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 32.724,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于 Brightforge 首席执行官的信息报告\n\n## 研究背景\n\n根据公司内部数据库的查询需求，目标是准确获取 Brightforge 公司的首席执行官（CEO）姓名。此次查询明确要求直接从内部数据库中提取准确数据，不依赖于印象或外部推测，确保信息的真实性和权威性。\n\n## 查询结果总结\n\n经过对内部数据库的系统性检索，涉及公司的基本信息、融资情况及关联字段的所有可用数据均已确认，但数据库中并未存有 Brightforge 公司 CEO 相关的任何记录。具体情况如下：\n\n- Brightforge 公司基础信息包括行业属性为生物技术（Biotech），成立时间为2020年。\n- 融资记录中显示了该公司于2020年10月5日完成了一轮种子融资，金额约为2650万美元。\n- 在表结构及相关字段中，通过多条检索尝试获得 CEO 信息，结果均显示“未知”（unknown）或该字段不存在。\n- 数据库错误日志显示在查询过程中出现“无此列名”的错误，进一步表明 CEO 相关数据字段缺失。\n\n因此，Brightforge 公司首席执行官的姓名并未被录入或维护于当前公司内部数据库。\n\n## 相关数据概述\n\n| 公司名称   | 行业      | 成立年份 | CEO姓名  | 融资轮次 | 融资金额（美元）    | 融资日期      |\n|------------|-----------|----------|----------|----------|---------------------|--------------|\n| Brightforge | 生物技术 | 2020年   | 未知     | 种子轮   | 26,506,000          | 2020-10-05   |\n\n该表清楚显示，除 CEO 外，其他核心企业数据均有详尽记录。\n\n## 结论\n\n根据公司内部数据库当前的信息记录，无法提供 Brightforge 公司首席执行官的具体姓名。数据库中缺少该项数据，现阶段内部系统不支持直接查询该内容。\n\n建议后续若需获取此信息，可考虑：\n\n- 联系公司相关部门补充和维护该关键管理人员信息；\n- 寻求外部权威数据库或公开信息平台进行验证和补充；\n- 通过企业法人注册信息等官方途径核实并更新内部数据库。\n\n---\n\n# 说明\n\n本报告仅基于公司内部数据库数据制作，保证未凭个人印象或外部信息填补数据空缺，完全遵循数据真实性原则。\n\n---\n\n### 来源\n\n[1] 公司内部数据库查询结果（2026年10月）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 8,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 8,
+    "sql_call_ids": [
+      "call_95SvfhRePo3gCtX8KW86Iyqg",
+      "call_FszKVsMCz0DqpCagcBbOGr5i",
+      "call_NcBfYkjhAgupLGqPdOCPo1go",
+      "call_RezX2i4f6HkPe0U6sTN7nJNh",
+      "call_SLz07nc3MQ2AqRvp3F6RZSHH",
+      "call_WVsBXCFK8pOFWH2VSbI2Q1hq",
+      "call_bMfkZxsSV7q8JgesVUWXM5gA",
+      "call_l60QFemJI3VGUrsJLqfBmiMP"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "error",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008973
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cyber-rounds",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Cybersecurity 行业的公司一共完成了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cyber-rounds-1b4a720a",
+  "started_at": "2026-10-13T15:17:15.216839+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 21.464,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中Cybersecurity行业公司融资笔数统计报告\n\n## 研究背景\n\n本次研究的核心目标是通过对公司内部数据库的直接查询，准确统计Cybersecurity（网络安全）行业内公司完成的所有融资交易数量。由于没有限定时间范围、融资阶段或地域范围，数据库中的所有相关数据均纳入统计范围，排除了任何主观推断或估算，确保结果的精确与权威。\n\n## 数据查询方法\n\n为保证数据的全面性与统计的严格性，采用了直接针对公司内部数据库的SQL查询方式。具体实现如下：\n\n- 查询语句：\n  ```sql\n  SELECT COUNT(fr.id) AS total_financing_transactions\n  FROM funding_rounds fr\n  JOIN companies c ON fr.company_id = c.id\n  WHERE c.industry = 'Cybersecurity';\n  ```\n  \n- 查询设计要点：\n  - 联结了`funding_rounds`融资轮次表与`companies`公司信息表，确保统计的是所有真实融资事件。\n  - 筛选条件以公司所属行业`industry`字段精确匹配“Cybersecurity”，避免误计入其他行业融资。\n  - 无任何时间、融资阶段或地理范围限制，涵盖数据库里全部相关融资记录。\n\n通过上述查询，直接调用数据库，自动生成融资笔数统计结果，完全规避人为误差。\n\n## 统计结果\n\n经过执行上述数据库查询，得到的确切结果显示：\n\n- Cybersecurity行业的公司在公司内部数据库里总共完成了 **19笔融资交易**。\n\n该数量是真实反映数据库中所有网络安全相关公司的融资记录总和，代表公司掌握的内部数据范围内的完整信息。\n\n## 结果分析\n\n- **准确性**：结果来源于数据库的直接计数，不依赖任何估算、过滤或人为判断，保证数据的真实性与可靠性。\n- **全面性**：无时间、地区及融资类型限制，所有记录均被覆盖，反映市场总体融资活跃度。\n- **行业聚焦**：筛选条件专注于“Cybersecurity”行业，确保数据的专一性与针对性，避免跨行业混淆。\n- **数据局限**：仅代表公司内部数据库中记录的融资事件，若数据库未涵盖某些外部或新近更新的融资信息，则该部分数据未计入。\n\n## 总结\n\n通过精确的数据库查询，确认公司内部数据库中Cybersecurity行业相关企业的完成融资笔数为19笔。这一数据提供了一个清晰的网络安全领域融资交易总量基准，有助于深入评估该行业的融资活跃度和投资动态。\n\n---\n\n### 参考来源\n\n[1] 内部公司数据库融资交易查询结果（SQL查询直接获得）。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_StnpJNREj0TBGQyBChTyUIaI"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004628
+  }
+}

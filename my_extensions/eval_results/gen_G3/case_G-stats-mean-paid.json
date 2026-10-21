@@ -1,0 +1,42 @@
+{
+  "case_id": "G-stats-mean-paid",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，状态为 paid 的订单，金额的平均值是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-stats-mean-paid-50a68dd8",
+  "started_at": "2026-10-13T16:13:26.487707+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 13.227,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中状态为 paid 的订单金额平均值分析报告\n\n## 查询背景\n\n本次研究旨在准确回答公司内部数据库中，订单状态为 **paid**（已支付）的订单，其金额的平均值具体是多少美元。用户明确要求直接查询数据库获取准确数字，避免凭经验或估算作答。\n\n## 研究方法\n\n通过对公司内部订单数据库进行结构化查询，筛选出状态为 `paid` 的所有订单，计算出这些订单金额字段的平均值。此过程确保数据的完整性与准确性，未做任何额外假设或推断。\n\n## 关键结果\n\n- 订单状态为 **paid** 的所有订单中，金额的平均值为：  \n  **450.72 美元**  \n- 此结果取自数据库原始数据，经过严格计算得出，具有高度信赖度。\n\n## 结果解读\n\n- 该平均值反映当前所有已完成支付订单的典型交易金额水平，为公司营收结构和客户消费行为提供直观数据基础。\n- 450.72 美元的平均金额在实际业务中可以作为定价策略调整、市场分析和客户分层的重要参考指标。\n- 若结合订单量及时间序列数据，可进一步分析支付金额的波动、趋势及潜在影响因素。\n\n## 附加说明\n\n- 查询过程严格遵守数据访问权限，且未对数据库数据进行任何修改或更新操作，仅进行了读取与计算。\n- 若需更深入的分析（如按时间、产品类别分层平均等），可进一步定制查询条件。\n\n## 结论\n\n根据公司内部数据库的实际查询结果，目前状态为 **paid** 的订单，其金额平均值为**450.72美元**。该数字为精准值，可直接应用于内外部报告、决策支持及业务优化。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (状态 “paid” 订单金额平均值计算)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_U8MHCAbcER4vhO2zkMa48wDi"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003141
+  }
+}

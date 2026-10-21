@@ -1,0 +1,43 @@
+{
+  "case_id": "L-min-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔金额最小的一轮融资是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-min-round-07a02d4a",
+  "started_at": "2026-10-13T15:09:58.506771+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.32,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔最小融资金额详尽报告\n\n## 简介\n\n本报告旨在明确回答关于公司内部数据库中，历史记录的单笔融资金额中最低金额（以美元计）的查询请求。此查询没有时间、融资类型或其他方面的限制，覆盖公司数据库中所有融资轮次。所有数据均直接来源于公司官方财务或投资数据库，确保结果的准确性和权威性。\n\n## 查询执行与数据来源\n\n为获得精确的最小单笔融资金额，使用了SQL查询直接访问公司内部融资数据库。具体查询语句如下：\n\n```sql\nSELECT MIN(amount_usd) AS smallest_single_transaction_amount FROM funding_rounds;\n```\n\n该语句检索 `funding_rounds` 表中所有融资轮的融资金额，返回最小值，即单笔融资金额中的最低记录。\n\n本次查询未对时间、融资类型、融资阶段、公司性质或任何其他条件进行筛选，确保覆盖了公司数据库中所有相关数据。\n\n## 查询结果与分析\n\n经过直接数据查询，发现公司内部记录的**单笔最小融资金额为2,790,000美元**。这一金额是数据库中所有融资轮金额的绝对最小值，反映了该公司历史融资中最低的融资额度纪录，具体情况如下：\n\n- **融资金额**：2,790,000美元（USD）\n- **相关记录范围**：包含了数据库中所有已记录融资轮，无论时间和类型\n- **数据准确性**：基于公司内部数据库的官方数据，非估算，保证精确无误\n\n此结果说明，公司所有融资活动中，曾经至少有一笔单笔融资金额低于三百万美元，但未低于上述金额。\n\n### 影响与应用\n\n了解最小融资金额对公司财务规划和投资策略有参考价值。例如：\n\n- 评估公司历史融资的资金结构及多样性\n- 识别可能的低额融资案例，分析背后业务策略\n- 为未来拟定融资计划提供历史数据支撑，合理预估最低融资门槛\n\n## 总结\n\n公司内部数据库经过精准直接查询后得出结论：公司历史上记录的**单笔最小融资金额为2,790,000美元**。该数据涵盖全部历史融资，无任何限制和筛选条件，确保结果的全面性和权威性。\n\n本报告基于内部数据库真实数据，为公司提供了一个重要的基准数字，助力财务分析及战略制定。\n\n---\n\n### 参考资料\n\n[1] 公司内部财务数据库融资轮数据查询结果（funding_rounds表）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_9MktIppaP4vUC8G1E5U9JNSj"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004507
+  }
+}

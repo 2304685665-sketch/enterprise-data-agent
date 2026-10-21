@@ -1,0 +1,41 @@
+{
+  "case_id": "G-max-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔金额最大的订单是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-max-order-ee1bd557",
+  "started_at": "2026-10-13T15:09:59.966265+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.345,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔金额最大的订单金额报告\n\n## 研究背景与目的\n\n本报告旨在通过直接查询公司内部数据库，准确核实公司历史订单记录中的单笔最高订单金额（以美元计）。此项研究排除凡基于记忆或估计的回答，完全依赖数据库中的订单数据，以确保数据真实性和准确性，为企业决策或相关分析提供可靠依据。\n\n## 数据查询方法\n\n为了满足研究需求，采用了针对内部订单表的标准SQL查询，查询语句如下：\n\n```sql\nSELECT MAX(amount_usd) AS highest_order_amount FROM orders;\n```\n\n该语句直接针对订单金额字段，提取订单金额中的最大值，确保单笔订单金额的准确无误。\n\n## 查询结果\n\n通过执行上述查询，结果显示：\n\n- 公司内部数据库中，单笔订单金额最高为 **2,580.28美元**。\n\n该金额为所有历史订单记录中经过验证的最大数值。\n\n## 结果解析\n\n- 订单金额2,580.28美元反映公司历史单笔交易中的最高账面值。\n- 该数据来自于公司权威数据库，经过直接计算，排除了任何人为错误和估算偏差。\n- 该信息可用于财务统计汇总、风险评估、客户消费行为分析等。\n- 未来若需跟踪单笔订单金额变化趋势，可以定期执行类似查询。\n\n## 结论\n\n公司内部数据库中最高的单笔订单金额为**2,580.28美元**。该金额具备权威性，直接来自公司内部订单记录，不含任何估算和推测，完全满足研究简报的需求。\n\n---\n\n### 参考来源\n\n[1] 公司内部订单数据库查询结果 (内部数据，无公开链接)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_SMEht7H4bMh97pYHcU02c9cN"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003164
+  }
+}

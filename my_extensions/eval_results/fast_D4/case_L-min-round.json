@@ -1,0 +1,42 @@
+{
+  "case_id": "L-min-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔金额最小的一轮融资是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-min-round-4c6e55ef",
+  "started_at": "2026-10-13T15:09:39.440655+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 9.959,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔金额最小的融资轮次金额报告\n\n## 概述\n\n本报告旨在准确回答公司内部数据库中，单笔金额最小的一轮融资金额为多少美元的问题。依据对内部数据库的直接查询，确保回答基于真实数据，而非凭记忆或推测。\n\n## 查询结果\n\n根据对公司数据库的检索，单笔金额最小的融资轮次金额为**2,790,000美元**（279万美元）。此数据反映的是数据库中所有融资轮次金额的最小值，是最精准、可信的金额信息。\n\n## 详细分析\n\n- **金额单位**：美元（USD）\n- **数值**：2,790,000\n- **数据来源**：公司内部融资数据库\n- **是否涉及多轮融资**：此数值针对单笔独立融资轮次，不代表累计融资金额\n- **备注**：数据库中未记录有更低金额的融资轮，这表明公司融资活动中，最低单笔融资金额均不低于此数\n\n### 可能影响因素\n\n虽然本报告未具体深入内部各轮融资的市场环境和策略，但可推测：\n\n- 融资金额受项目规模、投资人类型及融资阶段影响\n- 279万美元作为最小融资轮金额，表明公司较少有极小额融资，这可能体现公司融资策略偏向于较大规模资金的引入，适应快速发展或规模化经营需求\n\n## 结论\n\n在公司现有数据库中，单笔融资金额最低的是279万美元。此金额是经过直接数据查询得出，准确且权威，能够满足用户对融资金额最小值的明确需求。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果（访问权限受限，内部资料）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_5ElEt5p1WJHQ1ue8r8pusUpP"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003008
+  }
+}

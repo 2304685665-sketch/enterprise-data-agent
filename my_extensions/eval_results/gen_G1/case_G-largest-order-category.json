@@ -1,0 +1,43 @@
+{
+  "case_id": "G-largest-order-category",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，金额最大的那笔订单，买的商品属于哪个品类？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-largest-order-category-d4d1c876",
+  "started_at": "2026-10-13T15:21:11.272933+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 35.729,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中金额最大的订单所属商品品类研究报告\n\n## 引言\n\n本报告旨在明确查询公司内部数据库中，按订单金额排序，金额最大的单笔订单所对应的商品品类。为确保结果准确无误，所有数据均通过直接执行数据库SQL查询获取，杜绝基于记忆或假设的回答。报告将详细说明查询方法、具体结果及相关分析。\n\n## 查询方法\n\n为了找出金额最大的单笔订单及其对应商品品类，采取以下步骤：\n\n- 使用公司内部数据库中存储订单信息的`orders`表，同时结合存储商品信息的`products`表。两表通过`product_id`字段关联。\n- 按订单金额（`amount_usd`字段）降序排列所有订单，选取金额排名第一的订单。\n- 查询同时返回该订单的商品所对应的商品品类（`category`字段）。\n\n执行的SQL语句如下：\n\n```sql\nSELECT p.category, o.amount_usd \nFROM orders o \nJOIN products p ON o.product_id = p.product_id \nORDER BY o.amount_usd DESC \nLIMIT 1;\n```\n\n该查询保证结果即为数据库中目前存储的最高金额订单及其对应的商品品类。\n\n## 查询结果与分析\n\n根据上述查询结果，明确发现：\n\n- **最大金额订单的商品品类为“工具”（Tools）**\n- 该订单金额为 **2580.28 美元**\n\n这一结果表明，在当前公司内部订单数据中，金额最高的订单属于“工具”类别商品。这说明，从金额维度观察，公司在该类产品上的单笔采购金额最高。\n\n此结果基于内部数据库的实时数据，不受人为记忆误差影响，确保充分满足“精确查询”需求。\n\n## 结论\n\n- 公司内部数据库显示，金额最大的单笔订单购买的商品品类是“工具（Tools）”。\n- 订单金额具体为2580.28美元。\n- 该数据由对内部真实订单及商品表的直接SQL查询获得，无任何基于主观印象的推测，保证了数据的准确和权威性。\n\n此结果可为公司采购策略、品类管理或财务分析提供重要参考依据。\n\n## 数据来源\n\n- 内部数据库订单与商品信息表，SQL查询执行结果[1]\n\n---\n\n### Sources\n\n[1] 内部数据库查询执行结果（SQL语句：SELECT p.category, o.amount_usd FROM orders o JOIN products p ON o.product_id = p.product_id ORDER BY o.amount_usd DESC LIMIT 1;）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_W1yu2SKptNh0altqiBYsR3gX"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.007484
+  }
+}

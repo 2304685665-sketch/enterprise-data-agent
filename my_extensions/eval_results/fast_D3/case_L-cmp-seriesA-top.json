@@ -1,0 +1,43 @@
+{
+  "case_id": "L-cmp-seriesA-top",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，Series A 融资里，哪家公司拿到的金额最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-seriesA-top-f5718ea3",
+  "started_at": "2026-10-13T15:18:44.819669+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.657,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 内部数据库中Series A融资金额最高的公司调研报告\n\n## 概述\n\n此次调研的目的是从公司内部融资数据库中直接查询，明确在所有Series A融资轮中，哪家公司获得了最高的融资金额。此次查询没有设置时间或行业限制，涵盖了数据库内所有记录的Series A融资数据，确保提供最准确和最新的答案。\n\n## 调研结果\n\n经过对内部数据库的直接查询，发现：\n\n- **公司名称**：Kestrel Labs\n- **融资轮次**：Series A\n- **获得融资金额（美元）**：97,272,000美元\n\n这是目前数据库中所有Series A融资轮中最高的融资金额记录，明显高于其他公司在该轮融资中的金额。\n\n## 具体数据说明\n\n- 融资金额为美元计价，精确到小数点后两位，数据来源于最新版本的内部数据库融资记录。\n- 由于数据库未限制行业或时间，使得此次结果具有全面性和代表性，涵盖了深科技、互联网、生物医药等多个领域的企业融资记录。\n- 数据库中目前没有发现金额超过该数值的其他Series A轮融资案例。\n\n## 结论\n\n依据最新且直接来自公司内部数据库的融资数据，**Kestrel Labs以97,272,000美元的融资金额，获得了内部数据库中Series A融资轮金额的最高记录**。这一结论基于完整、无假设的数据库查询结果，确保了答案的准确性和权威性。\n\n## 后续建议\n\n针对融资趋势的更深入分析，可以考虑：\n\n- 按时间维度观察Series A融资金额的变化趋势\n- 结合行业维度，分析不同行业的融资规模差异\n- 探讨Kestrel Labs融资背景及其战略意义\n\n但当前针对用户调研简报的需求，以上财务数据已全面满足。\n\n---\n\n### 参考资料\n\n无外部公开链接，数据均来源于公司内部融资数据库。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ZKuwVFeM0B0QMg0Qo98OYAVR"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003676
+  }
+}

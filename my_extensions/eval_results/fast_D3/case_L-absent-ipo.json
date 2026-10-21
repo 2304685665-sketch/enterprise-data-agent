@@ -1,0 +1,48 @@
+{
+  "case_id": "L-absent-ipo",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Cobaltree 的上市（IPO）日期和发行价是多少？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-ipo-ae9bf67b",
+  "started_at": "2026-10-13T15:24:25.698956+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 23.629,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Cobaltree 上市（IPO）详情查询报告\n\n## 查询目的\n\n本次查询的目的是从我司内部数据库中，准确获取 Cobaltree 的上市（IPO）相关具体信息，包括**IPO的确切日期**及**发行价格**。查询仅依托公司内部数据，杜绝凭记忆或外部信息，保证数据的真实性与准确性。\n\n---\n\n## 内部数据库查询结果分析\n\n通过对我司内部数据库的检索，针对 Cobaltree 的融资以及上市信息进行了详尽查询。重点聚焦：\n\n- Cobaltree 名下的所有融资轮次记录\n- 有无IPO轮次相关信息（如IPO日期、发行价等）\n\n### 资金轮次概览\n\n数据库中关于 Cobaltree 目前已记录的融资信息如下，涵盖多个阶段但无IPO数据：\n\n| 融资轮次  | 日期       | 金额（美元）      |\n| ---------- | ---------- | ----------------- |\n| Seed       | 2019-09-16 | $61,761,000       |\n| Series A   | 2020-08-13 | $32,012,000       |\n| Series B   | 2022-05-01 | $19,763,000       |\n| Series C   | 2024-07-27 | $31,014,000       |\n\n### IPO相关信息的缺失\n\n- 查无任何标注为IPO的融资轮次\n- 无IPO日期及发行价格的字段记录\n- 数据库中没有显示Cobaltree已上市的迹象\n\n这意味着，依照我司内部记录，Cobaltree尚未完成上市流程，或数据库尚未录入相关IPO信息。\n\n---\n\n## 结论\n\n根据公司内部数据库的最新数据：\n\n- Cobaltree 目前仅有Seed及多轮私募融资轮，尚无IPO融资记录\n- 没有精确的IPO日期数据\n- 没有发行价格相关的记录\n\n因此，无法从我司内部数据库中提供Cobaltree的上市日期及发行价。倘若需要进一步确认Cobaltree的IPO状态，建议联系财务或投资部门确认是否存在尚未导入的IPO信息，或等待后续数据更新。\n\n---\n\n## 附注\n\n- 查询严格依据内部数据库现有数据，不含任何外部公开信息或个人臆测。\n- 若公司未来增加或更新IPO相关数据，可再次检索以获取最新信息。\n\n---\n\n# 总结\n\n我司内部数据库显示，截至目前，Cobaltree 尚未在系统中记录任何IPO相关细节，无法提供具体的上市日期与发行价数据。数据库中仅包含多轮私募融资记录，详细融资时间和金额见表格。\n\n如需进一步协助或数据更新通知，请告知。\n\n---\n\n### 参考来源\n\n本报告数据均来自我司内部数据库，无公开URL链接可供引用。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 4,
+      "think_tool": 1
+    },
+    "sql_calls": 4,
+    "sql_call_ids": [
+      "call_5XtkJw6DStGQ0Rd8CN4CEP7c",
+      "call_G6lfQEIUtcRgzl1OsfP7L361",
+      "call_YJSoSRzkEzScrg7l5t8cgNgG",
+      "call_ymzeyZRAcvZz4QNOybAJphpP"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 8,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006345
+  }
+}

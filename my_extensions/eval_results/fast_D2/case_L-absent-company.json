@@ -1,0 +1,46 @@
+{
+  "case_id": "L-absent-company",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，OmegaBot 最新一轮融资金额是多少？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-absent-company-3a102f87",
+  "started_at": "2026-10-13T15:26:02.531903+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 27.562,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# OmegaBot 最新一轮融资金额查询报告\n\n## 研究目标\n\n本次研究的目标是精确获取公司 OmegaBot 在我司内部数据库中的最新融资轮金额。要求直接从数据库抓取最新且准确的融资金额数据，不依赖任何记忆或外部信息。\n\n---\n\n## 数据库查询过程与发现\n\n1. **直接查询最新融资轮金额**  \n   通过如下SQL语句，查询了公司名为“OmegaBot”的最新一轮融资金额：  \n   ```sql\n   SELECT fr.amount_usd FROM funding_rounds fr \n   JOIN companies c ON fr.company_id = c.id \n   WHERE c.name = 'OmegaBot' \n   ORDER BY fr.round_date DESC LIMIT 1;\n   ```  \n   查询结果返回无数据行，表明数据库中没有该公司对应的融资记录。\n\n2. **模糊查询公司名称以排查名称变体**  \n   进一步用模糊匹配查询名称包含“OmegaBot”的公司：  \n   ```sql\n   SELECT name FROM companies WHERE name LIKE '%OmegaBot%';\n   ```  \n   仍未返回任何符合条件的公司名称，排除了因名称小差异导致查询无效的可能。\n\n3. **抽样查询内部公司名清单核对**  \n   查询了数据库中部分公司名称前100条，确认“OmegaBot”并不在存在的公司名单中。示例部分公司包括：  \n   - Aurelio  \n   - Brightforge  \n   - Fernlight  \n   - Gridwell  \n   - Helixon  \n   - Krystal Edu  \n   - Lumivex  \n   - Marlowe AI  \n   - Riverstone Robotics 等。  \n\n   OmegaBot 不存在于数据库任何记录中。\n\n---\n\n## 分析与结论\n\n- **OmegaBot公司未录入数据库**  \n  经过多步精准查询，不论是精确匹配还是模糊匹配，公司名“OmegaBot”皆未出现在我司数据库中。这意味着：  \n  - 内部数据库中没有该公司相关的记录。  \n  - 因此无法检索到任何融资轮数据，自然也无法获得最新融资金额。  \n  - 可能的原因包括公司名称拼写错误、公司尚未纳入数据库或数据库尚未更新至包含该公司数据。\n\n- **无法提供最新融资金额**  \n  由于数据库中无该公司数据，未能获取该公司最新融资金额。所有通过数据库直接查询的尝试均未返回结果。\n\n- **建议事项**  \n  - 请确认公司名称是否完全准确无误。  \n  - 若公司可能有别名或全名，建议提供其他可供核对的信息。  \n  - 若为新兴或小型公司，可能尚未被系统纳入，需要同步或补充外部数据源。  \n  - 若急需该数据，建议结合其他正规外部信息渠道进行同步核实。\n\n---\n\n## 总结\n\n基于我司内部数据库的完整查询结果显示，公司 OmegaBot 不存在于系统中，因而无法获取其最新融资轮的具体金额。数据库查询结果的透明性和准确性已得到保证，但目前数据缺失是限制因素。请考虑确认或更新公司名称，或结合其他数据源协同验证。\n\n---\n\n### 参考来源\n\n本报告所有数据均来自我司内部数据库查询，未使用外部数据来源。\n\n[1] 内部公司数据库融资轮数据查询结果 (SQL查询执行结果)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_MG9jVpQW4TwUce0Upto0kmp9",
+      "call_PiUw6koiNkDcxRK0wOrjGDX4",
+      "call_rjtUCvYgHNNVswaegLxXoxP4"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 8,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006744
+  }
+}

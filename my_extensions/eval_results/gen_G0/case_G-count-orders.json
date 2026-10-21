@@ -1,0 +1,45 @@
+{
+  "case_id": "G-count-orders",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-count-orders-d441d355",
+  "started_at": "2026-10-13T15:11:14.173115+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 31.415,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库订单总数调研报告\n\n## 调研背景\n\n本次调研旨在获取公司内部数据库中截至2026年10月13日的所有订单的准确总数。调研要求直接查询公司内部数据库，确保数据准确且为实时最新，无需进行任何过滤或维度拆分，涵盖所有订单记录（不论订单状态、日期或其他属性）。此调研的主要任务是量化订单总数，并提供明确可靠的数据支持，避免依赖估计或主观判断。\n\n## 数据库结构简述\n\n通过对公司内部数据库架构的初步查询，确定了主要涉及订单数据的核心表结构：\n\n- `customers` 表：存储客户信息  \n- `products` 表：存储产品信息  \n- `orders` 表：储存订单信息\n\n此次调研重点针对 `orders` 表进行分析和计数，因订单总数即来源于此数据表。\n\n## 订单总数查询结果\n\n利用标准SQL语句直接查询订单数据表，使用命令：\n\n```sql\nSELECT COUNT(*) AS total_orders FROM orders;\n```\n\n查询结果显示：\n\n- 截至2026年10月13日，公司数据库中共记录订单 **79笔**。\n\n该计数包括所有订单条目，不区分订单状态（如完成、取消、进行中等），也不受订单创建或其他时间维度的限制，保证了数据的全面性和准确性。\n\n## 结论\n\n- 目前公司内部数据库中共有 **79笔订单**。  \n- 该数字是通过直接数据库查询获得，完全符合调研要求的“精确、最新、无过滤”条件。  \n- 订单总量反映了数据库中全部记录，不存在遗漏或估算。  \n\n这一结果为公司业务分析、运营监控及后续决策提供了可靠的基础数据支撑。\n\n## 补充说明\n\n- 本次调研仅限只读查询，不涉及数据更改或新增。  \n- 订单数据涵盖了所有历史至今的订单，无论状态如何。  \n- 如需进一步细分（如按时间、客户、状态等统计），可基于本基础数据继续深入分析。\n\n---\n\n### 参考来源\n\n[1] 内部公司数据库：订单表查询结果，2026年10月13日执行SQL查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_RRnj1CiG8L33Til9jmrlHZcH",
+      "call_xx5eQ7dNu7fR33twlr2JG6SG"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.007636
+  }
+}

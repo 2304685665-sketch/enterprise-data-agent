@@ -1,0 +1,50 @@
+{
+  "case_id": "G-stats-median",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，所有订单金额的中位数是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-stats-median-6372e924",
+  "started_at": "2026-10-13T15:18:06.216626+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 39.189,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司所有订单金额中位数的详细报告\n\n## 研究背景与目标\n\n本次研究的目标是准确获取本公司内部数据库中所有订单金额（单位：美元）的中位数。要求直接查询现有内部订单数据库中的数据，涵盖所有订单，不做任何筛选或时间限制，保证结果的准确性和权威性。  \n\n## 数据获取与处理方法\n\n为了实现这一目标，采用了以下步骤：\n\n1. **提取所有订单金额数据**  \n   通过SQL查询，从内部订单表中选取所有订单的`amount_usd`字段数据，按金额从小到大排序。\n\n2. **计算订单总数**  \n   查询数据库中订单总条数，确认用于中位数计算的样本量。\n\n3. **确定中位数计算方式**  \n   - 若订单总数为奇数，则中位数是排序后处于中间的那个订单金额。  \n   - 若为偶数，则中位数是排序中间两个订单金额的均值。\n\n4. **提取中位数位置的订单金额**  \n   - 具体提取中位数所对应的一个或两个位置的订单金额。\n\n以上步骤确保了对整个数据集的完整覆盖，无任何过滤和预估，直接基于当前数据库准确计算中位数。\n\n## 数据分析结果\n\n### 订单总数及排序结果\n\n- 订单总数：共79条记录，属于奇数数量。  \n- 按金额升序排序的订单金额列表（仅部分展示，完整见附录）：  \n  42.23, 42.42, 54.14, 62.48, 84.62, 89.52, 89.53, 99.08, 108.01, ..., 355.54, ..., 2580.28\n\n### 中位数索引确定\n\n对于奇数样本数量，公式为 `(总数 + 1) / 2`，即 `(79 + 1) / 2 = 40`。  \n因此，中位数对应排序后的第40条订单金额。\n\n对应的查询结果：  \n- 第40条（offset 39）订单金额是332.25美元  \n- 第41条（offset 40）订单金额是355.54美元（用于验证，并非需要取平均）\n\n### 最终中位数\n\n由于订单数为奇数，第40条订单金额即为中位数，故本公司所有订单金额的中位数为：\n\n**332.25 美元**\n\n## 结论\n\n在不做任何筛选，基于当前完整订单数据的条件下，订单金额的中位数为332.25美元。这一数字是通过精确查询和计算得出，代表了订单金额的中间水平值，能反映出大致的订单金额规模分布趋势。\n\n该结果可以为公司财务分析、订单行为理解及未来定价策略提供量化的参考依据。\n\n## 附录：关键SQL查询示例\n\n```sql\n-- 查询订单总数\nSELECT COUNT(*) FROM orders;\n\n-- 查询订单金额并排序\nSELECT amount_usd FROM orders ORDER BY amount_usd ASC;\n\n-- 查询排序后的中位数金额（第40条）\nSELECT amount_usd FROM orders ORDER BY amount_usd ASC LIMIT 1 OFFSET 39;\n```\n\n---\n\n# 参考资料\n\n[1] 内部订单数据库查询结果，订单金额及排序数据  \n[2] 内部订单数据库查询结果，总订单数量  \n[3] 内部订单数据库查询第40和第41条记录金额结果  \n\n---\n\n### Sources\n\n[1] Internal Company Orders Database Query Results for amount_usd from orders table, sorted ascending  \n[2] Internal Company Orders Database Query Result for total count of orders  \n[3] Internal Company Orders Database Query Result for 40th and 41st offset order amounts",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 4,
+      "python_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 4,
+    "sql_call_ids": [
+      "call_P1igpyGnN2hbpHopvLxuc0Sf",
+      "call_YcEnpEcJQ1SKLcqXIjTLcGuk",
+      "call_uGZATgaeJ0SGcRPO70lKcmhy",
+      "call_x1PulUTm1XBTjqMa7kIMfVoW"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.011256
+  }
+}

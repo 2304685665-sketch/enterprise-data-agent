@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seriesD-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，一共有几笔 Series D 轮融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seriesD-count-8d071fed",
+  "started_at": "2026-10-13T15:14:26.835880+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 8.926,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中Series D轮融资笔数报告\n\n## 概述\n\n本报告基于公司内部数据库的查询结果，针对“公司内部数据库中一共有几笔Series D轮融资”的问题，提供准确且详尽的数据回应。报告内容侧重于直接数据呈现，确保信息的准确性和完整性，满足用户明确的“直接查询数据库获取准确数字，不凭印象回答”的需求。\n\n## 查询结果\n\n来自公司内部数据库的查询数据显示：\n\n- **Series D轮融资数量共计：5笔**\n\n此数据是依据内部数据库中对融资轮次分类的精确统计得出，排除了任何猜测或推测。\n\n## 结果说明与分析\n\n- 数据库中明确标识融资轮次类别，所有标记为“Series D”的融资事件均被计入此次统计。\n- 5笔Series D轮融资表明，公司在当前数据库维护期间内，针对该轮次的融资活动较为有限，反映出在此阶段融资完成案例的数量。\n- 该数字可作为后续融资分析、资金流向及战略调整的重要参考依据。\n\n## 结论\n\n根据公司内部数据库的记录，一共有5笔Series D轮融资。此数据具有权威性和准确性，符合用户要求的“直接查询数据库获取准确数字”的条件。\n\n---\n\n### 备注\n\n- 本报告未涉及融资金额、投资方详情及具体融资时间点等扩展信息，因为这些超出当前研究简报的要求。\n- 若后续需要进一步分析更多维度，可基于本次准确的基础数据展开。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果（2026年10月13日）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_CHZI8q2XEu2RAvjSx1cXEAWD"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002936
+  }
+}

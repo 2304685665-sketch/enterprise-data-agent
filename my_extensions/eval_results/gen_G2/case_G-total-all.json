@@ -1,0 +1,42 @@
+{
+  "case_id": "G-total-all",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有订单（不论状态）的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-total-all-19307a34",
+  "started_at": "2026-10-13T15:09:17.028864+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 22.882,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部所有订单金额总计报告\n\n## 概述\n\n本报告旨在回答关于公司内部数据库中所有订单金额总计的问题。根据客户需求，统计范围涵盖所有订单，无论其当前状态是已完成、待处理、已取消或其他任何状态类别，均须被包括在内。报告基于公司官方内部订单数据库的数据，确保结果准确无误，不依赖记忆、印象或任何估算。\n\n## 数据查询及统计方法\n\n- 为保证数据准确性，直接从公司内部订单数据库执行了如下SQL查询：\n  \n  ```sql\n  SELECT SUM(amount_usd) as total_amount_usd FROM orders\n  ```\n\n- 此查询涵盖了订单表（orders）中记录的所有订单，不设任何筛选条件，确保所有状态订单均被统计。\n\n- 查询结果即为公司截止当前时间点（2026年10月13日），所有订单金额的美元总和。\n\n## 订单金额总计结果\n\n- 查询得到的订单金额累计值为38,949.60美元。\n\n- 该金额是对公司内部数据库中所有订单金额的全面汇总，包括：\n  - 完成订单\n  - 待处理订单\n  - 已取消订单\n  - 以及数据库中存在的其他状态订单\n\n- 该总金额反映的是实际记录的订单金额总和，不包含任何估算成分，能够真实反映当前所有订单在金额上的累积情况。\n\n## 结论\n\n通过对官方内部数据库的直接查询，确认公司截至目前所有订单在金额上的合计为**38,949.60美元**。这一结果准确、完整且不带任何主观臆断，满足了关于订单金额总计的需求及数据完整性的要求。\n\n---\n\n### 参考来源\n\n[1] 公司内部订单数据库查询结果：`SELECT SUM(amount_usd) as total_amount_usd FROM orders`，返回金额38,949.60美元。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_378nPQq0WbWJ1RUDb0E1RhUx"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00447
+  }
+}

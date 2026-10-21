@@ -1,0 +1,76 @@
+{
+ "baseline": {
+  "dirs": [
+   "main2_final",
+   "base_main2_r2",
+   "base_main2_r3"
+  ],
+  "calls_mean_per_run": [
+   13.302,
+   12.825,
+   13.571
+  ],
+  "calls_mean": 13.233,
+  "calls_sd_across_runs": 0.378,
+  "pass_v1_per_run": [
+   53,
+   52,
+   53
+  ],
+  "pass_v2_per_run": [
+   58,
+   58,
+   59
+  ],
+  "pass_v3_per_run": [
+   59,
+   58,
+   60
+  ]
+ },
+ "d4": {
+  "dirs": [
+   "fast_D4",
+   "fast_D4_r2",
+   "fast_D4_r3"
+  ],
+  "calls_mean_per_run": [
+   4.46,
+   4.349,
+   4.397
+  ],
+  "calls_mean": 4.402,
+  "calls_sd_across_runs": 0.056,
+  "pass_v1_per_run": [
+   56,
+   56,
+   56
+  ],
+  "pass_v2_per_run": [
+   60,
+   61,
+   61
+  ],
+  "pass_v3_per_run": [
+   61,
+   62,
+   62
+  ]
+ },
+ "calls_reduction_pct_of_means": -66.7,
+ "per_case_pass_rate_v1": {
+  "baseline_mean": 0.836,
+  "d4_mean": 0.8889,
+  "wilcoxon_p_two_sided": 0.0051,
+  "d4_better_cases": 10,
+  "baseline_better_cases": 0
+ },
+ "per_case_pass_rate_v3": {
+  "baseline_mean": 0.9365,
+  "d4_mean": 0.9788,
+  "wilcoxon_p_two_sided": 0.0186,
+  "d4_better_cases": 10,
+  "baseline_better_cases": 2
+ },
+ "per_case_calls_wilcoxon_p": 5.168394813632266e-12
+}

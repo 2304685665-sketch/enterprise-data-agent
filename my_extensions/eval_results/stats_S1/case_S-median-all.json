@@ -1,0 +1,42 @@
+{
+  "case_id": "S-median-all",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，所有订单金额的中位数是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-median-all-e3baa1af",
+  "started_at": "2026-10-13T15:51:15.046054+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.069,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部订单金额中位数报告\n\n## 概述\n\n本报告基于对公司内部数据库的直接查询，准确计算了所有订单金额的中位数。用户关注的关键指标是订单金额的中位数（Median Order Amount），这是衡量订单金额分布的核心统计值，能反映公司订单的典型规模，避免极端值对平均数的影响。\n\n## 订单金额中位数具体数值\n\n通过SQL查询公司订单数据库，结果显示：\n\n- 所有订单金额的中位数为 **332.25美元**。\n\n此数据是对数据库中全量订单金额字段进行排序后，位于中间位置的金额值，代表了订单金额的“中心”倾向。\n\n## 数据查询与计算说明\n\n订单金额中位数的计算主要参考以下逻辑：\n\n- 从订单金额字段抽取所有记录。\n- 按金额从小到大排序。\n- 确定中间位置的订单金额：如果订单总数为奇数，则中位数为中间单个订单金额；若为偶数，则中位数为中间两个订单金额的平均值。\n\n本次查询使用的SQL示例，为确保结果准确（具体SQL语句根据公司数据库结构可能略有不同）：\n\n```sql\nSELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY order_amount) AS median_order_amount\nFROM orders;\n```\n\n该查询语句利用了数据库的内置中位数函数，保证统计的精确性和高效性。\n\n## 订单金额中位数的业务意义\n\n- **财务分析**：中位数能更真实反映订单的典型规模，排除极大或极小订单带来的偏差。\n- **市场策略**：了解订单金额中位数，有助于精准设计价格策略和促销活动定位。\n- **客户行为洞察**：通过该指标，可以观察客户消费习惯，优化产品组合和服务层级。\n\n## 结论\n\n基于公司内部数据库的数据直查，所有订单的金额中位数为 **332.25美元**。这是当前订单规模的典型反映，适合用作内部经营分析、市场定位参考和销售策略制定的基础数据。\n\n---\n\n### 参考资料\n\n[1] 公司内部订单数据库查询结果 (数据库直连，无公开链接)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_aG4Le8kMfFkxl40WbUZhbsI4"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00331
+  }
+}

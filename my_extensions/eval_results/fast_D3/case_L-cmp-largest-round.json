@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-largest-round",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪家公司拿到过金额最大的一笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-largest-round-3a7e7726",
+  "started_at": "2026-10-13T15:15:59.033310+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.376,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于我司内部数据库中获得最大单笔融资的公司调研报告\n\n## 一、调研背景\n\n本次调研的目的是明确指出我司内部数据库中哪家公司获得过的最大单笔融资金额。要求答案必须基于对内部数据库的直接查询，确保数字的准确性，避免依赖于主观记忆或印象。此信息对于评估公司融资能力、行业竞争地位及未来合作机会具有重要参考价值。\n\n## 二、调研方法\n\n通过对公司内部数据库进行结构化查询，筛选出具备融资金额数据的记录，具体目标为：\n\n- 查找所有记录中的“单笔融资金额”字段；\n- 找出金额最大的融资记录；\n- 获取对应的公司名称及融资金额。\n\n确保查询结果真实反映数据库中储存的历史融资数据。\n\n## 三、查询结果\n\n经过查询，结果显示：\n\n| 公司名称   | 最大单笔融资金额（人民币，元） |\n|------------|-----------------------------|\n| Junoflow   | 98,551,000.0                 |\n\nJunoflow 公司在我司内部数据库中拥有最大的一笔融资，金额达到约9,855.1万元人民币。\n\n## 四、结果分析\n\n1. **融资金额规模**  \n   近一亿人民币的融资金额在当前市场环境中属于中高端融资规模，说明Junoflow在资本市场中有较强的吸引力，或其商业模式和发展潜力被投资机构认可。\n\n2. **对公司影响**  \n   拥有较大单笔融资额度的企业通常具有较强的市场竞争力和发展潜力，这可能使Junoflow获得更多的市场资源，提升技术研发和市场扩展能力。\n\n3. **数据完整性和准确性**  \n   本次结果完全基于内部数据库字段，数据来源可靠，排除了人为主观判断带来的偏差。若需更详细的融资时间点、投资方等信息，建议进一步查询数据库中相关字段。\n\n## 五、结论\n\n根据我司内部数据库的直接查询结果，**Junoflow**公司获得的最大单笔融资金额为9,855.1万元人民币，是我司记录中融资数额最大的企业。这一数据为公司内部评估融资情况和竞争格局提供了可靠依据。\n\n---\n\n### 资料来源\n\n内部数据库结构化查询结果（2026年10月13日）\n\n---\n\n### Sources\n\n无外部网络来源，所有数据直接源自公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_3uHJZ7yAAp5HznbyZlAaVpbH"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002897
+  }
+}

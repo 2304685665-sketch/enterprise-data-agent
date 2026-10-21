@@ -1,0 +1,43 @@
+{
+  "case_id": "L-spread-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，单笔融资金额最大值与最小值相差多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-spread-round-2b8528b6",
+  "started_at": "2026-10-13T15:10:14.831206+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 17.183,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中单笔融资金额最大值与最小值差额分析报告\n\n## 概述\n\n本报告旨在准确回答公司内部数据库中“单笔融资金额最大值与最小值之间相差多少美元”的问题。该结果基于数据库中所有可用的融资记录，且不受时间或其他条件的限制，确保数据的完整性和权威性。计算过程完全依赖于官方数据库数据，避免任何主观估计，旨在提供一个精确的数值。\n\n## 数据来源与查询方式\n\n为获得精确的差额金额，执行了以下SQL查询，直接从公司官方的内部数据库中的融资记录表（`funding_rounds`）中抽取数据：\n\n```sql\nSELECT MAX(amount_usd) - MIN(amount_usd) AS difference_usd FROM funding_rounds;\n```\n\n- **字段说明**：\n  - `amount_usd`：单笔融资金额，单位为美元。\n- **表说明**：\n  - `funding_rounds`：公司所有融资交易的官方记录表，包含所有单笔融资金额。\n- 查询覆盖数据库中所有记录，未设置时间或其他任何筛选条件。\n\n该查询结果返回了融资金额最大值与最小值之间的**确切差额**，无偏倚、无估算。\n\n## 查询结果及其意义\n\n- 查询结果（单笔融资金额最大值 - 最小值）为：**95,761,000 美元**。\n- 该差额准确反映了公司历史上融资交易金额范围的跨度。\n- 结果直接体现在数据库中，无任何人工干预或推断。\n- 因无时间或条件限制，此差额涵盖了自数据库建立以来所有的单笔融资金额记录。\n\n此精确的数值对公司财务分析、风险管理及后续投资策略制定均具有重要参考价值，说明公司融资规模波动极大，存在较大金额差异的单笔交易。\n\n## 结论\n\n基于公司内部数据库的官方融资数据，单笔融资金额最大值与最小值之间的美元差额为**95,761,000 美元**。该结果严格基于完整的数据查询，确保绝对准确，能够为相关部门提供可靠的事实依据和数据支持。\n\n---\n\n### Sources\n\n[1] Internal company database query result: `SELECT MAX(amount_usd) - MIN(amount_usd) AS difference_usd FROM funding_rounds;`",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_LBXeKqGu89J2XfNhdv1AavsU"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004668
+  }
+}

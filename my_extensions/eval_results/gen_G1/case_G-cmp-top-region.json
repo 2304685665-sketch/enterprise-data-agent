@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-top-region",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪个区域的客户订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-region-6021b425",
+  "started_at": "2026-10-13T15:20:38.001417+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 33.264,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 报告：通过公司内部数据库查询各区域客户累计订单金额分析\n\n## 研究背景与目标\n\n本次研究旨在明确回答“公司内部数据库中，哪个地理区域的客户订单金额累计最高”的问题。为了确保答案的客观准确，直接通过SQL查询公司内部数据库，获取所有客户订单金额的累计总和，并按照区域进行分组统计。此次查询不设时间或产品类别限制，涵盖所有可用订单数据，确保了数据的全面性。\n\n## 数据查询及方法\n\n为了满足需求，执行了以下SQL查询，该查询将客户表与订单表进行联合，通过客户ID关联，统计各区域累计订单金额：\n\n```sql\nSELECT c.region, SUM(o.amount_usd) AS total_order_amount\nFROM customers c\nJOIN orders o ON c.customer_id = o.customer_id\nGROUP BY c.region\nORDER BY total_order_amount DESC;\n```\n\n- 该查询能确保所有客户所属的地理区域均被涵盖。\n- 使用SUM函数得到各区域累积订单金额。\n- 最后按照金额总和降序排列，方便直接识别订单金额最高的区域。\n\n## 查询结果与分析\n\n基于上述查询，获得了以下五个主要区域的累计订单金额（单位：美元）：\n\n| 区域   | 累计订单金额（USD） |\n|--------|------------------|\n| 中部(Central) | 15,575.97        |\n| 东部(East)    | 7,124.75         |\n| 南部(South)   | 6,564.87         |\n| 西部(West)    | 6,409.14         |\n| 北部(North)   | 3,274.87         |\n\n### 主要发现\n\n1. **中部区域的客户订单金额累计最高，达到15,575.97美元**，几乎是第二名东部区域的两倍，明显领先于其他区域。\n2. 东部和南部区域的累计订单金额也较为显著，分别为7,124.75美元和6,564.87美元。\n3. 西部和北部区域相对较低，尤其北部仅有3,274.87美元。\n4. 数据未限制时间跨度或产品类别，反映了历史至今的真实累计订单价值，因此具有高度的权威性和代表性。\n\n### 可能的影响因素（注释）\n\n虽然本报告未对影响不同区域订单金额的具体因素深入分析，但可考虑以下方向作为后续调研参考：\n\n- 各区域客户数量及客户规模的差异。\n- 区域经济发展水平及消费能力。\n- 市场推广及销售资源分配状况。\n\n## 结论\n\n根据公司内部数据库的精准查询结果显示，中部区域的客户拥有最高的累计订单金额，具体金额为15,575.97美元。其次为东部和南部区域，分别为7,124.75美元和6,564.87美元。西部和北部区域在订单金额累计方面则相对较少。\n\n以上数据涵盖了公司所有订单，没有额外过滤，能够准确、客观地回答查询需求，为公司制定区域销售策略、资源配置提供了量化依据。\n\n---\n\n### 参考来源\n\n[1] 公司内部数据库通过SQL查询获取的客户订单数据",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_qCmrNLpefkKzouXWn40ogNgv"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 10,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008235
+  }
+}

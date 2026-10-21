@@ -1,0 +1,46 @@
+{
+  "case_id": "G-absent-customer",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Zenithal Mart 最近一笔订单的金额是多少？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-absent-customer-35e62061",
+  "started_at": "2026-10-13T16:13:39.716452+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 16.87,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Zenithal Mart 最近一笔订单金额查询报告\n\n## 查询背景与目标\n\n本次报告旨在通过公司内部数据库，查询客户“Zenithal Mart”最近一笔订单的具体金额。要求直接以数据库中的准确数据作为依据，排除任何推测或未验证的信息，确保结果的真实性与权威性。\n\n## 数据库查询执行情况\n\n- 针对客户名称“Zenithal Mart”，进行客户信息及订单信息的数据库检索。\n- 采用了多条SQL查询语句分别搜索客户表与订单表，力图准确定位该客户的最近一笔订单金额。\n- 所有查询均成功执行，但结果均无数据返回，即未找到符合条件的记录。\n\n## 具体分析与结论\n\n1. **客户“Zenithal Mart”不存在于客户表中**  \n   - 数据库中无任何名为“Zenithal Mart”的客户记录，说明此客户可能未在公司系统中登记或录入存在差异（拼写、别名等问题）。\n   \n2. **因此，无法查询到任何相关订单信息**  \n   - 由于缺少客户主数据，数据库内自然没有关联订单数据，也就无法提供“Zenithal Mart”最近一笔订单的金额。\n   \n3. **可能原因**  \n   - 客户名称录入存疑：可能客户名称拼写或格式与实际使用名称有所不同。\n   - 客户并非本公司已有客户，因此没有订单记录。\n   - 数据库数据延迟或同步问题：如果客户最近刚成为客户，订单尚未录入数据库。\n\n4. **建议措施**  \n   - 核实客户正式登记名称，确认是否存在名称偏差。\n   - 如果需要查找订单金额，请提供客户其他识别信息（如客户编号、联系方式等）。\n   - 联系相关部门确认订单录入状态，确保数据完整。\n\n## 总结\n\n基于对公司内部数据库的全面查询，未能找到名为“Zenithal Mart”的客户记录，也因此无法获得其最近一笔订单的金额。当前数据库显示该客户不存在或尚未产生交易订单，无法提供所需精确数字。\n\n---\n\n## 来源\n\n无直接外部来源，所有信息均来源于公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_ktR1vHaKfUNAenwjYS7gAPkY",
+      "call_x9aSl21hgThmV2kVqWerljfQ",
+      "call_xcHBRxuAzNrgtVFtoSLS396o"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004758
+  }
+}

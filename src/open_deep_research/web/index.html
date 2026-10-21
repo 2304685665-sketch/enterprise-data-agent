@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Research 控制台</title>
+  <style>
+    :root { --bg:#f6f7f9; --card:#fff; --text:#1d2330; --muted:#6b7280; --accent:#2f5bea; --ok:#15803d; --bad:#b91c1c; --line:#e5e7eb; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0f1115; --card:#181b22; --text:#e6e8ee; --muted:#9aa3b2; --accent:#7c9cff; --ok:#4ade80; --bad:#f87171; --line:#2a2f3a; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui, -apple-system, "PingFang SC", sans-serif; }
+    main { max-width: 920px; margin: 0 auto; padding: 24px 16px 64px; display:grid; gap:16px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+    h1 { font-size:20px; margin:0 0 4px; } h2 { font-size:15px; margin:0 0 12px; }
+    .muted { color:var(--muted); font-size:13px; }
+    textarea, input { width:100%; padding:10px; border:1px solid var(--line); border-radius:8px; background:transparent; color:inherit; font:inherit; }
+    textarea { min-height:96px; resize:vertical; }
+    button { background:var(--accent); color:#fff; border:0; border-radius:8px; padding:8px 14px; font:inherit; cursor:pointer; }
+    button.secondary { background:transparent; color:var(--text); border:1px solid var(--line); }
+    button:disabled { opacity:.5; cursor:not-allowed; }
+    .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; }
+    .stat b { display:block; font-size:22px; } .stat span { color:var(--muted); font-size:12px; }
+    .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid var(--line); }
+    .pill.succeeded { color:var(--ok); } .pill.failed { color:var(--bad); }
+    pre { white-space:pre-wrap; word-break:break-word; margin:0; font:13px/1.5 ui-monospace, Menlo, monospace; }
+    ul { margin:0; padding-left:18px; }
+  </style>
+</head>
+<body>
+  <div id="root">页面需要启用 JavaScript，并能访问 cdnjs 加载 React。</div>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

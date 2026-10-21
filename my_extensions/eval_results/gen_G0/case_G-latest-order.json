@@ -1,0 +1,44 @@
+{
+  "case_id": "G-latest-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，最晚的一笔订单发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-latest-order-935752f3",
+  "started_at": "2026-10-13T15:13:21.157614+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 28.526,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中最新订单日期研究报告\n\n## 研究背景与目标\n\n本研究针对公司内部数据库中的订单数据，准确查找并确认截至2026年10月13日为止所记录的最新订单发生日期。用户明确要求无需凭记忆或假设回答，而必须直接基于数据库中的数据进行查询，确保信息的准确性与权威性。此报告通过对内部数据库的详细查询，揭示最新订单的具体日期，满足用户精准数据需求。\n\n## 数据源与查询方法\n\n### 数据库结构探查\n\n为确定存储订单信息的具体数据表，首先执行了以下SQL查询，寻找包含“order”关键字的表名：\n\n```sql\nSELECT name FROM sqlite_master WHERE type='table' AND name LIKE '%order%';\n```\n\n该查询确认数据库内存在名为`orders`的表，该表为储存订单相关数据的主表，成为后续查询的核心依据。\n\n### 最新订单日期查询\n\n确认订单表之后，执行以下SQL查询，获取`orders`表中订单日期的最大值，即最晚的订单时间：\n\n```sql\nSELECT MAX(order_date) AS most_recent_order_date FROM orders;\n```\n\n该查询直接返回了`orders`表中记录的最新订单日期。\n\n## 研究结果\n\n- 数据库中订单信息均集中于`orders`表。\n- 查询结果显示，截止2026年10月13日，公司内部数据库中最新的一笔订单日期为**2026年9月23日**。\n- 该日期明显早于当前日期，符合逻辑时间顺序，无数据异常。\n- 数据信息完全来源于数据库查询，未经过任何预测或推断，保证数据的客观准确。\n\n## 结论\n\n经过直接数据查询验证，公司的内部订单数据库中最新订单的具体日期为**2026年9月23日**。该日期是截至2026年10月13日公司的系统订单记录的最晚时间点。此信息严格基于订单表`orders`中的实际数据，符合用户要求，不存在任何假设成分，能为业务决策和数据分析提供可靠依据。\n\n## 备注\n\n- 本次查询仅涉及只读操作，未对数据库内容进行任何写入或修改。\n- 如果未来需要更细化的订单详情（如订单编号、客户信息等），可基于当天最新订单日期进一步深入查询。\n\n---\n\n### 参考资料\n\n[1] 内部数据库查询结果：查找包含“order”的数据表名称  \n[2] 内部数据库查询结果：获取订单表中最大订单日期\n\n---\n\n### Sources\n\n[1] Internal SQL database query result on table names: query to find tables with \"order\" in their names.  \n[2] Internal SQL database query result that returned the maximum order date from the `orders` table.",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_9VmuAC2RL8CIBqFhTe53FdeN",
+      "call_D9SuBkosYaahRzlVWikXUsHd"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.007777
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "L-largest-round-type",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，金额最大的那一笔融资属于什么轮次？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-largest-round-type-f4ec0289",
+  "started_at": "2026-10-13T15:16:15.315720+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.304,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中金额最大融资轮次的详尽分析报告\n\n## 概述\n\n本报告旨在明确回答“我们公司内部数据库里金额最大的那一笔融资属于什么轮次？”这一问题。通过直接查询公司内部融资数据库，获取了准确的数据，避免任何基于印象或猜测的回答，确保结论具有高度的准确性和权威性。\n\n## 最大融资金额及所属融资轮次细节\n\n根据数据库的结构和存储信息，查询出的最大融资金额为 **98,551,000 美元**。对应的融资轮次为 **种子轮（Seed round）**。这意味着，在我们已有的所有融资记录中，金额最高的单笔资金是在初创的早期阶段获得的。\n\n这一发现提醒我们：\n\n- 公司在种子轮阶段获得了极其重要且金额显著的融资，远高于通常行业内种子轮的平均水平。\n- 该轮融资的规模表明在最早期已经获得了市场或投资人的高度认可，为后续发展奠定坚实资金基础。\n- 后续轮次虽然融资数量和金额一般会逐渐递增，但数据库中当前记录显示此笔种子轮融资是最高的单笔入账。\n\n## 数据库查询方法与数据准确性说明\n\n本次结论基于内部数据库中 `round_type`（融资轮次）与对应融资金额字段的查询得出：\n\n- 数据库字段：`round_type` 与 `max_amount`\n- 查询结果：\n  - `round_type`: Seed\n  - `max_amount`: 98,551,000 USD\n\n此结果直接来源于数据库查询，保证了数据的可靠性，无人为干预或估测成分。\n\n## 对比与行业背景简析\n\n- 通常情况下，企业初期融资（种子轮）金额相比后续轮次会较小，但这次数据显示种子轮金额超出常规说明了该项目吸引了大量资金。\n- 若公司后续存在A轮、B轮或PPP轮（Pre-Series A、B轮、战略轮等），此次数据库内未显示有更高金额的融资。\n- 这种融资结构可能反映了公司的战略重点和融资节奏。\n\n## 结论\n\n综上所述，**内部数据库里金额最大的一笔融资属于“种子轮（Seed round）”，融资金额为 98,551,000 美元**。这一数据基于数据库中的真实记录直接提取，具有权威性和准确性。\n\n---\n\n### 参考来源\n\n本报告依据公司内部融资数据库的查询结果，无外部公开来源。\n\n### Sources\n\n[1] 内部融资数据库查询结果 (公司内部系统)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_z9ANbAha4qwiaIZbmYyMLU56"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003309
+  }
+}

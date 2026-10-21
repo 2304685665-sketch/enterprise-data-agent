@@ -1,0 +1,42 @@
+{
+  "case_id": "S-stdev-price",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，所有商品的单价（unit_price）的样本标准差（n-1）是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-stdev-price-2c905047",
+  "started_at": "2026-10-13T15:53:53.268284+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 22.507,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有商品单价样本标准差报告\n\n## 概述\n\n本报告旨在准确回答公司内部数据库中所有商品的单价（unit_price）的样本标准差（使用样本标准差公式，即除以 n-1）是多少美元。根据数据库最新查询结果，提供科学、严谨的统计结果，确保基于真实数据而非估计或印象，以支撑后续业务分析和决策。\n\n## 样本标准差的定义与意义\n\n样本标准差（Standard Deviation, SD）是衡量一组数据离散程度的重要指标。它反映了各数据点围绕样本平均值的离散程度，数值越大表示数据波动越大，越小则表示数据较为集中。\n\n- **样本标准差公式**：  \n  \\[\n  s = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (x_i - \\bar{x})^2}\n  \\]\n  其中，\\(x_i\\) 为单价数据，\\(\\bar{x}\\)为样本均值，\\(n\\) 是样本数量。  \n- 此处使用的是样本标准差（自由度为 n-1），适用于我们拥有的所有商品单价数据的统计分析。\n\n样本标准差可为库存管理、定价策略、风险评估等提供重要参考，帮助理解商品价格结构的变异性。\n\n## 查询过程与数据说明\n\n通过直接访问公司内部数据库，执行SQL查询以计算所有商品单价的样本标准差，保证数据的真实可靠。\n\n示例查询语句（SQL伪代码）：  \n```sql\nSELECT STDDEV_SAMP(unit_price) AS stddev_unit_price\nFROM products;\n```\n\n其中，`STDDEV_SAMP` 表示计算基于样本（n-1）的标准差。\n\n## 查询结果与解读\n\n- **样本标准差结果：** 约为 **35.93 美元**  \n- 该结果代表全公司数据库中所有已录入商品的单价波动程度，反映价格分布较为分散，存在一定幅度的高低价商品。\n\n### 结果意义  \n\n- 单价样本标准差达35.93美元说明商品价格差异较大，可能是由于产品线丰富，涵盖从低价基础商品到高价高端商品。  \n- 为定价策略及促销方案设计提供了数据支持，比如需要针对不同价格区间的商品采取差异化策略。  \n- 同时，该波动幅度可用于进一步的库存风险管理和销售预测，辅助业务部门的科学决策。\n\n## 结论\n\n基于公司内部数据库的准确信息，所有商品单价（unit_price）的样本标准差（n-1）为 **35.93美元**。这一统计指标为理解商品价格结构和制定相关业务策略提供了坚实的量化依据。\n\n---\n\n### Sources\n\n[1] 公司内部数据库查询结果（2026年10月）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_CfxBXsCDHiEe8u3PJSGIJIY7"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003636
+  }
+}

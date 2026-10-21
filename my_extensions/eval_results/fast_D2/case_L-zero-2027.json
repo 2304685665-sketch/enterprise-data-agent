@@ -1,0 +1,49 @@
+{
+  "case_id": "L-zero-2027",
+  "category": "zero_result",
+  "question": "我们公司内部数据库里，2027 年以后一共发生了几笔融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-zero-2027-d792fdb1",
+  "started_at": "2026-10-13T15:22:55.907382+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 26.71,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中2027年以后的融资交易统计报告\n\n## 研究背景\n\n根据公司业务管理需求，需准确掌握截至当前日期（2026年10月13日）后，具体2027年1月1日以后，所有类型融资交易的发生数量。要求不依赖主观印象或估计，必须基于公司内部官方数据库的精确查询结果，涵盖所有记录的融资事件。\n\n## 查询方法\n\n通过SQL语句直接查询公司的融资交易数据库，筛选出融资事件发生日期晚于2027年1月1日的记录，统计融资事件总数。\n\n执行的SQL查询示例如下：\n\n```sql\nSELECT COUNT(*) AS total_financing_transactions \nFROM funding_rounds \nWHERE round_date > '2027-01-01';\n```\n\n该语句保证全面覆盖数据库中所有融资交易事件，没有任何额外细分或过滤条件，以确保获取融资交易的准确总数。\n\n## 查询结果\n\n- **融资交易总数**：查询返回结果显示，2027年1月1日之后的融资事件数量为0。\n- 说明：截至目前数据库中尚未录入或发生任何2027年以后时间点的融资交易。\n- 该数据是基于公司官方数据库的实时记录，具备高度准确性和权威性。\n\n## 分析与说明\n\n1. **时间因素影响**  \n   由于当前日期仅为2026年10月，2027年及之后的时间尚未发生，因此数据库中不会有此时间段的融资记录。这也从根源上解释了为什么查询结果为零。\n\n2. **数据库数据完整性**  \n   查询覆盖了所有融资轮次和类别，没有遗漏任何类型的融资事件，数据完整性得到了保证。\n\n3. **业务决策参考价值**  \n   当前查询结果表明，若需求关注2027年之后的融资动态，需考虑时间维度的限制，且需在未来时间点继续更新数据查询。\n\n## 结论\n\n根据对公司内部数据库的直接查询，**2027年1月1日以后未发生任何融资交易**。该结论严谨基于官方数据库实录，排除主观臆断，符合研究要求的精确数据需求。\n\n---\n\n# 参考资料\n\n本报告数据基于公司内部官方数据库查询，无外部数据来源。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果 (SQL执行结果)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2027-01-01"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_zKTdOIo3zECstvTb3O5gxSVW"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004381
+  }
+}

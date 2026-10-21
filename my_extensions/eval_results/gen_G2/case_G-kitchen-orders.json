@@ -1,0 +1,42 @@
+{
+  "case_id": "G-kitchen-orders",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Kitchen 品类的商品一共被下了几笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-kitchen-orders-ecb770b3",
+  "started_at": "2026-10-13T15:13:59.041549+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.015,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中 Kitchen 品类商品订单总数的详尽报告\n\n## 总结\n\n通过对公司内部数据库的直接查询，确认了 Kitchen（厨房）品类商品的订单总数。查询未施加任何过滤条件或时间限制，涵盖了所有可用数据。经过核实，Kitchen 品类商品累计被下单的总笔数为 **21** 笔。\n\n该数据完全基于数据库实测结果，无任何估算或推测，体现了订单记录的真实状态。\n\n## 数据查询方法\n\n为确保数据准确性，采用了结构化查询语言（SQL）直接提取数据库中相关信息。查询语句如下：\n\n```sql\nSELECT COUNT(*) AS total_orders_for_kitchen \nFROM orders o \nJOIN products p ON o.product_id = p.product_id \nWHERE p.category = 'Kitchen';\n```\n\n该查询通过将订单表（orders）与产品表（products）依据产品ID字段做连接，选出所有类别为“Kitchen”的商品对应订单，求出总数。\n\n此方式确保：\n\n- 仅统计 Kitchen 品类下的商品订单\n- 统计包括所有历史数据，无时间范围限制\n- 使用数据库原始数据，无任何过滤或修改\n\n## 数据含义与应用\n\n- **精确度高**：因数据直接由数据库查询得出，无人为干预，确保信息严谨可靠。\n- **历史全覆盖**：无日期限制，代表自订单系统建立以来该品类商品所有被下单的记录总和。\n- **业务参考价值**：该数据可直接用于销售分析、库存调整以及未来业务决策。\n- **数据维护建议**：为持续获得准确业务情况，建议建立定期查询及数据监控机制。\n\n## 结论\n\n公司内部数据库表明，Kitchen 品类商品的订单总数为 **21笔**。该数字反映了库内订单数据的完整统计结果，能够为相关业务部门提供精准、权威的订单量参考。\n\n---\n\n### 参考文献\n\n[1] 内部公司数据库查询结果 – Kitchen品类订单总量统计\n\n---\n\n### Sources\n\n[1] Internal company database – direct query result for total orders of 'Kitchen' category products",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_FvWjQpwj2HDyiK78nWtpzyOp"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003532
+  }
+}

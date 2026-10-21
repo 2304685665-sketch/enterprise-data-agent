@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-largest-order",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪位客户下过金额最大的一笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-largest-order-9828dd95",
+  "started_at": "2026-10-13T16:11:08.109436+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 12.881,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中金额最大订单客户分析报告\n\n## 研究背景与目的\n\n本报告旨在准确回答“我们公司内部数据库中，哪位客户曾下过金额最大的一笔订单”的问题。通过直接查询数据库，获取了订单数据中金额最大那一笔的具体客户信息及对应金额，避免凭印象回答，确保数据的真实性和准确性。\n\n## 数据查询结果\n\n经过对公司内部订单数据库的查询和分析，得到以下关键数据：\n\n- **客户名称（customer_name）：** Juniper Market  \n- **订单编号（order_id）：** 28  \n- **订单金额（amount_usd）：** 2580.28 美元\n\n这是数据库中所有订单列表中金额最大的一笔，直接反映该客户所下订单的最高金额纪录。\n\n## 详细分析\n\n### 客户“Juniper Market”的表现\n\nJuniper Market此次订单金额为2580.28美元，是目前所有客户订单中金额最大的一笔。该数字代表了Juniper Market在公司业务中的重要订单规模，可能体现其采购力和合作关系的稳定度。\n\n### 订单金额的行业与业务影响\n\n订单金额达到2580.28美元，考虑到公司不同客户订单金额的分布情况，这是一笔相对较大的交易。这表明：\n\n- 该客户对公司产品或服务的需求量大，订单价值高。\n- 可能对公司的销售业绩贡献显著。\n- 该客户或许可作为重点维护对象，推动后续更大订单及长期合作。\n\n### 后续建议\n\n- **客户关系管理：** 建议针对Juniper Market进行重点客户管理和定制化服务，促进进一步订单增长。\n- **订单跟踪与分析：** 结合其他订单数据，分析该客户的消费频次和产品偏好，制定更精准的营销策略。\n- **风险评估：** 监控该笔大额订单的履约情况，防范货款风险。\n\n## 结论\n\n依据公司内部数据库的直接查询结果，客户「Juniper Market」曾下过金额最大的一笔订单，金额为2580.28美元。这一数据体现了此客户在近期交易过程中最大的一笔采购金额，对业务战略和客户管理具有重要意义。\n\n---\n\n### 数据来源\n\n根据公司内部数据库订单明细表直接提取，数据实时准确，无外部推测或估算成分。\n\n---\n\n### Sources\n\n[1] 公司内部订单数据库查询结果 (内部系统)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ek12pMgz9m3sqPSHfZqbeUZR"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003427
+  }
+}

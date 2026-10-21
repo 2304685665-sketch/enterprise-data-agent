@@ -1,0 +1,14 @@
+# 研究服务镜像（FastAPI + Redis 状态）。注意：尚未在真实 Docker 环境构建验证过。
+# python_executor 需要访问宿主 Docker 才能起沙箱容器，本镜像不挂载 docker.sock，
+# 因此容器内的服务无法使用 python_executor（其余工具不受影响）。
+FROM python:3.12-slim
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY src ./src
+COPY my_extensions ./my_extensions
+COPY skills ./skills
+COPY tests ./tests
+RUN pip install --no-cache-dir uv && uv pip install --system .
+ENV PYTHONPATH=/app/src
+EXPOSE 8000
+CMD ["uvicorn", "open_deep_research.api_service:build_default_app", "--factory", "--host", "0.0.0.0", "--port", "8000"]

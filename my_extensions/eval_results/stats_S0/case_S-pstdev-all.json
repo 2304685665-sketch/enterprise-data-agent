@@ -1,0 +1,49 @@
+{
+  "case_id": "S-pstdev-all",
+  "category": "python_stats",
+  "question": "我们公司内部数据库里，所有订单金额的总体标准差是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "S-pstdev-all-2a87f6a5",
+  "started_at": "2026-10-13T15:50:49.330867+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.003,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中所有订单金额的总体标准差分析报告\n\n## 研究问题概述\n\n本次研究旨在准确回答：“我们公司内部数据库里，所有订单金额的总体标准差是多少美元？”的具体数值要求。处理该问题的重点在于，直接从公司内部数据库中进行数据查询，避免凭主观印象给出估算值，从而确保数据的真实性与准确性。\n\n## 计算方法与数据来源\n\n1. **数据库查询执行环境**  \n   - 由于部分SQL函数如 `STDDEV` 或 `STDDEV_POP` 被报告为不可用，数据查询使用替代方法计算了方差（variance）和随后求取标准差（standard deviation）。  \n   - 标准差是统计学中衡量数据集离散程度的指标，为方差的平方根。\n\n2. **具体计算过程**  \n   - 查询结果中，订单金额的方差（variance）被计算为约 221264.27 美元²。  \n   - 标准差即方差开平方后，得出约为 470.39 美元。\n\n3. **数据时间范围与样本完整性**  \n   - 由于未发现关于筛选条件或时间段的限制，推定此次计算基于公司数据库中的**全部历史订单金额数据**。\n\n## 结果说明\n\n- **总体标准差数值：** 470.39 美元  \n  该数值代表所有订单金额数据中，订单金额波动的平均程度。  \n- **意义解读：**  \n  - 标准差为470.39美元表明订单金额的分布存在一定程度的波动，但属于中等波动水平。  \n  - 该指标可用于风险控制、订单金额异常检测以及后续的业务数据分析和决策支持。\n\n## 结论\n\n基于公司内部数据库的数据查询与统计计算，**所有订单金额的总体标准差为约470.39美元**。此数据完全来源于内部数据库，没有依赖主观判断，确保了回答的准确性与权威性。\n\n该标准差指标能够帮助相关部门理解订单金额的波动范围，为优化销售策略、资金管理和供应链规划提供重要参考。\n\n---\n\n### 参考资料\n\n无外部公开来源，本答案基于公司内部数据库查询结果。\n\n### 来源\n\n[1] 公司内部数据库订单金额统计数据（2026年10月13日查询结果）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 4,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 4,
+    "sql_call_ids": [
+      "call_94FBoggMBKKlIMGuctoijEZY",
+      "call_CJKFIubX8BWwhQi5dW6qNsuL",
+      "call_JKSuX8fQDjhMtZ2z4DfdeNT0",
+      "call_uIIqiRGfhAdlG1BZxExK2MYU"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 7,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.005439
+  }
+}

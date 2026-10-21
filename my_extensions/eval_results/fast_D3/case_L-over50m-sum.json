@@ -1,0 +1,42 @@
+{
+  "case_id": "L-over50m-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔金额超过 5000 万美元的融资，金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-over50m-sum-f0786991",
+  "started_at": "2026-10-13T15:14:11.587738+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.087,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部单笔融资金额超过5000万美元的融资总金额统计报告\n\n## 报告概述\n\n本报告基于对公司内部数据库的直接查询，准确统计了所有单笔融资金额超过5000万美元的融资交易总金额。所提供的数据非估算值，而是源于公司数据库中的真实记录，确保信息的准确性和权威性。\n\n## 融资金额筛选标准\n\n- 仅统计单笔融资金额**超过5000万美元（即5000万美金）**的交易记录。\n- 金额单位统一为美元。\n- 数据基于公司内部数据库的现有交易记录，涵盖所有符合条件的融资事件。\n\n## 查询结果\n\n通过对内部数据库的直接提取和汇总，得出以下明确数值：\n\n- 单笔融资金额超过5000万美元的融资交易总合计金额为**31.73361亿美元（3,173,361,000美元）**。\n\n## 数据准确性与说明\n\n- 数据报告严格遵照数据库中的实际记录，未进行任何预估、推算或外部数据引用。\n- 涉及金额严格按照原始交易金额字段统计，无重复计录或遗漏。\n- 该统计结果反映的是截至2026年10月13日公司数据库中所有符合金额条件的融资交易总额。\n\n## 结论与应用建议\n\n该金额体现了公司在大额融资领域的资本积累和交易规模，具备以下应用价值：\n\n- 财务统计和风险评估中的重要参考数据。\n- 制定融资策略时的基准指标。\n- 投资者沟通报告中重要的业绩展示数据。\n\n建议持续关注该指标的动态变化，以便及时反映公司融资结构的调整和扩展。\n\n---\n\n### 参考来源\n\n本报告所有数据均来源于公司内部数据库直接查询结果，无外部链接引用。\n\n### 联系方式\n\n如需进一步核实或查询细化数据分布，可联系相关数据部门进行专项查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_CfS3PW0CKSAJPHubQlIq99hY"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002685
+  }
+}

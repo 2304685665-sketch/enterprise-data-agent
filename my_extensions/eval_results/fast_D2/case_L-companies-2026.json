@@ -1,0 +1,42 @@
+{
+  "case_id": "L-companies-2026",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2026 年 1 月 1 日及以后获得过融资的公司一共有几家？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-companies-2026-1017e61d",
+  "started_at": "2026-10-13T15:16:51.462081+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 23.751,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中2026年1月1日及以后获得融资公司数量的调研报告\n\n## 调研背景与目的\n\n本次调研的核心目标是基于公司内部数据库的最新数据，准确查询并确定自2026年1月1日起至截至2026年10月13日为止，获得过融资的公司总数量。要求不依赖任何估算或主观判断，而是通过直接数据库查询获得精确数字，保证结果的权威性和准确性。\n\n## 调研方法与数据来源\n\n- 采用SQL语句直接访问公司内部融资数据表。\n- 查询条件严格限定为融资时间（round_date）在2026年1月1日及以后。\n- 返回结果统计不同（去重）公司的数量，以避免重复计数因多轮融资产生的同一公司多次出现。\n- 时间节点确定为2026年10月13日，以保证数据的新鲜度和时效性。\n\n具体使用的查询语句为：\n```sql\nSELECT COUNT(DISTINCT company_id) AS company_count FROM funding_rounds WHERE round_date >= '2026-01-01';\n```\n\n该语句准确筛选获得融资记录、融资日期满足条件的所有公司数量。\n\n## 查询结果\n\n- 查询结果显示：从2026年1月1日到2026年10月13日，共计有 **5家不同的公司** 获得了融资。\n- 该数据经过数据库直接统计确认，属于官方权威数据，无任何推测或估算成分。\n- 数据完整涵盖所有融资轮次，只计数公司唯一标识（company_id），确保准确无重复。\n\n## 结论\n\n根据对公司内部数据库的直接调研，2026年全年截至10月13日，公司获得融资的企业数量为5家。此结果为当前最精准、官方的融资企业总数，能够为相关业务分析、战略规划提供坚实的数据基础。\n\n## 附注说明\n\n- 数据仅限内部数据库现存记录的融资事件。\n- 若之后有数据更新或新的融资事件登记，则该数字将随时间变化。\n- 本查询未涉及融资金额、轮次细节或企业名称等信息，仅统计获得融资的公司总数。\n\n## 参考来源\n\n- 数据均从公司内部数据库直接调取，无第三方引用。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果 (2026年10月13日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_6JuKcW81KDgkAg3hez5uGsRl"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004471
+  }
+}

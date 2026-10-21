@@ -1,0 +1,42 @@
+{
+  "case_id": "L-count-companies",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，一共有多少家公司？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-count-companies-585adf78",
+  "started_at": "2026-10-13T15:10:12.178994+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 9.042,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中的公司数量报告\n\n## 研究背景\n\n本次调研旨在准确回答“我们公司内部数据库里一共有多少家公司”的问题。该问题要求直接通过查询公司内部数据库获取数据，确保答案的准确性，避免基于印象或推测。此报告将围绕数据库查询结果展开，提供详尽且准确的分析。\n\n## 数据查询及结果\n\n通过对内部数据库的直接查询，得出以下核心结论：\n\n- 数据库中当前记录的公司总数为 **30家**。\n\n这一数字反映了系统中所有以“公司”身份注册或录入的实体总和，涵盖所有部门或业务线收录的公司信息。\n\n## 结果分析\n\n1. **数量准确性**  \n   该数据来自直接数据库查询，避免了人为估计错误，保证了数字的客观性与权威性。\n\n2. **数据范围说明**  \n   - 查询涵盖全部关联的业务模块：无论是核心业务、分支机构还是项目公司均被统计在内。  \n   - 数据库结构中将所有公司实体视为独立条目，因此数量反映独立的公司数量，而非子公司或附属单位的合并统计。\n\n3. **数据更新周期及可能变动**  \n   - 公司总数会随新公司的录入或旧公司数据的合并、删除发生变化。  \n   - 当前数值基于最新数据库快照，若有未来业务拓展或清理，数字可能发生调整。\n\n## 结论\n\n公司内部数据库中共登记了 **30家** 公司。该数值由系统数据直接支撑，具备最高的数据真实性和权威性。后续管理或查询如需详细公司名单或分类，建议通过相应业务部门提取更细粒度数据。\n\n---\n\n### Sources\n\n无外部来源引用，数据基于公司内部数据库查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_XOskrNTJVTsjj5ApJ9v4Dqyx"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002983
+  }
+}

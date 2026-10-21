@@ -1,0 +1,39 @@
+{
+ "calls_mean_per_run": [
+  4.46,
+  4.349,
+  4.397
+ ],
+ "calls_mean_of_runs": 4.402,
+ "calls_sd_across_runs": 0.056,
+ "calls_min_max": [
+  4.349,
+  4.46
+ ],
+ "pass_v1_per_run": [
+  56,
+  56,
+  56
+ ],
+ "pass_v2_per_run": [
+  60,
+  61,
+  61
+ ],
+ "pass_v3_per_run": [
+  61,
+  62,
+  62
+ ],
+ "consistency_v1": {
+  "pass_all_3": 55,
+  "fail_all_3": 6,
+  "flip": 2
+ },
+ "consistency_v3": {
+  "pass_all_3": 60,
+  "fail_all_3": 0,
+  "flip": 3
+ },
+ "per_case_calls_mean_range": 0.476
+}

@@ -1,0 +1,75 @@
+{
+  "case_id": "G-absent-email",
+  "category": "no_answer",
+  "question": "我们公司内部数据库里，Alderwick Foods 的联系人邮箱是什么？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-absent-email-ee53616d",
+  "started_at": "2026-10-13T15:26:53.426092+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 106.029,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Alderwick Foods 联系邮箱查询报告\n\n## 背景与任务\n\n本次调研目标是通过直接查询本公司内部数据库，精准获取与 Alderwick Foods 相关的联系人邮箱地址，确保信息的准确性与时效性。调研要求排除任何凭记忆或假设的回答，重点在于内部数据的严谨检索。\n\n## 内部数据库查询及结构分析\n\n### 数据库表结构概览\n\n通过多次SQL查询确认，本公司内部数据库中共有三个主要表：\n\n- **customers（客户表）**  \n  包含字段：`customer_id`、`customer_name`、`region`、`signup_year`  \n  不包含任何联系方式或邮箱字段。\n\n- **orders（订单表）**  \n  包含字段：`order_id`、`customer_id`、`product_id`、`quantity`、`amount_usd`、`order_date`、`status`  \n  仅记录交易相关信息，无联系人信息。\n\n- **products（产品表）**  \n  包含字段：`product_id`、`product_name`、`category`、`unit_price`  \n  产品细节信息，非联系人信息。\n\n未发现有`contacts`、`representatives`、`customer_contacts`等专门存储联系人或联系方式的表存在。\n\n### 针对 Alderwick Foods 的查询结果\n\n- **客户存在性**：数据库中确实存在客户名称为 “Alderwick Foods” 的记录，`customer_id = 1`。\n- **客户详情**：\n  - 区域：East\n  - 注册年份：2020\n- **订单信息**：有最近订单记录，订单ID为1，订单日期为2024年12月2日，购买产品为 “Gale Fan”（产品ID=7），数量4件，金额108.01美元，订单状态为“paid”。\n- **联系方式检索**：尝试查询 `contact_email` 或相关联系字段均失败，客户表结构中不包含邮箱字段，且无其他表可供查询邮箱信息。\n\n## 内部文档检索结果\n\n通过关键词搜索（如“contact email addresses company representatives Alderwick Foods”及“company representative contact email addresses”）在公司内部文档中查找相关联系人邮件信息，结果无任何匹配的具体邮箱地址：\n\n- 文档如 doc02_synthmotion_product、doc06_neuralpath_funding_news、doc07_competitive_landscape 中虽涉及到客户和行业信息，但无代表联系人邮箱记录。\n- 没有内部文档或记录可以补充数据库中未存储的联系人邮箱信息。\n\n## 结论\n\n综合数据库直接查询和内部文档检索，严谨数据显示：\n\n- **当前本公司内部数据库中不存在针对 Alderwick Foods 公司代表的具体电子邮箱联系方式。**\n- 现有客户信息仅涵盖基本企业信息和订单记录，无联系人邮箱字段或关联联系人数据表。\n- 内部文档亦未存储或标注该客户代表的电子邮箱信息。\n\n若需 Alderwick Foods 的联系人邮箱地址，建议通过其他外部渠道或公司其他系统（非本次数据库访问范围内）进行进一步查询。\n\n## 建议\n\n- 可向相关业务部门确认是否有独立的CRM系统或联系人管理系统中储存代表邮箱。\n- 未来数据库设计中可考虑增加客户联系人联系方式字段，优化客户沟通效率。\n- 根据实际需求，可能需要升级内部信息管理体系，确保关键联系人信息入库。\n\n---\n\n### 参考资料\n\n[1] 内部公司数据库结构及SQL查询执行结果 (customers, orders, products表)  \n[2] doc02_synthmotion_product - 目标客户描述 (https://internal-docs/company-data/doc02_synthmotion_product)  \n[3] doc06_neuralpath_funding_news - 公司近况报告 (https://internal-docs/company-data/doc06_neuralpath_funding_news)  \n[4] doc07_competitive_landscape - 主要参与者介绍 (https://internal-docs/company-data/doc07_competitive_landscape)  \n\n---\n\n### Sources\n\n[1] 内部公司数据库结构及数据查询执行结果  \n[2] doc02_synthmotion_product - 目标客户: https://internal-docs/company-data/doc02_synthmotion_product  \n[3] doc06_neuralpath_funding_news - 公司近况: https://internal-docs/company-data/doc06_neuralpath_funding_news  \n[4] doc07_competitive_landscape - 主要参与者: https://internal-docs/company-data/doc07_competitive_landscape",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 16,
+      "think_tool": 2,
+      "internal_doc_search": 2
+    },
+    "sql_calls": 16,
+    "sql_call_ids": [
+      "call_1i81ynQKEs8E9ljwPoz62LEv",
+      "call_5WqGej8vI3DScqPfDDRGxEg8",
+      "call_8aq22awFlfhXYepm9WGcBt0V",
+      "call_B6wkoQ8XGheV7pRVa4fgPFF4",
+      "call_EcjgGC4CnNRjsAB43cAdYMgi",
+      "call_JCbKDrpqMTMHxyzBKF99yFDf",
+      "call_JwtOW7oszccbwpO9NMMdwnyg",
+      "call_OPv7xoVb9tjPAn5RwlDy4iMz",
+      "call_TxUJkiFvvBTJiyNcGcgPyxRv",
+      "call_dvz6HkIRrs7t8688Gd13NCqi",
+      "call_eBgkxsqMx9t5kmuCP0gFfiPV",
+      "call_h1IentEQrfueMk1HA44qmF25",
+      "call_n1cNrC1gqoZX7DqiUEMourFV",
+      "call_oDgIUwmTZ9S5rVC3b1OwL5Vd",
+      "call_wlvTfJcRum8SODPmPtZgUlOM",
+      "call_z23zEUY7DKxErS4A1JxIm5lj"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "error",
+      "error",
+      "success",
+      "error",
+      "success",
+      "success",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {
+      "internal_doc_search": 2
+    },
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 30,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.029268
+  }
+}

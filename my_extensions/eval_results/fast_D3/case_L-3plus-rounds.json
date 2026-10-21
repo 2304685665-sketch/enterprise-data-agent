@@ -1,0 +1,45 @@
+{
+  "case_id": "L-3plus-rounds",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，完成过 3 轮及以上融资的公司一共有几家？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-3plus-rounds-bb8fa03c",
+  "started_at": "2026-10-13T15:18:18.416518+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 13.937,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 内部数据库中完成三轮及以上融资的公司数量报告\n\n## 概述\n\n本报告旨在明确回答关于公司内部数据库中，完成三轮及以上融资的公司总数的问题。通过直接查询内部数据库中的融资轮次数据，避免任何主观印象或假设，确保结果的准确性和权威性。\n\n## 数据查询过程\n\n查询数据来源于公司内部“funding_rounds”融资轮次表。核心查询逻辑为统计每家公司的融资轮次数量，并筛选出融资轮次不少于三轮的公司数量。\n\n- 对所有公司统计其完成的融资轮次数\n- 过滤融资轮次数≥3的公司\n- 计算满足条件的公司总数\n\n此过程完全依赖于已录入的数据库真实数据，未经过任何数据推断或估计。\n\n## 关键发现\n\n数据库精确查询结果显示：\n\n- 完成三轮及以上融资的公司共计 **15家**。\n\n这些数据是基于数据库最新的“funding_rounds”表中记录的所有融资事件整理得出，确保了全量覆盖与数据完整性。\n\n## 结论\n\n截至当前数据库数据状态，在我司内部数据库中共有 **15家** 公司已经完成了至少三轮融资。这一数字为可直接查证和验证的事实，不包含任何推断或估计，完全符合研究需求的精确性要求。\n\n该数据可作为公司对外投资关系管理、融资策略分析及风险评估的基础参考。\n\n## 备注\n\n- 本查询仅覆盖公司内部数据库记录中的融资数据，未涉及外部第三方信息。\n- 若后期数据库数据更新，该数字需要同步重新确认。\n- 无其他与融资轮次数量直接相关的额外信息可以查询，如融资金额、具体轮次时间等，本报告仅聚焦于公司数量。\n\n### Sources\n\n[1] 内部公司数据库：funding_rounds 表查询结果 （内部数据，不公开链接）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_HKikMYkwPu9xdxx1N0qQG7wZ",
+      "call_fuLorZItCbwIoeoZGdZ2orx6"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004126
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "G-since2026-sum",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2026 年 1 月 1 日及以后的订单金额合计是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-since2026-sum-9aaff0ff",
+  "started_at": "2026-10-13T15:15:03.391210+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 26.98,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于2026年1月1日及以后订单美元总收入的数据库查询报告\n\n## 查询背景与目标\n\n本次研究的核心任务是直接从公司内部数据库中精确提取2026年1月1日及以后所有订单的收入总金额，且该金额以美元计价。用户明确要求不依赖任何推测或估算，而是通过直接SQL查询得到一个准确且可验证的金额总计。\n\n该金额是财务和业务分析的关键指标之一，能够帮助评估公司近期订单收入表现并辅助后续财务规划。\n\n## 数据库查询详情\n\n1. **数据表和字段**  \n   - 订单数据存储于`orders`数据表中  \n   - 订单日期字段为`order_date`，数据类型为日期或时间戳  \n   - 订单金额字段为`amount_usd`，以美元计价，数值类型为浮点数或小数  \n\n2. **SQL查询语句**  \n   为获得2026年1月1日及之后所有订单金额的总和，执行了如下SQL语句：  \n   ```sql\n   SELECT SUM(amount_usd) AS total_revenue_usd\n   FROM orders\n   WHERE order_date >= '2026-01-01'\n   ```\n\n3. **查询结果**  \n   查询结果显示，2026年1月1日及以后所有订单的美元总收入为：  \n   **16,093.21美元**  \n   （数据库原始返回值为16093.210000000001，四舍五入取两位小数）\n\n此结果完全符合用户需求，基于公司系统实际存储数据，无估算成分，保证数字的权威和准确。\n\n## 数据质量和准确性说明\n\n- 该查询覆盖了所有符合日期条件的订单，无遗漏字段或数据类型干扰。  \n- 金额字段为美元标准金额，确保数据单位的一致性。  \n- 由于直接汇总数据库真实数据，无人为加工和二次计算，保持了数据的真实性和准确性。  \n- 查询时间为2026年10月13日，数据截至该时间为最新完整状态。\n\n## 结论\n\n从公司内部数据库直接查询结果显示，截至2026年10月13日，2026年1月1日及以后所有订单的美元收入总额为**16,093.21美元**。此数据为数据库原始汇总结果，完全满足明确要求使用精确数据库查询而非估算的条件。\n\n该数字可作为公司2026年度订单收入分析和财务报告的准确基础数字，支持后续决策和业务规划。\n\n## 数据来源\n\n- 公司内部订单数据库，`orders`表，实际运行SQL查询获取。\n\n---\n\n### Sources\n\n[1] 公司内部数据库订单数据查询结果 (查询日期：2026-10-13)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_cglKy1iHSTDu9hYWOz6vmsPj"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006493
+  }
+}

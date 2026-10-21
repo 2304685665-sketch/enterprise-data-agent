@@ -1,0 +1,1885 @@
+{
+ "summary": {
+  "corpus_sha256": "9cda9463456725141f4dd6b0e0c1353775c598383766b0b507a45c43ec488f81",
+  "allow_with": true,
+  "n": 231,
+  "by_kind": {
+   "cte": {
+    "ok": 8
+   },
+   "non_select_readonly": {
+    "blocked": 5
+   },
+   "style": {
+    "ok": 28
+   },
+   "template": {
+    "ok": 165
+   },
+   "tricky": {
+    "ok": 25
+   }
+  },
+  "main_n": 226,
+  "main_blocked": 0,
+  "main_error": 0,
+  "blocked_ids": [
+   "B0227",
+   "B0228",
+   "B0229",
+   "B0230",
+   "B0231"
+  ],
+  "error_examples": []
+ },
+ "results": [
+  {
+   "id": "B0001",
+   "db": "demo",
+   "sql": "SELECT COUNT(*) FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n4"
+  },
+  {
+   "id": "B0002",
+   "db": "demo",
+   "sql": "SELECT * FROM \"companies\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id | name | industry | founded_year\n1 | RoboWorks | Humanoid Robotics | 2021\n2 | NeuralPath | Humanoid Robotics | 2019\n3"
+  },
+  {
+   "id": "B0003",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"id\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"id\")\n4"
+  },
+  {
+   "id": "B0004",
+   "db": "demo",
+   "sql": "SELECT \"id\" FROM \"companies\" WHERE \"id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0005",
+   "db": "demo",
+   "sql": "SELECT MIN(\"id\"), MAX(\"id\"), AVG(\"id\"), SUM(\"id\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"id\") | MAX(\"id\") | AVG(\"id\") | SUM(\"id\")\n1 | 4 | 2.5 | 10"
+  },
+  {
+   "id": "B0006",
+   "db": "demo",
+   "sql": "SELECT \"id\" FROM \"companies\" ORDER BY \"id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n4\n3\n2"
+  },
+  {
+   "id": "B0007",
+   "db": "demo",
+   "sql": "SELECT \"id\" FROM \"companies\" WHERE \"id\" > (SELECT AVG(\"id\") FROM \"companies\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n3\n4"
+  },
+  {
+   "id": "B0008",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"name\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"name\")\n4"
+  },
+  {
+   "id": "B0009",
+   "db": "demo",
+   "sql": "SELECT \"name\" FROM \"companies\" WHERE \"name\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "name\nRoboWorks\nNeuralPath\nSynthMotion"
+  },
+  {
+   "id": "B0010",
+   "db": "demo",
+   "sql": "SELECT DISTINCT \"name\" FROM \"companies\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "name\nRoboWorks\nNeuralPath\nSynthMotion\nAtlasAI"
+  },
+  {
+   "id": "B0011",
+   "db": "demo",
+   "sql": "SELECT \"name\", COUNT(*) AS n FROM \"companies\" GROUP BY \"name\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "name | n\nSynthMotion | 1\nRoboWorks | 1\nNeuralPath | 1\nAtlasAI | 1"
+  },
+  {
+   "id": "B0012",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"industry\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"industry\")\n1"
+  },
+  {
+   "id": "B0013",
+   "db": "demo",
+   "sql": "SELECT \"industry\" FROM \"companies\" WHERE \"industry\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "industry\nHumanoid Robotics\nHumanoid Robotics\nHumanoid Robotics"
+  },
+  {
+   "id": "B0014",
+   "db": "demo",
+   "sql": "SELECT DISTINCT \"industry\" FROM \"companies\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "industry\nHumanoid Robotics"
+  },
+  {
+   "id": "B0015",
+   "db": "demo",
+   "sql": "SELECT \"industry\", COUNT(*) AS n FROM \"companies\" GROUP BY \"industry\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "industry | n\nHumanoid Robotics | 4"
+  },
+  {
+   "id": "B0016",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"founded_year\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"founded_year\")\n4"
+  },
+  {
+   "id": "B0017",
+   "db": "demo",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" WHERE \"founded_year\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "founded_year\n2021\n2019\n2022"
+  },
+  {
+   "id": "B0018",
+   "db": "demo",
+   "sql": "SELECT MIN(\"founded_year\"), MAX(\"founded_year\"), AVG(\"founded_year\"), SUM(\"founded_year\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"founded_year\") | MAX(\"founded_year\") | AVG(\"founded_year\") | SUM(\"founded_year\")\n2019 | 2022 | 2020.5 | 8082"
+  },
+  {
+   "id": "B0019",
+   "db": "demo",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" ORDER BY \"founded_year\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "founded_year\n2022\n2021\n2020"
+  },
+  {
+   "id": "B0020",
+   "db": "demo",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" WHERE \"founded_year\" > (SELECT AVG(\"founded_year\") FROM \"companies\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "founded_year\n2021\n2022"
+  },
+  {
+   "id": "B0021",
+   "db": "demo",
+   "sql": "SELECT COUNT(*) FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n5"
+  },
+  {
+   "id": "B0022",
+   "db": "demo",
+   "sql": "SELECT * FROM \"funding_rounds\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id | company_id | round_type | amount_usd | round_date\n1 | 1 | Series B | 45000000.0 | 2026-03-15\n2 | 2 | Series A | 120"
+  },
+  {
+   "id": "B0023",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"id\")\n5"
+  },
+  {
+   "id": "B0024",
+   "db": "demo",
+   "sql": "SELECT \"id\" FROM \"funding_rounds\" WHERE \"id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0025",
+   "db": "demo",
+   "sql": "SELECT MIN(\"id\"), MAX(\"id\"), AVG(\"id\"), SUM(\"id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"id\") | MAX(\"id\") | AVG(\"id\") | SUM(\"id\")\n1 | 5 | 3.0 | 15"
+  },
+  {
+   "id": "B0026",
+   "db": "demo",
+   "sql": "SELECT \"id\" FROM \"funding_rounds\" ORDER BY \"id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n5\n4\n3"
+  },
+  {
+   "id": "B0027",
+   "db": "demo",
+   "sql": "SELECT \"id\" FROM \"funding_rounds\" WHERE \"id\" > (SELECT AVG(\"id\") FROM \"funding_rounds\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n4\n5"
+  },
+  {
+   "id": "B0028",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"company_id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"company_id\")\n4"
+  },
+  {
+   "id": "B0029",
+   "db": "demo",
+   "sql": "SELECT \"company_id\" FROM \"funding_rounds\" WHERE \"company_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "company_id\n1\n2\n3"
+  },
+  {
+   "id": "B0030",
+   "db": "demo",
+   "sql": "SELECT MIN(\"company_id\"), MAX(\"company_id\"), AVG(\"company_id\"), SUM(\"company_id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"company_id\") | MAX(\"company_id\") | AVG(\"company_id\") | SUM(\"company_id\")\n1 | 4 | 2.2 | 11"
+  },
+  {
+   "id": "B0031",
+   "db": "demo",
+   "sql": "SELECT \"company_id\" FROM \"funding_rounds\" ORDER BY \"company_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "company_id\n4\n3\n2"
+  },
+  {
+   "id": "B0032",
+   "db": "demo",
+   "sql": "SELECT \"company_id\" FROM \"funding_rounds\" WHERE \"company_id\" > (SELECT AVG(\"company_id\") FROM \"funding_rounds\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "company_id\n3\n4"
+  },
+  {
+   "id": "B0033",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"round_type\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"round_type\")\n4"
+  },
+  {
+   "id": "B0034",
+   "db": "demo",
+   "sql": "SELECT \"round_type\" FROM \"funding_rounds\" WHERE \"round_type\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_type\nSeries B\nSeries A\nSeries C"
+  },
+  {
+   "id": "B0035",
+   "db": "demo",
+   "sql": "SELECT DISTINCT \"round_type\" FROM \"funding_rounds\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_type\nSeries B\nSeries A\nSeries C\nSeed"
+  },
+  {
+   "id": "B0036",
+   "db": "demo",
+   "sql": "SELECT \"round_type\", COUNT(*) AS n FROM \"funding_rounds\" GROUP BY \"round_type\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_type | n\nSeries A | 2\nSeries C | 1\nSeries B | 1\nSeed | 1"
+  },
+  {
+   "id": "B0037",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"amount_usd\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"amount_usd\")\n5"
+  },
+  {
+   "id": "B0038",
+   "db": "demo",
+   "sql": "SELECT \"amount_usd\" FROM \"funding_rounds\" WHERE \"amount_usd\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n45000000.0\n12000000.0\n80000000.0"
+  },
+  {
+   "id": "B0039",
+   "db": "demo",
+   "sql": "SELECT MIN(\"amount_usd\"), MAX(\"amount_usd\"), AVG(\"amount_usd\"), SUM(\"amount_usd\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"amount_usd\") | MAX(\"amount_usd\") | AVG(\"amount_usd\") | SUM(\"amount_usd\")\n5000000.0 | 80000000.0 | 31400000.0 | 1570"
+  },
+  {
+   "id": "B0040",
+   "db": "demo",
+   "sql": "SELECT \"amount_usd\" FROM \"funding_rounds\" ORDER BY \"amount_usd\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n80000000.0\n45000000.0\n15000000.0"
+  },
+  {
+   "id": "B0041",
+   "db": "demo",
+   "sql": "SELECT \"amount_usd\" FROM \"funding_rounds\" WHERE \"amount_usd\" > (SELECT AVG(\"amount_usd\") FROM \"funding_rounds\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n45000000.0\n80000000.0"
+  },
+  {
+   "id": "B0042",
+   "db": "demo",
+   "sql": "SELECT COUNT(DISTINCT \"round_date\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"round_date\")\n5"
+  },
+  {
+   "id": "B0043",
+   "db": "demo",
+   "sql": "SELECT \"round_date\" FROM \"funding_rounds\" WHERE \"round_date\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_date\n2026-03-15\n2025-11-02\n2026-06-20"
+  },
+  {
+   "id": "B0044",
+   "db": "demo",
+   "sql": "SELECT DISTINCT \"round_date\" FROM \"funding_rounds\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_date\n2026-03-15\n2025-11-02\n2026-06-20\n2024-08-10\n2024-01-05"
+  },
+  {
+   "id": "B0045",
+   "db": "demo",
+   "sql": "SELECT \"round_date\", COUNT(*) AS n FROM \"funding_rounds\" GROUP BY \"round_date\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_date | n\n2026-06-20 | 1\n2026-03-15 | 1\n2025-11-02 | 1\n2024-08-10 | 1\n2024-01-05 | 1"
+  },
+  {
+   "id": "B0046",
+   "db": "large",
+   "sql": "SELECT COUNT(*) FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n30"
+  },
+  {
+   "id": "B0047",
+   "db": "large",
+   "sql": "SELECT * FROM \"companies\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id | name | industry | founded_year\n1 | Quantara | Humanoid Robotics | 2021\n2 | Lumivex | Fintech | 2013\n3 | Brightforge"
+  },
+  {
+   "id": "B0048",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"id\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"id\")\n30"
+  },
+  {
+   "id": "B0049",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"companies\" WHERE \"id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0050",
+   "db": "large",
+   "sql": "SELECT MIN(\"id\"), MAX(\"id\"), AVG(\"id\"), SUM(\"id\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"id\") | MAX(\"id\") | AVG(\"id\") | SUM(\"id\")\n1 | 30 | 15.5 | 465"
+  },
+  {
+   "id": "B0051",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"companies\" ORDER BY \"id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n30\n29\n28"
+  },
+  {
+   "id": "B0052",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"companies\" WHERE \"id\" > (SELECT AVG(\"id\") FROM \"companies\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n16\n17\n18\n19\n20"
+  },
+  {
+   "id": "B0053",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"name\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"name\")\n30"
+  },
+  {
+   "id": "B0054",
+   "db": "large",
+   "sql": "SELECT \"name\" FROM \"companies\" WHERE \"name\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "name\nQuantara\nLumivex\nBrightforge"
+  },
+  {
+   "id": "B0055",
+   "db": "large",
+   "sql": "SELECT DISTINCT \"name\" FROM \"companies\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "name\nQuantara\nLumivex\nBrightforge\nHelixon\nCobaltree\nNimbria\nVantora\nSolenne\nKestrel Labs\nMarlowe AI"
+  },
+  {
+   "id": "B0056",
+   "db": "large",
+   "sql": "SELECT \"name\", COUNT(*) AS n FROM \"companies\" GROUP BY \"name\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "name | n\nZephyra | 1\nVantora | 1\nTessera Bio | 1\nSolenne | 1\nRiverstone Robotics | 1"
+  },
+  {
+   "id": "B0057",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"industry\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"industry\")\n6"
+  },
+  {
+   "id": "B0058",
+   "db": "large",
+   "sql": "SELECT \"industry\" FROM \"companies\" WHERE \"industry\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "industry\nHumanoid Robotics\nFintech\nBiotech"
+  },
+  {
+   "id": "B0059",
+   "db": "large",
+   "sql": "SELECT DISTINCT \"industry\" FROM \"companies\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "industry\nHumanoid Robotics\nFintech\nBiotech\nClimate Tech\nCybersecurity\nEdtech"
+  },
+  {
+   "id": "B0060",
+   "db": "large",
+   "sql": "SELECT \"industry\", COUNT(*) AS n FROM \"companies\" GROUP BY \"industry\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "industry | n\nHumanoid Robotics | 5\nFintech | 5\nEdtech | 5\nCybersecurity | 5\nClimate Tech | 5"
+  },
+  {
+   "id": "B0061",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"founded_year\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"founded_year\")\n13"
+  },
+  {
+   "id": "B0062",
+   "db": "large",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" WHERE \"founded_year\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "founded_year\n2021\n2013\n2020"
+  },
+  {
+   "id": "B0063",
+   "db": "large",
+   "sql": "SELECT MIN(\"founded_year\"), MAX(\"founded_year\"), AVG(\"founded_year\"), SUM(\"founded_year\") FROM \"companies\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"founded_year\") | MAX(\"founded_year\") | AVG(\"founded_year\") | SUM(\"founded_year\")\n2012 | 2024 | 2017.5666666666666 |"
+  },
+  {
+   "id": "B0064",
+   "db": "large",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" ORDER BY \"founded_year\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "founded_year\n2024\n2024\n2023"
+  },
+  {
+   "id": "B0065",
+   "db": "large",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" WHERE \"founded_year\" > (SELECT AVG(\"founded_year\") FROM \"companies\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "founded_year\n2021\n2020\n2019\n2021\n2019"
+  },
+  {
+   "id": "B0066",
+   "db": "large",
+   "sql": "SELECT COUNT(*) FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n76"
+  },
+  {
+   "id": "B0067",
+   "db": "large",
+   "sql": "SELECT * FROM \"funding_rounds\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id | company_id | round_type | amount_usd | round_date\n1 | 1 | Seed | 42751000.0 | 2021-10-23\n2 | 1 | Series A | 8050200"
+  },
+  {
+   "id": "B0068",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"id\")\n76"
+  },
+  {
+   "id": "B0069",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"funding_rounds\" WHERE \"id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0070",
+   "db": "large",
+   "sql": "SELECT MIN(\"id\"), MAX(\"id\"), AVG(\"id\"), SUM(\"id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"id\") | MAX(\"id\") | AVG(\"id\") | SUM(\"id\")\n1 | 76 | 38.5 | 2926"
+  },
+  {
+   "id": "B0071",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"funding_rounds\" ORDER BY \"id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n76\n75\n74"
+  },
+  {
+   "id": "B0072",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"funding_rounds\" WHERE \"id\" > (SELECT AVG(\"id\") FROM \"funding_rounds\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "id\n39\n40\n41\n42\n43"
+  },
+  {
+   "id": "B0073",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"company_id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"company_id\")\n25"
+  },
+  {
+   "id": "B0074",
+   "db": "large",
+   "sql": "SELECT \"company_id\" FROM \"funding_rounds\" WHERE \"company_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "company_id\n1\n1\n1"
+  },
+  {
+   "id": "B0075",
+   "db": "large",
+   "sql": "SELECT MIN(\"company_id\"), MAX(\"company_id\"), AVG(\"company_id\"), SUM(\"company_id\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"company_id\") | MAX(\"company_id\") | AVG(\"company_id\") | SUM(\"company_id\")\n1 | 29 | 16.42105263157895 | 1248"
+  },
+  {
+   "id": "B0076",
+   "db": "large",
+   "sql": "SELECT \"company_id\" FROM \"funding_rounds\" ORDER BY \"company_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "company_id\n29\n29\n29"
+  },
+  {
+   "id": "B0077",
+   "db": "large",
+   "sql": "SELECT \"company_id\" FROM \"funding_rounds\" WHERE \"company_id\" > (SELECT AVG(\"company_id\") FROM \"funding_rounds\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "company_id\n17\n17\n17\n17\n17"
+  },
+  {
+   "id": "B0078",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"round_type\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"round_type\")\n5"
+  },
+  {
+   "id": "B0079",
+   "db": "large",
+   "sql": "SELECT \"round_type\" FROM \"funding_rounds\" WHERE \"round_type\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_type\nSeed\nSeries A\nSeries B"
+  },
+  {
+   "id": "B0080",
+   "db": "large",
+   "sql": "SELECT DISTINCT \"round_type\" FROM \"funding_rounds\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_type\nSeed\nSeries A\nSeries B\nSeries C\nSeries D"
+  },
+  {
+   "id": "B0081",
+   "db": "large",
+   "sql": "SELECT \"round_type\", COUNT(*) AS n FROM \"funding_rounds\" GROUP BY \"round_type\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_type | n\nSeed | 25\nSeries A | 18\nSeries B | 15\nSeries C | 13\nSeries D | 5"
+  },
+  {
+   "id": "B0082",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"amount_usd\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"amount_usd\")\n76"
+  },
+  {
+   "id": "B0083",
+   "db": "large",
+   "sql": "SELECT \"amount_usd\" FROM \"funding_rounds\" WHERE \"amount_usd\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n42751000.0\n80502000.0\n7753000.0"
+  },
+  {
+   "id": "B0084",
+   "db": "large",
+   "sql": "SELECT MIN(\"amount_usd\"), MAX(\"amount_usd\"), AVG(\"amount_usd\"), SUM(\"amount_usd\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"amount_usd\") | MAX(\"amount_usd\") | AVG(\"amount_usd\") | SUM(\"amount_usd\")\n2790000.0 | 98551000.0 | 53120736.84210526"
+  },
+  {
+   "id": "B0085",
+   "db": "large",
+   "sql": "SELECT \"amount_usd\" FROM \"funding_rounds\" ORDER BY \"amount_usd\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n98551000.0\n97272000.0\n96063000.0"
+  },
+  {
+   "id": "B0086",
+   "db": "large",
+   "sql": "SELECT \"amount_usd\" FROM \"funding_rounds\" WHERE \"amount_usd\" > (SELECT AVG(\"amount_usd\") FROM \"funding_rounds\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n80502000.0\n76004000.0\n74255000.0\n87010000.0\n61761000.0"
+  },
+  {
+   "id": "B0087",
+   "db": "large",
+   "sql": "SELECT COUNT(DISTINCT \"round_date\") FROM \"funding_rounds\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"round_date\")\n75"
+  },
+  {
+   "id": "B0088",
+   "db": "large",
+   "sql": "SELECT \"round_date\" FROM \"funding_rounds\" WHERE \"round_date\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_date\n2021-10-23\n2022-02-14\n2024-12-20"
+  },
+  {
+   "id": "B0089",
+   "db": "large",
+   "sql": "SELECT DISTINCT \"round_date\" FROM \"funding_rounds\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_date\n2021-10-23\n2022-02-14\n2024-12-20\n2026-04-27\n2016-12-24\n2020-10-05\n2021-03-02\n2023-11-08\n2025-10-24\n2026-07-25"
+  },
+  {
+   "id": "B0090",
+   "db": "large",
+   "sql": "SELECT \"round_date\", COUNT(*) AS n FROM \"funding_rounds\" GROUP BY \"round_date\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "round_date | n\n2020-11-09 | 2\n2026-09-11 | 1\n2026-08-06 | 1\n2026-07-25 | 1\n2026-06-25 | 1"
+  },
+  {
+   "id": "B0091",
+   "db": "gen",
+   "sql": "SELECT COUNT(*) FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n25"
+  },
+  {
+   "id": "B0092",
+   "db": "gen",
+   "sql": "SELECT * FROM \"customers\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id | customer_name | region | signup_year\n1 | Alderwick Foods | East | 2020\n2 | Bluepeak Retail | West | 2020\n3"
+  },
+  {
+   "id": "B0093",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"customer_id\") FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"customer_id\")\n25"
+  },
+  {
+   "id": "B0094",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"customers\" WHERE \"customer_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id\n1\n2\n3"
+  },
+  {
+   "id": "B0095",
+   "db": "gen",
+   "sql": "SELECT MIN(\"customer_id\"), MAX(\"customer_id\"), AVG(\"customer_id\"), SUM(\"customer_id\") FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"customer_id\") | MAX(\"customer_id\") | AVG(\"customer_id\") | SUM(\"customer_id\")\n1 | 25 | 13.0 | 325"
+  },
+  {
+   "id": "B0096",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"customers\" ORDER BY \"customer_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id\n25\n24\n23"
+  },
+  {
+   "id": "B0097",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"customers\" WHERE \"customer_id\" > (SELECT AVG(\"customer_id\") FROM \"customers\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id\n14\n15\n16\n17\n18"
+  },
+  {
+   "id": "B0098",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"customer_name\") FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"customer_name\")\n25"
+  },
+  {
+   "id": "B0099",
+   "db": "gen",
+   "sql": "SELECT \"customer_name\" FROM \"customers\" WHERE \"customer_name\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_name\nAlderwick Foods\nBluepeak Retail\nCinder & Co"
+  },
+  {
+   "id": "B0100",
+   "db": "gen",
+   "sql": "SELECT DISTINCT \"customer_name\" FROM \"customers\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_name\nAlderwick Foods\nBluepeak Retail\nCinder & Co\nDovetail Home\nEastgate Mart\nFjord Outfitters\nGlenhaven Pharmac"
+  },
+  {
+   "id": "B0101",
+   "db": "gen",
+   "sql": "SELECT \"customer_name\", COUNT(*) AS n FROM \"customers\" GROUP BY \"customer_name\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_name | n\nZinnia Home | 1\nYarrow Foods | 1\nWestbrook Hardware | 1\nViolet Row | 1\nUmberfield | 1"
+  },
+  {
+   "id": "B0102",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"region\") FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"region\")\n5"
+  },
+  {
+   "id": "B0103",
+   "db": "gen",
+   "sql": "SELECT \"region\" FROM \"customers\" WHERE \"region\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "region\nEast\nWest\nNorth"
+  },
+  {
+   "id": "B0104",
+   "db": "gen",
+   "sql": "SELECT DISTINCT \"region\" FROM \"customers\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "region\nEast\nWest\nNorth\nSouth\nCentral"
+  },
+  {
+   "id": "B0105",
+   "db": "gen",
+   "sql": "SELECT \"region\", COUNT(*) AS n FROM \"customers\" GROUP BY \"region\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "region | n\nWest | 5\nSouth | 5\nNorth | 5\nEast | 5\nCentral | 5"
+  },
+  {
+   "id": "B0106",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"signup_year\") FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"signup_year\")\n8"
+  },
+  {
+   "id": "B0107",
+   "db": "gen",
+   "sql": "SELECT \"signup_year\" FROM \"customers\" WHERE \"signup_year\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "signup_year\n2020\n2020\n2025"
+  },
+  {
+   "id": "B0108",
+   "db": "gen",
+   "sql": "SELECT MIN(\"signup_year\"), MAX(\"signup_year\"), AVG(\"signup_year\"), SUM(\"signup_year\") FROM \"customers\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"signup_year\") | MAX(\"signup_year\") | AVG(\"signup_year\") | SUM(\"signup_year\")\n2018 | 2025 | 2022.32 | 50558"
+  },
+  {
+   "id": "B0109",
+   "db": "gen",
+   "sql": "SELECT \"signup_year\" FROM \"customers\" ORDER BY \"signup_year\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "signup_year\n2025\n2025\n2025"
+  },
+  {
+   "id": "B0110",
+   "db": "gen",
+   "sql": "SELECT \"signup_year\" FROM \"customers\" WHERE \"signup_year\" > (SELECT AVG(\"signup_year\") FROM \"customers\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "signup_year\n2025\n2023\n2023\n2023\n2023"
+  },
+  {
+   "id": "B0111",
+   "db": "gen",
+   "sql": "SELECT COUNT(*) FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n79"
+  },
+  {
+   "id": "B0112",
+   "db": "gen",
+   "sql": "SELECT * FROM \"orders\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_id | customer_id | product_id | quantity | amount_usd | order_date | status\n1 | 1 | 7 | 4 | 108.01 | 2024-12-02 | "
+  },
+  {
+   "id": "B0113",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"order_id\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"order_id\")\n79"
+  },
+  {
+   "id": "B0114",
+   "db": "gen",
+   "sql": "SELECT \"order_id\" FROM \"orders\" WHERE \"order_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_id\n1\n2\n3"
+  },
+  {
+   "id": "B0115",
+   "db": "gen",
+   "sql": "SELECT MIN(\"order_id\"), MAX(\"order_id\"), AVG(\"order_id\"), SUM(\"order_id\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"order_id\") | MAX(\"order_id\") | AVG(\"order_id\") | SUM(\"order_id\")\n1 | 79 | 40.0 | 3160"
+  },
+  {
+   "id": "B0116",
+   "db": "gen",
+   "sql": "SELECT \"order_id\" FROM \"orders\" ORDER BY \"order_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_id\n79\n78\n77"
+  },
+  {
+   "id": "B0117",
+   "db": "gen",
+   "sql": "SELECT \"order_id\" FROM \"orders\" WHERE \"order_id\" > (SELECT AVG(\"order_id\") FROM \"orders\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_id\n41\n42\n43\n44\n45"
+  },
+  {
+   "id": "B0118",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"customer_id\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"customer_id\")\n22"
+  },
+  {
+   "id": "B0119",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"orders\" WHERE \"customer_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id\n1\n2\n2"
+  },
+  {
+   "id": "B0120",
+   "db": "gen",
+   "sql": "SELECT MIN(\"customer_id\"), MAX(\"customer_id\"), AVG(\"customer_id\"), SUM(\"customer_id\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"customer_id\") | MAX(\"customer_id\") | AVG(\"customer_id\") | SUM(\"customer_id\")\n1 | 25 | 13.354430379746836 | 1055"
+  },
+  {
+   "id": "B0121",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"orders\" ORDER BY \"customer_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id\n25\n25\n25"
+  },
+  {
+   "id": "B0122",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"orders\" WHERE \"customer_id\" > (SELECT AVG(\"customer_id\") FROM \"orders\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "customer_id\n14\n15\n15\n15\n15"
+  },
+  {
+   "id": "B0123",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"product_id\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"product_id\")\n12"
+  },
+  {
+   "id": "B0124",
+   "db": "gen",
+   "sql": "SELECT \"product_id\" FROM \"orders\" WHERE \"product_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id\n7\n7\n3"
+  },
+  {
+   "id": "B0125",
+   "db": "gen",
+   "sql": "SELECT MIN(\"product_id\"), MAX(\"product_id\"), AVG(\"product_id\"), SUM(\"product_id\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"product_id\") | MAX(\"product_id\") | AVG(\"product_id\") | SUM(\"product_id\")\n1 | 12 | 6.0886075949367084 | 481"
+  },
+  {
+   "id": "B0126",
+   "db": "gen",
+   "sql": "SELECT \"product_id\" FROM \"orders\" ORDER BY \"product_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id\n12\n12\n12"
+  },
+  {
+   "id": "B0127",
+   "db": "gen",
+   "sql": "SELECT \"product_id\" FROM \"orders\" WHERE \"product_id\" > (SELECT AVG(\"product_id\") FROM \"orders\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id\n7\n7\n10\n12\n12"
+  },
+  {
+   "id": "B0128",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"quantity\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"quantity\")\n20"
+  },
+  {
+   "id": "B0129",
+   "db": "gen",
+   "sql": "SELECT \"quantity\" FROM \"orders\" WHERE \"quantity\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "quantity\n4\n4\n9"
+  },
+  {
+   "id": "B0130",
+   "db": "gen",
+   "sql": "SELECT MIN(\"quantity\"), MAX(\"quantity\"), AVG(\"quantity\"), SUM(\"quantity\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"quantity\") | MAX(\"quantity\") | AVG(\"quantity\") | SUM(\"quantity\")\n1 | 20 | 9.886075949367088 | 781"
+  },
+  {
+   "id": "B0131",
+   "db": "gen",
+   "sql": "SELECT \"quantity\" FROM \"orders\" ORDER BY \"quantity\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "quantity\n20\n20\n20"
+  },
+  {
+   "id": "B0132",
+   "db": "gen",
+   "sql": "SELECT \"quantity\" FROM \"orders\" WHERE \"quantity\" > (SELECT AVG(\"quantity\") FROM \"orders\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "quantity\n12\n16\n10\n19\n20"
+  },
+  {
+   "id": "B0133",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"amount_usd\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"amount_usd\")\n79"
+  },
+  {
+   "id": "B0134",
+   "db": "gen",
+   "sql": "SELECT \"amount_usd\" FROM \"orders\" WHERE \"amount_usd\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n108.01\n108.02\n319.53"
+  },
+  {
+   "id": "B0135",
+   "db": "gen",
+   "sql": "SELECT MIN(\"amount_usd\"), MAX(\"amount_usd\"), AVG(\"amount_usd\"), SUM(\"amount_usd\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"amount_usd\") | MAX(\"amount_usd\") | AVG(\"amount_usd\") | SUM(\"amount_usd\")\n42.23 | 2580.28 | 493.032911392405 | 38949"
+  },
+  {
+   "id": "B0136",
+   "db": "gen",
+   "sql": "SELECT \"amount_usd\" FROM \"orders\" ORDER BY \"amount_usd\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n2580.28\n1935.79\n1806.78"
+  },
+  {
+   "id": "B0137",
+   "db": "gen",
+   "sql": "SELECT \"amount_usd\" FROM \"orders\" WHERE \"amount_usd\" > (SELECT AVG(\"amount_usd\") FROM \"orders\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "amount_usd\n1068.06\n985.09\n710.12\n1026.13\n512.15"
+  },
+  {
+   "id": "B0138",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"order_date\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"order_date\")\n71"
+  },
+  {
+   "id": "B0139",
+   "db": "gen",
+   "sql": "SELECT \"order_date\" FROM \"orders\" WHERE \"order_date\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_date\n2024-12-02\n2025-07-03\n2025-01-12"
+  },
+  {
+   "id": "B0140",
+   "db": "gen",
+   "sql": "SELECT DISTINCT \"order_date\" FROM \"orders\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_date\n2024-12-02\n2025-07-03\n2025-01-12\n2024-05-17\n2024-06-18\n2024-05-01\n2026-01-07\n2024-09-11\n2024-04-05\n2026-04-08"
+  },
+  {
+   "id": "B0141",
+   "db": "gen",
+   "sql": "SELECT \"order_date\", COUNT(*) AS n FROM \"orders\" GROUP BY \"order_date\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "order_date | n\n2026-09-23 | 2\n2026-06-15 | 2\n2026-04-06 | 2\n2025-08-13 | 2\n2025-03-11 | 2"
+  },
+  {
+   "id": "B0142",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"status\") FROM \"orders\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"status\")\n3"
+  },
+  {
+   "id": "B0143",
+   "db": "gen",
+   "sql": "SELECT \"status\" FROM \"orders\" WHERE \"status\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "status\npaid\npaid\npaid"
+  },
+  {
+   "id": "B0144",
+   "db": "gen",
+   "sql": "SELECT DISTINCT \"status\" FROM \"orders\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "status\npaid\nrefunded\npending"
+  },
+  {
+   "id": "B0145",
+   "db": "gen",
+   "sql": "SELECT \"status\", COUNT(*) AS n FROM \"orders\" GROUP BY \"status\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "status | n\npaid | 49\npending | 18\nrefunded | 12"
+  },
+  {
+   "id": "B0146",
+   "db": "gen",
+   "sql": "SELECT COUNT(*) FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(*)\n12"
+  },
+  {
+   "id": "B0147",
+   "db": "gen",
+   "sql": "SELECT * FROM \"products\" LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id | product_name | category | unit_price\n1 | Aero Kettle | Kitchen | 42.0\n2 | Brio Blender | Kitchen | 89.0\n3 |"
+  },
+  {
+   "id": "B0148",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"product_id\") FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"product_id\")\n12"
+  },
+  {
+   "id": "B0149",
+   "db": "gen",
+   "sql": "SELECT \"product_id\" FROM \"products\" WHERE \"product_id\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id\n1\n2\n3"
+  },
+  {
+   "id": "B0150",
+   "db": "gen",
+   "sql": "SELECT MIN(\"product_id\"), MAX(\"product_id\"), AVG(\"product_id\"), SUM(\"product_id\") FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"product_id\") | MAX(\"product_id\") | AVG(\"product_id\") | SUM(\"product_id\")\n1 | 12 | 6.5 | 78"
+  },
+  {
+   "id": "B0151",
+   "db": "gen",
+   "sql": "SELECT \"product_id\" FROM \"products\" ORDER BY \"product_id\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id\n12\n11\n10"
+  },
+  {
+   "id": "B0152",
+   "db": "gen",
+   "sql": "SELECT \"product_id\" FROM \"products\" WHERE \"product_id\" > (SELECT AVG(\"product_id\") FROM \"products\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_id\n7\n8\n9\n10\n11"
+  },
+  {
+   "id": "B0153",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"product_name\") FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"product_name\")\n12"
+  },
+  {
+   "id": "B0154",
+   "db": "gen",
+   "sql": "SELECT \"product_name\" FROM \"products\" WHERE \"product_name\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_name\nAero Kettle\nBrio Blender\nCove Lamp"
+  },
+  {
+   "id": "B0155",
+   "db": "gen",
+   "sql": "SELECT DISTINCT \"product_name\" FROM \"products\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_name\nAero Kettle\nBrio Blender\nCove Lamp\nDelta Drill\nEmber Heater\nFlux Router\nGale Fan\nHaze Humidifier\nIsle Toast"
+  },
+  {
+   "id": "B0156",
+   "db": "gen",
+   "sql": "SELECT \"product_name\", COUNT(*) AS n FROM \"products\" GROUP BY \"product_name\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "product_name | n\nLumen Torch | 1\nKilo Scale | 1\nJolt Charger | 1\nIsle Toaster | 1\nHaze Humidifier | 1"
+  },
+  {
+   "id": "B0157",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"category\") FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"category\")\n4"
+  },
+  {
+   "id": "B0158",
+   "db": "gen",
+   "sql": "SELECT \"category\" FROM \"products\" WHERE \"category\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "category\nKitchen\nKitchen\nHome"
+  },
+  {
+   "id": "B0159",
+   "db": "gen",
+   "sql": "SELECT DISTINCT \"category\" FROM \"products\" LIMIT 10",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "category\nKitchen\nHome\nTools\nElectronics"
+  },
+  {
+   "id": "B0160",
+   "db": "gen",
+   "sql": "SELECT \"category\", COUNT(*) AS n FROM \"products\" GROUP BY \"category\" ORDER BY n DESC LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "category | n\nKitchen | 4\nHome | 4\nTools | 3\nElectronics | 1"
+  },
+  {
+   "id": "B0161",
+   "db": "gen",
+   "sql": "SELECT COUNT(DISTINCT \"unit_price\") FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"unit_price\")\n12"
+  },
+  {
+   "id": "B0162",
+   "db": "gen",
+   "sql": "SELECT \"unit_price\" FROM \"products\" WHERE \"unit_price\" IS NOT NULL LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "unit_price\n42.0\n89.0\n35.5"
+  },
+  {
+   "id": "B0163",
+   "db": "gen",
+   "sql": "SELECT MIN(\"unit_price\"), MAX(\"unit_price\"), AVG(\"unit_price\"), SUM(\"unit_price\") FROM \"products\"",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "MIN(\"unit_price\") | MAX(\"unit_price\") | AVG(\"unit_price\") | SUM(\"unit_price\")\n16.5 | 129.0 | 52.416666666666664 | 629.0"
+  },
+  {
+   "id": "B0164",
+   "db": "gen",
+   "sql": "SELECT \"unit_price\" FROM \"products\" ORDER BY \"unit_price\" DESC LIMIT 3",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "unit_price\n129.0\n98.5\n89.0"
+  },
+  {
+   "id": "B0165",
+   "db": "gen",
+   "sql": "SELECT \"unit_price\" FROM \"products\" WHERE \"unit_price\" > (SELECT AVG(\"unit_price\") FROM \"products\") LIMIT 5",
+   "kind": "template",
+   "status": "ok",
+   "out_head": "unit_price\n89.0\n129.0\n64.0\n98.5\n54.0"
+  },
+  {
+   "id": "B0166",
+   "db": "demo",
+   "sql": "-- note\nSELECT COUNT(*) FROM \"companies\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(*)\n4"
+  },
+  {
+   "id": "B0167",
+   "db": "demo",
+   "sql": "/* q */ SELECT \"id\" FROM \"companies\" WHERE \"id\" > (SELECT AVG(\"id\") FROM \"companies\") LIMIT 5",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "id\n3\n4"
+  },
+  {
+   "id": "B0168",
+   "db": "demo",
+   "sql": "select \"industry\" from \"companies\" WHERE \"industry\" IS NOT NULL LIMIT 3",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "industry\nHumanoid Robotics\nHumanoid Robotics\nHumanoid Robotics"
+  },
+  {
+   "id": "B0169",
+   "db": "demo",
+   "sql": "SELECT \"founded_year\" FROM \"companies\" ORDER BY \"founded_year\" DESC LIMIT 3;",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "founded_year\n2022\n2021\n2020"
+  },
+  {
+   "id": "B0170",
+   "db": "demo",
+   "sql": "  \n\tSELECT MIN(\"id\"), MAX(\"id\"), AVG(\"id\"), SUM(\"id\") FROM \"funding_rounds\"  ",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "MIN(\"id\") | MAX(\"id\") | AVG(\"id\") | SUM(\"id\")\n1 | 5 | 3.0 | 15"
+  },
+  {
+   "id": "B0171",
+   "db": "demo",
+   "sql": "-- note\nSELECT \"company_id\" FROM \"funding_rounds\" ORDER BY \"company_id\" DESC LIMIT 3",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "company_id\n4\n3\n2"
+  },
+  {
+   "id": "B0172",
+   "db": "demo",
+   "sql": "/* q */ SELECT COUNT(DISTINCT \"amount_usd\") FROM \"funding_rounds\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"amount_usd\")\n5"
+  },
+  {
+   "id": "B0173",
+   "db": "demo",
+   "sql": "select \"round_date\" from \"funding_rounds\" WHERE \"round_date\" IS NOT NULL LIMIT 3",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "round_date\n2026-03-15\n2025-11-02\n2026-06-20"
+  },
+  {
+   "id": "B0174",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"companies\" WHERE \"id\" IS NOT NULL LIMIT 3;",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0175",
+   "db": "large",
+   "sql": "  \n\tSELECT DISTINCT \"name\" FROM \"companies\" LIMIT 10  ",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "name\nQuantara\nLumivex\nBrightforge\nHelixon\nCobaltree\nNimbria\nVantora\nSolenne\nKestrel Labs\nMarlowe AI"
+  },
+  {
+   "id": "B0176",
+   "db": "large",
+   "sql": "-- note\nSELECT COUNT(DISTINCT \"founded_year\") FROM \"companies\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"founded_year\")\n13"
+  },
+  {
+   "id": "B0177",
+   "db": "large",
+   "sql": "/* q */ SELECT * FROM \"funding_rounds\" LIMIT 5",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "id | company_id | round_type | amount_usd | round_date\n1 | 1 | Seed | 42751000.0 | 2021-10-23\n2 | 1 | Series A | 8050200"
+  },
+  {
+   "id": "B0178",
+   "db": "large",
+   "sql": "select COUNT(DISTINCT \"company_id\") from \"funding_rounds\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"company_id\")\n25"
+  },
+  {
+   "id": "B0179",
+   "db": "large",
+   "sql": "SELECT \"round_type\" FROM \"funding_rounds\" WHERE \"round_type\" IS NOT NULL LIMIT 3;",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "round_type\nSeed\nSeries A\nSeries B"
+  },
+  {
+   "id": "B0180",
+   "db": "large",
+   "sql": "  \n\tSELECT \"amount_usd\" FROM \"funding_rounds\" ORDER BY \"amount_usd\" DESC LIMIT 3  ",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "amount_usd\n98551000.0\n97272000.0\n96063000.0"
+  },
+  {
+   "id": "B0181",
+   "db": "gen",
+   "sql": "-- note\nSELECT COUNT(*) FROM \"customers\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(*)\n25"
+  },
+  {
+   "id": "B0182",
+   "db": "gen",
+   "sql": "/* q */ SELECT \"customer_id\" FROM \"customers\" WHERE \"customer_id\" > (SELECT AVG(\"customer_id\") FROM \"customers\") LIMIT 5",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "customer_id\n14\n15\n16\n17\n18"
+  },
+  {
+   "id": "B0183",
+   "db": "gen",
+   "sql": "select \"region\" from \"customers\" WHERE \"region\" IS NOT NULL LIMIT 3",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "region\nEast\nWest\nNorth"
+  },
+  {
+   "id": "B0184",
+   "db": "gen",
+   "sql": "SELECT \"signup_year\" FROM \"customers\" ORDER BY \"signup_year\" DESC LIMIT 3;",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "signup_year\n2025\n2025\n2025"
+  },
+  {
+   "id": "B0185",
+   "db": "gen",
+   "sql": "  \n\tSELECT MIN(\"order_id\"), MAX(\"order_id\"), AVG(\"order_id\"), SUM(\"order_id\") FROM \"orders\"  ",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "MIN(\"order_id\") | MAX(\"order_id\") | AVG(\"order_id\") | SUM(\"order_id\")\n1 | 79 | 40.0 | 3160"
+  },
+  {
+   "id": "B0186",
+   "db": "gen",
+   "sql": "-- note\nSELECT \"customer_id\" FROM \"orders\" ORDER BY \"customer_id\" DESC LIMIT 3",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "customer_id\n25\n25\n25"
+  },
+  {
+   "id": "B0187",
+   "db": "gen",
+   "sql": "/* q */ SELECT \"product_id\" FROM \"orders\" WHERE \"product_id\" > (SELECT AVG(\"product_id\") FROM \"orders\") LIMIT 5",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "product_id\n7\n7\n10\n12\n12"
+  },
+  {
+   "id": "B0188",
+   "db": "gen",
+   "sql": "select COUNT(DISTINCT \"amount_usd\") from \"orders\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"amount_usd\")\n79"
+  },
+  {
+   "id": "B0189",
+   "db": "gen",
+   "sql": "SELECT \"order_date\" FROM \"orders\" WHERE \"order_date\" IS NOT NULL LIMIT 3;",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "order_date\n2024-12-02\n2025-07-03\n2025-01-12"
+  },
+  {
+   "id": "B0190",
+   "db": "gen",
+   "sql": "  \n\tSELECT \"status\", COUNT(*) AS n FROM \"orders\" GROUP BY \"status\" ORDER BY n DESC LIMIT 5  ",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "status | n\npaid | 49\npending | 18\nrefunded | 12"
+  },
+  {
+   "id": "B0191",
+   "db": "gen",
+   "sql": "-- note\nSELECT \"product_id\" FROM \"products\" ORDER BY \"product_id\" DESC LIMIT 3",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "product_id\n12\n11\n10"
+  },
+  {
+   "id": "B0192",
+   "db": "gen",
+   "sql": "/* q */ SELECT COUNT(DISTINCT \"category\") FROM \"products\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "COUNT(DISTINCT \"category\")\n4"
+  },
+  {
+   "id": "B0193",
+   "db": "gen",
+   "sql": "select MIN(\"unit_price\"), MAX(\"unit_price\"), AVG(\"unit_price\"), SUM(\"unit_price\") from \"products\"",
+   "kind": "style",
+   "status": "ok",
+   "out_head": "MIN(\"unit_price\") | MAX(\"unit_price\") | AVG(\"unit_price\") | SUM(\"unit_price\")\n16.5 | 129.0 | 52.416666666666664 | 629.0"
+  },
+  {
+   "id": "B0194",
+   "db": "large",
+   "sql": "SELECT 'DELETE FROM x' AS note, COUNT(*) FROM \"companies\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "note | COUNT(*)\nDELETE FROM x | 30"
+  },
+  {
+   "id": "B0195",
+   "db": "large",
+   "sql": "SELECT 'please drop table' AS t FROM \"companies\" LIMIT 1",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "t\nplease drop table"
+  },
+  {
+   "id": "B0196",
+   "db": "large",
+   "sql": "SELECT COUNT(*) AS update_count FROM \"companies\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "update_count\n30"
+  },
+  {
+   "id": "B0197",
+   "db": "large",
+   "sql": "SELECT COUNT(*) AS insert_total, 'replace me' AS r FROM \"companies\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "insert_total | r\n30 | replace me"
+  },
+  {
+   "id": "B0198",
+   "db": "large",
+   "sql": "SELECT \"id\" AS \"delete\" FROM \"companies\" LIMIT 2",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "delete\n1\n2"
+  },
+  {
+   "id": "B0199",
+   "db": "large",
+   "sql": "SELECT * FROM \"companies\" WHERE CAST(\"id\" AS TEXT) LIKE '%update%' OR CAST(\"id\" AS TEXT) LIKE '%drop%'",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "Query executed successfully but returned no rows."
+  },
+  {
+   "id": "B0200",
+   "db": "large",
+   "sql": "SELECT /* DROP TABLE x; */ COUNT(*) FROM \"companies\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "COUNT(*)\n30"
+  },
+  {
+   "id": "B0201",
+   "db": "large",
+   "sql": "SELECT COUNT(*) FROM \"companies\" -- DELETE everything",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "COUNT(*)\n30"
+  },
+  {
+   "id": "B0202",
+   "db": "large",
+   "sql": "SELECT name FROM sqlite_master WHERE type='table'",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "name\ncompanies\nfunding_rounds"
+  },
+  {
+   "id": "B0203",
+   "db": "large",
+   "sql": "SELECT name, sql FROM sqlite_master WHERE type='table' AND sql LIKE '%CREATE%'",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "name | sql\ncompanies | CREATE TABLE companies (id INTEGER PRIMARY KEY, name TEXT, industry TEXT, founded_year INTEGER)\nf"
+  },
+  {
+   "id": "B0204",
+   "db": "large",
+   "sql": "SELECT CASE WHEN COUNT(*)>0 THEN 'has rows' ELSE 'empty' END FROM \"companies\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "CASE WHEN COUNT(*)>0 THEN 'has rows' ELSE 'empty' END\nhas rows"
+  },
+  {
+   "id": "B0205",
+   "db": "large",
+   "sql": "SELECT \"id\", ROW_NUMBER() OVER (ORDER BY \"id\") AS rn FROM \"companies\" LIMIT 5",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "id | rn\n1 | 1\n2 | 2\n3 | 3\n4 | 4\n5 | 5"
+  },
+  {
+   "id": "B0206",
+   "db": "large",
+   "sql": "SELECT \"id\" FROM \"companies\" UNION SELECT \"id\" FROM \"companies\" LIMIT 3",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0207",
+   "db": "large",
+   "sql": "SELECT * FROM (SELECT \"id\" FROM \"companies\" LIMIT 10) AS sub LIMIT 3",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "id\n1\n2\n3"
+  },
+  {
+   "id": "B0208",
+   "db": "large",
+   "sql": "SELECT COUNT(*) FROM \"companies\" a JOIN \"companies\" b ON a.\"id\" = b.\"id\" LIMIT 1",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "COUNT(*)\n30"
+  },
+  {
+   "id": "B0209",
+   "db": "large",
+   "sql": "SELECT 1 + 1 AS two",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "two\n2"
+  },
+  {
+   "id": "B0210",
+   "db": "large",
+   "sql": "SELECT date('now') IS NOT NULL AS ok",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "ok\n1"
+  },
+  {
+   "id": "B0211",
+   "db": "large",
+   "sql": "SELECT 'a;b' AS semi",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "semi\na;b"
+  },
+  {
+   "id": "B0212",
+   "db": "large",
+   "sql": "SELECT 'it''s fine' AS q",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "q\nit's fine"
+  },
+  {
+   "id": "B0213",
+   "db": "gen",
+   "sql": "SELECT '创建时间' AS 字段, COUNT(*) AS 记录数 FROM \"customers\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "字段 | 记录数\n创建时间 | 25"
+  },
+  {
+   "id": "B0214",
+   "db": "gen",
+   "sql": "SELECT '删除' AS 动作, COUNT(*) FROM \"customers\"",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "动作 | COUNT(*)\n删除 | 25"
+  },
+  {
+   "id": "B0215",
+   "db": "gen",
+   "sql": "SELECT \"customer_id\" FROM \"customers\" WHERE \"customer_id\" IS NOT NULL ORDER BY 1 LIMIT 3",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "customer_id\n1\n2\n3"
+  },
+  {
+   "id": "B0216",
+   "db": "gen",
+   "sql": "SELECT typeof(\"customer_id\"), length(CAST(\"customer_id\" AS TEXT)) FROM \"customers\" LIMIT 3",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "typeof(\"customer_id\") | length(CAST(\"customer_id\" AS TEXT))\ninteger | 1\ninteger | 1\ninteger | 1"
+  },
+  {
+   "id": "B0217",
+   "db": "demo",
+   "sql": "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "name\ncompanies\nfunding_rounds"
+  },
+  {
+   "id": "B0218",
+   "db": "demo",
+   "sql": "SELECT 'ATTACH is a word' AS w",
+   "kind": "tricky",
+   "status": "ok",
+   "out_head": "w\nATTACH is a word"
+  },
+  {
+   "id": "B0219",
+   "db": "large",
+   "sql": "WITH t AS (SELECT \"id\" FROM \"companies\") SELECT COUNT(*) FROM t",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "COUNT(*)\n30"
+  },
+  {
+   "id": "B0220",
+   "db": "large",
+   "sql": "WITH a AS (SELECT COUNT(*) AS n FROM \"companies\") SELECT n FROM a",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "n\n30"
+  },
+  {
+   "id": "B0221",
+   "db": "large",
+   "sql": "WITH a AS (SELECT \"id\" AS k FROM \"companies\" LIMIT 10), b AS (SELECT k FROM a) SELECT COUNT(*) FROM b",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "COUNT(*)\n10"
+  },
+  {
+   "id": "B0222",
+   "db": "gen",
+   "sql": "WITH t AS (SELECT * FROM \"customers\") SELECT COUNT(*) FROM t",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "COUNT(*)\n25"
+  },
+  {
+   "id": "B0223",
+   "db": "gen",
+   "sql": "with x as (select \"customer_id\" from \"customers\" limit 5) select * from x",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "customer_id\n1\n2\n3\n4\n5"
+  },
+  {
+   "id": "B0224",
+   "db": "demo",
+   "sql": "WITH r AS (SELECT 1 AS v UNION ALL SELECT v+1 FROM r WHERE v<5) SELECT SUM(v) FROM r",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "SUM(v)\n15"
+  },
+  {
+   "id": "B0225",
+   "db": "large",
+   "sql": "-- cte\nWITH t AS (SELECT 1 AS x) SELECT x FROM t",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "x\n1"
+  },
+  {
+   "id": "B0226",
+   "db": "large",
+   "sql": "WITH RECURSIVE c(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM c WHERE n<10) SELECT COUNT(*) FROM c",
+   "kind": "cte",
+   "status": "ok",
+   "out_head": "COUNT(*)\n10"
+  },
+  {
+   "id": "B0227",
+   "db": "large",
+   "sql": "EXPLAIN QUERY PLAN SELECT * FROM \"companies\"",
+   "kind": "non_select_readonly",
+   "status": "blocked",
+   "out_head": "SQL Error: only SELECT statements are permitted. Write operations are not allowed through this tool."
+  },
+  {
+   "id": "B0228",
+   "db": "large",
+   "sql": "PRAGMA table_info(\"companies\")",
+   "kind": "non_select_readonly",
+   "status": "blocked",
+   "out_head": "SQL Error: only SELECT statements are permitted. Write operations are not allowed through this tool."
+  },
+  {
+   "id": "B0229",
+   "db": "large",
+   "sql": "VALUES (1),(2),(3)",
+   "kind": "non_select_readonly",
+   "status": "blocked",
+   "out_head": "SQL Error: only SELECT statements are permitted. Write operations are not allowed through this tool."
+  },
+  {
+   "id": "B0230",
+   "db": "large",
+   "sql": "(SELECT COUNT(*) FROM \"companies\")",
+   "kind": "non_select_readonly",
+   "status": "blocked",
+   "out_head": "SQL Error: only SELECT statements are permitted. Write operations are not allowed through this tool."
+  },
+  {
+   "id": "B0231",
+   "db": "large",
+   "sql": "PRAGMA table_list",
+   "kind": "non_select_readonly",
+   "status": "blocked",
+   "out_head": "SQL Error: only SELECT statements are permitted. Write operations are not allowed through this tool."
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "G-east-customers",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，East 区域的客户一共有几位？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-east-customers-0412ede6",
+  "started_at": "2026-10-13T15:14:13.059822+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.381,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# East 区域客户数量查询报告\n\n## 数据查询背景与目标\n\n本次调研的目的是为了准确获取公司内部数据库中“East”（东部）区域的客户数量。需求明确指出，必须通过直接查询数据库，避免凭借记忆或估算提供数据，确保所获数字的真实性与时效性。\n\n没有额外的过滤条件或约束，查询任务仅聚焦于“region”字段中标注为“East”的所有客户，力求全面精确地反映当前数据库中的相关数据。\n\n---\n\n## 数据库查询执行\n\n针对研究需求，执行了以下SQL命令：\n\n```sql\nSELECT COUNT(*) AS east_region_customer_count FROM customers WHERE region = 'East';\n```\n\n此条查询语句意图汇总“customers”表中所有区域字段“region”为“East”的客户总数，确保不遗漏任何符合条件的记录。\n\n---\n\n## 查询结果与分析\n\n查询结果显示：\n\n- **“East”区域共有客户数量为5位。**\n\n该数字基于最新的数据库数据，未施加任何其他限制或筛选，因此完全反映了当前数据库中该区域客户的真实数量。\n\n这一结果为公司市场策略、客户关系管理以及区域业务分析等提供了一个准确的基础数据，有助于后续的决策和资源配置。\n\n---\n\n## 结论\n\n基于直接的数据库查询，无任何中间环节的猜测或估算，本次调研明确确认公司“East”区域客户数为5位。这一数据为管理层及相关部门提供了可信赖的参考依据，保障数据驱动决策的科学性和有效性。\n\n---\n\n## 来源\n\n- 内部客户数据库查询结果（2026年10月13日）[查询语句及结果记录]",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_wc5tgmKgF9eJ79zoKjUC28f2"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004019
+  }
+}

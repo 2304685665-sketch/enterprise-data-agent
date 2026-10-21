@@ -1,0 +1,131 @@
+name: Offline tests
+
+# 只跑"不需要真实模型 API、不需要 Docker"的测试脚本：全部使用假模型 /
+# mock 的工具入口，不产生任何费用，也不发真实网络请求。
+#
+# 刻意不包含（需要真实 Docker 镜像或真实 API，不适合默认 CI）：
+#   test_tool_reliability.py  —— 其中一条真实启动 Docker 容器
+#   test_python_executor.py   —— 依赖 Docker 沙箱镜像
+#   test_mem0.py / test_memory_manager.py / test_kb_search.py /
+#   test_internal_doc_search.py / test_e2e_*.py / eval_q6_sql.py /
+#   eval_q12_refusal.py —— 需要真实 API
+#
+# Python 固定 3.12：sql_executor 的多语句防护测试在 3.12 之前会抛
+# sqlite3.Warning（不是 sqlite3.Error，未被 sql_executor 捕获）；3.12 起改为
+# 可捕获的 ProgrammingError。这是 pyproject 声明 >=3.10 与实际防护行为之间
+# 的已知差距，这里固定 3.12 并非掩盖，修复属于单独事项。
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # 真实 PostgreSQL + pgvector：用于 test_pgvector_store（向量库后端的真实数据库测试，不是 mock）
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: odr_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PYTHONPATH: src
+      PYTHONDONTWRITEBYTECODE: "1"
+      # 假 key：测试里所有模型/Embedding 调用都被替换，这个值不会发出任何请求
+      OPENAI_API_KEY: sk-fake-test-key-no-real-network-calls
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 部分测试用 git worktree 对照历史提交（逐字节一致性检查），需要完整历史
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[test]"
+
+      - name: Build demo database (not tracked in git)
+        run: python my_extensions/setup_demo_db.py
+
+      - name: Run offline test scripts
+        run: |
+          set -e
+          for f in \
+            test_degradation_disclosure \
+            eval_degradation_t3 \
+            test_run_trace \
+            test_loop_detection \
+            test_internal_citations \
+            test_sql_executor \
+            test_eval_q6_date_matching \
+            test_hybrid_retrieval \
+            test_hybrid_integration \
+            test_rerank \
+            test_skills \
+            test_sim_fault_injection \
+            test_model_fallback \
+            test_agent_eval \
+            test_agent_eval_run \
+            test_grounding_guard \
+            test_agent_eval_score_v2 \
+            test_api_service_faults \
+            test_eval_retrieval_v2 \
+            test_agent_security_matrix \
+            test_sim_session_fault_injection \
+            test_eval_memory_filter \
+            test_sql_guard_cases \
+            test_data_faithfulness_prompt \
+            test_write_intent \
+            test_sql_schema_hint \
+            test_agent_eval_attack_arm \
+            test_memory_guard \
+            test_attribute_failures \
+            test_api_service \
+            test_approval \
+            test_api_metrics_web \
+            test_mcp_server \
+            test_doc_ingest \
+            test_eval_retrieval \
+            test_prompt_cache_experiment \
+            test_sql_stats_funcs \
+            test_sql_allow_with \
+            test_memory_llm_judge \
+            test_doc_llm_judge \
+            test_agent_eval_cases_stats \
+            test_agent_eval_score_v3 \
+            test_sql_guard_logical_check \
+            test_doc_content_guard \
+            ; do
+            echo "::group::$f"
+            python my_extensions/$f.py
+            echo "::endgroup::"
+          done
+
+      - name: pytest 风格的测试（含真实 PostgreSQL + pgvector）
+        env:
+          ODR_PG_TEST_DSN: postgresql://postgres:postgres@localhost:5432/odr_test
+        run: |
+          pip install pytest "psycopg[binary]" faiss-cpu
+          pytest -q -p no:cacheprovider \
+            my_extensions/test_pgvector_store.py \
+            my_extensions/test_faiss_store.py \
+            my_extensions/test_report_write_filter.py \
+            my_extensions/test_direct_research.py

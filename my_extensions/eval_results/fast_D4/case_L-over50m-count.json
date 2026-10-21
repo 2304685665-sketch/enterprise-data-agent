@@ -1,0 +1,42 @@
+{
+  "case_id": "L-over50m-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔金额超过 5000 万美元的融资一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-over50m-count-77a36821",
+  "started_at": "2026-10-13T15:13:14.383635+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 8.693,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 内部数据库中单笔金额超过5000万美元的融资笔数报告\n\n## 查询结果概述\n\n根据对公司内部数据库的直接查询，符合条件——即单笔融资金额超过5000万美元的案例共有 **41笔**。这一数字是通过对所有融资数据逐条核查金额字段得出的，确保准确无误，不基于经验或估算。\n\n## 数据查询方法说明\n\n- **数据来源**：公司内部融资数据库。\n- **筛选条件**：融资单笔金额 > 50,000,000美元。\n- **核验过程**：对所有融资轮次按金额字段进行检索和统计汇总。\n\n此过程完全依托数据查询工具，无人工主观判断干扰，确保了结果的客观性和精准度。\n\n## 数据分析与背景\n\n单笔金额超过5000万美元的融资笔数反映了公司投资或融资项目中的大型资金活动频率。此类大型融资通常涉及：\n\n- 公司战略性扩张阶段的资本需求；\n- 关键市场或产品线的重投入；\n- 机构投资者的重点关注与支持。\n\n41笔的数量显示，公司在融资活动中具备一定规模的高额融资案例，体现了公司或投资标的具备较强的资金吸引力和市场认可度。\n\n若需要深入分析资金来源、融资时间分布或行业结构，建议进一步细化查询和分类结果。\n\n## 结论\n\n- **公司内部数据库中，单笔融资金额超过5000万美元的融资共有41笔。**\n- 该结果为直接数据库查询所得，确保数据准确与可靠。\n- 此数字为衡量公司融资项目中重大资金流入的重要指标。\n\n---\n\n### Sources\n\n无外部公开来源，数据来自公司内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_heKejWeCrD7RfDjmJRfH8IS0"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 3,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002292
+  }
+}

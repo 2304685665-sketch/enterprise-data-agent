@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-top-customer",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪位客户的订单金额累计最高？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-top-customer-ae13a757",
+  "started_at": "2026-10-13T15:18:20.026426+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 23.668,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中订单金额累计最高客户报告\n\n## 研究目的\n本次研究旨在通过直接查询公司内部数据库，准确识别订单金额累计最高的客户。研究要求覆盖所有客户和全部历史订单数据，无时间范围或客户细分限制，确保通过最完整、最权威的数据源获得准确结论。最终需提供该客户的身份信息和精确的累计订单金额。\n\n## 数据获取与分析方法\n为满足研究需求，使用SQL语句对公司内部数据库中客户（Customers）和订单（Orders）相关表进行联合查询。具体步骤如下：\n\n- 结合客户表与订单表，通过客户ID关联两表数据；\n- 聚合客户的订单金额，对每个客户所有订单进行金额求和，计算其累计订单金额总和；\n- 不限时间段，使用订单表全部记录，以覆盖完整历史订单数据；\n- 根据累计订单金额从高到低排序，筛选出金额最高的客户。\n\n该查询确保了准确性和完整性，避免依赖任何主观印象或估计，直接反映了企业真实交易数据。\n\n## 查询结果\n\n根据数据库SQL查询结果，订单金额累计最高的客户信息如下：\n\n- **客户ID**：25  \n- **客户名称**：Zinnia Home  \n- **累计订单金额**：6039.82 美元\n\n该客户在公司的历史交易中累计订购金额最高，远超其他客户，体现其对公司业务贡献的重要性。\n\n## 结论\n\n通过直接访问并分析公司完整内部订单数据库，已准确确认Zinnia Home为累计订单金额最高的客户，累计金额为6039.82美元。此结果基于所有可用数据，无时间或客户类别筛选，全面反映了客户贡献度。\n\n公司可据此调整针对该客户的战略，比如优先级支持、定制化服务或重点维护，以巩固并提升与该客户的合作价值。\n\n---\n\n### 来源\n\n[1] 公司内部数据库SQL查询结果 (数据时间截至2026年10月13日)",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_ZmaTT5hsikJstAvpX1kashWE"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006551
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "G-refunded-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，状态为 refunded 的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-refunded-count-6ae6fa87",
+  "started_at": "2026-10-13T16:08:50.622997+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 10.299,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 内部数据库查询报告：状态为 refunded 的订单数量统计\n\n## 统计背景与查询目的\n\n本报告旨在准确回答“我们公司内部数据库里，状态为 refunded 的订单一共有几笔？”这一核心问题。该数字对理解公司退款订单的数量、评估退款率及相关运营决策具有重要意义。为了保证数据的准确性和权威性，本次数据来源为公司内部数据库，直接基于最新有效的订单状态数据查询，杜绝凭印象或推测。\n\n## 查询方法与数据说明\n\n- 数据库中订单的状态字段包含多个可能值，如 completed、pending、refunded 等。\n- “refunded”状态代表订单已完成退款流程。\n- 通过标准SQL查询（或等效数据库检索语句），筛选出所有订单状态为 refunded 的记录进行计数。\n- 数据库查询是在当前最新数据库快照上执行，确保数据的时效性。\n\n## 订单数统计结果\n\n经直接查询公司内部数据库，状态为 refunded 的订单总数为：\n\n**12 笔**\n\n这一数字反映了截至当前时间，公司整体退款订单的累计数量。\n\n## 相关分析与补充说明\n\n- 12 笔退款订单的数量可以作为后续计算退款率的基础，结合总订单量深入分析。\n- 退款订单的分布情况（如按时间段、订单类型、客户类别等）未在本次查询中涉及，若需进一步细分分析建议另行开展。\n- 订单状态的数据更新依赖于退款流程完成情况，可能存在短时间延后，实际数字应以数据库中最新记录为准。\n\n## 结论\n\n基于公司内部数据库直接查询结果，当前状态为 refunded 的订单总数为 12 笔，具体数据来源于最新的订单状态记录，具备充分的数据准确性与参考价值，为后续业务分析提供了有效支持。\n\n---\n\n### Sources\n\n[1] 公司内部数据库订单状态查询结果（实时系统数据）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_oYPX5FL8kRVpUlYNYIt00rbk"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 3,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00239
+  }
+}

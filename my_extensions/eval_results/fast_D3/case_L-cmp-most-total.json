@@ -1,0 +1,42 @@
+{
+  "case_id": "L-cmp-most-total",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪家公司累计融资金额最多？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-cmp-most-total-38911731",
+  "started_at": "2026-10-13T15:15:40.012037+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 19.018,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 我们公司内部数据库中累计融资金额最高的公司报告\n\n## 1. 研究背景与目标\n\n本次研究旨在基于我公司内部数据库直接查询，找出融资金额累计最高的公司。要求排除外部数据和主观猜测，严格根据数据库内记录的融资金额数据，确保数据准确、权威、最新。\n\n## 2. 数据查询结果\n\n通过对内部数据库的融资数据汇总分析，得到以下关键信息：\n\n- **融资金额累计最高的公司为：Nectar Climate**\n- **该公司累计融资总额为：350,065,000 美元**\n\n这是目前数据库中记录的最高累计融资金额，代表在我公司数据库覆盖的企业范围内，Nectar Climate的融资总额最高。\n\n## 3. 数据解析与业务意义\n\nNectar Climate作为融资金额最高的公司，其累计融资达3.5亿美元，体现出它在资本市场的强大吸引力和持续融资能力。该数额反映了投资者对其未来成长潜力的认可及其业务模型的融资竞争力。\n\n重点分析该数据可带来以下启示：\n\n- **市场关注度**：融资规模巨大，表明资本市场对该企业发展前景评价较高。\n- **业务规模与成长性**：较大融资额有助其快速扩展市场、研发投入及运营规模。\n- **竞争地位**：在公司数据库范围内领先的融资金额，可能意味着该企业在行业内具备一定标杆意义。\n\n## 4. 附加说明\n\n- 本次研究依据我公司内部数据库的最新记录，未包含任何外部公开数据；\n- 数据结果仅反映在数据库内部企业及融资事件，不排除外部市场上存在更大融资额情况，但不在本次查询范围内；\n- 数据中未涉及融资类型细分（如债权、股权等），仅累计融资总额。\n\n## 5. 结论\n\n根据内部数据库查询，**Nectar Climate以累计融资3.5亿美元位居融资金额最高公司**，该数字准确反映了数据库内企业的现实融资状况。\n\n建议关注该公司后续融资动态，结合市场趋势及业务指标，进一步深入研究其成长路径及潜在风险。\n\n---\n\n### 参考文献与数据来源\n\n[1] 公司内部融资数据库查询结果（截止2026年10月13日）\n\n---\n\n如需进一步详细融资轮次、投资方情况等数据，可基于内部权限进行专项查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_y5g5jWPuzIcsgzaKsNUviZF4"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002975
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "G-cmp-largest-order",
+  "category": "sql_compare",
+  "question": "我们公司内部数据库里，哪位客户下过金额最大的一笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-cmp-largest-order-4e0c7ffc",
+  "started_at": "2026-10-13T15:15:35.051916+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 13.469,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 查找公司内部数据库中单笔最大订单的客户信息报告\n\n## 一、研究背景与目的\n\n本次研究旨在通过直接查询公司内部数据库，找出迄今为止下单金额最大的单笔订单所属客户。不同于凭记忆或估计，此项调查将使用实际数据库数据进行分析，确保结果的准确性。无任何时间范围或订单类型限制，涵盖所有历史订单。\n\n## 二、查询方法与数据来源\n\n为确保数据的准确性，采用了以下SQL查询语句直接从数据库中提取所需信息：\n\n```sql\nSELECT customers.customer_id, customers.customer_name, orders.order_id, orders.amount_usd\nFROM orders\nJOIN customers ON orders.customer_id = customers.customer_id\nORDER BY orders.amount_usd DESC\nLIMIT 1;\n```\n\n此查询语句目的为：\n\n- 通过内连接（JOIN）将订单表（orders）和客户表（customers）关联起来，确保订单对应的客户信息可被查出。\n- 按订单金额（amount_usd）降序排列，全库筛选金额最大的订单。\n- 使用LIMIT 1限制只返回金额最大的一笔订单和对应客户数据。\n\n数据来源为公司现有内部数据库，包含所有历年订单和客户资料，确保查询范围完整，无遗漏订单。\n\n## 三、研究发现\n\n经过查询确认，公司的单笔最大订单及相关客户信息具体如下：\n\n- **客户名称**：Juniper Market  \n- **客户ID**：10  \n- **订单ID**：28  \n- **订单金额**：2,580.28美元\n\n该笔订单金额为公司内部订单金额中最高值，无其他订单超过该金额。\n\n## 四、分析与说明\n\n- 该客户“Juniper Market”通过一笔订单即达成了超过2500美元的交易额，显示其作为客户在历史采购中具有较大规模消费能力。\n- 本查询未限制订单类型或时间范围，结果代表了公司数据库中的绝对最大订单金额。\n- 订单金额精确至小数点后两位，量化准确，可以为销售策略、客户管理、风险评估等提供参考数据。\n\n## 五、结论\n\n公司内部数据库数据显示，“Juniper Market”客户于订单编号28中提交了金额为2,580.28美元的单笔最大订单。该数据为实时准确查询结果，有助于进一步认识和评估高价值客户的行为及其在公司业务中的影响。\n\n---\n\n### 参考来源\n\n[1] 内部公司数据库查询结果",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_tfn8ilcss0JX0GORq24xIp8P"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003677
+  }
+}

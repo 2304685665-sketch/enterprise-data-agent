@@ -1,0 +1,13 @@
+# 抓取配置示例：/metrics 与 /metrics/summary 一样需要 X-API-Key（http_headers 需要 Prometheus >= 2.55）
+global:
+  scrape_interval: 30s
+rule_files:
+  - alerts.yml
+scrape_configs:
+  - job_name: odr
+    metrics_path: /metrics
+    http_headers:
+      X-API-Key:
+        values: ["${ODR_API_KEY}"]   # 部署时替换为真实密钥（不要提交）
+    static_configs:
+      - targets: ["service:8000"]

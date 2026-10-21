@@ -1,0 +1,43 @@
+{
+  "case_id": "G-avg-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有订单的平均订单金额是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-avg-order-f5ece157",
+  "started_at": "2026-10-13T15:09:39.912586+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 20.051,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有订单的平均订单金额研究报告\n\n## 研究目的与范围\n\n本次研究旨在确定我公司内部数据库中记录的所有订单的精确平均订单金额，单位为美元。由于未对订单日期、客户分组、订单状态等设定任何筛选条件，本次分析涵盖数据库中所有订单，以确保结果全面且准确。数据获取通过直接查询公司数据库而非估算，确保资料的时效性和真实性。\n\n## 数据来源与查询方法\n\n平均订单金额数据由公司内部订单数据库通过结构化查询语言（SQL）检索得到。具体查询语句如下：\n\n```sql\nSELECT AVG(amount_usd) AS average_order_amount FROM orders;\n```\n\n该查询语句涵盖所有订单条目，无任何过滤条件，能够计算出全量订单的平均金额。\n\n## 平均订单金额结果分析\n\n查询结果显示，公司的所有订单中，平均订单金额为 **493.03 美元**（具体数值为493.032911392405美元）。此数据由现行数据库结构直接计算，具有以下特点：\n\n- **全面性**：数据涵盖数据库中所有记录的订单，无论订单时间、客户类型或状态。\n- **精确性**：通过数据库精确计算获得，消除人为估算的误差。\n- **货币单位一致**：所有订单金额均以美元计价，避免了汇率换算导致的混淆。\n\n这一平均订单金额数值为管理层提供了准确的整体销售单价参考，能够支持财务分析、营销策略制定及客户价值评估。\n\n## 结果的应用价值\n\n了解所有订单的平均订单金额具有重要的业务意义：\n\n- **销售绩效评估**：帮助评估整体交易规模及平均客户采购能力。\n- **市场策略调整**：结合平均订单额调整定价和促销策略，提升客户单笔消费。\n- **财务预算制定**：为预算和预测提供基础数据支持，确保目标设定切实合理。\n- **客户细分优化**：结合客户数据进一步细分订单金额分布，挖掘高价值客户群体。\n\n## 潜在后续分析建议\n\n虽然本次分析为总体平均水平，后续可考虑基于以下维度进行更细致划分，以深入理解订单金额结构：\n\n- 时间维度（按季度、年或节假日区分）\n- 客户类型（新客户、回头客、大客户等）\n- 地理区域\n- 产品类别或服务类型\n- 订单状态（完成、取消、退货等）\n\n通过多维度分析，有助于揭示隐藏在总体平均值背后的市场动态及客户行为特征。\n\n---\n\n## 结论\n\n根据对公司内部数据库的直接查询，所有订单的平均订单金额为493.03美元。该数据精准反映了全体订单的平均交易规模，无任何筛选条件限制，具备高度的参考价值和实用意义。建议结合此数据开展更深入的分层分析，支持后续业务决策和优化。\n\n---\n\n## 参考资料\n\n[1] 公司内部数据库查询结果：`SELECT AVG(amount_usd) AS average_order_amount FROM orders;` — 精确平均订单金额493.032911392405美元。\n\n### Sources\n\n[1] Internal Company Database Query Result: `SELECT AVG(amount_usd) AS average_order_amount FROM orders;`",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_xdp362v2LLqiYygNMaW2HqlW"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.004675
+  }
+}

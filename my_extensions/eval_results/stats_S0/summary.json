@@ -1,0 +1,231 @@
+{
+  "finished_at": "2026-10-13T15:57:03.274423+00:00",
+  "python": "3.13.12",
+  "code_version": {
+    "git_head": "2bb77b9d788832d38cf5c3acc280a95e5fbd8b9c",
+    "working_tree_dirty": false
+  },
+  "cases_requested": [
+    "S-pstdev-all",
+    "S-stdev-all",
+    "S-median-all",
+    "S-pstdev-paid",
+    "S-median-paid",
+    "S-stdev-east",
+    "S-median-central",
+    "S-pstdev-home",
+    "S-median-kitchen",
+    "S-pstdev-2025",
+    "S-median-qty3",
+    "S-stdev-price"
+  ],
+  "cases": [
+    {
+      "case_id": "S-pstdev-all",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 7,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005439
+      }
+    },
+    {
+      "case_id": "S-stdev-all",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005951
+      }
+    },
+    {
+      "case_id": "S-median-all",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 10,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.014817
+      }
+    },
+    {
+      "case_id": "S-pstdev-paid",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.006256
+      }
+    },
+    {
+      "case_id": "S-median-paid",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 4,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.00425
+      }
+    },
+    {
+      "case_id": "S-stdev-east",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004542
+      }
+    },
+    {
+      "case_id": "S-median-central",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 4,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003889
+      }
+    },
+    {
+      "case_id": "S-pstdev-home",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 6,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005889
+      }
+    },
+    {
+      "case_id": "S-median-kitchen",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004562
+      }
+    },
+    {
+      "case_id": "S-pstdev-2025",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [
+        "UNGROUNDED_REPORT_FIGURES"
+      ],
+      "model_calls": {
+        "ok": 4,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.003871
+      }
+    },
+    {
+      "case_id": "S-median-qty3",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": true,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.005739
+      }
+    },
+    {
+      "case_id": "S-stdev-price",
+      "run_status": "finished",
+      "valid_for_scoring": true,
+      "score_passed": false,
+      "issues": [],
+      "model_calls": {
+        "ok": 5,
+        "blocked": 0,
+        "error": 0,
+        "cost_usd": 0.004262
+      }
+    }
+  ],
+  "budget": {
+    "cap_usd": 0.25,
+    "actual_usd": 0.069463,
+    "tripped": false,
+    "trip_reason": null,
+    "calls_ok": 66,
+    "calls_blocked": 0,
+    "calls_error_assumed_not_billed": 0,
+    "calls_error_cost_unknown_charged_worst_case": 0,
+    "on_missing_usage": "halt",
+    "usage_missing_halt": false,
+    "calls_usage_missing_estimated": 0,
+    "overshoot_usd": 0.0,
+    "charged_for_failed_requests_usd": 0,
+    "by_model": {
+      "gpt-4.1-mini": {
+        "calls": 66,
+        "input_tokens": 119425,
+        "output_tokens": 13558,
+        "cost_usd": 0.069467
+      }
+    },
+    "price_source_note": "2026-10-12 核对 OpenAI 官方模型页：https://developers.openai.com/api/docs/models/gpt-4.1 (输入 2.00 / 缓存输入 0.50 / 输出 8.00) 与 .../gpt-4.1-mini (0.40 / 0.10 / 1.60)，标准档、文本 token；快照名 gpt-4.1-2025-04-14、gpt-4.1-mini-2025-04-14 归一到同名模型。价格会变，开跑当天请再看一眼。mini 页面没有显式写“standard tier”字样。其他模型（含 gpt-4o 系列）未核对，不在白名单内。"
+  },
+  "settings": {
+    "search_api": "none",
+    "models": {
+      "research_model": "openai:gpt-4.1-mini",
+      "final_report_model": "openai:gpt-4.1-mini",
+      "compression_model": "openai:gpt-4.1-mini",
+      "summarization_model": "openai:gpt-4.1-mini"
+    },
+    "timeout_s": 300.0,
+    "extra_config": {},
+    "grounding_guard_env": ""
+  },
+  "budget_aborted": false,
+  "blind_spots": [
+    "mem0（若 --memory on）与搜索 API 的费用不在预算内",
+    "internal_doc_search 每次查询会调用 OpenAI embedding，不经过回调、不在预算内；只在 evidence.uncounted_paid_calls 里数次数",
+    "缓存命中按未缓存价格计费（偏保守）",
+    "失败请求：5xx/超时/断连/取消按最坏情况计入；4xx 假设未计费（对 OpenAI 通常行为的假设，不是保证）",
+    "预检的输入 token 是字节数启发式估计，不是 tokenizer"
+  ],
+  "secret_scan_hits": []
+}

@@ -1,0 +1,104 @@
+{
+  "A_vs_B2": {
+    "n": 53,
+    "calls": {
+      "mean_a": 12.9245,
+      "mean_b": 12.9623,
+      "mean_diff_b_minus_a": 0.0377,
+      "median_diff": 0,
+      "n_nonzero": 39,
+      "W_plus": 393.0,
+      "z": 0.035,
+      "p": 0.9719
+    },
+    "cost": {
+      "mean_a": 0.0104,
+      "mean_b": 0.0105,
+      "mean_diff_b_minus_a": 0.0,
+      "median_diff": -0.0,
+      "n_nonzero": 53,
+      "W_plus": 722.0,
+      "z": 0.053,
+      "p": 0.9576
+    },
+    "sql": {
+      "mean_a": 4,
+      "mean_b": 3.9623,
+      "mean_diff_b_minus_a": -0.0377,
+      "median_diff": 0,
+      "n_nonzero": 41,
+      "W_plus": 398.5,
+      "z": 0.414,
+      "p": 0.6792
+    },
+    "v1": {
+      "pass_a": 44,
+      "pass_b": 43,
+      "a_only_pass": 2,
+      "b_only_pass": 1,
+      "mcnemar_exact_p": 1.0
+    },
+    "v2": {
+      "pass_a": 50,
+      "pass_b": 49,
+      "a_only_pass": 2,
+      "b_only_pass": 1,
+      "mcnemar_exact_p": 1.0
+    },
+    "ungrounded_cases": {
+      "a": 4,
+      "b": 10
+    }
+  },
+  "B1_vs_B2_runtorun": {
+    "n": 53,
+    "calls": {
+      "mean_a": 13.2642,
+      "mean_b": 12.9623,
+      "mean_diff_b_minus_a": -0.3019,
+      "median_diff": 0,
+      "n_nonzero": 36,
+      "W_plus": 283.5,
+      "z": 0.777,
+      "p": 0.437
+    },
+    "cost": {
+      "mean_a": 0.0107,
+      "mean_b": 0.0105,
+      "mean_diff_b_minus_a": -0.0003,
+      "median_diff": 0.0001,
+      "n_nonzero": 53,
+      "W_plus": 714.5,
+      "z": 0.004,
+      "p": 0.9965
+    },
+    "sql": {
+      "mean_a": 4.3774,
+      "mean_b": 3.9623,
+      "mean_diff_b_minus_a": -0.4151,
+      "median_diff": 0,
+      "n_nonzero": 34,
+      "W_plus": 218.5,
+      "z": 1.357,
+      "p": 0.1747
+    },
+    "v1": {
+      "pass_a": 44,
+      "pass_b": 43,
+      "a_only_pass": 3,
+      "b_only_pass": 2,
+      "mcnemar_exact_p": 1.0
+    },
+    "v2": {
+      "pass_a": 49,
+      "pass_b": 49,
+      "a_only_pass": 2,
+      "b_only_pass": 2,
+      "mcnemar_exact_p": 1.0
+    },
+    "ungrounded_cases": {
+      "a": 9,
+      "b": 10
+    }
+  }
+}

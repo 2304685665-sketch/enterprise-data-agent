@@ -1,0 +1,42 @@
+{
+  "case_id": "G-latest-order",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，最晚的一笔订单发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-latest-order-4751f7d9",
+  "started_at": "2026-10-13T15:11:20.627488+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 17.203,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中最新订单日期的调研报告\n\n## 调研背景\n\n本次调研旨在准确获取我司内部数据库中记录的最新一笔订单的具体日期。调研要求基于公司官方内部数据库的直接查询，确保数据的准确性，不得依赖记忆或主观臆断，同时覆盖所有订单类型及部门，无任何限制条件。\n\n## 查询方法与数据来源\n\n根据调研指令，使用标准SQL语句对公司订单数据库进行查询，具体语句为：\n\n```sql\nSELECT MAX(order_date) AS latest_order_date FROM orders;\n```\n\n该查询语句针对订单表（orders）提取所有订单中日期字段（order_date）的最大值，以便准确获取最新订单的日期。数据来源为公司官方内部数据库，保证信息权威、实时且完整。\n\n## 调研结果\n\n查询结果显示，数据库中最新一笔订单发生的日期为 **2026年9月23日**。该结果涵盖了所有订单记录，无论订单类型、所属部门或其他分类因素。\n\n此结果确保：\n\n- 数据由数据库直接返回，无任何人为猜测；\n- 全面覆盖所有订单记录，无部分遗漏；\n- 反映了数据库中最新的订单交易时间点，为公司运营提供准确的时效性信息。\n\n## 结论\n\n通过公司内部数据库的直接查询，确认本公司目前记录的最新订单日期为2026年9月23日。此日期为订单表中所有记录的最大订单日期，代表最新一次订单成交的时间。该结果适用于公司各部门及所有订单类型，满足调研要求的准确性与全面性。\n\n### 参考文献\n\n[1] 内部公司数据库订单日期查询结果：2026-09-23",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_4siFDfmswjkUybtkedxKFpQy"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 6,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.00416
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "G-kitchen-orders",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Kitchen 品类的商品一共被下了几笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-kitchen-orders-1b9cf443",
+  "started_at": "2026-10-13T15:18:03.478503+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 37.633,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中“Kitchen”品类商品订单总数的详尽报告\n\n## 研究目标\n\n本次研究旨在精准获取公司内部数据库中属于“Kitchen”（厨房）品类的所有商品所下订单的总数量。用户未限定时间范围、子类别或其他任何筛选条件，因此统计范围涵盖所有时间点、所有相关订单，并且不依赖记忆或估算，确保数据的准确性和权威性。\n\n## 数据库结构概述\n\n为确保查询的准确性，需了解数据库内相关表的结构。通过查询数据库元数据，发现以下三张关键表参与本次研究：\n\n- **customers**（客户表）\n  - 结构：`customer_id`（客户ID，主键），`customer_name`（客户名称），`region`（区域），`signup_year`（注册年份）\n- **products**（产品表）\n  - 结构：`product_id`（产品ID，主键），`product_name`（产品名称），`category`（产品类别），`unit_price`（单价）\n- **orders**（订单表）\n  - 结构：\n    - `order_id`（订单ID，主键）\n    - `customer_id`（客户ID，外键，关联customers表）\n    - `product_id`（产品ID，外键，关联products表）\n    - `quantity`（订购数量）\n    - `amount_usd`（订单金额，美元）\n    - `order_date`（订单日期）\n    - `status`（订单状态）\n\n该结构确保能够通过products表中的`category`字段筛选“Kitchen”类别商品，再通过订单表关联查询所有对应订单。\n\n## 查询方法与过程\n\n为实现精确统计，采用以下SQL查询实现目标：\n\n```sql\nSELECT COUNT(*) AS total_orders_kitchen\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nWHERE p.category = 'Kitchen';\n```\n\n### 查询说明\n\n- 通过`JOIN`操作，将订单表`orders`与产品表`products`以`product_id`字段关联联结。\n- 使用`WHERE`条件过滤出所有`category`字段值为`Kitchen`的商品相关订单。\n- `COUNT(*)`统计满足上述条件的所有订单记录数量，覆盖所有时间和状态，无任何额外过滤。\n\n## 统计结果\n\n查询结果表明：\n\n- 在公司内部数据库中，属于“Kitchen”品类的商品订单总数为**21笔**。\n\n该数字涵盖所有历史订单数据，完全符合用户“不限定时间或其他条件”的要求，保证数据精准无误。\n\n## 结论\n\n基于对公司内部数据库的直接查询，以`orders`与`products`表关联，过滤“Kitchen”品类商品，实现了订单总数的精确统计。经验证，所有订单共有21笔。这一结论：\n\n- 完全基于数据库实时数据，不依赖任何预估或印象。\n- 以明确的SQL逻辑实现，保证结果可复现与验证。\n- 满足用户需求，确保信息准确、完整。\n\n## 参考来源\n\n- 内部数据库结构与表定义查询：\n  - SQL语句：`SELECT name, sql FROM sqlite_master WHERE type='table'`\n- 订单统计查询：\n  - SQL语句：\n    ```sql\n    SELECT COUNT(*) AS total_orders_kitchen\n    FROM orders o\n    JOIN products p ON o.product_id = p.product_id\n    WHERE p.category = 'Kitchen'\n    ```\n\n---\n\n### Sources\n\n[1] 内部数据库表结构与定义查询: 无URL（公司内部数据库）  \n[2] “Kitchen”品类订单数量统计SQL查询结果: 无URL（公司内部数据库）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 2,
+      "think_tool": 1
+    },
+    "sql_calls": 2,
+    "sql_call_ids": [
+      "call_Hx4HOCeQibIpbgwQV7ZdrS2F",
+      "call_nEvPdqORi946LqtiVn9Yz99H"
+    ],
+    "sql_end_statuses": [
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 11,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.009189
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "L-avg-round",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有融资轮次的平均金额是多少美元？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-avg-round-d13f66f3",
+  "started_at": "2026-10-13T15:09:44.107755+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 14.395,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中所有融资轮次的平均金额报告\n\n## 概述\n\n本报告旨在准确揭示公司内部数据库中所有融资轮次的平均金额（以美元计），涵盖所有融资类型、阶段和日期。此数据取自最新数据库查询，确保信息准确且无主观估计。\n\n## 数据查询方法\n\n针对研究方案，直接对公司内部融资轮次数据表进行了SQL查询，完整未加任何筛选条件。具体查询语句如下：\n\n```sql\nSELECT AVG(amount_usd) AS average_amount_usd FROM funding_rounds;\n```\n\n该语句计算了数据库中所有融资记录`amount_usd`字段的平均值，覆盖所有类型、融资阶段、日期范围内的融资轮次，确保统计的全面及准确。\n\n## 主要发现\n\n- 公司数据库中所有融资轮次的平均融资金额为**53,120,736.84美元**。\n- 该平均数反映了历史及当前所有融资轮次的总体资金规模，未排除任何特定条件。\n- 此数据代表一个综合性指标，可用于评估公司所跟踪项目融资的整体资本规模情况。\n\n## 数据可信度与分析\n\n该结果直接提取自公司内部官方数据库，避免了任何主观猜测和估算，数据具备高度可靠性。考虑到数据涵盖所有类型（种子轮、A轮、B轮、C轮、IPO前等）、所有阶段与时间段，该数字反映的融资规模均衡了不同融资轮次的资金差异。\n\n需要注意：\n\n- 平均金额较高表明数据库中存在部分融资金额极大的轮次，可能因晚期融资或大型重大项目导致。\n- 若需要更细分的分析（按融资阶段、年份或行业），可额外细化查询参数。\n- 当前数据适用于宏观把握公司数据库中融资轮次资金规模的整体水平。\n\n## 总结\n\n依据公司内部数据库的完整数据，所有融资轮次的平均融资金额为约**5312万美元**。该数据覆盖所有融资轮次，无任何人为限制或选择，反映了融资活动的真实资金水平。\n\n此信息可辅助公司进行融资趋势分析、项目筛选及资本规划等决策，具有重要参考价值。\n\n---\n\n### 来源\n\n[1] 公司内部数据库融资轮次平均金额查询结果：`funding_rounds` 表统计数据",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_6R6c43X30FY573q0Z1xeHMod"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003427
+  }
+}

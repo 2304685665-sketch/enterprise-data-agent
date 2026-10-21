@@ -1,0 +1,42 @@
+{
+  "case_id": "L-earliest-date",
+  "category": "sql_aggregate",
+  "question": "我们公司内部数据库里，所有融资记录里最早的一笔发生在哪一天？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-earliest-date-5b4ab3c2",
+  "started_at": "2026-10-13T15:10:33.614638+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 15.024,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部融资记录最早一笔时间报告\n\n## 概述\n\n本报告依据公司内部数据库的直接查询结果，回答关于公司所有融资记录中最早发生融资时间的具体日期需求。报告中包含精准的数据来源和详细说明，以确保信息的准确性和可靠性，满足查询的严谨要求。\n\n## 查询结果\n\n根据公司内部数据库的查询结果显示，公司所有融资记录中最早的一笔融资时间为 **2016年2月2日**。\n\n- 此查询基于数据库中所有历史融资记录字段的准确检索和排序\n- 查询未基于人为印象或推测，而是直接从数据源中得出\n- 该日期代表公司数据库中可追溯到的第一条融资数据，体现了公司融资活动的起点\n\n## 数据库内容说明\n\n- 数据库中每条融资记录均包含关键字段如融资轮次日期（`round_date`）、金额、投资方等\n- 本次查询重点依赖`round_date`首条记录的排序确定最早时间\n- 由于查询范围涵盖了公司内部全部融资记录，因此查询结果具备代表性和完整性\n\n## 结论\n\n综上所述，公司内部数据库中所有融资记录的最早一笔融资准确发生于 **2016年2月2日**。这是基于公司官方内部数据的直接查询得出的唯一且权威的信息。\n\n---\n\n### Sources\n\n[1] 公司内部融资数据库查询结果（2016-02-02融资记录）",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_V3pmqJ1O5DOyt17V3BOeF2PM"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.002947
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "G-kitchen-orders",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，Kitchen 品类的商品一共被下了几笔订单？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-kitchen-orders-4336f319",
+  "started_at": "2026-10-13T15:16:00.100631+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 25.871,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# Kitchen 品类商品订单总数报告\n\n## 需求说明\n\n根据客户需求，需准确获取公司内部数据库中所有归类为“Kitchen”品类商品的订单总数。此数据必须来自数据库直接查询，保证其准确性和最新性。查询范围涵盖数据库中所有与“Kitchen”类别相关的订单，不限时间或子品类。此报告旨在基于实际数据库数据，明确给出该分类下商品的订单总数。\n\n## 数据查询方法\n\n为确保数据的准确与全面，查询采用以下SQL语句：\n\n```sql\nSELECT SUM(o.quantity) AS total_kitchen_orders\nFROM orders o\nJOIN products p ON o.product_id = p.product_id\nWHERE p.category = 'Kitchen';\n```\n\n- **orders 表**：记录所有订单明细，包括产品ID和订购数量。\n- **products 表**：包含所有产品的详细信息，如产品类别(category)。\n- 通过连接 `orders` 和 `products` 表，筛选所有`category`字段为“Kitchen”的商品订单。\n- 将所有满足条件的订单数量进行累加，得到总的订单数量。\n\n该查询直接针对数据库，保证数据完整性和即时性。\n\n## 查询结果\n\n执行上述SQL语句后，得到以下结果：\n\n- **Kitchen品类商品订单总数：176**\n\n这个数字代表了数据库中所有“Kitchen”分类产品的累计订单量，包括所有时间段及所有子类别，没有任何过滤条件。\n\n## 结论\n\n基于公司的内部数据库，Kitchen品类商品的订单总数为 **176笔**。这一结果直接来自实时数据查询，确保数据准确且最新，满足客户对精确数字的要求。\n\n不限制时间或子品类，反映了迄今为止所有订单的综合数据。此外，该数据可作为后续业务分析、库存管理和销售策略优化的重要依据。\n\n---\n\n### Sources\n\n[1] Internal company database queried via SQL: 176 total orders for 'Kitchen' category products",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "ResearchComplete": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_Ek5srOgbTJxT40UZ7QkxT64n"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": false,
+  "model_calls": {
+    "ok": 9,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.006233
+  }
+}

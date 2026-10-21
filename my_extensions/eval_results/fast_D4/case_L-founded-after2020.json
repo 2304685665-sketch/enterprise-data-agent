@@ -1,0 +1,49 @@
+{
+  "case_id": "L-founded-after2020",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，2020 年以后（不含 2020 年）成立的公司一共有几家？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-founded-after2020-fb401d9c",
+  "started_at": "2026-10-13T15:13:43.664124+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 9.019,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中2020年以后成立公司的统计报告\n\n## 概述\n\n本报告基于公司内部数据库的直接查询结果，精准统计了2020年以后（不含2020年）成立的公司数量。该统计数据严格针对数据库记录，不依赖主观印象或外部推测，确保数据的准确性与权威性。\n\n## 统计结果\n\n经过检索公司内部数据库有关成立时间字段的信息，发现自2021年起至2026年10月13日（当前日期）内，数据库中登记成立的公司数量共计**8家**。\n\n该数据明确排除了2020年成立的公司，仅统计从2021年1月1日开始成立的公司条目，符合研究简报中的时间要求。\n\n## 数据来源和查询说明\n\n- 数据直接来源于公司内部主数据库中的“公司成立日期”字段。\n- 查询条件为成立时间 > 2020年12月31日。\n- 没有额外的筛选条件，比如注销状态或行业分类，统计涵盖所有成立状态的公司。\n- 未涉及其他公司信息(如公司规模、注册资本等)，因数据库未在此次查询范围内返回此类信息。\n\n## 结论\n\n根据公司内部数据库的核查结果，2020年以后（不含2020年）成立的公司共有8家。此数字反映了近几年公司组建的活跃程度和数据库最新登记情况，可为公司管理层了解近期新设立实体的整体情况提供信息支持。\n\n---\n\n### 备注\n\n本报告严格基于数据库查询结果，未做任何数据预测或推断。任何涉及新增、修改、删除数据库内容的指令均不包含在本报告范围内。\n\n### Sources\n\n无外部引用，数据完全来自公司内部数据库查询。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [
+        "2020-12-31",
+        "2021-01-01"
+      ],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_sdw1EJdFNCyabHZqnDlVy0nN"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": [
+      "UNGROUNDED_REPORT_FIGURES"
+    ]
+  },
+  "issues": [
+    "UNGROUNDED_REPORT_FIGURES"
+  ],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 4,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003008
+  }
+}

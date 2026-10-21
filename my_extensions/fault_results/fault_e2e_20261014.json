@@ -1,0 +1,19 @@
+{
+ "F0": {
+  "doc_search_attempts": 30,
+  "injected": 9,
+  "attempt_success_rate": 0.7,
+  "useful": 11
+ },
+ "F1": {
+  "doc_search_attempts": 37,
+  "injected": 12,
+  "attempt_success_rate": 0.676,
+  "useful": 13
+ },
+ "mcnemar_useful": {
+  "only_F0": 0,
+  "only_F1": 2,
+  "p": 0.5
+ }
+}

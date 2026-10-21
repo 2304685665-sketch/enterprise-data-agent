@@ -1,0 +1,42 @@
+{
+  "case_id": "L-seed-count",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，一共有几笔 Seed 轮融资？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "L-seed-count-7e4be337",
+  "started_at": "2026-10-13T15:12:13.738887+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 11.062,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 公司内部数据库中Seed轮融资交易数量详尽报告\n\n## 查询目的与背景\n\n本次查询的目标是准确统计公司内部数据库中所有记录的Seed（种子）轮融资交易的数量。Seed轮融资是创业公司在初创阶段获得的第一轮外部资金，通常用以支持产品开发和市场验证。与其他融资轮次不同，本次统计不受时间段、行业或任何其他限制，需全面覆盖数据库中所有Seed轮融资条目，确保结果的准确性和完整性。\n\n## 数据库查询结果概述\n\n经过对公司内部数据库的直接查询，得出以下明确数字：\n\n- **Seed轮融资交易总数：25笔**\n\n这一数字涵盖了数据库中所有标记为Seed轮融资的交易记录，无遗漏，无重复，反映了截至当前数据库记录的完整情况。\n\n## 数据完整性与准确性说明\n\n- 查询过程中，直接依据数据库中的交易字段和融资轮次分类字段进行筛选，确保数据来源权威可靠。\n- 未使用任何估计、推断或外部数据源，完全基于内部正式记录。\n- 该结果无时间限制，覆盖历史所有数据条目，提供了全面的统计视图。\n- 该数据点为整型数量，适合于后续财务分析、投资决策及内部汇报。\n\n## 结论\n\n- 截至目前，公司内部数据库完整记录的Seed轮融资交易总数为25笔。\n- 该数字具备高度准确性和数据权威性，适合作为公司融资历史和投资分析的基础数据。\n- 若需进一步细分如具体时间、投资金额、参与投资方等信息，可基于本数据基础继续开展后续数据深挖。\n\n如需对Seed轮融资交易的其他维度进行分析或查询，欢迎提出相应需求。\n\n---\n\n### Sources\n\n无外部引用，数据来源为公司内部数据库直接查询结果。",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 1,
+      "think_tool": 1
+    },
+    "sql_calls": 1,
+    "sql_call_ids": [
+      "call_Wm7766Ow6zmJmM57O7qTK9de"
+    ],
+    "sql_end_statuses": [
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 5,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.003434
+  }
+}

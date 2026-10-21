@@ -1,0 +1,46 @@
+{
+  "case_id": "G-qty-over15",
+  "category": "sql_filter",
+  "question": "我们公司内部数据库里，单笔订单购买数量超过 15 件的订单一共有几笔？请直接查询数据库获取准确数字，不要凭印象回答。",
+  "run_id": "G-qty-over15-f2d3ff21",
+  "started_at": "2026-10-13T15:20:34.045092+00:00",
+  "run_status": "finished",
+  "wall_clock_seconds": 32.376,
+  "db_sha256_unchanged": true,
+  "engine_status": "finished",
+  "final_report": "# 关于公司内部数据库中单笔订单购买数量超过15件订单数量的调研报告\n\n## 研究背景与目标\n\n本次调研旨在准确统计公司的内部数据库中，单笔订单中购买数量超过15件的订单总数。为确保结果的准确性，采用直接查询数据库方式，杜绝凭印象或估算的数据。通过SQL查询订单相关数据，反映真实的数据库情况，进一步支持业务决策与分析。\n\n## 数据库结构确认\n\n初步尝试查询包含订单及购买数量信息的表时，发现“order_records”表不存在，造成查询错误。为明确正确的表结构，执行了数据库元数据查询，获得以下三张表的存在：\n\n- `customers`\n- `products`\n- `orders`\n\n结合表名语义和业务常识，“orders”表最有可能包含订单数量信息，因此决定在此表进行具体数据查询。\n\n## 具体查询与结果\n\n针对“orders”表编写并执行了以下SQL查询，精确计算购买数量大于15的订单数量：\n\n```sql\nSELECT COUNT(*) AS order_count FROM orders WHERE quantity > 15;\n```\n\n查询结果显示，符合条件的订单数量为：\n\n- **15笔订单**\n\n这一数字代表公司数据库内所有单笔订单中，购买数量超过15件的订单总数，真实反映当前数据库状态。\n\n## 结论\n\n通过实地查询公司内部数据库，排除数据缺失或表结构误判，获取了唯一准确的答案：\n\n> 公司内部数据库中，单笔订单购买数量超过15件的订单总计为15笔。\n\n该数据来源于数据库真实记录，绝非估算，从而为相关业务分析与决策提供了有力数据支持。\n\n## 附注\n\n- 本次调研仅基于当前数据库内订单数据，无数据修改权限，保证数据库数据安全与完整性。\n- 如果未来业务表结构或数据字段有所调整，可能导致统计口径变化，建议定期对数据库结构及查询标准进行复核。\n\n### 参考文献与数据来源\n\n- 内部数据库订单表（orders）数据，2026年10月13日实时查询结果\n\n---\n\n### Sources\n\n[1] 公司内部数据库（orders 表）: 内部企业数据，不公开链接",
+  "evidence": {
+    "ungrounded_figures": {
+      "dates": [],
+      "amounts": []
+    },
+    "tool_call_counts": {
+      "sql_executor": 3,
+      "think_tool": 1
+    },
+    "sql_calls": 3,
+    "sql_call_ids": [
+      "call_I2R33rMvL3OoPVAlWV6DzYTg",
+      "call_peBRH7CNTDx2IMvdRHxfU3jd",
+      "call_vbO3ybT1lXisjCXIV2r9mMwl"
+    ],
+    "sql_end_statuses": [
+      "error",
+      "success",
+      "success"
+    ],
+    "unpaired_tool_start_count": 0,
+    "unpaired_tool_end_count": 0,
+    "uncounted_paid_calls": {},
+    "issues": []
+  },
+  "issues": [],
+  "valid_for_scoring": true,
+  "score_passed": true,
+  "model_calls": {
+    "ok": 12,
+    "blocked": 0,
+    "error": 0,
+    "cost_usd": 0.008464
+  }
+}
